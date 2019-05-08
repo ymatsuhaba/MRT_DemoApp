@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use Illuminate\Http\Request;
 
 class ContactMessegeController extends Controller
@@ -17,5 +18,16 @@ class ContactMessegeController extends Controller
             'email' => 'required|email',
             'message' => 'required'
         ]);
+
+        Mail::send('emails.contact-message',[
+            'msg' => $request->message
+        ],function($mail) use($request){
+            $mail->from($request->email, $request->name);
+
+            $mail->to('mrt@gmail.com')->subject('Contact Message');
+        });
+
+        return redirect()->back()->with('flash_message','Thank you for your message');
     }
 }
+
