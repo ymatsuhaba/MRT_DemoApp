@@ -10,4 +10,12 @@ class ContactMessegeController extends Controller
     {
         return view('contact');
     }
+    public function store(Requerst $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+    }
 }

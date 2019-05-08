@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
+
+Route::post('/contact', [
+    'uses' => 'ContactMessageController@store',
+    'as' => 'contact.store'
+]);
