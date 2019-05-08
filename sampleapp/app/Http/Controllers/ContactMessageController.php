@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Mail;
 use Illuminate\Http\Request;
 
-class ContactMessegeController extends Controller
+class ContactMessageController extends Controller
 {
     public function create()
     {
