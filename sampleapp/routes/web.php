@@ -24,3 +24,6 @@ Route::post('/contact', [
     'as' => 'contact.store'
 ]);
 
+Route::get('/form',function(){
+    return view('form');
+});
