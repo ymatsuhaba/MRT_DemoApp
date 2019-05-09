@@ -11,7 +11,7 @@ class ContactMessageController extends Controller
     {
         return view('contact');
     }
-    public function store(Requerst $request)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'name' => 'required',
