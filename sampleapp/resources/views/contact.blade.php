@@ -6,6 +6,11 @@
         <meta http-equiv="X-UA=Compatible" content="ie=edge">
         <title>フォーム</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <style>
+            .invalid-feedback{
+               display: block; 
+            }
+            </style>
     </head>
     <body>
         <div class="container">
@@ -13,6 +18,9 @@
 
             <div class="row">
                 <div class="col-md-6">
+                @if (Session::has('flash-message'))
+                    <div class="alert alert-success">{{ Session }}</div>
+                @endif
                     <form method="post" action="{{ route('contact.store') }}">
                         {{ csrf_field() }}
 
