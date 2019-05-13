@@ -21,7 +21,7 @@
                 @if (Session::has('flash-message'))
                     <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
                 @endif
-                    <form method="post" action="{{ url('/form' }}">
+                    <form method="post" action="{{ url('/form') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
