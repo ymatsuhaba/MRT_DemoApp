@@ -33,6 +33,4 @@ Route::post('/login', [
     'as' => 'contact.store'
 ]);
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
