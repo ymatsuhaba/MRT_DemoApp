@@ -27,3 +27,12 @@ Route::post('/contact', [
 Route::get('/form',function(){
     return view('form');
 });
+
+Route::get('/login', [
+    'uses' => 'LoginController@create'
+]);
+
+Route::post('/login', [
+    'uses' => 'LoginController@store',
+    'as' => 'contact.store'
+]);
