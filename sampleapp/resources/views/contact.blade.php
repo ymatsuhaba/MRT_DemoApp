@@ -21,8 +21,8 @@
                 @if (Session::has('flash-message'))
                     <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
                 @endif
-                    <form method="post" action="{{ route('contact.store') }}">
-                        {{ csrf_field() }}
+                    <form method="post" action="{{ url('/form') }}">
+                        @csrf
 
                         <div class="form-group">
                             <label>Full Name: </label>
@@ -32,23 +32,7 @@
                             @endif
                         </div>
 
-                        <div class="form-group">
-                            <label>Email Address: </label>
-                            <input type="text" class="form-control" name="email">
-                            @if ($errors->has('email'))
-                            <small class="form-text invalid-feedback">{{ $errors->first('email') }}</small>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <label>Message: </label>
-                            <textarea name="Message" class="form-control"></textarea>
-                            @if ($errors->has('message'))
-                            <small class="form-text invalid-feedback">{{ $errors->first('message') }}</small>
-                            @endif
-                        </div>
-
-                            <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary">Submit</button>
                     </form> 
                 </div>
             </div>

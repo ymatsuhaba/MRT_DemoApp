@@ -19,11 +19,10 @@ Route::get('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
 
-Route::post('/contact', [
-    'uses' => 'ContactMessageController@store',
-    'as' => 'contact.store'
-]);
-
-Route::get('/form',function(){
+Route::post('/form',function(){
     return view('form');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
