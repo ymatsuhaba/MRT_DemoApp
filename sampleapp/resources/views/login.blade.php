@@ -9,23 +9,21 @@
 </head>
 <body>
 <h1>あだ名変換ツール</h1>
-<div class="col-md-4">
-    <form method="post" action="{{route('contact.store')}}">
-        {{ csrf_field() }}
+    <div class="login">
+        <div class="col-md-4">
+            <form method="post" action="{{url('/login')}}">
 
-        <div class="form-id">
-            <label>User id: </label>
-            <input type="text" class="form-control" name="id">
+                <div class="form-id">
+                    <label>User id: </label>
+                    <input type="text" name="id">
+                </div>
+                <div class="form-passwprd">
+                    <label>PassWord: </label>
+                    <input type="text" name="password">
+                </div>
+                <button class="btn btn-primary">ログイン</button>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label>PassWord: </label>
-            <input type="text" class="form-control" name="password">
-        </div>
-
-        <button class="btn btn-primary">ログイン</button>
-    </form>
-</div>
-
+    </div>
 </body>
 </html>
