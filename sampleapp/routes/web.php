@@ -19,19 +19,9 @@ Route::get('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
 
-Route::post('/contact', [
-    'uses' => 'ContactMessageController@store',
-    'as' => 'contact.store'
-]);
-
-Route::get('/form',function(){
-    return view('form');
-});
-
 Route::post('/form',function(){
     return view('form');
 });
-
 
 Auth::routes();
 
