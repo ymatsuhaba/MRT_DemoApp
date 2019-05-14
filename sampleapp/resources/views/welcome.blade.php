@@ -86,7 +86,6 @@
 
                 <div class="links">
                     <a href="https://medrt.co.jp/">Homepage</a>
-                    <a href="/form">form</a>
                     <a href="/contact">contact</a>
                     <a href="https://github.com/laravel/laravel">公式GitHub</a>
                 </div>
