@@ -23,6 +23,16 @@ Route::post('/form',function(){
     return view('form');
 });
 
+
+Route::get('/login', [
+    'uses' => 'LoginController@create'
+]);
+
+Route::post('/login', [
+    'uses' => 'LoginController@store',
+    'as' => 'contact.store'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
