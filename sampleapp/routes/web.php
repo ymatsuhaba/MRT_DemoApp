@@ -28,6 +28,11 @@ Route::get('/form',function(){
     return view('form');
 });
 
+Route::post('/form',function(){
+    return view('form');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

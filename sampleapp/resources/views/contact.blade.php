@@ -22,7 +22,7 @@
                     <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
                 @endif
                     <form method="post" action="{{ url('/form') }}">
-                        {{ csrf_field() }}
+                        @csrf
 
                         <div class="form-group">
                             <label>Full Name: </label>
