@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA=Compatible" content="ie=edge">
         <title>フォーム</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
     </head>
     <body>
     <div class="container">
@@ -29,10 +30,11 @@
 
                     <button class="btn btn-primary">Submit</button>
 
-                    @yield('footer');
                 </form>
             </div>
         </div>
     </div>
+
+    @yield('footer');
     </body>
 </html>
