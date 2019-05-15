@@ -40,3 +40,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/v_bind_test', function () {
+    return view('v_bind_test')->with('test', '変数テスト');
+});
