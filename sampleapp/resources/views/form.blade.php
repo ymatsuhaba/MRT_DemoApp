@@ -28,6 +28,8 @@
                     </div>
 
                     <button class="btn btn-primary">Submit</button>
+
+                    @yield('footer');
                 </form>
             </div>
         </div>
