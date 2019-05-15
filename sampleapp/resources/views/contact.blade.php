@@ -31,6 +31,7 @@
                 </div>
             </div>
         </div>
+        @extends('form')
     </body>
 </html>
 

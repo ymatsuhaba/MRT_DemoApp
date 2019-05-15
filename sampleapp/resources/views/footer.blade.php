@@ -7,4 +7,8 @@
         </ul>
     </nav>
     <p>Copyright 2018</p>
+
+    @foreach($articles as $article)
+        　　<b>{{$article->created_at->format('Y年m月d日')}}</b>
+    @endforeach
 </footer>
