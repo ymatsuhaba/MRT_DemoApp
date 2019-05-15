@@ -26,7 +26,6 @@
             </div>
         </div>
     </div>
-
-    @yield('footer');
+    @extends('form')
     </body>
 </html>
