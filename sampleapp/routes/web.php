@@ -11,6 +11,8 @@
 |
 */
 
+Route::auth();
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,10 +20,18 @@ Route::get('/', function () {
 Route::get('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
+Route::post('/contact', [
+    'uses' => 'ContactMessageController@create'
+]);
 
-Route::post('/form',function(){
-    return view('form');
-});
+//Route::get('/contact', function(Request $request){
+//});
+
+//Route::post('/form',function(){
+//    return view('form');
+//});
+
+Route::get('/form', 'ContactMessageController@form');
 
 Route::get('/login',function(){
     return view('login');
@@ -37,3 +47,4 @@ Route::get('/about', function () {
 Route::get('/v_bind_test', function () {
     return view('v_bind_test')->with('test', '変数テスト');
 });
+
