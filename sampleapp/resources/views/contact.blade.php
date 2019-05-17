@@ -21,15 +21,15 @@
                 @if (Session::has('flash-message'))
                     <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
                 @endif
-                    <form method="post" action="{{ url('/form') }}">
+                    <form method="get" action="{{ url('/form') }}">
                         @csrf
 
                         <div class="form-group">
                             <label>Full Name: </label>
                             <input type="text" class="form-control" name="name">
-                            @if ($errors->has('name'))
-                            <small class="form-text invalid-feedback">{{ $errors->first('name') }}</small>
-                            @endif
+{{--                            @if ($errors->has('name'))--}}
+{{--                            <small class="form-text invalid-feedback">{{ $errors->first('name') }}</small>--}}
+{{--                            @endif--}}
                         </div>
 
                         <button class="btn btn-primary">Submit</button>
@@ -39,5 +39,3 @@
         </div>
     </body>
 </html>
-
-
