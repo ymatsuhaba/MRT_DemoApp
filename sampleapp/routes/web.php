@@ -48,3 +48,7 @@ Route::get('/v_bind_test', function () {
     return view('v_bind_test')->with('test', '変数テスト');
 });
 
+Route::get('/post_test', 'PostTestController@form');
+
+
+Route::post('/post_test', 'PostTestController@form');
