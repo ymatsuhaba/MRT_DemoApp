@@ -24,20 +24,18 @@ Route::post('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
 
+//Route::get('/contact', function(Request $request){
+//});
+
+//Route::post('/form',function(){
+//    return view('form');
+//});
+
 Route::get('/form', 'ContactMessageController@form');
 
-                                        //loginページここから
-Route::get('/login', [
-    'uses' => 'LoginController@create'
-]);
-Route::post('/login', [
-    'uses' => 'LoginController@create'
-]);
-
-
-Route::post('/result', 'LoginController@result');
-                                        //loginページここまで
-
+Route::get('/login',function(){
+    return view('login');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -50,3 +48,7 @@ Route::get('/v_bind_test', function () {
     return view('v_bind_test')->with('test', '変数テスト');
 });
 
+Route::get('/post_test', 'PostTestController@form');
+
+
+Route::post('/post_test', 'PostTestController@form');

@@ -4,11 +4,11 @@
 <h1>あだ名変換ツール</h1>
     <div class="login">
         <div class="col-md-4">
-            <form method="post" action="{{url('/result')}}">
-                @csrf
+            <form method="post" action="{{url('/login')}}">
+
                 <div class="form-id">
                     <label>User id: </label>
-                    <input type="text" name="name">
+                    <input type="text" name="id">
                 </div>
                 <div class="form-passwprd">
                     <label>PassWord: </label>

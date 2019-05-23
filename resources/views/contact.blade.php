@@ -21,9 +21,9 @@
                         <div class="form-group">
                             <label>Full Name: </label>
                             <input type="text" class="form-control" name="name">
-                            @if ($errors->has('name'))
-                            <small class="form-text invalid-feedback">{{ $errors->first('name') }}</small>
-                            @endif
+{{--                            @if ($errors->has('name'))--}}
+{{--                            <small class="form-text invalid-feedback">{{ $errors->first('name') }}</small>--}}
+{{--                            @endif--}}
                         </div>
 
                         <button class="btn btn-primary">Submit</button>
@@ -31,5 +31,6 @@
                 </div>
             </div>
         </div>
+        @extends('form')
     </body>
 </html>
