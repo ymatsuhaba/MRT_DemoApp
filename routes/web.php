@@ -24,13 +24,6 @@ Route::post('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
 
-//Route::get('/contact', function(Request $request){
-//});
-
-//Route::post('/form',function(){
-//    return view('form');
-//});
-
 Route::get('/form', 'ContactMessageController@form');
 
 Route::get('/login',function(){
