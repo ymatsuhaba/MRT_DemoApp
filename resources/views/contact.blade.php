@@ -1,11 +1,5 @@
 @extends('layouts.head_common')
-
-        <style>
-            .invalid-feedback{
-               display: block; 
-            }
-            </style>
-    </head>
+<html>
     <body>
         <div class="container">
             <h1>Contact Us</h1>
@@ -21,6 +15,9 @@
 
                             <label>From: </label>
                             <input type="text" class="form-control" name="from">
+
+                            <label>Nickname: </label>
+                            <input type="text" class="form-control" name="nickname">
                         </div>
 
                         <button class="btn btn-primary">登録</button>
