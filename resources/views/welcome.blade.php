@@ -88,7 +88,7 @@
                     <a href="https://medrt.co.jp/">Homepage</a>
                     <a href="/contact">contact</a>
                     <a href="/about">about</a>
-                    <a href="/login">about</a>
+                    <a href="/login">login</a>
                     <a href="https://github.com/laravel/laravel">公式GitHub</a>
                 </div>
             </div>
