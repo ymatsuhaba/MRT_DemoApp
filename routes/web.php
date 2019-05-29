@@ -24,7 +24,7 @@ Route::post('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
 
-Route::get('/form', 'ContactMessageController@form');
+Route::get('/form', 'ContactMessageController@form_refactored');
 
 Route::get('/login',function(){
     return view('login');
