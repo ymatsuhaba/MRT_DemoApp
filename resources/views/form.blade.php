@@ -1,25 +1,31 @@
-@extends('layouts.head_common')
-
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    </head>
     <body>
         <div class="container">
             <h1>NameMaker</h1>
 
             <div class="row">
-                <div class="col-md-6">
-                    @if (Session::has('flash-message'))
-                        <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
-                  @endif
-                    <form method="get" action="{{ url('/form') }}">
-                        @csrf
-                        <div class="form-group">
-                            <label>Nickname: </label>
-                            @foreach ($nickname as $value)
-                                <br>
-                              {{$name['name']}}{{$value}}
+                <form method="get" action="{{ url('/form') }}">
+                    @csrf
+                    <div class="form-group">
+                        <table>
+                            <tr>
+                                <th>名前</th>
+                                <th>出身地</th>
+                                <th>ニックネーム</th>
+                            </tr>
+                            @foreach ($nickname as $nickname)
+                                <tr>
+                                    <td>{{$nickname -> name}}</td>
+                                    <td>{{$nickname -> from}}</td>
+                                    <td>{{$nickname -> nickname}}</td>
+                                </tr>
                             @endforeach
-                        </div>
-                    </form>
-                </div>
+                        </table>
+                    </div>
+                </form>
             </div>
         </div>
     </body>
