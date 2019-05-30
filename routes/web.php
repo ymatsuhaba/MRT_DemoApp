@@ -45,10 +45,3 @@ Route::get('/post_test', 'PostTestController@form');
 
 
 Route::post('/post_test', 'PostTestController@form');
-
-
-Route::get('/new', 'NewController@new');
-
-Route::get('/newresult', 'NewController@newresult');
-
-
