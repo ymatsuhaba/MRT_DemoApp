@@ -45,3 +45,9 @@ Route::get('/post_test', 'PostTestController@form');
 
 
 Route::post('/post_test', 'PostTestController@form');
+
+Route::get('/search', 'SearchController@search');
+
+Route::post('/search', 'SearchController@search');
+
+Route::get('/list', 'listController@list');
