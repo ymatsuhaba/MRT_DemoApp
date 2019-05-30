@@ -27,8 +27,9 @@ class ContactMessageController extends Controller
         // ３．「_token」は予め覗いた変数を使う
 
         // 登録データ取得
-        $nickname   = Nickname::all();
-        return view('form', compact('nickname'));
+        $nickname = Nickname::all();
+        $url = "http://localhost:3000/contact";
+        return view('form', compact('nickname', 'url'));
     }
 
     // Formページ
@@ -51,4 +52,3 @@ class ContactMessageController extends Controller
         return view('form', compact('nickname'));
     }
 }
-

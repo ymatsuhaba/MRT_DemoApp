@@ -24,7 +24,7 @@ Route::post('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
 
-Route::get('/form', 'ContactMessageController@form_refactored');
+Route::get('/form', 'ContactMessageController@form');
 
 
 
@@ -56,3 +56,9 @@ Route::get('/post_test', 'PostTestController@form');
 
 
 Route::post('/post_test', 'PostTestController@form');
+
+Route::get('/search', 'SearchController@search');
+
+Route::post('/search', 'SearchController@search');
+
+Route::get('/list', 'listController@list');
