@@ -36,7 +36,7 @@ Route::post('/login', [
     'uses' => 'LoginController@create'
 ]);
 
-Route::get('/loginform','LoginController@form');
+Route::get('/loginform','LoginController@form_refactored');
 
 
 

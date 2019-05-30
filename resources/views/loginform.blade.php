@@ -18,11 +18,12 @@
                         <th>出身地</th>
                         <th>ニックネーム</th>
                     </tr>
-                    @foreach ($nickname as $nickname)
+                    @foreach ($logindata as $login)
                         <tr>
-                            <td>{{$nickname -> name}}</td>
-                            <td>{{$nickname -> from}}</td>
-                            <td>{{$nickname -> nickname}}</td>
+                            <td>{{$login -> id}}</td>
+                            <td>{{$login -> name}}</td>
+                            <td>{{$login -> from}}</td>
+                            <td>{{$login -> password}}</td>
                         </tr>
                     @endforeach
                 </table>
