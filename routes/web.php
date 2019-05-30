@@ -26,9 +26,20 @@ Route::post('/contact', [
 
 Route::get('/form', 'ContactMessageController@form');
 
-Route::get('/login',function(){
-    return view('login');
-});
+
+
+
+Route::get('/login', [
+    'uses' => 'LoginController@create'
+]);
+Route::post('/login', [
+    'uses' => 'LoginController@create'
+]);
+
+Route::get('/loginform','LoginController@form');
+
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

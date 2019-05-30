@@ -4,7 +4,8 @@
 <h1>あだ名変換ツール</h1>
     <div class="login">
         <div class="col-md-4">
-            <form method="post" action="{{url('/login')}}">
+            <form method="get" action="{{url('/loginform')}}">
+                @csrf
 
                 <div class="form-id">
                     <label>User id: </label>
