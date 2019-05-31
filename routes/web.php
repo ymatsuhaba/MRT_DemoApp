@@ -33,9 +33,11 @@ Route::get('/login',function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [
+    'uses' => 'AboutController@show'
+]);
+
+
 
 Route::get('/v_bind_test', function () {
     return view('v_bind_test')->with('test', '変数テスト');
