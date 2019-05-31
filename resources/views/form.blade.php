@@ -15,12 +15,18 @@
                                 <th>名前</th>
                                 <th>出身地</th>
                                 <th>ニックネーム</th>
+                                <th>性別</th>
+                                <th>生年月日</th>
+                                <th>本アプリを利用した理由</th>
                             </tr>
                             @foreach ($nickname as $nickname)
                                 <tr>
                                     <td>{{$nickname -> name}}</td>
                                     <td>{{$nickname -> from}}</td>
                                     <td>{{$nickname -> nickname}}</td>
+                                    <td>{{$nickname -> sex}}</td>
+                                    <td>{{$nickname -> birthday}}</td>
+                                    <td>{{$nickname -> reason}}</td>
                                 </tr>
                             @endforeach
                         </table>
