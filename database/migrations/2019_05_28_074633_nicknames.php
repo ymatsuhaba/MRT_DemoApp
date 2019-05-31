@@ -18,6 +18,10 @@ class Nicknames extends Migration
             $table->string('name');
             $table->string('from');
             $table->string('nickname');
+            $table->string('sex');
+            $table->string('birthday');
+            $table->string('reason:');
+
         });
     }
 
