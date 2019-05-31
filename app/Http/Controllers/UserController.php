@@ -13,3 +13,5 @@ class UserController extends Controller
         return view ('user.index', ['items' => $items]);
     }
 }
+
+

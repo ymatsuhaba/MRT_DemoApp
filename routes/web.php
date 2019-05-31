@@ -24,22 +24,11 @@ Route::post('/contact', [
     'uses' => 'ContactMessageController@create'
 ]);
 
-Route::get('/form', 'ContactMessageController@form_refactored');
+Route::get('/form', 'ContactMessageController@form');
 
-
-
-
-Route::get('/login', [
-    'uses' => 'LoginController@create'
-]);
-Route::post('/login', [
-    'uses' => 'LoginController@create'
-]);
-
-Route::get('/loginform','LoginController@form_refactored');
-
-
-
+Route::get('/login',function(){
+    return view('login');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -58,3 +47,7 @@ Route::get('/post_test', 'PostTestController@form');
 
 
 Route::post('/post_test', 'PostTestController@form');
+
+Route::get('/new', 'NewController@new');
+
+Route::get('/newresult', 'NewController@newresult');
