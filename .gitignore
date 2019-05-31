@@ -10,5 +10,5 @@ npm-debug.log
 yarn-error.log
 composer.lock
 .DS_Store
-.idea
-.laradock/data/mysql
+/.idea
+/.laradock

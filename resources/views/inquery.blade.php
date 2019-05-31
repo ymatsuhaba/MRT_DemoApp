@@ -7,7 +7,7 @@
             <h1>NameMaker</h1>
 
             <div class="row">
-                <form method="get" action="{{ url('/form') }}">
+                <form method="get">
                     @csrf
                     <div class="form-group">
                         <table>
@@ -19,14 +19,14 @@
                                 <th>生年月日</th>
                                 <th>本アプリを利用した理由</th>
                             </tr>
-                            @foreach ($nickname as $nickname)
+                            @foreach ($obj as $obj)
                                 <tr>
-                                    <td>{{$nickname -> name}}</td>
-                                    <td>{{$nickname -> from}}</td>
-                                    <td>{{$nickname -> nickname}}</td>
-                                    <td>{{$nickname -> sex}}</td>
-                                    <td>{{$nickname -> birthday}}</td>
-                                    <td>{{$nickname -> reason}}</td>
+                                    <td>{{$obj -> name}}</td>
+                                    <td>{{$obj -> from}}</td>
+                                    <td>{{$obj -> nickname}}</td>
+                                    <td>{{$obj -> sex}}</td>
+                                    <td>{{$obj -> birthday}}</td>
+                                    <td>{{$obj -> reason}}</td>
                                 </tr>
                             @endforeach
                         </table>
