@@ -14,15 +14,19 @@
                             <tr>
                                 <th>名前</th>
                                 <th>出身地</th>
+                                <th>ニックネーム</th>
                                 <th>性別</th>
                                 <th>生年月日</th>
+                                <th>本アプリを利用した理由</th>
                             </tr>
-                            @foreach ($search as $search)
+                            @foreach ($obj as $obj)
                                 <tr>
-                                    <td><a href="{{ route('users.destroy', ['id' => $user->id])}}">{{$search -> name}}</a></td>
-                                    <td>{{$search -> from}}</td>
-                                    <td>{{$search -> sex}}</td>
-                                    <td>{{$search -> birthday}}</td>
+                                    <td>{{$obj -> name}}</td>
+                                    <td>{{$obj -> from}}</td>
+                                    <td>{{$obj -> nickname}}</td>
+                                    <td>{{$obj -> sex}}</td>
+                                    <td>{{$obj -> birthday}}</td>
+                                    <td>{{$obj -> reason}}</td>
                                 </tr>
                             @endforeach
                         </table>

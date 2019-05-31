@@ -43,11 +43,13 @@ Route::get('/v_bind_test', function () {
 
 Route::get('/post_test', 'PostTestController@form');
 
-
 Route::post('/post_test', 'PostTestController@form');
 
 Route::get('/search', 'SearchController@search');
 
 Route::post('/search', 'SearchController@search');
 
-Route::get('/list', 'listController@list');
+Route::get('/list', 'ListController@list');
+Route::post('/list', 'ListController@link');
+
+Route::get('/inquery', 'InqueryController@Inquery');

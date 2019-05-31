@@ -8,6 +8,7 @@ class Nickname extends Model
 {
     public $timestamps = false;
     protected $fillable= array('name','from', 'nickname', 'sex', 'birthday', 'reason');
+    protected $hidden = array('id');
 
     public function getData()
     {
