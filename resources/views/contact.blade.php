@@ -10,23 +10,14 @@
                         @csrf
 
                         <div class="form-group">
-                            <label>名前: </label>
+                            <label>Full Name: </label>
                             <input type="text" class="form-control" name="name">
 
-                            <label>出身地: </label>
+                            <label>From: </label>
                             <input type="text" class="form-control" name="from">
 
-                            <label>ニックネーム: </label>
+                            <label>Nickname: </label>
                             <input type="text" class="form-control" name="nickname">
-
-                            <label>性別: </label>
-                            <input type="text" class="form-control" name="sex">
-
-                            <label>生年月日: </label>
-                            <input type="text" class="form-control" name="birthday">
-
-                            <label>本アプリを利用した理由: </label>
-                            <input type="text" class="form-control" name="reason">
                         </div>
 
                         <button class="btn btn-primary">登録</button>

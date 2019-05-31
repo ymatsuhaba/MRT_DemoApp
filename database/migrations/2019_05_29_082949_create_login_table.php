@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Nicknames extends Migration
+class CreateLoginTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class Nicknames extends Migration
      */
     public function up()
     {
-        Schema::create('nicknames', function (Blueprint $table) {
+        Schema::create('logins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('from');
-            $table->string('nickname');
+            $table->string('password');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class Nicknames extends Migration
      */
     public function down()
     {
-        Schema::drop('nicknames');
+        Schema::dropIfExists('logins');
     }
 }

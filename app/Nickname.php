@@ -10,6 +10,7 @@ class Nickname extends Model
     protected $fillable= array('name','from', 'nickname', 'sex', 'birthday', 'reason');
     protected $hidden = array('id');
 
+
     public function getData()
     {
         $name = $this -> name;

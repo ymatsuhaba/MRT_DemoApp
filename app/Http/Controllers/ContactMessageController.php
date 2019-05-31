@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Nickname;
-use Illuminate\Support\Collection;
 
 class ContactMessageController extends Controller
 {
@@ -27,28 +26,8 @@ class ContactMessageController extends Controller
         // ３．「_token」は予め覗いた変数を使う
 
         // 登録データ取得
-        $nickname = Nickname::all();
-        $url = "http://localhost:3000/contact";
-        return view('form', compact('nickname', 'url'));
-    }
-
-    // Formページ
-    public function form_refactored(Request $request)
-    {
-        // Nicknameクラスをインスタンス化
-        $mdl_nickname = new Nickname;
-
-        // リクエストのデータをArray型で取得し、Collection型へ変換
-        $form_data = new Collection($request->all());
-
-        // 不要なキーを削除
-        $form_data->forget('_token');
-
-        // Collection型からArray型へ変換し、Nicknameインスタンスへ代入、データベースへ保存
-        $mdl_nickname->fill($form_data->toArray())->save();
-
-        // 登録データ取得
         $nickname   = Nickname::all();
         return view('form', compact('nickname'));
     }
 }
+

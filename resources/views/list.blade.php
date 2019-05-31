@@ -19,7 +19,7 @@
                             </tr>
                             @foreach ($search as $search)
                                 <tr>
-                                    <td><a href="{{ route('users.destroy', ['id' => $user->id])}}">{{$search -> name}}</a></td>
+                                    <td><a href='inquery'>{{$search -> name}}</a></td>
                                     <td>{{$search -> from}}</td>
                                     <td>{{$search -> sex}}</td>
                                     <td>{{$search -> birthday}}</td>

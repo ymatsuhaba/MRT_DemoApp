@@ -18,7 +18,7 @@
                             </tr>
                             @foreach ($nickname as $nickname)
                                 <tr>
-                                    <td><a href='contact'>{{$nickname -> name}}</a></td>
+                                    <td>{{$nickname -> name}}</td>
                                     <td>{{$nickname -> from}}</td>
                                     <td>{{$nickname -> nickname}}</td>
                                 </tr>

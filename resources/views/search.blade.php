@@ -5,7 +5,7 @@
             <h1>NameMaker</h1>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <form method="get" action="{{ url('/list') }}">
                         @csrf
 
@@ -22,8 +22,9 @@
                             <label>生年月日: </label>
                             <input type="text" class="form-control" name="birthday">
                         </div>
+
                         <button class="btn btn-primary">検索</button>
-                    </form>
+                    </form> 
                 </div>
             </div>
         </div>
