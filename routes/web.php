@@ -61,7 +61,12 @@ Route::get('/inquery', 'InqueryController@Inquery');
 Route::get('/update', 'UpdateController@edit');
 Route::post('/update', 'UpdateController@update');
 
-Route::get('/', function () { return view('update_result');});
+Route::get('/update_result', function () { return view('update_result');});
+
+Route::get('/delete', 'DeleteController@edit');
+Route::post('/delete', 'DeleteController@delete');
+
+Route::get('/delete_result', function () { return view('delete_result');});
 
 Route::get('/new', 'NewController@new');
 
