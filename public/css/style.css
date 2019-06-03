@@ -115,3 +115,7 @@ tr:nth-child(even) {
     border-bottom: solid 2px #fd9535;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
+
+.update {
+    font-size: 15px;
+}
