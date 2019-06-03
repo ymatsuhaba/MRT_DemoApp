@@ -58,6 +58,9 @@ Route::get('/list', 'ListController@list');
 
 Route::get('/inquery', 'InqueryController@Inquery');
 
+Route::get('/update', 'UpdateController@update');
+
+Route::get('/update_result', 'UpdateresultController@result');
 
 Route::get('/new', 'NewController@new');
 
