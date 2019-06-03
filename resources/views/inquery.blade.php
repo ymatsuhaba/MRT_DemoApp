@@ -12,23 +12,23 @@
                     <div class="form-group">
                         <table>
                             <tr>
-                                <th>名前</th>
-                                <th>出身地</th>
-                                <th>ニックネーム</th>
-                                <th>性別</th>
-                                <th>生年月日</th>
-                                <th>本アプリを利用した理由</th>
+                                <th>名前</th><td>{{$data -> name}}</td>
                             </tr>
-                            @foreach ($obj as $obj)
-                                <tr>
-                                    <td>{{$obj -> name}}</td>
-                                    <td>{{$obj -> from}}</td>
-                                    <td>{{$obj -> nickname}}</td>
-                                    <td>{{$obj -> sex}}</td>
-                                    <td>{{$obj -> birthday}}</td>
-                                    <td>{{$obj -> reason}}</td>
-                                </tr>
-                            @endforeach
+                            <tr>
+                                <th>出身地</th><td>{{$data -> from}}</td>
+                            </tr>
+                            <tr>
+                                <th>ニックネーム</th><td>{{$data -> nickname}}</td>
+                            </tr>
+                            <tr>
+                                <th>性別</th><td>{{$data -> sex}}</td>
+                            </tr>
+                            <tr>
+                                <th>生年月日</th><td>{{$data -> birthday}}</td>
+                            </tr>
+                            <tr>
+                                <th>本アプリを利用した理由</th><td>{{$data -> reason}}</td>
+                            </tr>
                         </table>
                     </div>
                 </form>

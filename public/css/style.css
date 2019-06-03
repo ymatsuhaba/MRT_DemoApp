@@ -50,3 +50,68 @@ tr:nth-child(even) {
     background: #d9d9d9;
 }
 
+.btn-square-slant {
+    display: inline-block;
+    position: relative;
+    padding: 1.0em 4.0em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 5px #36528c;/*ボタン色より暗めに*/
+    border-right: solid 5px #5375bd;/*ボタン色より暗めに*/
+}
+
+.btn-square-slant:before {
+    content: " ";
+    position: absolute;
+    bottom: -5px;
+    left: -1px;
+    width: 0;
+    height: 0;
+    border-width: 0 6px 6px 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #FFF;
+}
+
+.btn-square-slant:after {
+    content: " ";
+    position: absolute;
+    top: -1px;
+    right: -5px;
+    width: 0;
+    height: 0;
+    border-width: 0px 6px 6px 0px;
+    border-style: solid;
+    border-color: #FFF;
+    border-bottom-color: transparent;
+}
+
+.btn-square-slant:active {
+    /*ボタンを押したとき*/
+    border:none;
+    -webkit-transform: translate(6px,6px);
+    transform: translate(6px,6px);
+}
+
+.btn-square-slant:active:after, .btn-square-slant:active:before {
+    content: none;/*ボタンを押すと線が消える*/
+}
+
+.btn-square-pop {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #fd9535;/*背景色*/
+    border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+    border-radius: 4px;/*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+}
+
+.btn-square-pop:active {
+    border-bottom: solid 2px #fd9535;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}

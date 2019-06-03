@@ -7,14 +7,10 @@ use \App\Nickname;
 
 class InqueryController extends Controller
 {
-    // Listページ
-    public function Inquery()
+    // 照会ページ
+    public function Inquery(Request $request)
     {
-        $name = $request->input('name');
-
-        $id = $request->input('id');
-
-        $search = Nickname::where('id', $id);
-        return view('inquery', compact('search'));
+        $data = Nickname::where('id', $request->input('id'))->first();
+        return view('inquery', compact('data'));
     }
 }
