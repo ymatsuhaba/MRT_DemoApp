@@ -13,19 +13,15 @@ class ListController extends Controller
     {
         $name = $request->input('name');
         $from = $request->input('from');
-        $sex = $request->input('from');
+        $sex = $request->input('sex');
         $birthday = $request->input('birthday');
 
-        $search = Nickname::where('name', $name)->orWhere('from', $from)->orWhere('sex', $sex)->orWhere('birthday', $birthday)->get();
-        $url = "http://localhost:3000/inquery";
-        return view('list', compact('search', 'url'));
-    }
+        if($name == NULL and $from == NULL and $sex == NULL and $birthday == NULL) {
+            $search = Nickname::all();
+        } else {
+            $search = Nickname::where('name', $name)->orWhere('from', $from)->orWhere('sex', $sex)->orWhere('birthday', $birthday)->get();
+        }
 
-    public function link()
-    {
-        $id = Session::all()->input('id');
-        $obj = Nickname::where('id', $id);
-
-        return view('inquery', compact('obj'));
+        return view('list', compact('search'));
     }
 }
