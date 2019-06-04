@@ -12,6 +12,7 @@
                 <form method="get">
                     @csrf
                     <div class="form-group">
+                        <p><a href='/list' class="btn-square-pop">一覧に戻る</a></p>
                         <table>
                             <tr>
                                 <th>名前</th><td>{{$request -> name}}</td>
