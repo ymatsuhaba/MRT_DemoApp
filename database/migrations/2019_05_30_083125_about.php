@@ -26,6 +26,6 @@ class About extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('abouts');
     }
 }
