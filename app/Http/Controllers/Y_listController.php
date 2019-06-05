@@ -11,19 +11,25 @@ class Y_listController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+//    public function index(Request $request)
+//    {
+//        $id = $request->input('id');
+//        $name = $request->input('name');
+//        $from = $request->input('from');
+//        $password = $request->input('password');
+//
+//        if($id == NULL and $name == NULL and $from == NULL and $password == NULL ) {
+//            $login = login::all();
+//        } else {
+//            $login= login::where('id', $id)->where('name', $name)->orWhere('from', $from)->orWhere('password', $password)->get();
+//        }
+//        return view ('y_list',compact('login'));
+//    }
+    public function index()
     {
-        $id = $request->input('id');
-        $name = $request->input('name');
-        $from = $request->input('from');
-        $password = $request->input('password');
-
-        if($id == NULL and $name == NULL and $from == NULL and $password == NULL ) {
-            $logindata = login::all();
-        } else {
-            $logindata= login::where('id', $id)->where('name', $name)->orWhere('from', $from)->orWhere('password', $password)->get();
-        }
-        return view ('y_list',compact('logindata'));
+//        $login = Login::all();
+        $login = Login::orderBy('created_at', 'desc')->get();
+        return view('y_list')->with('login', $login);
     }
     /**
      * Show the form for creating a new resource.
@@ -42,7 +48,19 @@ class Y_listController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'id' => 'required'
+        ]);
+
+        $logindata =new Login;
+        $logindata->id = $required -> input('id');
+        $logindata->id = $required -> input('name');
+        $logindata->id = $required -> input('from');
+
+        $logindata->save();
+
+        return redirect('/')->with('success','Success');
+
     }
     /**
      * Display the specified resource.
@@ -52,10 +70,8 @@ class Y_listController extends Controller
      */
     public function show($id)
     {
-        $logindata =Login::find($id);
-        $logindata->show();
-        return view(y_list.show)->with('login',$login);
-
+//        $login =Login::find($id);
+//        return view('y_list.show')->with('login',$login);
     }
     /**
      * Show the form for editing the specified resource.
@@ -65,7 +81,9 @@ class Y_listController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $login =Login::find($id);
+        return view('y_list.edit');
     }
     /**
      * Update the specified resource in storage.
@@ -76,7 +94,7 @@ class Y_listController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
     /**
      * Remove the specified resource from storage.
@@ -86,10 +104,9 @@ class Y_listController extends Controller
      */
     public function destroy($id)
     {
-        $logindata = Login::find($id);
-        $logindata->delete();
-        return redirect('/')->with('success','Delete');
-//        $data = Nickname::where('id', $request->input('id'))->first();
-//        return view('inquery', compact('data'));
+        $id->delete();
+
+        return view('/y_list.destroy')->with('success','Delete');
+
     }
 }

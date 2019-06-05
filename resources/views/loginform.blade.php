@@ -51,6 +51,12 @@
             </div>
         </form>
     </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="/y_list" class="btn-square-slant" style="margin:20px;">検索</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

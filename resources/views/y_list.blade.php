@@ -33,15 +33,15 @@
                     <th>Delete</th>
 
                 </tr>
-                @foreach ($logindata as $login)
+                @foreach ($login as $login)
                     <tr>
                         <th>{{$login -> id}}</th>
                         <td>{{$login -> name}}</td>
                         <td>{{$login -> from}}</td>
                         <td>{{$login -> password}}</td>
-                        <td><a href='/inquery?id={{$login->id}}' class="btn-square-pop">Details</a></td>
-                        <td><a href='/update?id={{$login->id}}'  class="btn-square-pop">update</a></td>
-                        <td><a href="/y_list{{$login->id}}"  class="btn-square-pop">Delete</a></td>--}}
+                        <td><a href="/y_list/{{$login->id}}/edit" class="btn-square-pop">Edit</a></td>
+                        <td><a href="/y_list/{{$login->id}}/update"  class="btn-square-pop">update</a></td>
+                        <td><a href="/y_list/{{$login->id}}/destroy"  class="btn-square-pop">Delete</a></td>
                     </tr>
                 @endforeach
             </table>

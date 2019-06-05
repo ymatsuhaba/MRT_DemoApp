@@ -43,8 +43,8 @@ Route::get('/delete_result'  , 'DeleteresultController@delete');
 //y_list
 Route::get('/login','LoginController@create');
 Route::get('/loginform','LoginController@form');
-Route::resource('y_list', 'Y_listController',['only' =>'index','update', 'show','destroy']);
-Route::resource('y_search', 'Y_searchController',['only' =>'index','update', 'destroy']);
+Route::resource('y_list', 'Y_listController');
+//Route::resource('y_search', 'Y_searchController',['only' =>['index','update', 'destroy']]);
 
 
 
