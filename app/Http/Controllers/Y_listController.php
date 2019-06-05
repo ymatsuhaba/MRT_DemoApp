@@ -17,6 +17,7 @@ class Y_listController extends Controller
         $name = $request->input('name');
         $from = $request->input('from');
         $password = $request->input('password');
+
         if($id == NULL and $name == NULL and $from == NULL and $password == NULL ) {
             $logindata = login::all();
         } else {
@@ -51,7 +52,10 @@ class Y_listController extends Controller
      */
     public function show($id)
     {
-        //
+        $logindata =Login::find($id);
+        $logindata->show();
+        return view(y_list.show)->with('login',$login);
+
     }
     /**
      * Show the form for editing the specified resource.

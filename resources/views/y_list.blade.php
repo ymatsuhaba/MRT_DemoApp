@@ -41,7 +41,7 @@
                         <td>{{$login -> password}}</td>
                         <td><a href='/inquery?id={{$login->id}}' class="btn-square-pop">Details</a></td>
                         <td><a href='/update?id={{$login->id}}'  class="btn-square-pop">update</a></td>
-{{--                        <td><a href="{{ route('y_list.destroy', ['id' => $login->id]) }}"  class="btn-square-pop">Delete</a></td>--}}
+                        <td><a href="/y_list{{$login->id}}"  class="btn-square-pop">Delete</a></td>--}}
                     </tr>
                 @endforeach
             </table>
