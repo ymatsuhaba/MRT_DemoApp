@@ -2,13 +2,12 @@
 <html>
     <body>
         <div class="container">
-            <h1>Contact Us</h1>
+            <h1>NameMaker</h1>
 
             <div class="row">
                 <div class="col-md-6">
-                    <form method="get" action="{{ url('/form') }}">
+                    <form method="get" action="{{url('/contact_result')}}">
                         @csrf
-
                         <div class="form-group">
                             <label>名前: </label>
                             <input type="text" class="form-control" name="name">
@@ -30,7 +29,7 @@
                         </div>
 
                         <button class="btn btn-primary">登録</button>
-                    </form> 
+                    </form>
                 </div>
             </div>
         </div>

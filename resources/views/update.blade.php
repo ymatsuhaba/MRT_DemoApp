@@ -7,9 +7,9 @@
             <h1>NameMaker</h1>
 
             <div class="row">
-                <form method="post">
+                <form method="get" action="{{url('/update_result')}}">
                     @csrf
-                    <div class="form-group" action="{{ url('/update_result')}}">
+                    <div class="form-group">
                         <table>
                             <tr>
                                 <th>名前</th><td><input type="text" name="name" value='{{$data -> name}}'>※必須</td>
@@ -30,9 +30,9 @@
                                 <th>本アプリを利用した理由</th><td><input type="text" name="reason" value='{{$data -> reason}}'>※必須</td>
                             </tr>
                         </table>
+                        <input name="id" type="hidden" value="{{$data -> id}}">
+                        <button class="btn btn-primary">更新</button>
                     </div>
-                    <br>
-                    <button class="btn btn-primary">更新</button>
                 </form>
             </div>
         </div>

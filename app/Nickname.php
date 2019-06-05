@@ -10,7 +10,6 @@ class Nickname extends Model
     protected $fillable= array('name','from', 'nickname', 'sex', 'birthday', 'reason');
     protected $hidden = array('id');
 
-
     public function getData()
     {
         $name = $this -> name;
@@ -18,7 +17,5 @@ class Nickname extends Model
         $nickname = $this -> nickname;
 
         return compact('name', 'from', 'nickname');
-
-//        return '名前：'.$this -> name.' 出身地：'.$this -> from.' ニックネーム：'.$this -> nickname;
     }
 }
