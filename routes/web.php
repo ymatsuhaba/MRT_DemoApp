@@ -69,3 +69,15 @@ Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
 
 Route::get('/newresult', 'NewController@newresult');
+
+Route::get('/find', 'FindController@find');
+
+Route::get('/findresult', 'FindController@findresult');
+
+Route::get('/create', 'FindController@create');
+
+Route::get('/store', 'FindController@store');
+
+Route::get('/destroy', 'FindController@destroy');
+
+Route::get('/destroyresult', 'FindController@destroyresult');
