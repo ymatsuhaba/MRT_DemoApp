@@ -21,6 +21,7 @@ class LoginTableSeeder extends Seeder
         ]);
         $login->save();
         // 2レコード
+
         $login = new \App\login([
             'id'   =>  '2',
             'name' => 'Mai Shiraishi',
