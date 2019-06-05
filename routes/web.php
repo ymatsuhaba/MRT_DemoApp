@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,72 +9,36 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::auth();
-
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/contact', [
-    'uses' => 'ContactMessageController@create'
-]);
-Route::post('/contact', [
-    'uses' => 'ContactMessageController@create'
-]);
-
-Route::get('/form', 'ContactMessageController@form');
-
-
+// 検索ページ
+Route::get('/search', 'SearchController@search');
+Route::post('/search', 'SearchController@search');
+// 一覧ページ
+Route::get('/list', 'ListController@list');
+// 照会ページ
+Route::get('/inquery', 'InqueryController@Inquery');
+// 登録ページ
+Route::get('/contact'        , 'ContactController@edit');
+Route::get('/contact_result' , 'ContactresultController@create');
+// 更新ページ
+Route::get('/update'         , 'UpdateController@edit');
+Route::get('/update_result'  , 'UpdateresultController@update');
+// 削除ページ
+Route::get('/delete'         , 'DeleteController@edit');
+Route::get('/delete_result'  , 'DeleteresultController@delete');
 Route::get('/login','LoginController@create');
-
 Route::get('/loginform','LoginController@form');
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::get('/about', [
     'uses' => 'AboutController@show'
 ]);
-
-
-
 Route::get('/v_bind_test', function () {
     return view('v_bind_test')->with('test', '変数テスト');
 });
-
 Route::get('/post_test', 'PostTestController@form');
-
-
 Route::post('/post_test', 'PostTestController@form');
-
-        //search のルーティング
-Route::get('/search', 'SearchController@search');
-
-Route::post('/search', 'SearchController@search');
-
-Route::get('/list', 'ListController@list');
-
-Route::get('/inquery', 'InqueryController@Inquery');
-
-        //new のルーティング
 Route::get('/new', 'NewController@new');
-
 Route::get('/newresult', 'NewController@newresult');
-
-        //検索
-Route::get('/find', 'FindController@find');
-        //登録者一覧
-Route::get('/findresult', 'FindController@findresult');
-        //新規登録
-Route::get('find/create','FindController@edit');
-        //登録結果画面
-Route::get('find/store','FindController@store');
-        //削除
-Route::delete('/delete?id={{$query->id}}','FindController@destroy');
-
-
-
-
-
