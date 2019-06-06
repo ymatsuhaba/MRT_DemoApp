@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::auth();
+//
+//Route::auth();
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,12 +35,11 @@ Route::get('/update_result'  , 'UpdateresultController@update');
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
 
-// ゆっきー
-//y_list
-Route::get('/login','LoginController@create');
-Route::get('/loginform','LoginController@form');
-Route::resource('y_list', 'Y_listController',['only' =>'index','update', 'destroy']);
-Route::resource('y_search', 'Y_searchController',['only' =>'index','update', 'destroy']);
+
+
+
+Route::get('/login', 'LoginController@index');
+Route::resource('login', 'LoginController');
 
 // しょう
 // 検索ページ
@@ -67,6 +66,6 @@ Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test'
 Route::get('/post_test', 'PostTestController@form');
 Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
+
 Route::get('/newresult', 'NewController@newresult');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/about', 'AboutController@show');
+
