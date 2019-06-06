@@ -14,6 +14,7 @@ class ListController extends Controller
         $from = $request->input('from');
         $sex = $request->input('sex');
         $birthday = $request->input('birthday');
+        $no = 1;
 
         if($name == NULL and $from == NULL and $sex == NULL and $birthday == NULL) {
             $search = Nickname::all();
@@ -21,6 +22,6 @@ class ListController extends Controller
             $search = Nickname::where('name', $name)->orWhere('from', $from)->orWhere('sex', $sex)->orWhere('birthday', $birthday)->get();
         }
 
-        return view('list', compact('search'));
+        return view('list', compact('search', 'no'));
     }
 }

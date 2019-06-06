@@ -17,55 +17,55 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// つよぽん
 // 検索ページ
 Route::get('/search', 'SearchController@search');
 Route::post('/search', 'SearchController@search');
-
 // 一覧ページ
 Route::get('/list', 'ListController@list');
-
 // 照会ページ
 Route::get('/inquery', 'InqueryController@Inquery');
-
 // 登録ページ
 Route::get('/contact'        , 'ContactController@edit');
 Route::get('/contact_result' , 'ContactresultController@create');
-
 // 更新ページ
 Route::get('/update'         , 'UpdateController@edit');
 Route::get('/update_result'  , 'UpdateresultController@update');
-
 // 削除ページ
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
 
 
-//Route::get('/login','LoginController@create');
-//Route::get('/loginform','LoginController@form');
+
+
 Route::get('/login', 'LoginController@index');
 Route::resource('login', 'LoginController');
-//Route::resource('y_search', 'Y_searchController',['only' =>['index','update', 'destroy']]);
 
+// しょう
+// 検索ページ
+Route::get('/find', 'FindController@find');
+// 登録者一覧ページ
+Route::get('/findresult', 'FindController@findresult');
+// 新規登録ページ
+Route::get('/create', 'FindController@create');
+// 新規登録結果ページ
+Route::get('/store', 'FindController@store');
+// 削除確認ページ
+Route::get('/destroy', 'FindController@destroy');
+// 削除結果ページ
+Route::get('/destroyresult', 'FindController@destroyresult');
+// 登録情報更新ページ
+Route::get('/renew'         , 'FindController@renew');
+// 登録情報更新結果ページ
+Route::get('/renew_result'  , 'FindController@renew_result');
+//詳細確認ページ
+Route::get('/details'  , 'FindController@details');
 
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('/about', [
-    'uses' => 'AboutController@show'
-]);
-
-
-
-Route::get('/v_bind_test', function () {
-    return view('v_bind_test')->with('test', '変数テスト');
-});
-
+// その他
+Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
 Route::get('/post_test', 'PostTestController@form');
-
-
 Route::post('/post_test', 'PostTestController@form');
-
 Route::get('/new', 'NewController@new');
 
 Route::get('/newresult', 'NewController@newresult');
+
