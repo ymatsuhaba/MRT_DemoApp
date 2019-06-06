@@ -55,24 +55,16 @@ class FindController extends Controller
 
     public function renew(Request $request)
     {
-        $info = Find::where('id', $request->input('id'))->first();
+        $info = find::where('id', $request->input('id'))->first();
         return view('renew', compact('info'));
     }
 
 
+
     public function renew_result(Request $request)
     {
-        $info = Find::where('id', $request->input('id'))->first();
-        //値を代入
-        $info->name           = $request->name;
-        $info->from           = $request->from;
-        $info->sex            = $request->sex;
-        $info->date_of_birth  = $request->date_of_birth;
-
-        //保存（更新）
-        $info->save();
-
-        return view('renew_result', compact('request'));
+        $info = find::where('id', $request->input('id'))->first();
+        return view('renew', compact('info'));
     }
 
 
