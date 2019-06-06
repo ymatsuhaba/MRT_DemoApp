@@ -9,6 +9,7 @@
             <form method="get" action="{{ url('/findresult') }}">
                 @csrf
 
+                <div class="form-group">
                     <label>名前</label>
                     <input type="text" class="form-control" name="名前" placeholder="名前を入力">
 
@@ -20,6 +21,7 @@
 
                     <label>生年月日</label>
                     <input type="text" class="form-control" name="birthday" placeholder="西暦で入力　（例：19920603）">
+                </div>
 
                 <button class="btn btn-primary">検索</button>
             </form>
