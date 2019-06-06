@@ -38,7 +38,7 @@ class Y_listController extends Controller
      */
     public function create()
     {
-        //
+        return view('y_list.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -52,12 +52,13 @@ class Y_listController extends Controller
             'id' => 'required'
         ]);
 
-        $logindata =new Login;
-        $logindata->id = $required -> input('id');
-        $logindata->id = $required -> input('name');
-        $logindata->id = $required -> input('from');
+        $login =new Login;
+        $login->id = $required -> input('id');
+        $login->id = $required -> input('name');
+        $login->id = $required -> input('from');
+        $login->id = $required -> input('password');
 
-        $logindata->save();
+        $login->save();
 
         return redirect('/')->with('success','Success');
 
@@ -70,8 +71,8 @@ class Y_listController extends Controller
      */
     public function show($id)
     {
-//        $login =Login::find($id);
-//        return view('y_list.show')->with('login',$login);
+        $login =Login::find($id);
+        return view('y_list.show')->with('login',$login);
     }
     /**
      * Show the form for editing the specified resource.
@@ -83,7 +84,7 @@ class Y_listController extends Controller
     {
 
         $login =Login::find($id);
-        return view('y_list.edit');
+        return view('y_list.edit')-with('login',$login);
     }
     /**
      * Update the specified resource in storage.
@@ -94,7 +95,13 @@ class Y_listController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $login = Todo::find($id);
+        $login->id = $request->input('id');
+        $login->name = $request->input('name');
+        $login->from = $request->input('from');
+        $login->password = $request->input('password');
+        $login->save();
+        return redirect('/')->with('success', 'Updated');
     }
     /**
      * Remove the specified resource from storage.
@@ -104,9 +111,9 @@ class Y_listController extends Controller
      */
     public function destroy($id)
     {
-        $id->delete();
-
-        return view('/y_list.destroy')->with('success','Delete');
+        $login = Login::find($id);
+        $login->delete();
+        return redirect('/')->with('success', 'Deleted');
 
     }
 }
