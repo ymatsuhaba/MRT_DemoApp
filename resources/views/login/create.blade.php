@@ -3,10 +3,10 @@
 @section('content')
     <h1>Create Login</h1>
     {!! Form::open(['action' => 'LoginController@store', 'method' => 'POST']) !!}
-    {{ Form::bsText('id') }}
-    {{ Form::bsText('name') }}
-    {{ Form::bsText('from') }}
-    {{ Form::bsText('password') }}
-    {{ Form::bsSubmit('Submit', ['class' => 'btn btn-primary']) }}
+    {{ Form::Text('id') }}
+    {{ Form::Text('name') }}
+    {{ Form::Text('from') }}
+    {{ Form::Text('password') }}
+    {{ Form::Submit('Submit', ['class' => 'btn btn-primary']) }}
     {!! Form::close() !!}
 @endsection

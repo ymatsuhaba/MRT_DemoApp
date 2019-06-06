@@ -3,7 +3,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Login;
-//use Collective\Html\HtmlServiceProvider;
 
 class LoginController extends Controller
 {
@@ -55,9 +54,9 @@ class LoginController extends Controller
 
         $login =new Login;
         $login->id = $required -> input('id');
-        $login->id = $required -> input('name');
-        $login->id = $required -> input('from');
-        $login->id = $required -> input('password');
+        $login-> input('name');
+        $login-> input('from');
+        $login-> input('password');
 
         $login->save();
 
