@@ -69,3 +69,19 @@ Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
 
 Route::get('/newresult', 'NewController@newresult');
+
+//検索ページ
+Route::get('/find', 'FindController@find');
+//登録者一覧ページ
+Route::get('/findresult', 'FindController@findresult');
+//新規登録ページ
+Route::get('/create', 'FindController@create');
+
+Route::get('/store', 'FindController@store');
+
+Route::get('/destroy', 'FindController@destroy');
+
+Route::get('/destroyresult', 'FindController@destroyresult');
+//登録情報更新ページ
+Route::get('/renew'         , 'FindController@renew');
+Route::get('/renew_result'  , 'FindController@renew_result');
