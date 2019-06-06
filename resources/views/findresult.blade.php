@@ -1,8 +1,5 @@
 @extends('layouts.head_common')
 <html>
-<head>
-
-</head>
 <body>
 <div class="container">
     <h1>登録者一覧ページ</h1>
@@ -12,8 +9,6 @@
             <a href="/create"  input type ="button" style="margin:50px;">新規登録</a>
         </div>
     </div>
-
-    <div class="row1">
         <form method="get">
             @csrf
             <div class="form-group">
@@ -23,7 +18,6 @@
                         <th>出身地</th>
                         <th>性別</th>
                         <th>生年月日</th>
-
                     </tr>
                     @foreach ($query as $query)
                         <tr>
@@ -40,7 +34,7 @@
                 </table>
             </div>
         </form>
-    </div>
+
 </div>
 </body>
 </html>
