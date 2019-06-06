@@ -59,6 +59,8 @@ Route::get('/destroyresult', 'FindController@destroyresult');
 Route::get('/renew'         , 'FindController@renew');
 // 登録情報更新結果ページ
 Route::get('/renew_result'  , 'FindController@renew_result');
+//詳細確認ページ
+Route::get('/details'  , 'FindController@details');
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
