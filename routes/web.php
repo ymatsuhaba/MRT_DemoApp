@@ -36,9 +36,7 @@ Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
 
 
-
-
-Route::get('/login', 'LoginController@index');
+//Route::get('/login', 'LoginController@index');
 Route::resource('login', 'LoginController');
 
 // しょう

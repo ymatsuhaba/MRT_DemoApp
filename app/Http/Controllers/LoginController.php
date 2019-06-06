@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Nickname;
 use Illuminate\Http\Request;
 use App\Login;
 
@@ -42,14 +41,19 @@ class LoginController extends Controller
         return view('login.show')->with('login',$login);
     }
 
-    public function edit($id)
+
+    public function edit()
     {
-        $login = Login::find($id);
-        return view('login.show')->with('login',$login);
+        return view('login.edit');
     }
 
-    public function update(Request $request, $id)
+
+    public function update(Request $request)
     {
+        $this->validate($request,[
+            'id' => 'required'
+        ]);
+
         $login = Login::find($id);
         $login->id = $request->input('id');
         $login->name = $request->input('name');
