@@ -53,14 +53,24 @@ class LoginController extends Controller
         ]);
 
         $login =new Login;
-        $login->id = $required -> input('id');
-        $login-> input('name');
-        $login-> input('from');
-        $login-> input('password');
+        $login->id = $request -> input('id');
+        $login->name = $request -> input('name');
+        $login->from = $request -> input('from');
+        $login->password = $request -> input('password');
 
         $login->save();
 
-        return redirect('/')->with('success','Success');
+        return redirect('/login')->with('success','Success');
+
+//        $value = new Nickname; // 左辺：新キャラ　右辺：既存キャラ　new：偉いやつ
+//        $form = $request->all();
+//        unset($form['_token']);
+//        $value->fill($form)->save();
+//        // １．個別に取得して代入する。⇛リーダブルコードを見ればわかる⇛フォームの内容が変わるとバグる。
+//        // ２．unsetではなくlistから除外する書き方
+//        // ３．「_token」は予めのぞいた変数を使う
+//
+//        return view('contact_result', compact('request'));
 
     }
     /**
@@ -81,11 +91,9 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-
-        $login =Login::find($id);
-        return view('login.edit')-with('login',$login);
+        return view('login.edit');
     }
     /**
      * Update the specified resource in storage.
@@ -102,7 +110,7 @@ class LoginController extends Controller
         $login->from = $request->input('from');
         $login->password = $request->input('password');
         $login->save();
-        return redirect('/')->with('success', 'Updated');
+        return redirect('/login')->with('success', 'Updated');
     }
     /**
      * Remove the specified resource from storage.
@@ -114,7 +122,7 @@ class LoginController extends Controller
     {
         $login = Login::find($id);
         $login->delete();
-        return redirect('/')->with('success', 'Deleted');
+        return redirect('/login')->with('success', 'Deleted');
 
     }
 }

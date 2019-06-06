@@ -7,7 +7,7 @@
         <table>
             <tr>
                 <th>id</th>
-                <th>name</th>
+   s             <th>name</th>
                 <th>from</th>
                 <th>password</th>
                 <th>Edit</th>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a class="btn btn-default" href="/">Go Back</a>
+    <a class="btn btn-default" href="/login">Go Back</a>
 
 {{--    <h1><a href="login/{{$login->id}}">{{$login->id}}</a></h1>--}}
 
