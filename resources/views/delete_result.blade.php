@@ -11,4 +11,4 @@
     <p class="crud">データを削除しました。</p>
 </div>
 </body>
-</html>å
+</html>
