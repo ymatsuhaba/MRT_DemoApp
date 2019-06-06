@@ -55,7 +55,7 @@ class FindController extends Controller
 
     public function renew(Request $request)
     {
-        $info = Find::where('id', $request->input('id'))->first();
+        $info = find::where('id', $request->input('id'))->first();
         return view('renew', compact('info'));
     }
 
@@ -73,6 +73,7 @@ class FindController extends Controller
         $info->save();
 
         return view('renew_result', compact('info'));
+
     }
 
 
