@@ -4,7 +4,7 @@
 <body>
 <div class="container">
     <h1>NameMaker</h1>
-    <p class="update">以下のデータを登録しました。</p>
+    <p class="crud">以下のデータを登録しました。</p>
 
     <div class="row">
         <form method="get">
