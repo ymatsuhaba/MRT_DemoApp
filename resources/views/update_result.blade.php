@@ -1,3 +1,4 @@
+@extends('layouts.head_common')
 <html>
 <head>
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
