@@ -9,6 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <a href="/contact" class="btn-square-slant" style="margin:20px;">新規登録</a>
+                    <a href="/search" class="btn-square-slant" style="margin:20px;">検索画面に戻る</a>
                 </div>
             </div>
 
@@ -18,6 +19,7 @@
                     <div class="form-group">
                         <table>
                             <tr>
+                                <th>No</th>
                                 <th>名前</th>
                                 <th>出身地</th>
                                 <th>性別</th>
@@ -28,6 +30,7 @@
                             </tr>
                             @foreach ($search as $search)
                                 <tr>
+                                    <td>{{$no++}}</td>
                                     <td>{{$search -> name}}</td>
                                     <td>{{$search -> from}}</td>
                                     <td>{{$search -> sex}}</td>
