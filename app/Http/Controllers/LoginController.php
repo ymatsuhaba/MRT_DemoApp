@@ -1,56 +1,119 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
-use \App\Login;
+use App\Login;
 
 class LoginController extends Controller
 {
-//    public function store(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+//    public function index(Request $request)
 //    {
-//        return redirect()->back()->with('flash_message','Thank you for your message');
+//        $id = $request->input('id');
+//        $name = $request->input('name');
+//        $from = $request->input('from');
+//        $password = $request->input('password');
+//
+//        if($id == NULL and $name == NULL and $from == NULL and $password == NULL ) {
+//            $login = login::all();
+//        } else {
+//            $login= login::where('id', $id)->where('name', $name)->orWhere('from', $from)->orWhere('password', $password)->get();
+//        }
+//        return view ('y_list',compact('login'));
 //    }
-
-
-//loginページの表示
+    public function index()
+    {
+//        $login = Login::all();
+        $login = Login::orderBy('created_at', 'desc')->get();
+        return view('y_list')->with('login', $login);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('login');
+        return view('login.create');
     }
-
-//Formページの表示
-    public function form(Request $name)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        // 登録処理
-        $value = new Login();
-        $form = $name->all();
-        unset($form['_token']);
-        $value->fill($form)->save();
+        $this->validate($request,[
+            'id' => 'required'
+        ]);
 
-        // 登録データ取得
-        $logindata  = Login::all();
-        return view('loginform', compact( 'logindata'));
+        $login =new Login;
+        $login->id = $required -> input('id');
+        $login->id = $required -> input('name');
+        $login->id = $required -> input('from');
+        $login->id = $required -> input('password');
+
+        $login->save();
+
+        return redirect('/')->with('success','Success');
+
     }
-
-    // LoginFormページ
-    public function form_refactored(Request $request)
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        // Nicknameクラスをインスタンス化
-        $mdl_logindata = new Login;
+        $login =Login::find($id);
+        return view('y_list.show')->with('login',$login);
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
 
-        // リクエストのデータをArray型で取得し、Collection型へ変換
-        $form_data = new Collection($request->all());
+        $login =Login::find($id);
+        return view('login.edit')-with('login',$login);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $login = Login::find($id);
+        $login->id = $request->input('id');
+        $login->name = $request->input('name');
+        $login->from = $request->input('from');
+        $login->password = $request->input('password');
+        $login->save();
+        return redirect('/')->with('success', 'Updated');
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $login = Login::find($id);
+        $login->delete();
+        return redirect('/')->with('success', 'Deleted');
 
-        // 不要なキーを削除
-        $form_data->forget('_token');
-
-        // Collection型からArray型へ変換し、Nicknameインスタンスへ代入、データベースへ保存
-        $mdl_logindata->fill($form_data->toArray())->save();
-
-        // 登録データ取得
-        $logindata   = Login::all();
-        return view('loginform', compact('logindata'));
     }
 }
