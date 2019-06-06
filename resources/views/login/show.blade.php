@@ -8,7 +8,7 @@
     <p>{{$login->text}}</p>
     <br><br>
     <a href="/login/{{$login->id}}/edit" class="btn btn-default">Edit</a>
-    {!! Form::open(['action' => ['Y_listController@destroy', $login->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+    {!! Form::open(['action' => ['LoginController@destroy', $login->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
     {{ Form::hidden('_method', 'DELETE') }}
     {{ Form::bsSubmit('Delete', ['class' => 'btn btn-danger']) }}
     {!! Form::close() !!}

@@ -40,7 +40,7 @@ Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
 
 
-//y_list
+//login
 //Route::get('/login','LoginController@create');
 //Route::get('/loginform','LoginController@form');
 Route::get('/', 'LoginController@index');

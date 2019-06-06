@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Create Todo</h1>
-    {!! Form::open(['action' => 'Y_listController@store', 'method' => 'POST']) !!}
+    {!! Form::open(['action' => 'LoginController@store', 'method' => 'POST']) !!}
     {{ Form::bsText('id') }}
     {{ Form::bsText('name') }}
     {{ Form::bsText('from') }}

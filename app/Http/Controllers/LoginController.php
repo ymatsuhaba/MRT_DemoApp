@@ -23,13 +23,13 @@ class LoginController extends Controller
 //        } else {
 //            $login= login::where('id', $id)->where('name', $name)->orWhere('from', $from)->orWhere('password', $password)->get();
 //        }
-//        return view ('y_list',compact('login'));
+//        return view ('login',compact('login'));
 //    }
     public function index()
     {
 //        $login = Login::all();
         $login = Login::orderBy('created_at', 'desc')->get();
-        return view('y_list')->with('login', $login);
+        return view('login.index')->with('login', $login);
     }
     /**
      * Show the form for creating a new resource.
@@ -72,7 +72,7 @@ class LoginController extends Controller
     public function show($id)
     {
         $login =Login::find($id);
-        return view('y_list.show')->with('login',$login);
+        return view('login.show')->with('login',$login);
     }
     /**
      * Show the form for editing the specified resource.

@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-md-6">
-            <form method="get" action="{{ url('/y_list') }}">
+            <form method="get" action="{{ url('login') }}">
                 @csrf
 
                 <div class="form-group">
