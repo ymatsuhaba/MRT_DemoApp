@@ -32,8 +32,8 @@
                             <td>{{$query -> from}}</td>
                             <td>{{$query -> sex}}</td>
                             <td>{{$query -> date_of_birth}}</td>
-                            <td><a href='/inquery?id={{$query->id}}' class="btn-square-pop">詳細</a></td>
-                            <td><a href='/update?id={{$query->id}}' class="btn-square-pop">更新</a></td>
+                            <td><a href='/inquer?id={{$query->id}}' class="btn-square-pop">詳細</a></td>
+                            <td><a href='/renew?id={{$query->id}}' class="btn-square-pop">更新</a></td>
                             <td><a href='/destroy?id={{$query->id}}' class="btn-square-pop">削除</a></td>
                         </tr>
                     @endforeach
