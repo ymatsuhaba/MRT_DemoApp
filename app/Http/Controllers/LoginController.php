@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Login;
+//use Collective\Html\HtmlServiceProvider;
 
 class LoginController extends Controller
 {
@@ -28,8 +29,8 @@ class LoginController extends Controller
     public function index()
     {
 //        $login = Login::all();
-        $logins = Login::orderBy('created_at', 'desc')->get();
-        return view('login.index')->with('logins', $logins);
+        $login = Login::orderBy('created_at', 'desc')->get();
+        return view('login.index')->with('login', $login);
     }
     /**
      * Show the form for creating a nesw resource.
@@ -73,6 +74,7 @@ class LoginController extends Controller
     {
         $login =Login::find($id);
         return view('login.show')->with('login',$login);
+//        return 123;
     }
     /**
      * Show the form for editing the specified resource.
