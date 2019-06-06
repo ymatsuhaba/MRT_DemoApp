@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Y_list</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>

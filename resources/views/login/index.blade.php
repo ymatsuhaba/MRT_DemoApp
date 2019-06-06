@@ -2,8 +2,8 @@
 
 @section('content')
     <h1>Login</h1>
-    @if(count($login) > 0)
-        @foreach($login as $login)
+    @if(count($logins) > 0)
+        @foreach($logins as $login)
             <div class="well">
                 <h3><a href="login/{{$login->id}}">{{$login->text}}</a> <span class="label label-danger">{{$login->text}}</span></h3>
             </div>

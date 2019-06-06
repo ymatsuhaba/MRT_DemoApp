@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create Todo</h1>
+    <h1>Create Login</h1>
     {!! Form::open(['action' => 'LoginController@store', 'method' => 'POST']) !!}
     {{ Form::bsText('id') }}
     {{ Form::bsText('name') }}

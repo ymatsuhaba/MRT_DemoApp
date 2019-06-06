@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::auth();
+//
+//Route::auth();
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,7 +43,7 @@ Route::get('/delete_result'  , 'DeleteresultController@delete');
 //login
 //Route::get('/login','LoginController@create');
 //Route::get('/loginform','LoginController@form');
-Route::get('/y_search', 'LoginController@index');
+Route::get('/', 'LoginController@index');
 Route::resource('login', 'LoginController');
 //Route::resource('y_search', 'Y_searchController',['only' =>['index','update', 'destroy']]);
 

@@ -28,11 +28,11 @@ class LoginController extends Controller
     public function index()
     {
 //        $login = Login::all();
-        $login = Login::orderBy('created_at', 'desc')->get();
-        return view('login.index')->with('login', $login);
+        $logins = Login::orderBy('created_at', 'desc')->get();
+        return view('login.index')->with('logins', $logins);
     }
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a nesw resource.
      *
      * @return \Illuminate\Http\Response
      */
