@@ -91,6 +91,8 @@
                     <a href="/login">login</a>
                     <a href="https://github.com/laravel/laravel">公式GitHub</a>
                     <a href="/new">new</a>
+                    <a href="/search">search</a>
+                    <a href="/find">find</a>
                 </div>
             </div>
         </div>

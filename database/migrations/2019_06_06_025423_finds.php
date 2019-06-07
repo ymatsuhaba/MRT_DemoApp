@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class About extends Migration
+class Finds extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class About extends Migration
      */
     public function up()
     {
-        Schema::create('abouts', function (Blueprint $table) {
-            $table->string('id');
-            $table->string('password');
+        Schema::create('finds', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('from');
+            $table->string('sex');
+            $table->integer('date_of_birth');
         });
     }
 
@@ -26,6 +29,6 @@ class About extends Migration
      */
     public function down()
     {
-        Schema::drop('abouts');
+        Schema::dropIfExists('finds');
     }
 }

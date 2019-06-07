@@ -5,11 +5,11 @@
 <body>
 <div class="container">
     <h1>NameMaker</h1>
+
     <div class="row">
-        <form method="get">
+        <form method="get" action="{{ url('/delete_result')}}">
             @csrf
             <div class="form-group">
-                <p><a href='/list' class="btn-square-pop">一覧に戻る</a></p>
                 <table>
                     <tr>
                         <th>名前</th><td>{{$data -> name}}</td>
@@ -30,11 +30,12 @@
                         <th>本アプリを利用した理由</th><td>{{$data -> reason}}</td>
                     </tr>
                 </table>
+                <input name="id" type="hidden" value="{{$data -> id}}">
+                <br>
+                <button class="btn btn-primary">削除</button>
             </div>
         </form>
     </div>
-    </form>
-</div>
 </div>
 </body>
 </html>
