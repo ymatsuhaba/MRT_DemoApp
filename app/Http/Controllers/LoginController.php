@@ -23,7 +23,7 @@ class LoginController extends Controller
             'id' => 'required'
         ]);
 
-        $login =new Login;
+        $login = Login::firstOrNew([id => $request -> input('id')]);
         $login->id = $request -> input('id');
         $login->name = $request -> input('name');
         $login->from = $request -> input('from');
@@ -32,6 +32,7 @@ class LoginController extends Controller
         $login->save();
 
         return redirect('/login')->with('success','Success');
+
 
     }
 
@@ -42,23 +43,28 @@ class LoginController extends Controller
     }
 
 
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('login.edit');
+//        $this->validate($request,[
+//            'id' => 'required'
+//        ]);
+
+        $login = Login::find($request->id);
+        return view('login.edit',['login' => $login]);
     }
 
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
         $this->validate($request,[
             'id' => 'required'
         ]);
 
-        $login = Login::find($id);
-        $login->id = $request->input('id');
-        $login->name = $request->input('name');
-        $login->from = $request->input('from');
-        $login->password = $request->input('password');
+        $login = Login::find($request->$id);
+        $login->id = $request->id;
+        $login->name = $request->name;
+        $login->from = $request->from;
+        $login->password = $request->password;
         $login->save();
         return redirect('/login')->with('success', 'Updated');
     }

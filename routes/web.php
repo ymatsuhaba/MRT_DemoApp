@@ -10,8 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-//Route::auth();
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,6 +36,8 @@ Route::get('/delete_result'  , 'DeleteresultController@delete');
 
 //Route::get('/login', 'LoginController@index');
 Route::resource('login', 'LoginController');
+
+Route::resource('calculator', 'CalculatorController');
 
 // しょう
 // 検索ページ

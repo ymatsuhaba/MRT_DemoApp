@@ -10,6 +10,7 @@
                 <th>name</th>
                 <th>from</th>
                 <th>password</th>
+                <th>Edit</th>
             </tr>
 
             @if(count($login) > 0)
@@ -19,6 +20,7 @@
                         <td>{{$login -> name}}</td>
                         <td>{{$login -> from}}</td>
                         <td>{{$login -> password}}</td>
+{{--                        <td><a href="/login/{{$login->id}}/edit" class="btn btn-default">Edit</a></td>--}}
                     </tr>
                 @endforeach
             @endif

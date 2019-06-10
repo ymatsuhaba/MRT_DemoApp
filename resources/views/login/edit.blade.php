@@ -20,7 +20,7 @@
 @section('content')
     <h1>Create Login</h1>
     <a class="btn btn-default" href="/login">Go Back</a>
-    {!! Form::open(['action' => 'LoginController@update', 'method' => 'POST']) !!}
+    {!! Form::open(['action' => 'LoginController@store', 'method' => 'POST']) !!}
     {{ Form::Text('id',$login->id) }}
     {{ Form::Text('name',$login->name) }}
     {{ Form::Text('from',$login->from) }}
