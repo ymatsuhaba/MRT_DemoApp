@@ -17,6 +17,47 @@ class CalculatorController extends Controller
         return view('calculator.index');
     }
 
+//足し算をする
+    public function add(){
+
+        $num1 = $_GET["num1"];
+        $num2 = $_GET["num2"];
+        $number = $num1 + $num2;
+
+        return view ('calculator.add',compact('number'));
+    }
+
+//引き算をする
+    public function subtract(){
+
+        $num1 = $_GET["num1"];
+        $num2 = $_GET["num2"];
+        $number = $num1 - $num2;
+
+        return view ('calculator.subtract',compact('number'));
+    }
+
+//掛け算をする
+    public function multify(){
+
+        $num1 = $_GET["num1"];
+        $num2 = $_GET["num2"];
+        $number = $num1 * $num2;
+
+        return view ('calculator.multify',compact('number'));
+    }
+
+//割り算をする
+    public function divide(){
+
+        $num1 = $_GET["num1"];
+        $num2 = $_GET["num2"];
+        $number = $num1 / $num2;
+
+        return view ('calculator.divide',compact('number'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

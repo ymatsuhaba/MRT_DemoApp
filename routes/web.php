@@ -38,6 +38,16 @@ Route::get('/delete_result'  , 'DeleteresultController@delete');
 Route::resource('login', 'LoginController');
 
 Route::resource('calculator', 'CalculatorController');
+//Route::get('/calculator', 'CalculatorController@add');
+//Route::get('/calculator', 'CalculatorController@subtract');
+//Route::get('calculator.result','CalculatorResultController@index');
+
+//Yuckyの計算機第一弾
+Route::get('calculator.add','CalculatorController@add');
+Route::get('calculator.subtract','CalculatorController@subtract');
+Route::get('calculator.multify','CalculatorController@multify');
+Route::get('calculator.divide','CalculatorController@divide');
+
 
 // しょう
 // 検索ページ
