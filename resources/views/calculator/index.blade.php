@@ -5,7 +5,7 @@
             <a class="btn btn-default" href="/">Go Back</a>
             <h1>Calculator</h1>
 
-        <form action="?" method="post">
+        <form action='calculator' method="post">
             <table>
                 <tr>
                     <td colspan="2"><button type="submit" name="button" value="C">C</button></td>
@@ -13,9 +13,9 @@
                     <td><button type="submit" name="button" value="÷">÷</button></td>
                 </tr>
                 <tr>
-                    <td><button type="submit" name="button" value="7">7</button></td>
-                    <td><button type="submit" name="button" value="8">8</button></td>
-                    <td><button type="submit" name="button" value="9">9</button></td>
+                    <td><button type="submit" name="button" value="7" class="number">7</button></td>
+                    <td><button type="submit" name="button" value="8" class="number">8</button></td>
+                    <td><button type="submit" name="button" value="9" class="number">9</button></td>
                     <td><button type="submit" name="button" value="✕">×</button></td>
                 </tr>
                 <tr>
