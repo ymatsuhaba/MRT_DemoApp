@@ -69,3 +69,19 @@ Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
 
 Route::get('/newresult', 'NewController@newresult');
+
+// DENTAKUN のページ
+Route::get('/dentakun', 'DentakunController@index');
+
+Route::get('/dentakunresult', 'DentakunController@result');
+// DENTAKUN Jrのページ
+Route::get('/dentakunjr', 'JrController@index');
+
+Route::get('/dentakunjrresult', 'JrController@result');
+
+
+
+
+
+
+

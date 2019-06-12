@@ -93,6 +93,7 @@
                     <a href="/new">new</a>
                     <a href="/search">search</a>
                     <a href="/find">Find</a>
+                    <a href="/dentakun">dentakun</a>
                 </div>
             </div>
         </div>
