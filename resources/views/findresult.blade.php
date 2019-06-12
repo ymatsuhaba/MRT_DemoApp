@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-sm-12">
             <a href="find/create"  input type ="button" style="margin:50px;">新規登録</a>
-    </div>
+        </div>
     </div>
 
     <div class="row1">
@@ -31,9 +31,9 @@
                             <td>{{$query -> from}}</td>
                             <td>{{$query -> sex}}</td>
                             <td>{{$query -> date_of_birth}}</td>
-                            <td><a href='/inquery?id={{$query->id}}' class="btn-square-pop">詳細</a></td>
-                            <td><a href='/update?id={{$query->id}}' class="btn-square-pop">更新</a></td>
-                            <td><a href='/delete?id={{$query->id}}' class="btn-square-pop">削除</a></td>
+                            <td><a href='/details?id={{$query->id}}' class="btn-square-pop">詳細</a></td>
+                            <td><a href='/renew?id={{$query->id}}' class="btn-square-pop">更新</a></td>
+                            <td><a href='/destroy?id={{$query->id}}' class="btn-square-pop">削除</a></td>
                         </tr>
                     @endforeach
                 </table>

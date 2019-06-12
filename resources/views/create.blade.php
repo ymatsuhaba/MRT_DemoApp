@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 @extends('layouts.head_common')
 
 <h1 padding=>新規登録</h1>
@@ -9,7 +13,7 @@
     </div>
 </div>
 
-<form method="get" action="/find/store">
+<form method="get" action="/store">
 
     <div class="form-group">
         <label>名前</label>

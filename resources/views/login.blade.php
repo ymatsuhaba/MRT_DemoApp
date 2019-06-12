@@ -16,11 +16,11 @@
                     <input type="text" name="name">
                 </div>
                 <div class="form-passwprd">
-                    <label>PassWord: </label>
+                    <label>From: </label>
                     <input type="text" name="from">
                 </div>
                 <div class="form-id">
-                    <label>User id: </label>
+                    <label>Password: </label>
                     <input type="text" name="password">
                 </div>
                 <button class="btn btn-primary">ログイン</button>
