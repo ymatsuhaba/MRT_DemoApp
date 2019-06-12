@@ -39,7 +39,5 @@ class DentakunController extends Controller
         }
         return view('/dentakunresult',compact('kekka','request'));
     }
-//$enzansi == '%'
-
 };
 

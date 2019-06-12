@@ -17,13 +17,12 @@
         }
     </style>
 </head>
-        <body>
-            <hr><h1>電太くん</h1><hr><img src="dentakun1.png" width="250" height="250">
-                <h2>計算の答えはこちらです。<hr>{{$kekka}}</h2>
+<body>
+<hr><h1>電太くん</h1><hr><img src="dentakun1.png" width="250" height="250">
+<h2>計算の答えはこちらです。<hr>{{$kekka}}</h2>
 
-            <footer>
-            <p>&copy; shohei seguchi</p>
-        </footer>
-
+<footer>
+    <p>&copy; shohei seguchi</p>
+</footer>
 </body>
 </html>
