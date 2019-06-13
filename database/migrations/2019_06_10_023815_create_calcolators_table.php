@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class About extends Migration
+class CreateCalcolatorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class About extends Migration
      */
     public function up()
     {
-        Schema::create('abouts', function (Blueprint $table) {
-            $table->string('id');
-            $table->string('password');
+        Schema::create('calcolators', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +26,6 @@ class About extends Migration
      */
     public function down()
     {
-        Schema::drop('abouts');
+        Schema::dropIfExists('calcolators');
     }
 }
