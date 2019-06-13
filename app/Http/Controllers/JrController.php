@@ -17,6 +17,7 @@ class JrController extends Controller
 
         $num1 = $request -> input('number1');
         $tax =1.08 ;
+
         $result = $num1 * $tax ;
 
         return view('/dentakunjrresult',compact('result'));
