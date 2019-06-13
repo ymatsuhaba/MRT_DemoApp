@@ -10,8 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-//Route::auth();
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,12 +33,22 @@ Route::get('/update_result'  , 'UpdateresultController@update');
 // 削除ページ
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
+// 電卓ページ
+Route::get('/calc'           , 'CalcController@calc');
+Route::post('/calc'          , 'CalcController@calc');
 
-
-
-
-Route::get('/login', 'LoginController@index');
+//Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
+
+//Yuckyの計算機第一弾
+Route::resource('calculator', 'CalculatorController');
+Route::get('calculator.add','CalculatorController@add');
+Route::get('calculator.subtract','CalculatorController@subtract');
+Route::get('calculator.multify','CalculatorController@multify');
+Route::get('calculator.divide','CalculatorController@divide');
+Route::get('/calcal', 'CalcalController@index');
+
+
 
 // しょう
 // 検索ページ
@@ -60,6 +69,12 @@ Route::get('/renew'         , 'FindController@renew');
 Route::get('/renew_result'  , 'FindController@renew_result');
 //詳細確認ページ
 Route::get('/details'  , 'FindController@details');
+// DENTAKUN のページ
+Route::get('/dentakun', 'DentakunController@index');
+Route::get('/dentakunresult', 'DentakunController@result');
+// DENTAKUN Jrのページ
+Route::get('/dentakunjr', 'JrController@index');
+Route::get('/dentakunjrresult', 'JrController@result');
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});

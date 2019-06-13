@@ -5,10 +5,11 @@
 </head>
 <body>
 <div class="container">
-    <h1 style = text-align:center;>登録者一覧ページ</h1>
+    <h1>登録者一覧ページ</h1>
+
     <div class="row">
         <div class="col-sm-12">
-            <a href="/create" class="btn-square-slant" style = margin:50px;>新規登録</a>
+            <a href="find/create"  input type ="button" style="margin:50px;">新規登録</a>
         </div>
     </div>
 
@@ -18,7 +19,6 @@
             <div class="form-group">
                 <table>
                     <tr>
-                        <th>id</th>
                         <th>名前</th>
                         <th>出身地</th>
                         <th>性別</th>
@@ -27,7 +27,6 @@
                     </tr>
                     @foreach ($query as $query)
                         <tr>
-                            <td>{{$query -> id}}</td>
                             <td>{{$query -> name}}</td>
                             <td>{{$query -> from}}</td>
                             <td>{{$query -> sex}}</td>

@@ -20,11 +20,11 @@
 @section('content')
     <h1>Create Login</h1>
     <a class="btn btn-default" href="/login">Go Back</a>
-    {!! Form::open(['action' => 'LoginController@update', 'method' => 'POST']) !!}
-    {{ Form::Text('id') }}
-    {{ Form::Text('name') }}
-    {{ Form::Text('from') }}
-    {{ Form::Text('password') }}
+    {!! Form::open(['action' => 'LoginController@store', 'method' => 'POST']) !!}
+    {{ Form::Text('id',$login->id) }}
+    {{ Form::Text('name',$login->name) }}
+    {{ Form::Text('from',$login->from) }}
+    {{ Form::Text('password',$login->password) }}
     {{ Form::Submit('Submit', ['class' => 'btn btn-primary']) }}
     {!! Form::close() !!}
 @endsection

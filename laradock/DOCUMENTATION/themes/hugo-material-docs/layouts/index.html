@@ -27,7 +27,6 @@
 
             <!-- Wrapper arround google ads for seedanddew -->
             <div class='snd-ad'>
-                <!-- ------------------------------------------------------------------------- -->
                 <!-- Google Ads -->
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Laradock Horizontal -->
@@ -38,11 +37,10 @@
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-                <!-- ------------------------------------------------------------------------- -->
             </div>
 
-			{{ range where .Site.Pages "Type" "index" }}
-				<h1>{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}</h1>
+            {{ range where .Site.Pages "Type" "index" }}
+            <h1>{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}</h1>
 
 				{{ .Content }}
 			{{ end }}
