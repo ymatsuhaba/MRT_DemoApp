@@ -43,6 +43,11 @@ Route::get('calculator.add','CalculatorController@add');
 Route::get('calculator.subtract','CalculatorController@subtract');
 Route::get('calculator.multify','CalculatorController@multify');
 Route::get('calculator.divide','CalculatorController@divide');
+Route::get('/calcal', 'CalcalController@index');
+//Vue.jsのアサインをする//
+//Route::get('/{any}', function () {
+//    return view('app');
+//})->where('any', '.*');
 
 
 // しょう

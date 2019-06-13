@@ -13,6 +13,15 @@ h1{
     font-weight: bold;
 }
 
+h2{
+    color:darkcyan;
+    background: #e6e6fa;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
 table{
     width: 50%;
     border-collapse:separate;
