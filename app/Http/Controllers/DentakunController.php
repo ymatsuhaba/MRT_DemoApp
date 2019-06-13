@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use mysql_xdevapi\Session;
 
 class DentakunController extends Controller
 {
@@ -40,4 +39,5 @@ class DentakunController extends Controller
         return view('/dentakunresult',compact('kekka','request'));
     }
 };
+
 
