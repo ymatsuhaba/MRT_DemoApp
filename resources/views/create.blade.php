@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
 @extends('layouts.head_common')
 
 <h1 padding=>新規登録</h1>
