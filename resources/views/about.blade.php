@@ -1,12 +1,5 @@
-<!doctype html>
-<html lang=ja>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+@extends('layouts.head_common')
+
 <body>
 <h1>About Us</h1>
 <p>私たちあだ名メーカーは、価値を創造するプロモーションカンパニーです。 <br>クライアントの課題に一過性のアイデアで応えるのではなく、
@@ -22,6 +15,5 @@
     この想いのもと、私たちシー・レップはこれからもクライアントと共創するパートナーとして、<br>
     未来を拓くはじまりの一歩と、その先をつくりつづけていきます。</p>
 
-@extends('form')
 </body>
 </html>

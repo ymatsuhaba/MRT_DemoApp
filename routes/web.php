@@ -10,8 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-//Route::auth();
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,8 +34,19 @@ Route::get('/update_result'  , 'UpdateresultController@update');
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
 
-// ゆっきー
+
+//Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
+
+//Yuckyの計算機第一弾
+Route::resource('calculator', 'CalculatorController');
+Route::get('calculator.add','CalculatorController@add');
+Route::get('calculator.subtract','CalculatorController@subtract');
+Route::get('calculator.multify','CalculatorController@multify');
+Route::get('calculator.divide','CalculatorController@divide');
+Route::get('/calcal', 'CalcalController@index');
+
+
 
 // しょう
 // 検索ページ
