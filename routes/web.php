@@ -19,12 +19,12 @@ Route::get('/', function () {
 
 // つよぽん
 // 検索ページ
-Route::get('/search'         , 'SearchController@search');
-Route::post('/search'        , 'SearchController@search');
+Route::get('/search', 'SearchController@search');
+Route::post('/search', 'SearchController@search');
 // 一覧ページ
-Route::get('/list'           , 'ListController@list');
+Route::get('/list', 'ListController@list');
 // 照会ページ
-Route::get('/inquery'        , 'InqueryController@Inquery');
+Route::get('/inquery', 'InqueryController@Inquery');
 // 登録ページ
 Route::get('/contact'        , 'ContactController@edit');
 Route::get('/contact_result' , 'ContactresultController@create');
@@ -34,12 +34,8 @@ Route::get('/update_result'  , 'UpdateresultController@update');
 // 削除ページ
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
-// 全件削除処理
-Route::get('/alldelete'      , 'AlldeleteController@alldelete');
-// 電卓
-Route::get('/calc'           , 'CalcController@calc');
-Route::post('/calc'          , 'CalcController@calc');
 
+// ゆっきー
 Route::resource('login', 'LoginController');
 
 // しょう
@@ -61,6 +57,12 @@ Route::get('/renew'         , 'FindController@renew');
 Route::get('/renew_result'  , 'FindController@renew_result');
 //詳細確認ページ
 Route::get('/details'  , 'FindController@details');
+// DENTAKUN のページ
+Route::get('/dentakun', 'DentakunController@index');
+Route::get('/dentakunresult', 'DentakunController@result');
+// DENTAKUN Jrのページ
+Route::get('/dentakunjr', 'JrController@index');
+Route::get('/dentakunjrresult', 'JrController@result');
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
