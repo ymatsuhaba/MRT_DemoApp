@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -44,10 +45,7 @@ Route::get('calculator.subtract','CalculatorController@subtract');
 Route::get('calculator.multify','CalculatorController@multify');
 Route::get('calculator.divide','CalculatorController@divide');
 Route::get('/calcal', 'CalcalController@index');
-//Vue.jsのアサインをする//
-//Route::get('/{any}', function () {
-//    return view('app');
-//})->where('any', '.*');
+
 
 
 // しょう
@@ -69,6 +67,12 @@ Route::get('/renew'         , 'FindController@renew');
 Route::get('/renew_result'  , 'FindController@renew_result');
 //詳細確認ページ
 Route::get('/details'  , 'FindController@details');
+// DENTAKUN のページ
+Route::get('/dentakun', 'DentakunController@index');
+Route::get('/dentakunresult', 'DentakunController@result');
+// DENTAKUN Jrのページ
+Route::get('/dentakunjr', 'JrController@index');
+Route::get('/dentakunjrresult', 'JrController@result');
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
