@@ -19,12 +19,12 @@ Route::get('/', function () {
 
 // つよぽん
 // 検索ページ
-Route::get('/search', 'SearchController@search');
-Route::post('/search', 'SearchController@search');
+Route::get('/search'         , 'SearchController@search');
+Route::post('/search'        , 'SearchController@search');
 // 一覧ページ
-Route::get('/list', 'ListController@list');
+Route::get('/list'           , 'ListController@list');
 // 照会ページ
-Route::get('/inquery', 'InqueryController@Inquery');
+Route::get('/inquery'        , 'InqueryController@Inquery');
 // 登録ページ
 Route::get('/contact'        , 'ContactController@edit');
 Route::get('/contact_result' , 'ContactresultController@create');
@@ -34,11 +34,12 @@ Route::get('/update_result'  , 'UpdateresultController@update');
 // 削除ページ
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
+// 全件削除処理
+Route::get('/alldelete'      , 'AlldeleteController@alldelete');
+// 電卓
+Route::get('/calc'           , 'CalcController@calc');
+Route::post('/calc'          , 'CalcController@calc');
 
-
-
-
-Route::get('/login', 'LoginController@index');
 Route::resource('login', 'LoginController');
 
 // しょう
