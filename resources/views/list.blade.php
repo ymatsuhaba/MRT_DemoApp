@@ -10,15 +10,17 @@
         <div class="col-sm-12">
             <a href="/contact" class="btn-square-slant" style="margin:20px;">新規登録</a>
             <a href="/search" class="btn-square-slant" style="margin:20px;">検索画面に戻る</a>
+            <a href='/alldelete?&name={{$request->name}}&from={{$request->from}}&sex={{$request->sex}}&birthday={{$request->birthday}}' class="btn-square-slant" style="margin:20px;">全件削除</a>
         </div>
     </div>
-
+    <p class="alldelete">{{$message}}</p>
     <div class="row1">
         <form method="get">
             @csrf
             <div class="form-group">
                 <table>
                     <tr>
+                        <th>選択</th>
                         <th>No</th>
                         <th>名前</th>
                         <th>出身地</th>
@@ -30,6 +32,7 @@
                     </tr>
                     @foreach ($search as $search)
                         <tr>
+                            <td><input type="checkbox" class="form-control" name="flug"></td>
                             <td>{{$no++}}</td>
                             <td>{{$search -> name}}</td>
                             <td>{{$search -> from}}</td>
