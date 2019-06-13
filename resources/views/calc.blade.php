@@ -13,7 +13,7 @@
 
     <table class="calc" id="calcTable">
         <tr>
-            <td colspan="4" width="140" height="120"><input name="data" style="width:600px;height:100px" type="text" value="{{$result}}"></td>
+            <td colspan="4" width="140" height="120"><input name="data" style="font-size:300%;width:600px;height:100px" type="text" value="{{$result}}"></td>
         </tr>
         <tr>
             <td colspan="2" width="140" height="120"><input type="button" onclick="calc('C')" value="C"></td>

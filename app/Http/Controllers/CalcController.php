@@ -20,6 +20,7 @@ class CalcController extends Controller
         $subafterdata     = preg_replace('/[^0-9]/', '', strstr($data, '-'));
         $multiafterdata   = preg_replace('/[^0-9]/', '', strstr($data, '×'));
         $divafterdata     = preg_replace('/[^0-9]/', '', strstr($data, '÷'));
+        $perdata     = preg_replace('/[^0-9]/', '', strstr($data, '%', true));
         $result = '';
 
         // 入力された演算子に応じて処理
@@ -31,6 +32,8 @@ class CalcController extends Controller
             $result = $multibeforedata * $multiafterdata;
         } else if (strpos($data,'÷') !== false) {
             $result = $divbeforedata / $divafterdata;
+        } else if (strpos($data,'%') !== false) {
+            $result = $perdata / '100';
         }
 
         return view('calc', compact('result'));
