@@ -33,7 +33,9 @@ Route::get('/update_result'  , 'UpdateresultController@update');
 // 削除ページ
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
-
+// 電卓ページ
+Route::get('/calc'           , 'CalcController@calc');
+Route::post('/calc'          , 'CalcresultController@calc');
 
 //Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
