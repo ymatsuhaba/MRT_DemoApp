@@ -7,7 +7,7 @@
         <div class="row">
             <form method="get">
                 @csrf
-                {{$number}}
+                {{$CalculatedNumber}}
             </form>
         </div>
 </div>
