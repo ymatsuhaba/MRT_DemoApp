@@ -47,6 +47,7 @@ Route::get('calculator.subtract','CalculatorController@subtract');
 Route::get('calculator.multify','CalculatorController@multify');
 Route::get('calculator.divide','CalculatorController@divide');
 Route::get('/calcal', 'CalcalController@index');
+Route::get('calculator.search', 'CalculatorController@search');
 
 
 

@@ -5,7 +5,7 @@
 
 <div id="table">
     <h2>add</h2>
-    <form action='calculator.store' method="GET">
+    <form action='calculator.add' method="GET">
         Num1: <input type="number" name="num1">
         Num2: <input type="number" name="num2">
         <input type="submit">

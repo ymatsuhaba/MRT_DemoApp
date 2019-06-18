@@ -23,15 +23,23 @@ class CalculatorController extends Controller
     }
 
 //足し算をする
-    public function add(){
+    public function add(Request $request){
 
-        $num1 = $_GET["num1"];
-        $num2 = $_GET["num2"];
+        $this->validate($request,[
+            'num1' => 'required',
+            'num2' => 'required'
+        ]);
+
+        $Calculator = Calculator::firstOrNew([num1 => $request -> input('num1')]);
+        $Calculator->num1 = $request -> input('num1');
+        $Calculator->num2 = $request -> input('num2');
+//        $num1 = $_GET["num1"];
+//        $num2 = $_GET["num2"];
         $CalculatedNumber = $num1 + $num2;
 
         $Calculator =array($num1,'+',$num2,$CalculatedNumber);
 
-//        $Calculator->save();
+        $Calculator->save();
 
         return redirect ('/calculator',compact('Calculator'));
 //        return redirect()->back();
@@ -128,6 +136,14 @@ class CalculatorController extends Controller
 //     * @param  int  $id
 //     * @return \Illuminate\Http\Response
 //     */
+
+//    public function search(Request $request)
+//    {
+//        $Calculator = Calculator::where('category', $request->calc)-> get();
+//        return view('calculator.index', ['Calculator' => $Calculator]) ;
+//    }
+
+
     public function destroy($id)
     {
         $Calculator= Calculator::find($id);
