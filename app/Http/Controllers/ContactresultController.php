@@ -38,8 +38,6 @@ class ContactresultController extends Controller
         }
 
         $form = $request->all();
-        unset($form['_token']);
-
         $value = new Nickname;
         $value->fill($form)->save();
         // １．個別に取得して代入する。⇛リーダブルコードを見ればわかる⇛フォームの内容が変わるとバグる。

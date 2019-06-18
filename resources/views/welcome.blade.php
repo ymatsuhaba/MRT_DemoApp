@@ -96,7 +96,7 @@
                     <a href="/dentakun">DENTAKUN</a>
                     <a href="/calculator">Calculator</a>
                     <a href="/calcal">CalCal</a>
-                    <a href="/calc">Calculator</a>
+                    <a href="/calc">sakaCalc</a>
                 </div>
             </div>
         </div>
