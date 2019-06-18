@@ -39,3 +39,6 @@ Vue.component('Articles', require('./components/Articles.vue')
 new Vue({
     el: '#app',
 });
+
+
+

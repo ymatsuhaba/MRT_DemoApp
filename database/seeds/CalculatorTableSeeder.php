@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+//use Illuminate\Support\Facades\DB;
 
 class CalculatorTableSeeder extends Seeder
 {
@@ -12,40 +13,82 @@ class CalculatorTableSeeder extends Seeder
     public function run()
     {
         //    一つ目の計算
-        $Calculators = new \App\Calculator([
+        $Calculator = new \App\Calculator([
             'num1' => '21',
             'calc' => '+',
             'num2' => '7',
-            'ArithmeticOperations' => '28',
+            'CalculatedNumber' => '28',
         ]);
-        $Calculators->save();
+        $Calculator->save();
+
 
         //    二つ目の計算
-        $Calculators = new \App\Calculator([
+        $Calculator = new \App\Calculator([
             'num1' => '21',
             'calc' => '-',
             'num2' => '7',
-            'ArithmeticOperations' => '14',
+            'CalculatedNumber' => '14',
         ]);
-        $Calculators->save();
+        $Calculator->save();
+
 
         //    三つ目の計算
-        $Calculators = new \App\Calculator([
+        $Calculator = new \App\Calculator([
             'num1' => '21',
             'calc' => '×',
             'num2' => '7',
-            'ArithmeticOperations' => '147',
+            'CalculatedNumber' => '147',
         ]);
-        $Calculators->save();
+        $Calculator->save();
+
 
         //    四つ目の計算
-        $Calculators = new \App\Calculator([
+        $Calculator = new \App\Calculator([
             'num1' => '21',
             'calc' => '÷',
             'num2' => '7',
-            'ArithmeticOperations' => '3',
+            'CalculatedNumber' => '3',
         ]);
-        $Calculators->save();
+        $Calculator->save();
+
+        //    五つ目の計算
+        $Calculator = new \App\Calculator([
+            'num1' => '21',
+            'calc' => '+',
+            'num2' => '7',
+            'CalculatedNumber' => '28',
+        ]);
+        $Calculator->save();
+
+
+        //    六つ目の計算
+        $Calculator = new \App\Calculator([
+            'num1' => '21',
+            'calc' => '-',
+            'num2' => '7',
+            'CalculatedNumber' => '14',
+        ]);
+        $Calculator->save();
+
+
+        //    七つ目の計算
+        $Calculator = new \App\Calculator([
+            'num1' => '21',
+            'calc' => '×',
+            'num2' => '7',
+            'CalculatedNumber' => '147',
+        ]);
+        $Calculator->save();
+
+
+        //    八つ目の計算
+        $Calculator = new \App\Calculator([
+            'num1' => '21',
+            'calc' => '÷',
+            'num2' => '7',
+            'CalculatedNumber' => '3',
+        ]);
+        $Calculator->save();
     }
 
 

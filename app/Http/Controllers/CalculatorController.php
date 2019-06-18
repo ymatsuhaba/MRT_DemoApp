@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Calculator;
-
+use Illuminate\Support\Facades\DB;
 
 class CalculatorController extends Controller
 {
@@ -15,7 +15,11 @@ class CalculatorController extends Controller
      */
     public function index()
     {
-        return view('calculator.index');
+//        $Calculators =Calculator::orderBy('created_at', 'desc')->get();
+        $Calculator = DB::select('select * from calculators');
+        return view('calculator.index')->with('Calculator', $Calculator);
+
+//        return view('calculator.index');
     }
 
 //足し算をする
@@ -25,7 +29,12 @@ class CalculatorController extends Controller
         $num2 = $_GET["num2"];
         $CalculatedNumber = $num1 + $num2;
 
-        return view ('calculator.add',compact('CalculatedNumber'));
+        $Calculator =array($num1,'+',$num2,$CalculatedNumber);
+
+//        $Calculator->save();
+
+        return redirect ('/calculator',compact('Calculator'));
+//        return redirect()->back();
     }
 
 //引き算をする
@@ -60,8 +69,7 @@ class CalculatorController extends Controller
 
     public function create()
     {
-        $Calculators =Calculators::orderBy('created_at', 'desc')->get();
-        return view('calculator.list')->with('Calculators', $Calculators);
+        return view('calculator.create');
     }
 
 //    public function store(Request $request)
@@ -79,13 +87,13 @@ class CalculatorController extends Controller
 //        $login->save();
 //
 //        return redirect('/login')->with('success','Success');
-//
-//
+////
+////
 //    }
 //
     public function show()
     {
-        return view('calculator.list');
+        return redirect('/calculator');
     }
 //
 //
@@ -120,11 +128,10 @@ class CalculatorController extends Controller
 //     * @param  int  $id
 //     * @return \Illuminate\Http\Response
 //     */
-//    public function destroy($id)
-//    {
-//        $login = Login::find($id);
-//        $login->delete();
-//        return redirect('/login')->with('success', 'Deleted');
-//
-//    }
+    public function destroy($id)
+    {
+        $Calculator= Calculator::find($id);
+        $Calculator->delete();
+        return redirect('/calculator')->with('success', 'Deleted');
+    }
 }

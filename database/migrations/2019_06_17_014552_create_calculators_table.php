@@ -19,6 +19,7 @@ class CreateCalculatorsTable extends Migration
             $table->string('calc');
             $table->string('num2');
             $table->string('CalculatedNumber');
+            $table->timestamps();
         });
     }
 

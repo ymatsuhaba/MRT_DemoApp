@@ -13,7 +13,6 @@
     </head>
 
     <body>
-
         <div id="app">
             <v-toolbar>
                 <v-toolbar-side-icon></v-toolbar-side-icon>
@@ -27,14 +26,9 @@
             </v-toolbar>
         </div>
 
-        <div id="app">
-            <div class="container">
-                <app-home></app-home>
-            </div>
-        </div>
-
-
         <script src="js/app.js"></script>
+
+
 {{--        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>--}}
 {{--        <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>--}}
 {{--        <script src="js/app.js"></script>--}}
