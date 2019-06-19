@@ -13,20 +13,21 @@
         @csrf
         <form method="post" action="{{url('/calclog')}}">
             <div class="select-area">
-                <select class="select-label" name="operator_sel">
-                    <option value='all' >all</option>
-                    <option value='+' >＋</option>
-                    <option value='-' >－</option>
-                    <option value='*' >×</option>
-                    <option value='/' >÷</option>
+                <select class="select-label" name="operator_sel" onchange="submit(this.form)">
+                    <option value='all' {{$selectbox['all']}}>all</option>
+                    <option value='+' {{$selectbox['+']}}>＋</option>
+                    <option value='-' {{$selectbox['-']}}>－</option>
+                    <option value='*' {{$selectbox['*']}}>×</option>
+                    <option value='/' {{$selectbox['/']}}>÷</option>
                 </select>
-                <button class="btn btn-primary">変更</button>
             </div>
         </form>
         <br>
         <table class="calclresult">
             <tr>
-                <th class="calcth" colspan="4">計算結果</th>
+                <th class="calcth" >No</th>
+                <th class="calcth" colspan="3">計算結果</th>
+                <th class="calcth">登録日</th>
             </tr>
             @foreach ($calcresult as $calclnum)
                 <tr>
@@ -34,7 +35,9 @@
                     <td>{{$calclnum['formula']}}</td>
                     <td>{{$calclnum['equal']}}</td>
                     <td>{{$calclnum['calcresult']}}</td>
+                    <td>{{$calclnum['created_at']}}</td>
                     <input name="operator" type="hidden" value="{{$calclnum['operator']}}">
+
                 </tr>
             @endforeach
         </table>

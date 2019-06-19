@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class CalcController extends Controller
 {
+    /**
+     * 電卓で入力された値の計算処理
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function calc(Request $request)
     {
         // 入力された値を取得
@@ -68,4 +73,3 @@ class CalcController extends Controller
         return view('calc', compact('result'));
     }
 }
-
