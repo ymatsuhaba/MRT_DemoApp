@@ -1,19 +1,19 @@
 @extends('layouts.calculator_common')
 
             <a class="btn btn-default" href="/">Go Back</a>
-            <a class="btn btn-default" href="calculator/create">Create</a>
+{{--            <a class="btn btn-default" href="calculator/search">Search</a>--}}
+            <a href="calculator.search" class="btn btn-primary" style="margin:20px;">Search</a>
             <h1>Calculator</h1>
 
     <div id="table">
         <h2>add</h2>
-        <form action='calculator.add' method="GET">
+        <form action='calculator.add' value='add' method="GET">
             Num1: <input type="number" name="num1">
             Num2: <input type="number" name="num2">
             <input type="submit">
         </form>
         <h2>subtract</h2>
         <form action="calculator.subtract" method="GET">
-
             Num1: <input type="number" name="num1">
             Num2: <input type="number" name="num2">
             <input type="submit">

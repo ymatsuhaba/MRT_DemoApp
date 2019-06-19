@@ -18,6 +18,12 @@ class Calculator extends Model
         $num2 = $this -> num2;
         $CalculatedNumber = $this -> CalculatedNumber;
 
+//        $num1->save();
+//        $calc->save();
+//        $num2->save();
+//        $CalculatedNumber->save();
+
         return compact('num1','calc', 'num2', 'CalculatedNumber');
+
     }
 }

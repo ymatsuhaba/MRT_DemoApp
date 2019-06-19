@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use App\Calculator;
 use Illuminate\Support\Facades\DB;
 
@@ -25,80 +25,86 @@ class CalculatorController extends Controller
 //足し算をする
     public function add(Request $request){
 
-        $this->validate($request,[
-            'num1' => 'required',
-            'num2' => 'required'
-        ]);
+        $Calculator = new Calculator();
 
-        $Calculator = Calculator::firstOrNew([num1 => $request -> input('num1')]);
-        $Calculator->num1 = $request -> input('num1');
-        $Calculator->num2 = $request -> input('num2');
-//        $num1 = $_GET["num1"];
-//        $num2 = $_GET["num2"];
+        $num1 = $request->input('num1');
+        $num2 = $request->input('num2');
+
         $CalculatedNumber = $num1 + $num2;
 
-        $Calculator =array($num1,'+',$num2,$CalculatedNumber);
+
+
+        $Calculator->num1 = $num1;
+        $Calculator->num2 = $num2;
+        $Calculator->calc = '+';
+        $Calculator->CalculatedNumber = $CalculatedNumber;
 
         $Calculator->save();
 
-        return redirect ('/calculator',compact('Calculator'));
-//        return redirect()->back();
+        return view ('calculator.add',compact('num1','calc','num2','CalculatedNumber'));
     }
 
 //引き算をする
-    public function subtract(){
+    public function subtract(Request $request){
 
-        $num1 = $_GET["num1"];
-        $num2 = $_GET["num2"];
+        $Calculator = new Calculator();
+
+        $num1 = $request->input('num1');
+        $num2 = $request->input('num2');
+
         $CalculatedNumber = $num1 - $num2;
 
-        return view ('calculator.subtract',compact('CalculatedNumber'));
+        $Calculator->num1 = $num1;
+        $Calculator->num2 = $num2;
+        $Calculator->calc = '-';
+        $Calculator->CalculatedNumber = $CalculatedNumber;
+
+        $Calculator->save();
+
+        return view ('calculator.subtract',compact('num1','num2','CalculatedNumber'));
     }
 
 //掛け算をする
-    public function multify(){
+    public function multify(Request $request){
 
-        $num1 = $_GET["num1"];
-        $num2 = $_GET["num2"];
+        $Calculator = new Calculator();
+
+        $num1 = $request->input('num1');
+        $num2 = $request->input('num2');
+
         $CalculatedNumber = $num1 * $num2;
 
-        return view ('calculator.multify',compact('CalculatedNumber'));
+        $Calculator->num1 = $num1;
+        $Calculator->num2 = $num2;
+        $Calculator->calc = '*';
+        $Calculator->CalculatedNumber = $CalculatedNumber;
+
+        $Calculator->save();
+
+        return view ('calculator.multify',compact('num1','num2','CalculatedNumber'));
     }
 
 //割り算をする
-    public function divide(){
+    public function divide(Request $request){
 
-        $num1 = $_GET["num1"];
-        $num2 = $_GET["num2"];
+        $Calculator = new Calculator();
+
+
+        $num1 = $request->input('num1');
+        $num2 = $request->input('num2');
+
         $CalculatedNumber = $num1 / $num2;
 
-        return view ('calculator.divide',compact('CalculatedNumber'));
+        $Calculator->num1 = $num1;
+        $Calculator->num2 = $num2;
+        $Calculator->calc = '/';
+        $Calculator->CalculatedNumber = $CalculatedNumber;
+
+        $Calculator->save();
+
+        return view ('calculator.divide',compact('num1','num2','CalculatedNumber'));
     }
 
-    public function create()
-    {
-        return view('calculator.create');
-    }
-
-//    public function store(Request $request)
-//    {
-//        $this->validate($request,[
-//            'id' => 'required'
-//        ]);
-//
-//        $login = Login::firstOrNew([id => $request -> input('id')]);
-//        $login->id = $request -> input('id');
-//        $login->name = $request -> input('name');
-//        $login->from = $request -> input('from');
-//        $login->password = $request -> input('password');
-//
-//        $login->save();
-//
-//        return redirect('/login')->with('success','Success');
-////
-////
-//    }
-//
     public function show()
     {
         return redirect('/calculator');
@@ -139,15 +145,38 @@ class CalculatorController extends Controller
 
 //    public function search(Request $request)
 //    {
+//        $Calculator->num1 = $request->num1;
+//        $Calculator->num2 = $request->num2;
+//        $Calculator->calc = $request->calc;
+//        $Calculator->CalculatedNumber = $request->CalculatedNumber;
+//
+//
 //        $Calculator = Calculator::where('category', $request->calc)-> get();
-//        return view('calculator.index', ['Calculator' => $Calculator]) ;
+//        return view('calculator.search', ['Calculator' => $Calculator]) ;
 //    }
 
 
-    public function destroy($id)
-    {
-        $Calculator= Calculator::find($id);
-        $Calculator->delete();
-        return redirect('/calculator')->with('success', 'Deleted');
-    }
+//    public function destroy($id)
+//    {
+//        $Calculator= Calculator::find($id);
+//        $Calculator->delete();
+//        return redirect('/calculator')->with('success', 'Deleted');
+//    }
+
+//    public function search(Request $request)
+//    {
+//        //レコードを検索
+//        $Calculator = Calculator::where('id', $request->input('calc'))->first();
+////        $Calculator = DB::select('select * from calculators');
+//        //値を代入
+//        $Calculator->calc = $request->;
+//
+//
+//        //保存（更新）
+//        $nickname->save();
+//
+//        return view('update_result', compact('request'));
+//    }
+
+
 }

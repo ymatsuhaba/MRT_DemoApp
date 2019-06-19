@@ -35,7 +35,7 @@ class CalculatorTableSeeder extends Seeder
         //    三つ目の計算
         $Calculator = new \App\Calculator([
             'num1' => '21',
-            'calc' => '×',
+            'calc' => '*',
             'num2' => '7',
             'CalculatedNumber' => '147',
         ]);
@@ -45,7 +45,7 @@ class CalculatorTableSeeder extends Seeder
         //    四つ目の計算
         $Calculator = new \App\Calculator([
             'num1' => '21',
-            'calc' => '÷',
+            'calc' => '/',
             'num2' => '7',
             'CalculatedNumber' => '3',
         ]);
@@ -74,7 +74,7 @@ class CalculatorTableSeeder extends Seeder
         //    七つ目の計算
         $Calculator = new \App\Calculator([
             'num1' => '21',
-            'calc' => '×',
+            'calc' => '*',
             'num2' => '7',
             'CalculatedNumber' => '147',
         ]);
@@ -84,7 +84,7 @@ class CalculatorTableSeeder extends Seeder
         //    八つ目の計算
         $Calculator = new \App\Calculator([
             'num1' => '21',
-            'calc' => '÷',
+            'calc' => '/',
             'num2' => '7',
             'CalculatedNumber' => '3',
         ]);
