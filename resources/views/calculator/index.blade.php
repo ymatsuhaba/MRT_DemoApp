@@ -2,7 +2,8 @@
 
             <a class="btn btn-default" href="/">Go Back</a>
 {{--            <a class="btn btn-default" href="calculator/search">Search</a>--}}
-            <a href="calculator.search" class="btn btn-primary" style="margin:20px;">Search</a>
+            <a href="calculator.searchAdd" class="btn btn-primary" style="margin:20px;">SearchAdd</a>
+            <a href="calculator.searchSub" class="btn btn-primary" style="margin:20px;">SearchSub</a>
             <h1>Calculator</h1>
 
     <div id="table">
@@ -39,7 +40,6 @@
                 <th>Calc</th>
                 <th>Num2</th>
                 <th>CalculatedNumber</th>
-{{--                <th>Delete</th>--}}
             </tr>
 
             @if(count($Calculator) > 0)

@@ -14,8 +14,8 @@
             {{--                <th>Delete</th>--}}
         </tr>
 
-{{--        @if(count($Calculator) > 0)--}}
-{{--            @foreach($Calculator as $Calculator)--}}
+{{--        @if(count($SearchSub) > 0)--}}
+{{--            @foreach($SearchSub as $Calculator)--}}
 {{--                <tr>--}}
 {{--                    <td>{{$Calculator -> num1}}</td>--}}
 {{--                    <td>{{$Calculator -> calc}}</td>--}}

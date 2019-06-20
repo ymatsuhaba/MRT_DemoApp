@@ -61,7 +61,7 @@ class CalculatorController extends Controller
 
         $Calculator->save();
 
-        return view ('calculator.subtract',compact('num1','num2','CalculatedNumber'));
+        return view ('calculator.subtract',compact('num1','calc','num2','CalculatedNumber'));
     }
 
 //掛け算をする
@@ -81,7 +81,7 @@ class CalculatorController extends Controller
 
         $Calculator->save();
 
-        return view ('calculator.multify',compact('num1','num2','CalculatedNumber'));
+        return view ('calculator.multify',compact('num1','calc','num2','CalculatedNumber'));
     }
 
 //割り算をする
@@ -102,7 +102,7 @@ class CalculatorController extends Controller
 
         $Calculator->save();
 
-        return view ('calculator.divide',compact('num1','num2','CalculatedNumber'));
+        return view ('calculator.divide',compact('num1','calc','num2','CalculatedNumber'));
     }
 
     public function show()
@@ -160,23 +160,24 @@ class CalculatorController extends Controller
 //    {
 //        $Calculator= Calculator::find($id);
 //        $Calculator->delete();
-//        return redirect('/calculator')->with('success', 'Deleted');
+//        return ('calculator.delete');
 //    }
 
-//    public function search(Request $request)
-//    {
-//        //レコードを検索
-//        $Calculator = Calculator::where('id', $request->input('calc'))->first();
-////        $Calculator = DB::select('select * from calculators');
-//        //値を代入
-//        $Calculator->calc = $request->;
-//
-//
-//        //保存（更新）
-//        $nickname->save();
-//
-//        return view('update_result', compact('request'));
-//    }
+    public function searchAdd()
+    {
+        //レコードを検索
+        $searchAdd = Calculator::where('calc')->string('+')->find();
+//      $searchAdd = DB::select('select * from calculators')->get('calc')->string('+');
+//        $Callator = DB::select('select * from calculators');
 
+        //保存（更新）
+//        $searchAdd->save();
 
+        return view('calculator.searchAdd', compact('searchAdd'));
+    }
+
+    public function searchSub()
+    {
+        return view('calculator.searchSub');
+    }
 }
