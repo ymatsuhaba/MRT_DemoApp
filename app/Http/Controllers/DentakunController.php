@@ -14,9 +14,8 @@ class DentakunController extends Controller
 
         $s1 = $request->input('t1');
         $s2 = $request->input('t2');
+
         $enzansi = $request->input('cty');
-
-
 
         if ($enzansi == 'c1') {
             $kekka = $s1 + $s2;
@@ -37,8 +36,6 @@ class DentakunController extends Controller
             $kekka = $s1 / $s2;
 
         }
-
-
         return view('/dentakunresult',compact('kekka','request'));
     }
 };
