@@ -3,6 +3,7 @@
 @section('content')
 
     <a class="btn btn-default" href="login/create">Create Login</a>
+    <a class="btn btn-default" href="/">Go Back</a>
     <h1>Login</h1>
         <table>
             <tr>
