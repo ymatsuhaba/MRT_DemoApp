@@ -29,7 +29,7 @@
                 <th class="calcth" colspan="3">計算結果</th>
                 <th class="calcth">登録日</th>
             </tr>
-            @foreach ($calcresult as $calclnum)
+            @foreach ($displaydata as $calclnum)
                 <tr>
                     <td>{{$no++}}</td>
                     <td>{{$calclnum['formula']}}</td>
