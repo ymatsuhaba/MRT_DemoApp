@@ -38,8 +38,9 @@ class ContactresultController extends Controller
         }
 
         $form = $request->all();
-        $value = new Nickname;
         unset($form['_token']);
+
+        $value = new Nickname;
         $value->fill($form)->save();
         // １．個別に取得して代入する。⇛リーダブルコードを見ればわかる⇛フォームの内容が変わるとバグる。
         // ２．unsetではなくlistから除外する書き方
