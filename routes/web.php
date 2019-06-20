@@ -76,12 +76,17 @@ Route::get('/dentakunresult', 'DentakunController@result');
 // DENTAKUN Jrのページ
 Route::get('/dentakunjr', 'JrController@index');
 Route::get('/dentakunjrresult', 'JrController@result');
+//計算履歴一覧ページ
+Route::get('/history', 'HistoryController@index');
+Route::get('/history_plus', 'HistoryController@plus');
+Route::get('/history_minus', 'HistoryController@minus');
+Route::get('/history_time', 'HistoryController@time');
+Route::get('/history_divide', 'HistoryController@divide');
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
 Route::get('/post_test', 'PostTestController@form');
 Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
-
 Route::get('/newresult', 'NewController@newresult');
 

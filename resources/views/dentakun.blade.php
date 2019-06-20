@@ -18,17 +18,18 @@
                 @csrf
                 <input type="text" value="" name="t1">
                     <select name="cty">
-                        <option value="c1" >＋</option>
-                        <option value="c2" >－</option>
-                        <option value="c3" >×</option>
-                        <option value="c4" >÷</option>
+                        <option value="+" >＋</option>
+                        <option value="-" >－</option>
+                        <option value="×" >×</option>
+                        <option value="÷" >÷</option>
                     </select>
                 <input type="text" value="" name="t2">
                 <button class="btn btn-warning">計算する</button>
             </form>
         <footer>
             <p>&copy; shohei seguchi</p>
-            <a href="/dentakunjr"><img src="dentakunjr.png" width="30" height="30"></a>電太くんJrはこちら</a>
+            <a href="/dentakunjr"><img src="dentakunjr.png" width="50" height="50"></a>電太くんJrはこちら</a>
+            <a href="/history"><img src="dentaku.jpeg" width="50" height="50"></a>計算履歴一覧はこちら</a>
         </footer>
     </body>
 </html>
