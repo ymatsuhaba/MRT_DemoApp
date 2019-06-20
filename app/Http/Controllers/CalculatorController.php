@@ -17,11 +17,8 @@ class CalculatorController extends Controller
      */
     public function index()
     {
-//        $Calculators =Calculator::orderBy('created_at', 'desc')->get();
         $Calculator = DB::select('select * from calculators');
         return view('calculator.index')->with('Calculator', $Calculator);
-
-//        return view('calculator.index');
     }
 
 //足し算し、登録する
@@ -107,12 +104,7 @@ class CalculatorController extends Controller
         return view ('calculator.divide',compact('num1','calc','num2','CalculatedNumber'));
     }
 
-
-
-
-
-
-
+//Calculator.indexに戻る
     public function show()
     {
         return redirect('/calculator');
@@ -122,32 +114,46 @@ class CalculatorController extends Controller
 //    足し算メソッドのデータを検索する
     public function searchAdd()
     {
-      $searchAdd = DB::select('select * from calculators where calc=\'+\'');
+        $AllData = Calculator::all();
+        $searchAdd = null;
+        $Collection = new Collection();
 
-        return view('calculator.searchAdd', compact('searchAdd'));
+        foreach($AllData as $searchAdd){
+
+            if ($searchAdd->isAdd()) {
+                $Collection->push($searchAdd);
+            }
+        }
+        return view('calculator.searchAdd',compact('Collection'));
     }
 
 //    引き算メソッドのデータを検索する
     public function searchSub()
     {
-        $searchSub =Calculator::where('calc','-')->get();
+        $AllData = Calculator::all();
+        $searchSub = null;
+        $Collection = new Collection();
 
-        return view('calculator.searchSub',compact('searchSub'));
+        foreach($AllData as $searchSub){
+
+            if ($searchSub->isSubtract()) {
+                $Collection->push($searchSub);
+            }
+        }
+        return view('calculator.searchSub',compact('Collection'));
     }
 
 
 //    掛け算メソッドのデータを検索する
     public function searchMul(){
 
-        //DBからoperetorカラムが+のレコードのデータ全てを取得
         $AllData = Calculator::all();
         $searchMul = null;
         $Collection = new Collection();
 
         foreach($AllData as $searchMul){
-            $calc = $searchMul->calc;
 
-            if ($calc == '*') {
+            if ($searchMul->isMultify()) {
                 $Collection->push($searchMul);
             }
         }
@@ -157,21 +163,18 @@ class CalculatorController extends Controller
 //    割り算メソッドのデータを検索する
     public function searchDiv()
     {
-//        $calc = Calculator::where('calc')->get();
         $AllData = Calculator::all();
         $searchDiv = null;
         $Collection = new Collection();
 
         foreach($AllData as $searchDiv){
-            $calc = $searchDiv->calc;
 
-            if($calc == '/'){
+            if($searchDiv->isdivide()){
                 $Collection->push($searchDiv);
             }
         }
 
         return view('calculator.searchDiv',compact('Collection'));
     }
-
 }
 

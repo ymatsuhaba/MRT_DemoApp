@@ -18,12 +18,44 @@ class Calculator extends Model
         $num2 = $this -> num2;
         $CalculatedNumber = $this -> CalculatedNumber;
 
-//        $num1->save();
-//        $calc->save();
-//        $num2->save();
-//        $CalculatedNumber->save();
-
         return compact('num1','calc', 'num2', 'CalculatedNumber');
 
+    }
+
+    public function isAdd()
+    {
+        if($this->calc === '+'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function isSubtract()
+    {
+        if($this->calc === '-'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    public function isMultify()
+    {
+        if($this->calc === '/'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function isDivide()
+    {
+        if($this->calc === '/'){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

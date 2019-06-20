@@ -12,8 +12,7 @@
             <th>CalculatedNumber</th>
         </tr>
 
-        @if(count($searchSub) > 0)
-            @foreach($searchSub as $Calculator)
+            @foreach($Collection as $Calculator)
                 <tr>
                     <td>{{$Calculator -> num1}}</td>
                     <td>{{$Calculator -> calc}}</td>
@@ -21,7 +20,6 @@
                     <td>{{$Calculator -> CalculatedNumber}}</td>
                 </tr>
             @endforeach
-        @endif
     </table>
 </div>
 

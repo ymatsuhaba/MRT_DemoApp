@@ -12,7 +12,6 @@
             <th>CalculatedNumber</th>
         </tr>
 
-{{--        @if(count($searchDiv) > 0)--}}
             @foreach($Collection as $searchDiv)
                 <tr>
                     <td>{{$searchDiv -> num1}}</td>
@@ -21,7 +20,6 @@
                     <td>{{$searchDiv -> CalculatedNumber}}</td>
                 </tr>
             @endforeach
-{{--        @endif--}}
     </table>
 </div>
 
