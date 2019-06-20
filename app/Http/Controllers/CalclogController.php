@@ -76,6 +76,22 @@ class CalclogController extends Controller
     }
 
     /**
+     * 対象データをコレクション型の変数にSET
+     * @param $operatornnum
+     * @return Collection
+     */
+    private function setcollectiondata ($operatornnum) {
+        return new Collection([
+            'first_figure'    => $operatornnum['first_figure']
+            , 'second_figure' => $operatornnum['second_figure']
+            , 'operator'      => $operatornnum['operator']
+            , 'equal'         => $operatornnum['equal']
+            , 'result'        => $operatornnum['result']
+            , 'created_at'    => $operatornnum['created_at']
+        ]);
+    }
+
+    /**
      * 対象データの編集処理
      * @param $objdata
      * @return Collection
@@ -115,22 +131,6 @@ class CalclogController extends Controller
     }
 
     /**
-     * 対象データをコレクション型の変数にSET
-     * @param $operatornnum
-     * @return Collection
-     */
-    private function setcollectiondata ($operatornnum) {
-        return new Collection([
-            'first_figure'    => $operatornnum['first_figure']
-            , 'second_figure' => $operatornnum['second_figure']
-            , 'operator'      => $operatornnum['operator']
-            , 'equal'         => $operatornnum['equal']
-            , 'result'        => $operatornnum['result']
-            , 'created_at'    => $operatornnum['created_at']
-        ]);
-    }
-
-    /**
      * SELECTBOXの選択した値を保持する処理
      * @param $operator
      * @return array
@@ -153,6 +153,9 @@ class CalclogController extends Controller
         } else if ($operator == '/') {
             // 「/」の場合
             $defaultselect = $select->combine([NULL, NULL, NULL, NULL, 'selected'])->toArray();
+        } else {
+            // それ以外の場合
+            $defaultselect = $select->combine(['selected', NULL, NULL, NULL, NULL])->toArray();
         }
         return $defaultselect;
     }

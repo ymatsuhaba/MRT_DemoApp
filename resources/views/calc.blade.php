@@ -9,7 +9,7 @@
 
 
 <div>
-    <a href="/calclog?operator_sel=all" class="btn-square-slant" style="margin:20px;">計算履歴</a>
+    <a href="/calclog" class="btn-square-slant" style="margin:20px;">計算履歴</a>
 </div>
 <form name="form" class="form" method="post" action="{{url('/calc')}}">
     @csrf
