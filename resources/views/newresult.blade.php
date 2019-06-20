@@ -12,8 +12,8 @@
             <div class="form-group">
                     @foreach ($new as $new)
 
-                       <p>{{$new ->name}}
-                           {{$new ->content}}</p>
+                    <p>{{$new ->name}}</p><hr>
+                    <p>{{$new ->content}}</p>
                     @endforeach
 
             </div>
