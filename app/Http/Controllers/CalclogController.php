@@ -20,7 +20,8 @@ class CalclogController extends Controller
         // インスタンス生成
         $calclist = new Calclog();
         // 【Calclog】データ全件取得
-        $calcresult = $calclist->getwheredata($operator);
+        $calcresult = $calclist->getwheredata();
+
         // 取得したデータを画面表示用に編集
         $displaydata = $this->editdata($calcresult, $operator);
         // 選択した演算子を初期値として設定する
