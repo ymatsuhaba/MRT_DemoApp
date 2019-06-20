@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\History;
 
 class DentakunController extends Controller
 {
@@ -12,22 +13,23 @@ class DentakunController extends Controller
 
     public function result (request $request) {
 
+
+
         $s1 = $request->input('t1');
         $s2 = $request->input('t2');
 
         $enzansi = $request->input('cty');
 
-        if ($enzansi == 'c1') {
+        if ($enzansi == '+') {
             $kekka = $s1 + $s2;
 
         }
 
-        else if($enzansi == 'c2') {
+        else if($enzansi == '-') {
             $kekka = $s1 - $s2;
 
         }
-
-        else if($enzansi == 'c3') {
+        else if($enzansi == '×') {
             $kekka = $s1 * $s2;
 
         }
@@ -36,8 +38,22 @@ class DentakunController extends Controller
             $kekka = $s1 / $s2;
 
         }
+
+        // 登録処理
+        $value = new History();
+        $value-> number1 = $request->input('t1');
+        $value-> operator = $request->input('cty');
+        $value-> number2 = $request->input('t2');
+        $value-> result = $kekka;
+        $value->save();
+
+
         return view('/dentakunresult',compact('kekka','request'));
+
     }
+
+
+
 };
 
 
