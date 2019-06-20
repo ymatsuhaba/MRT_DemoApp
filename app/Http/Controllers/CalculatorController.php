@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Calculator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Collection;
+//use Illuminate\Database\Eloquent\Builder;
 
 class CalculatorController extends Controller
 {
@@ -22,7 +24,7 @@ class CalculatorController extends Controller
 //        return view('calculator.index');
     }
 
-//足し算をする
+//足し算し、登録する
     public function add(Request $request){
 
         $Calculator = new Calculator();
@@ -44,7 +46,7 @@ class CalculatorController extends Controller
         return view ('calculator.add',compact('num1','calc','num2','CalculatedNumber'));
     }
 
-//引き算をする
+//引き算し、登録する
     public function subtract(Request $request){
 
         $Calculator = new Calculator();
@@ -64,7 +66,7 @@ class CalculatorController extends Controller
         return view ('calculator.subtract',compact('num1','calc','num2','CalculatedNumber'));
     }
 
-//掛け算をする
+//掛け算し、登録する
     public function multify(Request $request){
 
         $Calculator = new Calculator();
@@ -84,7 +86,7 @@ class CalculatorController extends Controller
         return view ('calculator.multify',compact('num1','calc','num2','CalculatedNumber'));
     }
 
-//割り算をする
+//割り算し、登録する
     public function divide(Request $request){
 
         $Calculator = new Calculator();
@@ -105,79 +107,71 @@ class CalculatorController extends Controller
         return view ('calculator.divide',compact('num1','calc','num2','CalculatedNumber'));
     }
 
+
+
+
+
+
+
     public function show()
     {
         return redirect('/calculator');
     }
-//
-//
-//    public function edit(Request $request)
-//    {
-////        $this->validate($request,[
-////            'id' => 'required'
-////        ]);
-//
-//        $login = Login::find($request->id);
-//        return view('login.edit',['login' => $login]);
-//    }
-//
-//
-//    public function update(Request $request,$id)
-//    {
-//        $this->validate($request,[
-//            'id' => 'required'
-//        ]);
-//
-//        $login = Login::find($request->$id);
-//        $login->id = $request->id;
-//        $login->name = $request->name;
-//        $login->from = $request->from;
-//        $login->password = $request->password;
-//        $login->save();
-//        return redirect('/login')->with('success', 'Updated');
-//    }
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-
-//    public function search(Request $request)
-//    {
-//        $Calculator->num1 = $request->num1;
-//        $Calculator->num2 = $request->num2;
-//        $Calculator->calc = $request->calc;
-//        $Calculator->CalculatedNumber = $request->CalculatedNumber;
-//
-//
-//        $Calculator = Calculator::where('category', $request->calc)-> get();
-//        return view('calculator.search', ['Calculator' => $Calculator]) ;
-//    }
 
 
-//    public function destroy($id)
-//    {
-//        $Calculator= Calculator::find($id);
-//        $Calculator->delete();
-//        return ('calculator.delete');
-//    }
-
+//    足し算メソッドのデータを検索する
     public function searchAdd()
     {
-        //レコードを検索
-        $searchAdd = Calculator::where('calc')->string('+')->find();
-//      $searchAdd = DB::select('select * from calculators')->get('calc')->string('+');
-//        $Callator = DB::select('select * from calculators');
-
-        //保存（更新）
-//        $searchAdd->save();
+      $searchAdd = DB::select('select * from calculators where calc=\'+\'');
 
         return view('calculator.searchAdd', compact('searchAdd'));
     }
 
+//    引き算メソッドのデータを検索する
     public function searchSub()
     {
-        return view('calculator.searchSub');
+        $searchSub =Calculator::where('calc','-')->get();
+
+        return view('calculator.searchSub',compact('searchSub'));
     }
+
+
+//    掛け算メソッドのデータを検索する
+    public function searchMul(){
+
+        //DBからoperetorカラムが+のレコードのデータ全てを取得
+        $AllData = Calculator::all();
+        $searchMul = null;
+        $Collection = new Collection();
+
+        foreach($AllData as $searchMul){
+            $calc = $searchMul->calc;
+
+            if ($calc == '*') {
+                $Collection->push($searchMul);
+            }
+        }
+        return view('calculator.searchMul',compact('Collection'));
+    }
+
+//    割り算メソッドのデータを検索する
+    public function searchDiv()
+    {
+//        $calc = Calculator::where('calc')->get();
+        $AllData = Calculator::all();
+        $searchDiv = null;
+        $Collection = new Collection();
+
+        foreach($AllData as $searchDiv){
+            $calc = $searchDiv->calc;
+
+            if($calc == '/'){
+                $Collection->push($searchDiv);
+            }
+        }
+
+        return view('calculator.searchDiv',compact('Collection'));
+    }
+
 }
+

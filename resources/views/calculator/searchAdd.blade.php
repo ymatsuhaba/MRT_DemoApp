@@ -1,6 +1,5 @@
 @extends('layouts.calculator_common')
 
-<a class="btn btn-default" href="/">Go Back</a>
 <a class="btn btn-default" href="calculator">list</a>
 <h1>Calculator</h1>
 
@@ -11,11 +10,10 @@
             <th>Calc</th>
             <th>Num2</th>
             <th>CalculatedNumber</th>
-            {{--                <th>Delete</th>--}}
         </tr>
 
-        @if(count($SearchAdd) > 0)
-            @foreach($SearchAdd as $Calculator)
+        @if(count($searchAdd) > 0)
+            @foreach($searchAdd as $Calculator)
                 <tr>
                     <td>{{$Calculator -> num1}}</td>
                     <td>{{$Calculator -> calc}}</td>

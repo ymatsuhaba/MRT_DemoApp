@@ -1,9 +1,11 @@
 @extends('layouts.calculator_common')
 
-            <a class="btn btn-default" href="/">Go Back</a>
-{{--            <a class="btn btn-default" href="calculator/search">Search</a>--}}
-            <a href="calculator.searchAdd" class="btn btn-primary" style="margin:20px;">SearchAdd</a>
-            <a href="calculator.searchSub" class="btn btn-primary" style="margin:20px;">SearchSub</a>
+                <a class="btn btn-default" href="/">Go Back</a>
+    {{--            <a class="btn btn-default" href="calculator/search">Search</a>--}}
+                <a href="calculator.searchAdd" class="btn btn-primary" style="margin:20px;">SearchAdd</a>
+                <a href="calculator.searchSub" class="btn btn-primary" style="margin:20px;">SearchSub</a>
+                <a href="calculator.searchMul" class="btn btn-primary" style="margin:20px;">SearchMul</a>
+                <a href="calculator.searchDiv" class="btn btn-primary" style="margin:20px;">SearchDiv</a>
             <h1>Calculator</h1>
 
     <div id="table">
@@ -42,7 +44,7 @@
                 <th>CalculatedNumber</th>
             </tr>
 
-            @if(count($Calculator) > 0)
+{{--            @if(count($Calculator) > 0)--}}
                 @foreach($Calculator as $Calculator)
                     <tr>
                         <td>{{$Calculator -> num1}}</td>
@@ -51,7 +53,7 @@
                         <td>{{$Calculator -> CalculatedNumber}}</td>
                     </tr>
                 @endforeach
-            @endif
+{{--            @endif--}}
         </table>
     </div>
 

@@ -49,6 +49,8 @@ Route::get('calculator.divide','CalculatorController@divide');
 Route::get('/calcal', 'CalcalController@index');
 Route::get('calculator.searchAdd', 'CalculatorController@searchAdd');
 Route::get('calculator.searchSub', 'CalculatorController@searchSub');
+Route::get('calculator.searchMul', 'CalculatorController@searchMul');
+Route::get('calculator.searchDiv', 'CalculatorController@searchDiv');
 
 
 
