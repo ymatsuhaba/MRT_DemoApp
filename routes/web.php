@@ -18,12 +18,12 @@ Route::get('/', function () {
 
 // つよぽん
 // 検索ページ
-Route::get('/search', 'SearchController@search');
-Route::post('/search', 'SearchController@search');
+Route::get('/search'         , 'SearchController@search');
+Route::post('/search'        , 'SearchController@search');
 // 一覧ページ
-Route::get('/list', 'ListController@list');
+Route::get('/list'           , 'ListController@list');
 // 照会ページ
-Route::get('/inquery', 'InqueryController@Inquery');
+Route::get('/inquery'        , 'InqueryController@Inquery');
 // 登録ページ
 Route::get('/contact'        , 'ContactController@edit');
 Route::get('/contact_result' , 'ContactresultController@create');
@@ -33,9 +33,10 @@ Route::get('/update_result'  , 'UpdateresultController@update');
 // 削除ページ
 Route::get('/delete'         , 'DeleteController@edit');
 Route::get('/delete_result'  , 'DeleteresultController@delete');
-// 電卓ページ
+// 電卓ページcalc
 Route::get('/calc'           , 'CalcController@calc');
 Route::post('/calc'          , 'CalcController@calc');
+Route::get('/calclog'        , 'CalclogController@calclog');
 
 //Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
@@ -46,7 +47,10 @@ Route::get('calculator.add','CalculatorController@add');
 Route::get('calculator.subtract','CalculatorController@subtract');
 Route::get('calculator.multify','CalculatorController@multify');
 Route::get('calculator.divide','CalculatorController@divide');
-Route::get('/calcal', 'CalcalController@index');
+Route::get('calculator.searchAdd', 'CalculatorController@searchAdd');
+Route::get('calculator.searchSub', 'CalculatorController@searchSub');
+Route::get('calculator.searchMul', 'CalculatorController@searchMul');
+Route::get('calculator.searchDiv', 'CalculatorController@searchDiv');
 
 
 
@@ -75,12 +79,17 @@ Route::get('/dentakunresult', 'DentakunController@result');
 // DENTAKUN Jrのページ
 Route::get('/dentakunjr', 'JrController@index');
 Route::get('/dentakunjrresult', 'JrController@result');
+//計算履歴一覧ページ
+Route::get('/history', 'HistoryController@index');
+Route::get('/history_plus', 'HistoryController@plus');
+Route::get('/history_minus', 'HistoryController@minus');
+Route::get('/history_time', 'HistoryController@time');
+Route::get('/history_divide', 'HistoryController@divide');
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
 Route::get('/post_test', 'PostTestController@form');
 Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
-
 Route::get('/newresult', 'NewController@newresult');
 

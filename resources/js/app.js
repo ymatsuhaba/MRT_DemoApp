@@ -26,10 +26,8 @@ Vue.use(Vuetify)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 //
-// Vue.component('AppHome', require('./components/AppHome.vue'));
-Vue.component(
-    'Articles',
-    require('./components/Articles.vue')
+Vue.component('AppHome', require('./components/AppHome.vue'));
+Vue.component('Articles', require('./components/Articles.vue')
 );
 
 /**
@@ -38,6 +36,9 @@ Vue.component(
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 //
-const app = new Vue({
+new Vue({
     el: '#app',
 });
+
+
+

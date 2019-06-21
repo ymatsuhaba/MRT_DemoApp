@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCalcolatorsTable extends Migration
+class Histories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class CreateCalcolatorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('calcolators', function (Blueprint $table) {
+        Schema::create('histories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('number1');
+            $table->string('operator');
+            $table->integer('number2');
+            $table->integer('result');
             $table->timestamps();
+
         });
     }
 
@@ -26,6 +31,7 @@ class CreateCalcolatorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calcolators');
+        Schema::dropIfExists('histories');
+
     }
 }
