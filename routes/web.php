@@ -52,6 +52,9 @@ Route::get('calculator.searchSub', 'CalculatorController@searchSub');
 Route::get('calculator.searchMul', 'CalculatorController@searchMul');
 Route::get('calculator.searchDiv', 'CalculatorController@searchDiv');
 
+Route::resource('kadaiman','KadaimanController');
+Route::get('kadaiman.answer1','KadaimanController@answer1');
+
 
 
 // しょう
