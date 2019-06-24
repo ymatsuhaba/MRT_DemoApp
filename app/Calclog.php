@@ -45,7 +45,7 @@ class Calclog extends Model
      * 問１
      */
     public static function kadai1 () {
-        return new Collection([Calclog::all()->random()]);
+        return new Collection([Calclog::all()->shuffle()]);
     }
     /**
      * 問２
@@ -56,7 +56,7 @@ class Calclog extends Model
         $varioustype_data->push('5623456');
         $varioustype_data->push(10.45678);
         $varioustype_data->push(true);
-        return $varioustype_data->random();
+        return $varioustype_data->shuffle();
     }
     /**
      * 問３
@@ -64,7 +64,7 @@ class Calclog extends Model
     public static function kadai3 () {
         $null_data = Calclog::all();
         $null_data->push(NULL);
-        return $null_data->random();
+        return $null_data->shuffle();
     }
     /**
      * 問４
@@ -72,7 +72,7 @@ class Calclog extends Model
     public static function kadai4 () {
         $dummy_data = Calclog::all();
         $dummy_data->push(new Calclogdummy(12345, '+', 2345678, '=', '2429543'));
-        return $dummy_data->random();
+        return $dummy_data->shuffle();
     }
     /**
      * 問５
@@ -86,7 +86,7 @@ class Calclog extends Model
         $varioustype_data->push($this->wickednessdata());
         $varioustype_data->push(new Calclogdummy(752, '+', 58667412, '=', '58668162'));
         $varioustype_data->push(false);
-        return $varioustype_data->random();
+        return $varioustype_data->shuffle();
     }
 
     public function wickednessdata () {

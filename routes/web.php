@@ -52,8 +52,12 @@ Route::get('calculator.searchSub', 'CalculatorController@searchSub');
 Route::get('calculator.searchMul', 'CalculatorController@searchMul');
 Route::get('calculator.searchDiv', 'CalculatorController@searchDiv');
 
-Route::resource('kadaiman','KadaimanController');
-Route::get('kadaiman.answer1','KadaimanController@answer1');
+Route::resource('answerman','AnswermanController');
+Route::get('answerman.answer1','AnswermanController@answer1');
+Route::get('answerman.answer2','AnswermanController@answer2');
+Route::get('answerman.answer3','AnswermanController@answer3');
+Route::get('answerman.answer4','AnswermanController@answer4');
+Route::get('answerman.answer5','AnswermanController@answer5');
 
 
 
