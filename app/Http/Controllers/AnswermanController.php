@@ -17,23 +17,16 @@ class AnswermanController extends Controller
     public function index()
     {
         $calclogs = Calclog::all();
-//        $data = $this->Callog
-//            ->where('category', 'PHP')
-//            ->get();
 
         return view('answerman.index',['calclogs' => $calclogs]);
     }
 
     public function answer1()
     {
-//        静的メソッドを用いる
-        $calclogs = Calclog::kadai1();
-//        一元化する
-        $flattened = $calclogs->flatten();
-//        resultの順に並び替える
-        $sorted = $flattened->sortby('result');
-//        出力する
-        $sorted->values()->all();
+        //        一元化する
+        $flattened = Calclog::kadai1()->flatten();
+        //        resultの順に並び替える
+        $sorted = $flattened->sortby('result')->values()->all();
 
         return view('answerman.answer1',compact('sorted'));
 
@@ -42,13 +35,20 @@ class AnswermanController extends Controller
 
     public function answer2()
     {
-        $calclogs = Calclog::kadai2();
+//        //        課題２を出力する
+        $alldata = Calclog::kadai2();
 
-        $Collection = $calclogs->forget('345',"'5623456'",'10.45678','true');
-        //        resultの順に並び替える
-        $sorted = $Collection->sortby('result');
-        //        出力する
-        $sorted->values()->all();
+        $collection = new Collection();
+
+        //       String型、Float型、Integer型、Boolean型のもの以外のものでない場合,Collectionに$calclogを追加
+        foreach($alldata as $calclog){
+
+            if (!is_string($calclog) && !is_float($calclog) && !is_int($calclog) && !is_bool($calclog)) {
+                $collection->push($calclog);
+            }
+        }
+
+        $sorted = $collection->sortby('result')->values()->all();
 
         return view('answerman.answer2',compact('sorted'));
     }
@@ -58,16 +58,21 @@ class AnswermanController extends Controller
 
     public function answer3()
     {
-        $Collection = Calclog::kadai3();
+        $alldata = Calclog::kadai3();
 
-        foreach($Collection as $calclog){
+        $collection = new Collection();
 
-            if ($calclog === NULL) {
-                $Collection->forget($calclog);
+        //       NULLのみを削除して、それ以外はそのまま出力する
+        foreach($alldata as $calclog){
+
+            if (!isset($calclog)) {
+                $collection->pull($calclog);
+            }else{
+                $collection->push($calclog);
             }
         }
         //        resultの順に並び替える
-        $sorted = $Collection->sortby('result');
+        $sorted = $collection->sortby('result');
         //        出力する
         $sorted->values()->all();
 
@@ -79,14 +84,34 @@ class AnswermanController extends Controller
 
     public function answer4()
     {
-        $calclogs = Calclog::kadai4();
+        //        課題４の生成
+        $alldata = Calclog::kadai4();
 
-        $Collection = $calclogs->splice(12345, '+', 2345678, '=', '2429543');
+        $collection = new Collection();
 
-        //        resultの順に並び替える
-        $sorted = $Collection->sortby('result');
-        //        出力する
-        $sorted->values()->all();
+        //       NULLのみを削除して、それ以外はそのまま出力する
+        foreach($alldata as $calclog){
+                $first_figure = $calclog->input('first_figure');
+                $second_figure = $calclog->input('second_figure');
+                $operator = $calclog->input('operator');
+                $result = $calclog->input('result');
+
+            if ($operator = '+' && $result = $first_figure + $second_figure) {
+
+                $collection->push($calclog);
+
+            }elseif($operator = '+' && $result = $first_figure + $second_figure){
+
+                $collection->pull($calclog);
+            }else{
+
+                $collection->push($calclog);
+            }
+        }
+        //        echo $collection;
+
+        //        resultの順に並び替える,出力する
+        $sorted = $collection->sortby('result')->values()->all();
 
         return view('answerman.answer4',compact('sorted'));
     }
@@ -96,8 +121,12 @@ class AnswermanController extends Controller
 
     public function answer5()
     {
-        $calclogs = Calclog::all();
+        $calclogs = Calclog::kadai5();
 
         return view('answerman.answer5',['calclogs' => $calclogs]);
     }
+
+
 }
+
+
