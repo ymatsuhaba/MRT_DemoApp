@@ -37,6 +37,13 @@ Route::get('/delete_result'  , 'DeleteresultController@delete');
 Route::get('/calc'           , 'CalcController@calc');
 Route::post('/calc'          , 'CalcController@calc');
 Route::get('/calclog'        , 'CalclogController@calclog');
+// 課題1~5
+Route::get('/kadai1'         , 'KadaisakamotoController@kadai1');
+Route::get('/kadai2'         , 'KadaisakamotoController@kadai2');
+Route::get('/kadai3'         , 'KadaisakamotoController@kadai3');
+Route::get('/kadai4'         , 'KadaisakamotoController@kadai4');
+Route::get('/kadai5'         , 'KadaisakamotoController@kadai5');
+
 
 //Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
@@ -92,6 +99,15 @@ Route::get('/history_plus', 'HistoryController@plus');
 Route::get('/history_minus', 'HistoryController@minus');
 Route::get('/history_time', 'HistoryController@time');
 Route::get('/history_divide', 'HistoryController@divide');
+//課題のページ
+Route::get('/index', 'AnswerController@index');
+Route::get('/question1', 'AnswerController@question1');
+Route::get('/question2', 'AnswerController@question2');
+Route::get('/question3', 'AnswerController@question3');
+Route::get('/question4', 'AnswerController@question4');
+Route::get('/question5', 'AnswerController@question5');
+
+
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
