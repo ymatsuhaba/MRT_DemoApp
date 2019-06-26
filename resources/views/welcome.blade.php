@@ -97,6 +97,7 @@
                     <a href="/calculator">Calculator</a>
                     <a href="/calcal">CalCal</a>
                     <a href="/calc">sakaCalc</a>
+                    <a href="/answerman">Answerman</a>
                 </div>
             </div>
         </div>

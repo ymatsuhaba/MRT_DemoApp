@@ -115,7 +115,7 @@ class CalculatorController extends Controller
     public function searchAdd()
     {
         $AllData = Calculator::all();
-        $searchAdd = null;
+//        $searchAdd = null;
         $Collection = new Collection();
 
         foreach($AllData as $searchAdd){
@@ -131,7 +131,7 @@ class CalculatorController extends Controller
     public function searchSub()
     {
         $AllData = Calculator::all();
-        $searchSub = null;
+//        $searchSub = null;
         $Collection = new Collection();
 
         foreach($AllData as $searchSub){
