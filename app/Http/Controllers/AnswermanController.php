@@ -72,9 +72,7 @@ class AnswermanController extends Controller
             }
         }
         //        resultの順に並び替える
-        $sorted = $collection->sortby('result');
-        //        出力する
-        $sorted->values()->all();
+        $sorted = $collection->sortby('result')->values()->all();
 
         return view('answerman.answer3',compact('sorted'));
     }
@@ -89,27 +87,22 @@ class AnswermanController extends Controller
 
         $collection = new Collection();
 
-        //       NULLのみを削除して、それ以外はそのまま出力する
         foreach($alldata as $calclog){
-                $first_figure = $calclog->input('first_figure');
-                $second_figure = $calclog->input('second_figure');
-                $operator = $calclog->input('operator');
-                $result = $calclog->input('result');
+                $first_figure = $calclog->first_figure;
+                $second_figure = $calclog->second_figure;
+                $operator = $calclog->operator;
+                $result = $calclog->result;
 
-            if ($operator = '+' && $result = $first_figure + $second_figure) {
-
+            if ($operator =='+' && $result == $first_figure + $second_figure){
+                    $collection->push($calclog);
+            }elseif($operator =='-'){
                 $collection->push($calclog);
-
-            }elseif($operator = '+' && $result = $first_figure + $second_figure){
-
-                $collection->pull($calclog);
-            }else{
-
+            }elseif($operator =='*'){
+                $collection->push($calclog);
+            }elseif($operator =='/'){
                 $collection->push($calclog);
             }
         }
-        //        echo $collection;
-
         //        resultの順に並び替える,出力する
         $sorted = $collection->sortby('result')->values()->all();
 
@@ -121,9 +114,25 @@ class AnswermanController extends Controller
 
     public function answer5()
     {
-        $calclogs = Calclog::kadai5();
+        $valdata = Calclog::kadai5();
 
-        return view('answerman.answer5',['calclogs' => $calclogs]);
+        $collection = new Collection;
+
+        foreach($valdata as $calclog){
+
+            if (!is_string($calclog) && !is_float($calclog) && !is_int($calclog) && !is_bool($calclog)) {
+                $collection->push($calclog);
+            }
+        }
+        echo $collection;
+
+
+
+//
+//        //        resultの順に並び替える,出力する
+//        $sorted = $collection->sortby('result')->values()->all();
+//
+//        return view('answerman.answer5',compact('sorted'));
     }
 
 

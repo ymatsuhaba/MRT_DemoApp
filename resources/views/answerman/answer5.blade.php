@@ -1,6 +1,20 @@
 @extends('layouts.calculator_common')
 
-<a class="btn btn-default" href="/answerman">Go Back</a>
+@extends('layouts.calculator_common')
+<div id="Frontend">
+    <a class="btn btn-primary" href="/answerman">Go Back</a>
+    <a class="btn btn-secondary" href="answerman.answer1">課題1</a>
+    <a class="btn btn-secondary" href="answerman.answer2">課題2</a>
+    <a class="btn btn-secondary" href="answerman.answer3">課題3</a>
+    <a class="btn btn-secondary" href="answerman.answer4">課題4</a>
+    <a class="btn btn-secondary" href="answerman.answer5">課題5</a>
+</div>
+
+<style>
+    #Frontend{
+        text-align: center;
+    }
+</style>
 
 <div id="table">
     <table>
