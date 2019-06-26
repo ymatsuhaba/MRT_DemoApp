@@ -37,6 +37,13 @@ Route::get('/delete_result'  , 'DeleteresultController@delete');
 Route::get('/calc'           , 'CalcController@calc');
 Route::post('/calc'          , 'CalcController@calc');
 Route::get('/calclog'        , 'CalclogController@calclog');
+// 課題1~5
+Route::get('/kadai1'         , 'KadaisakamotoController@kadai1');
+Route::get('/kadai2'         , 'KadaisakamotoController@kadai2');
+Route::get('/kadai3'         , 'KadaisakamotoController@kadai3');
+Route::get('/kadai4'         , 'KadaisakamotoController@kadai4');
+Route::get('/kadai5'         , 'KadaisakamotoController@kadai5');
+
 
 //Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
