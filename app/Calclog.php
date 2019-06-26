@@ -9,6 +9,7 @@ class Calclog extends Model
 {
     protected $fillable= array('first_figure','second_figure', 'operator', 'equal', 'result');
 
+
     /**
      * 【Calclog】登録処理
      * @param $collection
@@ -23,7 +24,6 @@ class Calclog extends Model
      * @return $operatordata
      */
     public function getwheredata () {
-        // 【Calclog】データ全件取得
         $operatordata = Calclog::all();
         return $operatordata;
     }
