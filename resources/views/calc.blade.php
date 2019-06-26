@@ -10,6 +10,11 @@
 
 <div>
     <a href="/calclog" class="btn-square-slant" style="margin:20px;">計算履歴</a>
+    <a href="/kadai1" class="btn-square-slant" style="margin:20px;">課題１</a>
+    <a href="/kadai2" class="btn-square-slant" style="margin:20px;">課題２</a>
+    <a href="/kadai3" class="btn-square-slant" style="margin:20px;">課題３</a>
+    <a href="/kadai4" class="btn-square-slant" style="margin:20px;">課題４</a>
+    <a href="/kadai5" class="btn-square-slant" style="margin:20px;">課題５</a>
 </div>
 <form name="form" class="form" method="post" action="{{url('/calc')}}">
     @csrf

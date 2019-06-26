@@ -100,17 +100,17 @@ class Calclog extends Model
 
 class Calclogdummy
 {
-    public function __construct($first_figure, $oprator, $second_figure, $equal, $result)
+    public function __construct($first_figure, $operator, $second_figure, $equal, $result)
     {
         $this->first_figure = $first_figure;
-        $this->operator = $oprator;
+        $this->operator = $operator;
         $this->second_figure = $second_figure;
         $this->equal = $equal;
         $this->result = $result;
     }
 
     public $first_figure;
-    public $oprator;
+    public $operator;
     public $second_figure;
     public $equal;
     public $result;
