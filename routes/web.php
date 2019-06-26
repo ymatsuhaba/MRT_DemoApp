@@ -92,6 +92,15 @@ Route::get('/history_plus', 'HistoryController@plus');
 Route::get('/history_minus', 'HistoryController@minus');
 Route::get('/history_time', 'HistoryController@time');
 Route::get('/history_divide', 'HistoryController@divide');
+//課題のページ
+Route::get('/index', 'AnswerController@index');
+Route::get('/question1', 'AnswerController@question1');
+Route::get('/question2', 'AnswerController@question2');
+Route::get('/question3', 'AnswerController@question3');
+Route::get('/question4', 'AnswerController@question4');
+Route::get('/question5', 'AnswerController@question5');
+
+
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
