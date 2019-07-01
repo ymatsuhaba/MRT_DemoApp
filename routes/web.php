@@ -47,6 +47,7 @@ Route::get('/kadai5'         , 'KadaisakamotoController@kadai5');
 
 //Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
+Route::get('/calcal','CalcalController@index');
 
 //Yuckyの計算機第一弾
 Route::resource('calculator', 'CalculatorController');

@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(NicknameTableSeeder::class);
 
         $this->call(CalculatorTableSeeder::class);
+
+        $this->call(CalclogTableSeeder::class);
     }
 }
