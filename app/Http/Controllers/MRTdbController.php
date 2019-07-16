@@ -50,7 +50,8 @@ class MRTdbController extends Controller
      */
     public function show($id)
     {
-        //
+        $mrtdbs = DB::select('select * from mrtdbs');
+        return view('mrt-db.show')->with('mrtdbs',$mrtdbs);
     }
 
     /**
