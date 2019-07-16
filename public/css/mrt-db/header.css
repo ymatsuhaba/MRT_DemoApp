@@ -1,0 +1,66 @@
+header #container{
+    width:80%;
+    height:100px;
+    display:flex;
+    margin: 0 auto;
+}
+
+header #container #logo{
+    width:20%;
+    height:100px;
+}
+
+header #container #logo #img1{
+    height:90px;
+}
+
+header #container #sentence{
+    height:100px;
+    width:30%;
+
+    /*テキストに対して*/
+    text-align: center;
+    padding-top: 35px;
+    padding-left:10px;
+    font-size:20px;
+    font-weight: bold;
+}
+
+
+
+header #container .SerAndArea .service{
+    display:flex;
+}
+
+header #container .SerAndArea .service .btn{
+    width:150px;
+    height:35px;
+    background-color: black;
+    margin-bottom:5px;
+    margin-left:3px;
+
+    /*テキストに対して*/
+    color:white;
+}
+
+
+/*リクルートの中身*/
+header #container .SerAndArea .recruit{
+    display: flex;
+    height:55px;
+}
+
+header #container .SerAndArea .recruit .Area{
+    width:300px;
+    background: linear-gradient(aqua 50%, deepskyblue 50%);
+    margin-left:6px;
+
+    /*テキストに対して*/
+    text-align: center;
+    padding-top:18px;
+    font-size: 24px;
+    font-weight: bold;
+}
+header #container .SerAndArea .recruit .Area a{
+    text-decoration: none;
+}

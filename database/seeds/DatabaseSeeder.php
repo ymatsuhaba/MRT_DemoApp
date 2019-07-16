@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CalculatorTableSeeder::class);
 
         $this->call(CalclogTableSeeder::class);
+
+        $this->call(MrtdbTableSeeder::class);
     }
 }

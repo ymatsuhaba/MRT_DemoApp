@@ -67,6 +67,7 @@ Route::get('answerman.answer3','AnswermanController@answer3');
 Route::get('answerman.answer4','AnswermanController@answer4');
 Route::get('answerman.answer5','AnswermanController@answer5');
 
+Route::resource('mrt-db','MRTdbController');
 
 
 // しょう

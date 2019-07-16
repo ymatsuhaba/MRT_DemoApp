@@ -1,0 +1,183 @@
+
+#main_content2{
+    width:70%;
+    height:1000px;
+    margin:0 auto;
+}
+
+#main_content2 #LR_container{
+    display: flex;
+
+}
+
+
+    /*レフト部分*/
+    #main_content2 #LR_container #left{
+        width:47%;
+        background-color:lightskyblue;
+        /*opacity: 0.7;*/
+        height:800px;
+        margin-right:6%;
+    }
+
+        #main_content2 #LR_container #left .content{
+            width:90%;
+            height:600px;
+            margin:5px auto 0 auto;
+
+            white-space:nowrap;
+            overflow: scroll;
+        }
+
+            #main_content2 #LR_container #left .content p{
+                height:15px;
+                margin-top:3px;
+
+                font-size:15px;
+
+
+            }
+
+
+    /*<!--ライト部分-->*/
+    #main_content2 #LR_container #right{
+        width:47%;
+        background-color:lightskyblue;
+        /*opacity: 0.7;*/
+        height:800px;
+    }
+        /*Conditionクラス*/
+        #main_content2 #LR_container #right .conditions{
+            height:45px;
+            width:85%;
+            background-color: white;
+            display:flex;
+            margin:5px auto 0 auto;
+        }
+            #main_content2 #LR_container #right .conditions .id1{
+                height:45px;
+                width:25%;
+                /*テキスト*/
+                font-weight:bold;
+                text-align:center;
+                padding-top: 15px;
+            }
+
+            #main_content2 #LR_container #right .conditions .id2{
+                height:45px;
+                width:50%;
+            }
+                #main_content2 #LR_container #right .conditions .id2 .select{
+                    height:45px;
+                    width:100%;
+                }
+
+            #main_content2 #LR_container #right .conditions .id3{
+                height:45px;
+                width:25%;
+                /*テキスト*/
+                text-align:center;
+                padding-top: 15px;
+            }
+
+        #main_content2 #LR_container #right .jobs{
+            height:45px;
+            width:85%;
+            background-color: white;
+            display:flex;
+            margin:5px auto 0 auto;
+        }
+
+            #main_content2 #LR_container #right .jobs .id1{
+                height:45px;
+                width:25%;
+                /*テキスト*/
+                font-weight:bold;
+                text-align:center;
+                padding-top: 15px;
+            }
+
+            #main_content2 #LR_container #right .jobs .id2{
+                height:45px;
+                width:25%;
+                /*テキスト*/
+                font-weight:bold;
+                text-align:center;
+                padding-top: 15px;
+            }
+
+            #main_content2 #LR_container #right .jobs .id3{
+                height:45px;
+                width:25%;
+                /*テキスト*/
+                font-weight:bold;
+                text-align:center;
+                padding-top: 15px;
+            }
+
+    #main_content2 #LR_container #right .salary{
+        height:45px;
+        width:85%;
+        background-color: white;
+        display:flex;
+        margin:5px auto 0 auto;
+    }
+
+        #main_content2 #LR_container #right .salary .id1{
+            height:45px;
+            width:25%;
+            /*テキスト*/
+            font-weight:bold;
+            text-align:center;
+            padding-top: 15px;
+        }
+
+        #main_content2 #LR_container #right .salary .id2{
+            height:45px;
+            width:55%;
+            /*テキスト*/
+            font-weight:bold;
+            text-align:center;
+            padding-top: 10px;
+        }
+
+        #main_content2 #LR_container #right .salary .id3{
+            height:45px;
+            width:15%;
+            /*テキスト*/
+            text-align:center;
+            padding-top: 15px;
+        }
+
+
+
+/*LRで共通部分です*/
+    #main_content2 #LR_container .box{
+        height:30px;
+        width:80%;
+        margin:5px auto 0 auto;
+
+        /*テキストに対して*/
+        background : linear-gradient(whitesmoke 50%, lightgrey 50%);
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-top:5px;
+    }
+
+    #main_content2 #LR_container .title{
+        background-color: aquamarine;
+        height:20px;
+        width:100%;
+        margin:10px auto 0 auto;
+
+        font-size:15px;
+        font-weight:bold;
+        text-align:center;
+    }
+
+    #main_content2 #LR_container .title .sentence{
+        height:170px;
+        margin-top:10px;
+        padding-top:10px;
+    }

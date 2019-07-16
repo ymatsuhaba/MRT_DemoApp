@@ -12513,7 +12513,7 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
 ( function() {
 
-	// Executing both pixelPosition & boxSizingReliable tests require only one layout
+	// Executing both pixelPosition & boxSizingReliable tests require only one mrt-db
 	// so they're executed at the same time to save the second computation.
 	function computeStyleTests() {
 
@@ -37087,7 +37087,7 @@ var render = function() {
     { attrs: { height: "auto", color: "primary lighten-1" } },
     [
       _c(
-        "v-layout",
+        "v-mrt-db",
         { attrs: { "justify-center": "", row: "", wrap: "" } },
         [
           _vm._l(_vm.links, function(link) {
@@ -46259,7 +46259,7 @@ var TransitionGroup = {
     }
 
     // we divide the work into three loops to avoid mixing DOM reads and writes
-    // in each iteration - which helps prevent layout thrashing.
+    // in each iteration - which helps prevent mrt-db thrashing.
     children.forEach(callPendingCbs);
     children.forEach(recordPosition);
     children.forEach(applyTranslation);
@@ -56401,7 +56401,7 @@ var __assign = undefined && undefined.__assign || function () {
     },
     methods: {
         /**
-         * Update the application layout
+         * Update the application mrt-db
          *
          * @return {number}
          */
@@ -56707,7 +56707,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _grid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./grid */ "./src/components/VGrid/grid.js");
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_grid__WEBPACK_IMPORTED_MODULE_1__["default"])('layout'));
+/* harmony default export */ __webpack_exports__["default"] = (Object(_grid__WEBPACK_IMPORTED_MODULE_1__["default"])('mrt-db'));
 
 /***/ }),
 
@@ -59530,7 +59530,7 @@ var __assign = undefined && undefined.__assign || function () {
             if (this.right && e.touchstartX >= this.touchArea.right) this.isActive = true;else if (!this.right && this.isActive) this.isActive = false;
         },
         /**
-         * Update the application layout
+         * Update the application mrt-db
          */
         updateApplication: function updateApplication() {
             return !this.isActive || this.temporary || this.isMobile ? 0 : this.calculatedWidth;
@@ -64385,7 +64385,7 @@ var __assign = undefined && undefined.__assign || function () {
     },
     methods: {
         /**
-         * Update the application layout
+         * Update the application mrt-db
          *
          * @return {number}
          */
@@ -65780,7 +65780,7 @@ var __assign = undefined && undefined.__assign || function () {
                 var height = input.scrollHeight;
                 var minHeight = parseInt(this.rows, 10) * parseFloat(this.rowHeight);
                 // This has to be done ASAP, waiting for Vue
-                // to update the DOM causes ugly layout jumping
+                // to update the DOM causes ugly mrt-db jumping
                 input.style.height = Math.max(minHeight, height) + 'px';
             }
         },
@@ -72894,7 +72894,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @mixin
  *
- * Used in layout components (drawer, toolbar, content)
+ * Used in mrt-db components (drawer, toolbar, content)
  * to avoid an entry animation when using SSR
  */
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
