@@ -13,7 +13,7 @@ class CreateMrtdbTable extends Migration
      */
     public function up()
     {
-        Schema::create('mrtdbs', function (Blueprint $table) {
+        Schema::create('mrt_dbs', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('主キー');
             $table->string('type',1)->comment('求人種別');
             $table->date('start_date')->comment('開始日付');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\mrtdb;
+use App\mrt_db;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -17,7 +17,7 @@ class MRTdbController extends Controller
      */
     public function index()
     {
-        $mrtdbs = DB::select('select * from mrtdbs');
+        $mrtdbs = DB::select('select * from mrt_dbs');
         return view('mrt-db.index')->with('mrtdbs', $mrtdbs);
     }
 

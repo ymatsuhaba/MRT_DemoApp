@@ -1,16 +1,37 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class MrtdbTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
+        factory(App\mrt_db::class, 100)->create();
+////        日本語指定
+//        $faker = Faker\Factory::create('ja_JP');
+//
+//        for($i=0; $i<10; $i++)
+//        {
+//            $mrtdb = [
+//                'type' => $faker->numberBetween($min = 1, $max = 2),
+//                'start_date' => $faker ->dateTimeBetween($startDate='-30days', $endDate ='now')->format('Y-m-d'),
+//                'end_date' => $faker ->dateTimeBetween($startDate='now', $endDate ='+30days')->format('Y-m-d'),
+//                'start_time' => $faker ->time($max = '12:0:0' ,$format = 'H:i:s'),
+//                'end_time' => $faker ->time($max = '22:0:0' ,$format = 'H:i:s'),
+//                'prefecture' => $faker ->streetName,
+//                'place' => $faker ->streetAddress,
+//                'salary_system' => $faker ->randomElements(['1','2']),
+//                'salary' => $faker ->numberBetween($min = 10000, $max = 100000),
+//                'transportation_system' => $faker ->randomElements(['1','2']),
+//                'transportation_expenses' => $faker ->numberBetween($min = 100, $max = 10000),
+//                'work_form' => $faker->randomElements(['1', '2']),
+//                'facility_type' => $faker ->randomElements(['1','2','3','4','5']),
+//            ];
+//        }
+    }
+}
 //        $mrtdb = new \App\mrtdb([
 //            'id' => 1,
 //            'type' => 1,
@@ -314,16 +335,37 @@ class MrtdbTableSeeder extends Seeder
 //        ]);
 //
 //        $mrtdb->save();
-        DB::table('mrtdbs')->delete();
 
-        $faker = Faker::create('ja_JP');
 
-        $ramdom1 = ['1', '2'];
 
-        for($i=0; $i < 40; $i++){
-            'id' => $i,
-            'type' ==> $faker->randomElement($ramdom1),
-        }
 
-    }
-}
+
+//        DB::table('mrtdbs')->delete();
+//
+
+
+        //日本語指定
+//        $faker = Faker\Factory::create('ja_JP');
+
+//        for($i=0; $i<10; $i++)
+//        {
+//            mrtdb::create([
+//                'type' => $faker->numberBetween($min = 1, $max = 2),
+//                'start_date' => $faker ->dateTimeBetween($startDate='-30days', $endDate ='now')->format('Y-m-d'),
+//                'end_date' => $faker ->dateTimeBetween($startDate='now', $endDate ='+30days')->format('Y-m-d'),
+//                'start_time' => $faker ->time($max = '12:0:0' ,$format = 'H:i:s'),
+//                'end_time' => $faker ->time($max = '22:0:0' ,$format = 'H:i:s'),
+//                'prefecture' => $faker ->streetName,
+//                'place' => $faker ->streetAddress,
+//                'salary_system' => $faker ->randomElements(['1','2']),
+//                'salary' => $faker ->numberBetween($min = 10000, $max = 100000),
+//                'transportation_system' => $faker ->randomElements(['1','2']),
+//                'transportation_expenses' => $faker ->numberBetween($min = 100, $max = 10000),
+//                'work_form' => $faker->numberBetween($min = 1, $max = 2),
+//                'facility_type' => $faker ->randomElements(['1','2','3','4','5']),
+//            ]);
+//        }
+//    }
+//}
+
+
