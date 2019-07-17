@@ -16,6 +16,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//テストSHOHEI
+Route::get('/MRT_S' , function () {
+    return view('MRTLP.index');
+});
+
+
 // つよぽん
 // 検索ページ
 Route::get('/search'         , 'SearchController@search');
@@ -108,4 +115,7 @@ Route::get('/post_test', 'PostTestController@form');
 Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
 Route::get('/newresult', 'NewController@newresult');
+
+
+
 
