@@ -17,15 +17,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CalculatorTableSeeder::class);
 
-<<<<<<< HEAD
         $this->call(CalclogTableSeeder::class);
 
-        $this->call(MrtdbTableSeeder::class);
-
-//        factory(App\mrt_db::class, 100)->create();
-
-=======
         $this->call(RecruitmentSeeder::class);
->>>>>>> upstream/master
+
+        factory(App\mrt_db::class, 300)->create();
+
     }
 }
