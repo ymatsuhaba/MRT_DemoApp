@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\mrt_db;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Collection;
+//use Illuminate\Database\Eloquent\Collection;
 
 
 class MRTdbController extends Controller
@@ -17,8 +18,9 @@ class MRTdbController extends Controller
      */
     public function index()
     {
-        $mrtdbs = DB::select('select * from mrt_dbs');
-        return view('mrt-db.index')->with('mrtdbs', $mrtdbs);
+        $mrt_db =mrt_db::orderby('created_at','desc')->get();
+
+        return view('mrt-db.index',compact('mrt_db'));
     }
 
     /**
@@ -48,10 +50,11 @@ class MRTdbController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $mrtdbs = DB::select('select * from mrtdbs');
-        return view('mrt-db.show')->with('mrtdbs',$mrtdbs);
+        $mrt_db =mrt_db::orderby('created_at','desc')->get();
+
+        return view('mrt-db.show',compact('mrt_db'));
     }
 
     /**

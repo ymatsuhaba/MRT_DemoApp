@@ -5,9 +5,9 @@
                 <div id="left">
                     <div class="box">新着情報</div><!--height:35px-->
                     <div class="content"><!--height:605px 計640px-->
-                        @if(count($mrtdbs) > 0)
-                            @foreach($mrtdbs as $mrtdb)
-                                <p><a href="mrt-db/{{$mrtdb -> id}}">{{$mrtdb -> type}}&nbsp;&nbsp;|{{$mrtdb -> start_date}}~~{{$mrtdb -> end_date}}&nbsp;&nbsp;|{{$mrtdb -> prefecture}}{{$mrtdb -> place}}&nbsp;&nbsp;&nbsp;&nbsp;{{$mrtdb -> start_time}}~~{{$mrtdb -> end_time}}</a></p>
+                        @if(count($mrt_db) > 0)
+                            @foreach($mrt_db as $mrt_db)
+                                <p><a href="mrt-db.show">{{$mrt_db -> type}}&nbsp;&nbsp;|{{$mrt_db -> start_date}}&nbsp;&nbsp;|{{$mrt_db -> prefecture}}{{$mrt_db -> place}}&nbsp;&nbsp;&nbsp</a></p>
                             @endforeach
                         @endif
                     </div>

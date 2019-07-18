@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CalclogTableSeeder::class);
 
-//        $this->call(MrtdbTableSeeder::class);
+        $this->call(MrtdbTableSeeder::class);
 
-        factory(App\mrt_db::class, 100)->create();
+//        factory(App\mrt_db::class, 100)->create();
 
     }
 }
