@@ -1,0 +1,51 @@
+#subject{
+    display:flex;
+    width:70%;
+    height:200px;
+    margin:0 auto;
+}
+
+/* 内科系 */
+#subject #naika{
+    width:30%;
+    height:200px;
+    /* background-color: rgb(55, 212, 212); */
+    margin-right:3%;
+    border:2px solid #000000;
+}
+
+#subject .title .box{
+    height:170px;
+    margin-top:10px;
+    padding-top:10px;
+}
+
+/* 外科系 */
+#subject #gaika{
+    width:30%;
+    height:200px;
+    /* background-color: rgb(55, 212, 212); */
+    margin-right:3%;
+    border:2px solid #000000;
+}
+
+
+/* その他 */
+#subject #sonota{
+    width:30%;
+    height:200px;
+    /* background-color: rgb(55, 212, 212); */
+    border:2px solid #000000;
+}
+
+/* タイトルの所の書式を全て統一さしたかったため。 */
+#subject .title{
+    background-color: aquamarine;
+    height:20px;
+    width:80%;
+    margin:0 auto;
+
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;
+}

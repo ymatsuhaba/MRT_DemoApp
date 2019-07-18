@@ -1,0 +1,48 @@
+/*カレンダーのクラス 355px*/
+#main_content2 #LR_container #right #calender{
+    border:3px solid indianred;
+    width:70%;
+    margin:10px auto 5px auto;
+    height:355px;
+    background-color: #e0e0e0;
+}
+
+    #main_content2 #LR_container #right #calender #cal_title{
+        font-weight:bold;
+        font-size:30px;
+        text-align:center;
+    }
+
+
+    #main_content2 #LR_container #right #calender .day{
+        height:20px;
+        margin-top:10px;
+    }
+
+    #main_content2 #LR_container #right #calender .sunday{
+        height:30px;
+        padding-top:10px;
+        background-color: rgba(255, 177, 172, 0.51);
+
+        color:red;
+    }
+
+    #main_content2 #LR_container #right #calender .saturday{
+        height:30px;
+        padding-top:10px;
+        background-color: rgba(152, 155, 255, 0.51);
+
+        color:blue;
+    }
+
+    #main_content2 #LR_container #right #calender .number{
+        height:25px;
+        background-color: #cccccc;
+        font-size:15px;
+        padding-top:5px;
+    }
+
+
+    #main_content2 #LR_container #right #calender table th, table td{
+        border: solid 3px greenyellow;
+    }

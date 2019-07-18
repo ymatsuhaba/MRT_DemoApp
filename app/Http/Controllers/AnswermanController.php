@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+//use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\DB;
 use App\calclog;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -64,7 +64,8 @@ class AnswermanController extends Controller
 
         //       NULLのみを削除して、それ以外はそのまま出力する
         foreach($alldata as $calclog){
-
+            //動く理由と動かなかった理由
+            //if文を書く意味。
             if (!isset($calclog)) {
                 $collection->pull($calclog);
             }else{
@@ -93,6 +94,7 @@ class AnswermanController extends Controller
                 $operator = $calclog->operator;
                 $result = $calclog->result;
 
+            //データに左右されないコーディング
             if ($operator =='+' && $result == $first_figure + $second_figure){
                     $collection->push($calclog);
             }elseif($operator =='-'){
