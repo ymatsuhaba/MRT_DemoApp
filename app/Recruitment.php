@@ -35,9 +35,7 @@ class Recruitment extends Model
                 date('H:i',strtotime($work_start_time)).'-'.date('H:i',strtotime($work_end_time)).' '.
                 $location.' '.'('.
                 $prefectures.')'.
-                $medical
-
-            ;
+                $medical;
 
             $list_data->push($datas);
         }
