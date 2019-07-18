@@ -17,18 +17,6 @@ class Recruitment extends Model
         $list_data=new Collection();
 
         foreach ($recruitment_data as $recruitment_data) {
-//            $job_offer_type = $recruitment_data->input('job_offer_type');
-//            $work_start_date = $recruitment_data->input('work_start_date');
-//            $work_start_time = $recruitment_data->input('work_start_time');
-//            $work_end_time = $recruitment_data->input('work_end_time');
-//            $location = $recruitment_data->input('location');
-//            $salary_type = $recruitment_data->input('salary_type');
-//            $salary = $recruitment_data->input('salary');
-//            $transport_money_type = $recruitment_data->input('transport_money_type');
-//            $transport_money = $recruitment_data->input('transport_money');
-//            $work_form = $recruitment_data->input('work_form');
-//            $facility_type = $recruitment_data->input('facility_type');
-//            $medical = $recruitment_data->input('medical');
 
             $job_offer_type = $recruitment_data->job_offer_type;
             $work_start_date = $recruitment_data->work_start_date;
@@ -49,15 +37,6 @@ class Recruitment extends Model
                 $prefectures.')'.
                 $medical
 
-
-//                $location.
-//                $salary_type.
-//                $salary.
-//                $transport_money_type.
-//                $transport_money.
-//                $work_form.
-//                $facility_type.
-//                $medical
             ;
 
             $list_data->push($datas);
