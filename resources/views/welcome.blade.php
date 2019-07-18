@@ -98,6 +98,7 @@
                     <a href="/calcal">CalCal</a>
                     <a href="/calc">sakaCalc</a>
                     <a href="/mrtlp">MRTLP_S</a>
+                    <a href="/answerman">Answerman</a>
                 </div>
             </div>
         </div>
