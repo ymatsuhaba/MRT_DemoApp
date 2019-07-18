@@ -106,6 +106,8 @@ Route::get('/question2', 'AnswerController@question2');
 Route::get('/question3', 'AnswerController@question3');
 Route::get('/question4', 'AnswerController@question4');
 Route::get('/question5', 'AnswerController@question5');
+//MRTLPのページ
+Route::get('/mrtlp', 'LpController@index');
 
 
 
@@ -115,4 +117,7 @@ Route::get('/post_test', 'PostTestController@form');
 Route::post('/post_test', 'PostTestController@form');
 Route::get('/new', 'NewController@new');
 Route::get('/newresult', 'NewController@newresult');
+
+
+
 
