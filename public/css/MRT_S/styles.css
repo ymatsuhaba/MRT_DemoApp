@@ -1,0 +1,292 @@
+body {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    padding-right: 20%;
+    padding-left: 20%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+
+}
+
+.service {
+    display: inline-flex;
+    background-color: black;
+    color: white;
+    margin-right: 0.5px;
+    padding-right: 29px;
+
+
+}
+
+.service a {
+    color:white;
+    text-decoration: none;
+    padding-left: 1px;
+
+}
+
+
+.area {
+    display: flex;
+}
+
+.services {
+    margin-right: 15%;
+    margin-top: 1%;
+    margin-bottom: -14px;
+}
+
+.menu {
+    background-color: #333399;
+    font-family: 'ＭＳ Ｐゴシック', sans-serif;
+    height: 50px;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.menu li a {
+    color: white;
+    border: 1px solid #7679ab;
+    border-bottom: none;
+    width: 140px;
+    height: 35px;
+    font-size: 11px;
+    padding-bottom: 30%;
+    padding-top: 0;
+}
+
+
+
+
+
+
+
+.container1 {
+    display: flex;
+    padding: 1% 1% 1% 1%;
+    height: 300px;
+    max-height: 100%;
+    width: auto;
+
+}
+
+#MRT2 {
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+form {
+    border: groove;
+    background-color: whitesmoke;
+    text-align: center;
+    margin:0 5%;
+    height: 275px;
+    width:25%;
+}
+
+
+.users {
+    display: flex;
+    text-align: center;
+    background-color: white;
+    font-family: 'ＭＳＰゴシック', sans-serif;
+    font-size: 15px;
+}
+
+.users a {
+    padding: 50px 10px 0px 40px;
+}
+
+
+
+.login{
+    margin:0;
+}
+.login #id{
+    margin:0;
+}
+
+.password{
+    margin:0;
+}
+
+.doctor p{
+    margin:0;
+}
+
+.btns {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    margin:0 auto;
+}
+
+
+
+
+/*メニューバー（求人情報 ）*/
+.nav_recruit {
+    text-decoration: none;
+}
+
+
+.justify-content-center {
+    padding: 5px 5px 5px 5px;
+}
+
+.nav_recruit .justify-content-center .nav-item1 a {
+    color: black;
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
+    margin-right: 70px;
+    padding: 10px 20px 15px 20px;
+    border: 1px solid #d4d4d4;
+    text-decoration: none;
+    font-family: 'ＭＳ Ｐゴシック', sans-serif;
+
+}
+
+.nav_recruit .justify-content-center .nav-item1 .nav-link1:hover {
+    color: whitesmoke;
+    background: -webkit-linear-gradient(top, rgba(26,160,229,0.8) 0%, rgba(26,160,229,0.8) 50%, #1aa0e5 51%, rgba(26,160,229,0.8) 95%, rgba(26,160,229,0.8) 100%);
+}
+
+.nav_recruit .justify-content-center .nav-item1 .nav-link2:hover {
+    color: whitesmoke;
+    background: -webkit-linear-gradient(top, rgba(38,173,139,0.8) 0%, rgba(38,173,139,0.8) 50%, #26ad8b 51%, rgba(38,173,139,0.8) 95%, rgba(38,173,139,0.8) 100%);}
+
+.nav_recruit .justify-content-center .nav-item1 .nav-link3:hover {
+    color: whitesmoke;
+    background: -webkit-linear-gradient(top, #2e9aed 0%, #2e9aed 50%, #0d7de1 51%, #2e9aed 95%, #2e9aed 100%);
+}
+
+
+/*新着求人*/
+.job_search{
+    display:flex;
+    border-top: 3px solid #1AA0E5;
+    border-right: solid 3px lightgray;
+    border-bottom: solid 3px lightgray;
+    border-left: solid 3px lightgray;
+    padding: 1% 1% 15% 1%;
+    margin-top: 1%;
+}
+
+.new_jobs .title-box .title_spot {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #d4d4d4;
+    box-sizing: border-box;
+    border-left: 2px solid #1AA0E5;
+    text-align: center;
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
+    padding-top: 1%;
+    margin-top: 0;
+}
+
+.simasima li:nth-child(2n){
+    background-color:#EEE;
+}
+
+.simasima li a {
+    color: #4584A5;
+    font-size:13px;
+
+}
+
+.left_jobs {
+    width: 48%;
+    max-width: 100%;
+    height:500px;
+    max-height: 500px;
+    overflow: scroll;
+    padding-bottom: 20%;
+
+}
+
+.new_jobs {
+    width: 48%;
+    max-width: 100%;
+    height:500px;
+    max-height: 500px;
+    padding-bottom: 20%;
+}
+
+.new_jobs:last-child{
+    margin-left:4%;
+}
+
+.simasima {
+    list-style: none;
+}
+
+/*求人検索*/
+
+.decorate-parts {
+    background-color: #808181;
+    width: 3px;
+    height: 15px;
+    margin: 4px 5px 0 0;
+}
+
+.job_search_contents {
+    margin: 1% 1% 1% 1%;
+    padding: 1% 1% 1% 1%;
+    display:flex;
+    width: 600px;
+}
+
+.job_search_contents th div {
+    font-size: 17px;
+    font-weight: bold;
+    float: left;
+}
+
+.job_search_contents select {
+    margin-left: 65px;
+    width: 150px;
+}
+
+th {
+    display:flex;
+}
+
+.clinical_department {
+    display:flex;
+}
+
+.working_form {
+    display: flex;
+}
+
+.working_form div {
+    /*font-weight: bold;*/
+}
+
+
+.pref {
+    display: flex;
+}
+
+.input_money {
+    display: inline-block;
+}
+
+.search_logo {
+    padding-left: 30%;
+    padding-top: 2%;
+}
+
+.calender  {
+    padding-left: 14%;
+    width:100%;
+
+}

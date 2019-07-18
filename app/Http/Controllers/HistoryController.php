@@ -6,7 +6,7 @@ use App\History;
 use Illuminate\Database\Eloquent\Collection;
 
 
-class HistoryController extends Controller
+class  HistoryController extends Controller
 {
     public function index(){
         //DBからレコードのデータを取得
