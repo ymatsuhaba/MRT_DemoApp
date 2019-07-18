@@ -28,6 +28,8 @@ class Recruitments extends Migration
             $table->integer('transport_money');
             $table->string('work_form');
             $table->string('facility_type');
+            $table->string('medical');
+
         });
     }
     /**
