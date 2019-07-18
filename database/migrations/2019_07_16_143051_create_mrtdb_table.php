@@ -39,6 +39,6 @@ class CreateMrtdbTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mrtdbs');
+        Schema::dropIfExists('mrt_dbs');
     }
 }
