@@ -50,9 +50,9 @@ class MRTdbController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $mrt_db =mrt_db::orderby('created_at','desc')->get();
+        $mrt_db =mrt_db::find($id);
 
         return view('mrt-db.show',compact('mrt_db'));
     }

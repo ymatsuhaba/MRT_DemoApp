@@ -7,7 +7,7 @@
                     <div class="content"><!--height:605px 計640px-->
                         @if(count($mrt_db) > 0)
                             @foreach($mrt_db as $mrt_db)
-                                <p><a href="mrt-db.show">{{$mrt_db -> type}}&nbsp;&nbsp;|{{$mrt_db -> start_date}}&nbsp;&nbsp;|{{$mrt_db -> prefecture}}{{$mrt_db -> place}}&nbsp;&nbsp;&nbsp</a></p>
+                                <p><a href="mrt-db/{{$mrt_db -> id}}">{{$mrt_db -> type}}&nbsp;&nbsp;|{{$mrt_db -> start_date}}&nbsp;&nbsp;|{{$mrt_db -> prefecture}}{{$mrt_db -> place}}&nbsp;&nbsp;&nbsp</a></p>
                             @endforeach
                         @endif
                     </div>
