@@ -2,6 +2,7 @@
 <div id="right">
                     <div class="box">求人検索</div><!--height:35px-->
                     <!--右側のコンテンツ内容です-->
+            <form class="form-inline">
                     <div class="conditions"><!--height:50px 計85px-->
                         <div class="id1">都道府県</div>
                         <div class="id2">
@@ -138,7 +139,8 @@
                             <td></td>
                         </tr>
                     </table><!--カレンダーテーブルの作成-->
-
+                <button type="submit" class="btn btn-primary mb-2"><a href="mrt-db.search">Confirm identity</a></button>
+            </form>
 
 
 
@@ -172,7 +174,7 @@
                     <img src="png/premium.png" class="picture" alt="premium">
                 </div>
                 <form>
-                    <button type="submit" class="submit">新規会員登録</button>
+                    <button type="submit" class="submit"><a href="mrt-db.search">新規会員登録</a></button>
                 </form>
             </div><!--feature-->
         </div><!--main_content-->

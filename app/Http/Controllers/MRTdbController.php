@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\mrt_db;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
-//use Illuminate\Database\Eloquent\Collection;
+//use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Collection;
 
 
 class MRTdbController extends Controller
@@ -18,9 +17,14 @@ class MRTdbController extends Controller
      */
     public function index()
     {
-        $mrt_db =mrt_db::orderby('created_at','desc')->get();
+//        $mrt_db =mrt_db::orderby('startDate','asc')->get();
 
-        return view('mrt-db.index',compact('mrt_db'));
+        $collection =new mrt_db();
+
+        $mrtDbCollection =$collection->getAllData();
+
+
+        return view('mrt-db.index',compact('mrtDbCollection'));
     }
 
     /**
@@ -63,31 +67,5 @@ class MRTdbController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
