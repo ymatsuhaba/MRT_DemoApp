@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\mrtdbFind;
 use Illuminate\Http\Request;
 use App\mrt_db;
 //use Illuminate\Support\Facades\DB;
@@ -17,14 +18,12 @@ class MRTdbController extends Controller
      */
     public function index()
     {
-//        $mrt_db =mrt_db::orderby('startDate','asc')->get();
 
         $collection =new mrt_db();
 
         $mrtDbCollection =$collection->getAllData();
 
-
-        return view('mrt-db.index',compact('mrtDbCollection'));
+        return view('mrt-db.search',compact('mrtDbCollection'));
     }
 
     /**
