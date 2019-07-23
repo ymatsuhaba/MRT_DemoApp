@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class mrtdbFind extends Model
 {
-//    public $timestamps = false;
-//
-//    protected $fillable = array('name', 'from', 'sex', 'date_of_birth');
+    public $timestamps = false;
+
+    protected $fillable = ['type', 'startDate','endDate', 'week','prefecture', 'place', 'startTime', 'endTime',
+    'salary', 'salarySystem', 'transportationSystem', 'transportationExpenses', 'workForm', 'facilityType'];
+
 }

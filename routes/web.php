@@ -67,8 +67,11 @@ Route::get('answerman.answer3','AnswermanController@answer3');
 Route::get('answerman.answer4','AnswermanController@answer4');
 Route::get('answerman.answer5','AnswermanController@answer5');
 
-Route::resource('mrt-db','MRTdbController',['only' => ['index','show']]);
-Route::get('mrt-db.search','MRTdbSearchController@search');
+//Route::resource('mrt-db','MRTdbController',['only' => ['index','show']]);
+Route::get('mrt-db','MRTdbController@index');
+Route::post('mrt-db','MRTdbController@index');
+Route::get('/mySearch','MRTdbSearchController@search');
+
 
 
 

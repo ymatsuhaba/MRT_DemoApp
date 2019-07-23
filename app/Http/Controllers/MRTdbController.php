@@ -23,7 +23,7 @@ class MRTdbController extends Controller
 
         $mrtDbCollection =$collection->getAllData();
 
-        return view('mrt-db.search',compact('mrtDbCollection'));
+        return view('mrt-db.index',compact('mrtDbCollection'));
     }
 
     /**

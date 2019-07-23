@@ -5,23 +5,26 @@ namespace App\Http\Controllers;
 use App\mrt_db;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 
 class MRTdbSearchController extends Controller
 {
-    public function search(request $request){
+    public function search(){
 
-        $prefecture = $request->input('prefecture');
-//        $from = $request->input('');
-//        $sex = $request->input('sex');
-//        $birthday = $request->input('birthday');
+//        $prefecture = $request->input('prefecture');
+//        $medical = $request->input('medical');
+//        $workForm = $request->input('workForm');
+//        $salary = $request->input('salary');
+//
+//        if(!empty($prefecture)) {
+//            $mrtDbCollection = mrt_db::all();
+//        } else {
+//            $mrtDbCollection = mrt_db::where('prefecture',"$prefecture")->get();
+//        }
+//        $mrtDbCollection = DB::table('mrt_dbs')
+//            ->where('prefecture',$prefecture)->get();
 
-        if($prefecture == NULL) {
-            $mrtDbCollection = mrt_db::all();
-        } else {
-            $mrtDbCollection = mrt_db::where('prefecture', 'like', "%$prefecture%")->getAllData();
-        }
-
-        return view('mrt-db.search',compact('mrtDbCollection'));
+        return view('mysearch');
 
     }
 }
