@@ -2,13 +2,15 @@
 <div id="right">
                     <div class="box">求人検索</div><!--height:35px-->
                     <!--右側のコンテンツ内容です-->
-            <form class="form-inline" method="get" action="{{ url('/mySearch') }}">
+            <form method="post" action="{{url('mrt-db.second.resultSearch')}}">
+                {{ csrf_field() }}
                     <div class="conditions"><!--height:50px 計85px-->
                         <div class="id1">都道府県</div>
                         <div class="id2">
-                            <select class="select">
-                                @foreach(config('prefecture') as $index => $name)
-                                    <option value="{{$index}}" @if(old('_pref') == $index) selected @endif>{{$name}}</option>
+                            <select class="select" name="prefecture">
+                                <option selected>Choose...</option>
+                                @foreach(config('prefecture') as $index1 => $name1)
+                                    <option value="{{$name1}}" @if(old('prefecture') == $index1) selected @endif>{{$name1}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -18,16 +20,37 @@
                     <div class="conditions"><!--height:50px 計135px-->
                         <div class="id1">診療科</div>
                         <div class="id2">
-                            <select class="select">
-                                <option selected class="font">Open this select menu</option>
-                                <option value="1">内科</option>
-                                <option value="2">外科</option>
-                                <option value="3">婦人科</option>
-                                <option value="3">小児科</option>
-                                <option value="3">放射線科</option>
-                                <option value="3">耳鼻科</option>
-                                <option value="3">透析</option>
-                                <option value="3">コンタクト</option>
+                            <select class="select" name="medical">
+                                <option selected>Choose...</option>
+{{--                                @foreach(config('medical') as $key => $value)--}}
+{{--                                    <option value="{{$value}}">{{$value}}</option>--}}
+{{--                                @endforeach()--}}
+                                <option value="内科">内科</option>
+                                <option value="外科">外科</option>
+                                <option value="整形外科">整形外科</option>
+                                <option value="形成外科">形成外科</option>
+                                <option value="脳外科">脳外科</option>
+                                <option value="婦人科">婦人科</option>
+                                <option value="眼科">眼科</option>
+                                <option value="精神科">精神科</option>
+                                <option value="心療内科">心療内科</option>
+                                <option value="麻酔科">麻酔科</option>
+                                <option value="小児科">小児科</option>
+                                <option value="放射線科">放射線科</option>
+                                <option value="耳鼻科">耳鼻科</option>
+                                <option value="皮膚科">皮膚科</option>
+                                <option value="訪問診療">訪問診療</option>
+                                <option value="人間ドック">人間ドック</option>
+                                <option value="内視鏡">内視鏡</option>
+                                <option value="透析">透析</option>
+                                <option value="心療内科">検診</option>
+                                <option value="麻酔科">往診</option>
+                                <option value="訪問診療">病棟管理</option>
+                                <option value="人間ドック">産婦人科</option>
+                                <option value="内視鏡">口腔外科</option>
+                                <option value="透析">歯科口腔外科</option>
+                                <option value="心療内科">歯科</option>
+                                <option value="麻酔科">コンタクト</option>
                             </select>
                         </div>
                         <div class="id3">指定なし</div>
@@ -38,26 +61,20 @@
                     <div class="jobs"><!--height:50px 計185px-->
                         <div class="id1">勤務形態</div>
                         <div class="id2">
-                            <div class="buttom">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                <input type="radio" id="customRadioInline1" name="workForm" value="当直" class="custom-control-input">
                                 <label class="custom-control-label" for="customRadioInline1">当直</label>
-                            </div>
                         </div>
                         <div class="id3">
-                            <div class="buttom">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                <input type="radio" id="customRadioInline2" name="workForm" value="日直・日当直" class="custom-control-input">
                                 <label class="custom-control-label" for="customRadioInline2">日直・日当直</label>
-                            </div>
                         </div>
                     </div><!--jobsクラスの終了-->
 
                     <div class="salary"><!--height:50px 計235px-->
                         <div class="id1">都道府県</div>
                         <div class="id2">
-                                <form class="form-inline">
-                                    <input type="number" name="salary" id="customNumberSalary" placeholder="希望の時給を書く欄">
-                                    <label class="number-salary" for="customNumberSalary">万円以上</label>
-                                </form>
+                                <input type="number" name="salary" value="hourlySalary "id="customNumberSalary" placeholder="希望の時給を書く欄">
+                                <label class="number-salary" for="customNumberSalary">万円以上</label>
                         </div>
                         <div class="id3">半角数字</div>
                     </div><!--salaryクラスの終了-->
@@ -65,10 +82,8 @@
                     <div class="salary"><!--height:50px 計285px-->
                         <div class="id1"></div>
                         <div class="id2">
-                            <form class="form-inline">
-                                <input type="number" name="salary" id="hopeSalary" placeholder="一回辺りの希望報酬を書く欄。">
+                                <input type="number" name="salary" id="salary" placeholder="一回辺りの希望報酬を書く欄。">
                                 <label class="number-salary" for="hopeSalary">万円以上</label>
-                            </form>
                         </div>
                         <div class="id3">半角数字</div>
                     </div><!--salaryクラスの終了-->
@@ -133,7 +148,7 @@
                             <td></td>
                         </tr>
                     </table><!--カレンダーテーブルの作成-->
-                <button class="btn btn-primary mb-2">Confirm identity</button>
+                <button class="btn btn-primary mb-2" type="submit">Confirm identity</button>
             </form>
 
 
@@ -167,9 +182,6 @@
                     <img src="png/bonus_point.png" class="picture" alt="bonus_point">
                     <img src="png/premium.png" class="picture" alt="premium">
                 </div>
-                <form>
-                    <button type="submit" class="submit"><a href="mrt-db.search">新規会員登録</a></button>
-                </form>
             </div><!--feature-->
         </div><!--main_content-->
     </div><!--tag-->

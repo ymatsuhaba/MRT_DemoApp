@@ -23,6 +23,7 @@ class CreateMrtdbTable extends Migration
             $table->time('startTime')->comment('開始時間');
             $table->time('endTime')->comment('終了時間');
             $table->integer('salary')->comment('給料');
+            $table->integer('hourlySalary')->comment('希望時給');
             $table->string('salarySystem')->comment('給与体系');
             $table->string('medical')->comment('診療科目');
             $table->integer('transportationExpenses')->comment('交通費');

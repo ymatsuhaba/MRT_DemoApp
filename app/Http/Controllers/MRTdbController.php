@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\mrtdbFind;
 use Illuminate\Http\Request;
 use App\mrt_db;
+use Symfony\Component\Console\Input\Input;
 //use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -33,8 +34,12 @@ class MRTdbController extends Controller
      */
     public function create()
     {
+//        $prefecture =Input::get('prefecture');
+//        $medical =Input::get('medical');
 
+        return view('mrt-db.second.resultSearch');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -42,9 +47,10 @@ class MRTdbController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+
+//        return view('resultSearch');
     }
 
     /**

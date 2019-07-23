@@ -9,22 +9,25 @@ use Illuminate\Database\Eloquent\Collection;
 
 class MRTdbSearchController extends Controller
 {
-    public function search(){
+    public function search(Request $request){
 
-//        $prefecture = $request->input('prefecture');
-//        $medical = $request->input('medical');
-//        $workForm = $request->input('workForm');
-//        $salary = $request->input('salary');
-//
-//        if(!empty($prefecture)) {
-//            $mrtDbCollection = mrt_db::all();
-//        } else {
-//            $mrtDbCollection = mrt_db::where('prefecture',"$prefecture")->get();
-//        }
-//        $mrtDbCollection = DB::table('mrt_dbs')
-//            ->where('prefecture',$prefecture)->get();
+        $prefecture = $request->prefecture;
+        $medical = $request->medical;
+        $workForm = $request->workForm;
+        $hourlySalary = $request->hourlySalary;
+        $salary = $request->salary;
 
-        return view('mysearch');
+
+
+        $mrtDbCollection = mrt_db::where('prefecture',$prefecture)
+            ->where('medical',$medical)
+            ->where('workForm',$workForm)
+            ->where('salary','>',$hourlySalary)
+            ->where('hourlySalary','>',$salary)
+            ->get();
+
+
+        return view('mrt-db.second.resultSearch',compact('mrtDbCollection'));
 
     }
 }
