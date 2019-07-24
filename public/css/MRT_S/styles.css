@@ -84,7 +84,7 @@ a {
 
 
 
-form {
+.login_form {
     border: groove;
     background-color: whitesmoke;
     text-align: center;
@@ -178,6 +178,7 @@ form {
     border-left: solid 3px lightgray;
     padding: 1% 1% 15% 1%;
     margin-top: 1%;
+
 }
 
 .new_jobs .title-box .title_spot {
@@ -192,13 +193,17 @@ form {
     margin-top: 0;
 }
 
-.simasima li:nth-child(2n){
-    background-color:#EEE;
+.new_jobs {
+    width: 100%;
+    height:500px;
+    max-height: 500px;
+    padding-bottom: 20%;
+
+
 }
 
-.simasima li a {
-    color: #4584A5;
-    font-size:13px;
+.new_jobs:last-child{
+    margin-left:4%;
 
 }
 
@@ -207,26 +212,37 @@ form {
     max-width: 100%;
     height:500px;
     max-height: 500px;
-    overflow: scroll;
     padding-bottom: 20%;
-
+    overflow: hidden;
 }
 
-.new_jobs {
-    width: 48%;
-    max-width: 100%;
-    height:500px;
-    max-height: 500px;
-    padding-bottom: 20%;
-}
 
-.new_jobs:last-child{
-    margin-left:4%;
-}
 
 .simasima {
     list-style: none;
+    width:100%;
 }
+
+.simasima li a {
+    color: #4584A5;
+    font-size:13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.simasima li:nth-child(2n){
+    background-color:#EEE;
+}
+
+
+
+
+
+
+
+
 
 /*求人検索*/
 
@@ -289,4 +305,8 @@ th {
     padding-left: 14%;
     width:100%;
 
+}
+
+.input_form {
+    width: 50%;
 }

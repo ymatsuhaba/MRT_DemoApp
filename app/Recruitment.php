@@ -27,9 +27,10 @@ class Recruitment extends Model
             $medical = $recruitment_data->medical;
 
 
+            $job_offer_type_change= config('const_s.type'."$job_offer_type");
 
 
-            $datas='【'.$job_offer_type.'】'.' '.
+            $datas='【'.$job_offer_type_change.'】'.' '.
                 date('Y年m月d日',strtotime($work_start_date)).' '.
                 $week[date('w', strtotime($work_start_date))].' '.
                 date('H:i',strtotime($work_start_time)).'-'.date('H:i',strtotime($work_end_time)).' '.
