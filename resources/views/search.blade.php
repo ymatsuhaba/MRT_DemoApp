@@ -12,7 +12,7 @@
                 <div class="form-group">
                     <label>名前: </label>
                     <input type="text" class="form-control" name="name">
-
+w
                     <label>出身地: </label>
                     <input type="text" class="form-control" name="from">
 
