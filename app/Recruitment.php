@@ -27,7 +27,7 @@ class Recruitment extends Model
             $medical = $recruitment_data->medical;
 
 
-            $job_offer_type_change= config('const_s.type'."$job_offer_type");
+            $job_offer_type_change= config("const_s.type.$job_offer_type");
 
 
             $datas='【'.$job_offer_type_change.'】'.' '.

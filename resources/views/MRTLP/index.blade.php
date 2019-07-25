@@ -23,8 +23,32 @@
 
     <title>医師求人・転職紹介・アルバイトならMRT</title>
 </head>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<style>
+    .container {
+        font-family: 'Noto Sans', sans-serif;
+        margin-top: 80px;
+    }
+    h3 {
+        margin-bottom: 30px;
+    }
+    th {
+        height: 30px;
+        text-align: center;
+    }
+    td {
+        height: 100px;
+    }
+    .today {
+        background: orange;
+    }
+    th:nth-of-type(1), td:nth-of-type(1) {
+        color: red;
+    }
+    th:nth-of-type(7), td:nth-of-type(7) {
+        color: blue;
+    }
+</style>
 <body>
 
 <!--ヘッダー-->
@@ -152,7 +176,7 @@
                     <div class="pref">
                         <div class="decorate-parts"></div>
                         <div>&ensp;都道府県</div>
-                        <select name="prefectures">
+                        <select name="location">
                             <option value="" selected>都道府県を選択</option>
                             <option value="北海道">北海道</option>
                             <option value="青森県">青森県</option>
@@ -283,78 +307,67 @@
                     </div>
                 </div>
 
+{{--希望の日付--}}
+            <div>
+                &ensp;希望日程&ensp;
+                <select name="month">
+                    <option value="">-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>　月
+
+
+                <select name="day">
+                    <option value="">-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>　日
+            </div>
 
 
 
 
+        {{--検索ボタン--}}
 
-                <!--期間-->
-
-
-
-                <!--            カレンダー-->
-
-                {{--                <div class="calender">--}}
-                {{--                    <table>--}}
-                {{--                        <tr class="cal_title">--}}
-                {{--                            <td colspan="7">2019年7月</td>--}}
-                {{--                        </tr>--}}
-                {{--                        <tr  bgcolor="#d3d3d3">--}}
-                {{--                            <td><div class="sunday">日</div></td>--}}
-                {{--                            <td><div class="day">月</div></td>--}}
-                {{--                            <td><div class="day">火</div></td>--}}
-                {{--                            <td><div class="day">水</div></td>--}}
-                {{--                            <td><div class="day">木</div></td>--}}
-                {{--                            <td><div class="day">金</div></td>--}}
-                {{--                            <td><div class="saturday">土</div></td>--}}
-                {{--                        </tr>--}}
-                {{--                        <tr  bgcolor="#FFFFFF">--}}
-                {{--                            <td></td>--}}
-                {{--                            <td><div class="day">1</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">2</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">3</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">4</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">5</div><div class="number">153件</div></td>--}}
-                {{--                            <td ><div class="saturday">6</div><div class="number">153件</div></td>--}}
-                {{--                        </tr>--}}
-                {{--                        <tr bgcolor="#FFFFFF">--}}
-                {{--                            <td><div class="sunday">7</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">8</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">9</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">10</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">11</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">12</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="saturday">13</div><div class="number">153件</div></td>--}}
-                {{--                        </tr>--}}
-                {{--                        <tr bgcolor="#FFFFFF">--}}
-                {{--                            <td><div class="sunday">14</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">15</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">16</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">17</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">18</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">19</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="saturday">20</div><div class="number">153件</div></td>--}}
-                {{--                        </tr>--}}
-                {{--                        <tr bgcolor="#FFFFFF">--}}
-                {{--                            <td ><div class="sunday">21</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">22</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">23</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">24</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">25</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">26</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="saturday">27</div><div class="number">153件</div></td>--}}
-                {{--                        </tr>--}}
-                {{--                        <tr bgcolor="#FFFFFF">--}}
-                {{--                            <td><div class="sunday">28</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">29</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">30</div><div class="number">153件</div></td>--}}
-                {{--                            <td><div class="day">31</div><div class="number">153件</div></td>--}}
-                {{--                            <td></td>--}}
-                {{--                            <td></td>--}}
-                {{--                            <td></td>--}}
-                {{--                        </tr>--}}
-                {{--                    </table>--}}
-                {{--                </div>--}}
                 <button><a><img class="search_logo" src="この条件で検索.png"></button>
             </div>
         </div>
