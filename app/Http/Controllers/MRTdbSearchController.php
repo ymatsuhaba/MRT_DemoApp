@@ -11,21 +11,62 @@ class MRTdbSearchController extends Controller
 {
     public function search(Request $request){
 
-        $prefecture = $request->prefecture;
-        $medical = $request->medical;
-        $workForm = $request->workForm;
-        $hourlySalary = $request->hourlySalary;
-        $salary = $request->salary;
+        $prefecture = $request->input('prefecture');
+        $medical = $request->input('medical');
+        $workFormDuty = $request->input('workFormDuty');
+        $workFormDayDuty = $request->input('workFormDayDuty');
+        $hourlySalary = $request->input('hourlySalary');
+        $salary = $request->input('salary');
+        $startDate = $request->input('startDate');
 
 
+        $query = DB::table('mrt_dbs');
 
-        $mrtDbCollection = mrt_db::where('prefecture',$prefecture)
-            ->where('medical',$medical)
-            ->where('workForm',$workForm)
-            ->where('salary','>',$hourlySalary)
-            ->where('hourlySalary','>',$salary)
-            ->get();
 
+        if (isset($prefecture)){
+            $query->where('prefecture',$prefecture);
+        }
+
+        if (isset($medical)){
+            $query->where('medical',$medical);
+        }
+
+
+        if (isset($workFormDuty) || isset($workFormDayDuty)){
+            // 当直が選択されている場合（日直・日当直が選択れていない）
+            if (isset($workFormDuty) && !isset($workFormDayDuty)) {
+                $query -> where('workForm', $workFormDuty);
+            }
+            // 日直・日当直が選択されている場合（当直が選択されていない）
+            if (!isset($workFormDuty) && isset($workFormDayDuty)) {
+                $query -> where('workForm', $workFormDayDuty);
+            }
+        }
+
+
+//        // 給与形態
+//        if (isset($hourlySalary) || isset($salary_day)) {
+//            if (isset($hourlySalary) && !isset($salary)) {
+//                $query -> where('salary_type', '2');
+//                $query -> where('salary', '>=', $hourlySalary);
+//            }
+//            if (!isset($hourlySalary) && isset($salary)) {
+//                $query -> where('salary_type', '1');
+//                $query -> where('salary', '>=', $salary_day);
+//            }
+//            if (isset($hourlySalary) && isset($salary)) {
+//                $query -> where('salary', '>=', $hourlySalary);
+//                $query -> orwhere('salary', '>=', $salary);
+//            }
+//        }
+
+
+        if (isset($startDate)){
+            $query->where('startDate',$startDate);
+        }
+
+
+        $mrtDbCollection = $query->orderby('startDate','asc')->get();
 
         return view('mrt-db.second.resultSearch',compact('mrtDbCollection'));
 

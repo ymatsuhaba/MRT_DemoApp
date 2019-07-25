@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\mrtdbFind;
-use Illuminate\Http\Request;
 use App\mrt_db;
 use Symfony\Component\Console\Input\Input;
-//use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 
 

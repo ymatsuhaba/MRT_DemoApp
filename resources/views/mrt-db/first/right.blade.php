@@ -8,10 +8,10 @@
                         <div class="id1">都道府県</div>
                         <div class="id2">
                             <select class="select" name="prefecture">
-                                <option selected>Choose...</option>
-                                @foreach(config('prefecture') as $index1 => $name1)
-                                    <option value="{{$name1}}" @if(old('prefecture') == $index1) selected @endif>{{$name1}}</option>
-                                @endforeach
+                                <option value="" selected>Choose...</option>
+                                    @foreach(config('prefecture') as $index1 => $name1)
+                                        <option value="{{$index1}}">{{$name1}}</option>
+                                    @endforeach
                             </select>
                         </div>
                         <div class="id3">指定なし</div>
@@ -21,36 +21,10 @@
                         <div class="id1">診療科</div>
                         <div class="id2">
                             <select class="select" name="medical">
-                                <option selected>Choose...</option>
-{{--                                @foreach(config('medical') as $key => $value)--}}
-{{--                                    <option value="{{$value}}">{{$value}}</option>--}}
-{{--                                @endforeach()--}}
-                                <option value="内科">内科</option>
-                                <option value="外科">外科</option>
-                                <option value="整形外科">整形外科</option>
-                                <option value="形成外科">形成外科</option>
-                                <option value="脳外科">脳外科</option>
-                                <option value="婦人科">婦人科</option>
-                                <option value="眼科">眼科</option>
-                                <option value="精神科">精神科</option>
-                                <option value="心療内科">心療内科</option>
-                                <option value="麻酔科">麻酔科</option>
-                                <option value="小児科">小児科</option>
-                                <option value="放射線科">放射線科</option>
-                                <option value="耳鼻科">耳鼻科</option>
-                                <option value="皮膚科">皮膚科</option>
-                                <option value="訪問診療">訪問診療</option>
-                                <option value="人間ドック">人間ドック</option>
-                                <option value="内視鏡">内視鏡</option>
-                                <option value="透析">透析</option>
-                                <option value="心療内科">検診</option>
-                                <option value="麻酔科">往診</option>
-                                <option value="訪問診療">病棟管理</option>
-                                <option value="人間ドック">産婦人科</option>
-                                <option value="内視鏡">口腔外科</option>
-                                <option value="透析">歯科口腔外科</option>
-                                <option value="心療内科">歯科</option>
-                                <option value="麻酔科">コンタクト</option>
+                                <option value="" selected>Choose...</option>
+                                    @foreach(config('medical') as $key => $value)
+                                        <option value="{{$key}}">{{$value}}</option>
+                                    @endforeach
                             </select>
                         </div>
                         <div class="id3">指定なし</div>
@@ -61,11 +35,11 @@
                     <div class="jobs"><!--height:50px 計185px-->
                         <div class="id1">勤務形態</div>
                         <div class="id2">
-                                <input type="radio" id="customRadioInline1" name="workForm" value="当直" class="custom-control-input">
+                                <input type="checkbox" id="customRadioInline1" name="workFormDuty" value="1" class="custom-control-input">
                                 <label class="custom-control-label" for="customRadioInline1">当直</label>
                         </div>
                         <div class="id3">
-                                <input type="radio" id="customRadioInline2" name="workForm" value="日直・日当直" class="custom-control-input">
+                                <input type="checkbox" id="customRadioInline2" name="workFormDayDuty" value="2" class="custom-control-input">
                                 <label class="custom-control-label" for="customRadioInline2">日直・日当直</label>
                         </div>
                     </div><!--jobsクラスの終了-->
@@ -73,8 +47,8 @@
                     <div class="salary"><!--height:50px 計235px-->
                         <div class="id1">都道府県</div>
                         <div class="id2">
-                                <input type="number" name="salary" value="hourlySalary "id="customNumberSalary" placeholder="希望の時給を書く欄">
-                                <label class="number-salary" for="customNumberSalary">万円以上</label>
+                                <input type="number" name="hourlySalary" id="customNumberSalary" placeholder="時給">
+                                <label class="number-salary" for="customNumberSalary">円以上</label>
                         </div>
                         <div class="id3">半角数字</div>
                     </div><!--salaryクラスの終了-->
@@ -82,72 +56,28 @@
                     <div class="salary"><!--height:50px 計285px-->
                         <div class="id1"></div>
                         <div class="id2">
-                                <input type="number" name="salary" id="salary" placeholder="一回辺りの希望報酬を書く欄。">
-                                <label class="number-salary" for="hopeSalary">万円以上</label>
+                                <input type="number" name="salary" id="customNumberSalary2" placeholder="一回辺り">
+                                <label class="number-salary" for="customNumberSalary2">円以上</label>
                         </div>
                         <div class="id3">半角数字</div>
                     </div><!--salaryクラスの終了-->
 
-                    <!--カレンダーの作成 calender.cssに記載-->
-                    <table id="calender"><!--height:355px 計640px-->
-                        <tr id="cal_title">
-                            <td colspan="7">2019年7月</td>
-                        </tr>
-                        <tr align="center" bgcolor="#999999">
-                            <td><div class="sunday">日</div></td>
-                            <td><div class="day">月</div></td>
-                            <td><div class="day">火</div></td>
-                            <td><div class="day">水</div></td>
-                            <td><div class="day">木</div></td>
-                            <td><div class="day">金</div></td>
-                            <td><div class="saturday">土</div></td>
-                        </tr>
-                        <tr align="center" bgcolor="#FFFFFF">
-                            <td></td>
-                            <td><div class="day">1</div><div class="number">153件</div></td>
-                            <td><div class="day">2</div><div class="number">153件</div></td>
-                            <td><div class="day">3</div><div class="number">153件</div></td>
-                            <td><div class="day">4</div><div class="number">153件</div></td>
-                            <td><div class="day">5</div><div class="number">153件</div></td>
-                            <td ><div class="saturday">6</div><div class="number">153件</div></td>
-                        </tr>
-                        <tr align="center" bgcolor="#FFFFFF">
-                            <td><div class="sunday">7</div><div class="number">153件</div></td>
-                            <td><div class="day">8</div><div class="number">153件</div></td>
-                            <td><div class="day">9</div><div class="number">153件</div></td>
-                            <td><div class="day">10</div><div class="number">153件</div></td>
-                            <td><div class="day">11</div><div class="number">153件</div></td>
-                            <td><div class="day">12</div><div class="number">153件</div></td>
-                            <td><div class="saturday">13</div><div class="number">153件</div></td>
-                        </tr>
-                        <tr align="center" bgcolor="#FFFFFF">
-                            <td><div class="sunday">14</div><div class="number">153件</div></td>
-                            <td><div class="day">15</div><div class="number">153件</div></td>
-                            <td><div class="day">16</div><div class="number">153件</div></td>
-                            <td><div class="day">17</div><div class="number">153件</div></td>
-                            <td><div class="day">18</div><div class="number">153件</div></td>
-                            <td><div class="day">19</div><div class="number">153件</div></td>
-                            <td><div class="saturday">20</div><div class="number">153件</div></td>
-                        </tr>
-                        <tr align="center" bgcolor="#FFFFFF">
-                            <td ><div class="sunday">21</div><div class="number">153件</div></td>
-                            <td><div class="day">22</div><div class="number">153件</div></td>
-                            <td><div class="day">23</div><div class="number">153件</div></td>
-                            <td><div class="day">24</div><div class="number">153件</div></td>
-                            <td><div class="day">25</div><div class="number">153件</div></td>
-                            <td><div class="day">26</div><div class="number">153件</div></td>
-                            <td><div class="saturday">27</div><div class="number">153件</div></td>
-                        </tr>
-                        <tr align="center" bgcolor="#FFFFFF">
-                            <td><div class="sunday">28</div><div class="number">153件</div></td>
-                            <td><div class="day">29</div><div class="number">153件</div></td>
-                            <td><div class="day">30</div><div class="number">153件</div></td>
-                            <td><div class="day">31</div><div class="number">153件</div></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table><!--カレンダーテーブルの作成-->
+
+
+                <div class="conditions"><!--height:50px 計135px-->
+                    <div class="id1">希望日程</div>
+                    <div class="id2">
+                        <select class="select" name="startDate">
+                            <option value="" selected>Choose...</option>
+                            @foreach(config('calender') as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="id3">指定なし</div>
+                </div><!--conditionsクラスの終了-->
+
+
                 <button class="btn btn-primary mb-2" type="submit">Confirm identity</button>
             </form>
 

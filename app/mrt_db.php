@@ -45,6 +45,7 @@ class mrt_db extends Model
                 $medical.')';
 
             $mrtDbCollection->push($data);
+
         }
 
         return $mrtDbCollection;
