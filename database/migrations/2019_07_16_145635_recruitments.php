@@ -30,6 +30,7 @@ class Recruitments extends Migration
             $table->string('facility_type');
             $table->string('medical');
 
+
         });
     }
     /**

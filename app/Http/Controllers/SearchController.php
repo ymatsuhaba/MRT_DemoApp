@@ -50,29 +50,29 @@ class SearchController extends Controller
         // 給与形態
         if (isset($salary_time) || isset($salary_day)) {
             if (isset($salary_time) && !isset($salary_day)) {
-                $query->where('salary_type', '2');
-                $query->where('salary', '>=', $salary_time);
+                $query->where('salary_type', '2')
+                    ->where('salary', '>=', $salary_time);
             }
 
             if (!isset($salary_time) && isset($salary_day)) {
-                $query->where('salary_type', '1');
-                $query->where('salary', '>=', $salary_day);
+                $query->where('salary_type', '1')
+                    ->where('salary', '>=', $salary_day);
             }
 
             if (isset($salary_time) && isset($salary_day)) {
-                $query->where('salary', '>=', $salary_time);
-                $query->orwhere('salary', '>=', $salary_day);
+                $query->where('salary', '>=', $salary_time)
+                    ->orwhere('salary', '>=', $salary_day);
             }
-
-//希望日程
-            if (isset($work_start_date)) {
-                $query->where('work_start_date', $work_start_date);
-            }
-
-
-            $result = $query->Orderby('work_start_date', 'asc')->get();
-
-
-            return view('MRTLP.search_result', compact('result'));
         }
-    }}
+
+        //希望日程
+        if (isset($work_start_date)) {
+            $query->where('work_start_date', $work_start_date);
+        }
+
+        $result = $query->Orderby('work_start_date', 'asc')->get();
+
+
+        return view('MRTLP.search_result', compact('result'));
+    }
+}
