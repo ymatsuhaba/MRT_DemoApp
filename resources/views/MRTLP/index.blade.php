@@ -310,66 +310,47 @@
 {{--希望の日付--}}
             <div>
                 &ensp;希望日程&ensp;
-                <select name="month">
-                    <option value="">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>　月
-
-
-                <select name="day">
-                    <option value="">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                </select>　日
+                <select name="work_start_date">
+                    <option value="">希望日程を選択</option>
+                    <option value="1">2019年7月1日 (月)</option>
+                    <option value="2">2019年7月2日 (火)</option>
+                    <option value="3">2019年7月3日 (水)</option>
+                    <option value="4">2019年7月4日 (木)</option>
+                    <option value="5">2019年7月5日 (金)</option>
+                    <option value="6">2019年7月6日 (土)</option>
+                    <option value="7">2019年7月7日 (日)</option>
+                    <option value="8">2019年7月8日 (月)</option>
+                    <option value="9">2019年7月9日 (火)</option>
+                    <option value="10">2019年7月10日 (水)</option>
+                    <option value="11">2019年7月11日 (木)</option>
+                    <option value="12">2019年7月12日 (金)</option>
+                    <option value="13">2019年7月13日 (土)</option>
+                    <option value="14">2019年7月14日 (日)</option>
+                    <option value="15">2019年7月15日 (月)</option>
+                    <option value="16">2019年7月16日 (火)</option>
+                    <option value="17">2019年7月17日 (水)</option>
+                    <option value="2019-07-18">2019年7月18日 (木)</option>
+                    <option value="19">2019年7月19日 (金)</option>
+                    <option value="20">2019年7月20日 (土)</option>
+                    <option value="21">2019年7月21日 (日)</option>
+                    <option value="22">2019年7月22日 (月)</option>
+                    <option value="23">2019年7月23日 (火)</option>
+                    <option value="24">2019年7月24日 (水)</option>
+                    <option value="25">2019年7月25日 (木)</option>
+                    <option value="26">2019年7月26日 (金)</option>
+                    <option value="27">2019年7月27日 (土)</option>
+                    <option value="28">2019年7月28日 (日)</option>
+                    <option value="29">2019年7月29日 (月)</option>
+                    <option value="30">2019年7月30日 (火)</option>
+                    <option value="31">2019年7月31日 (水)</option>
+                </select>　
             </div>
-
-
-
 
         {{--検索ボタン--}}
-
+            <div>
                 <button><a><img class="search_logo" src="この条件で検索.png"></button>
             </div>
+        </div>
         </div>
     </form>
 </div>

@@ -27,10 +27,11 @@
         <li>
             【{{Config::get("const_s.type.$list->job_offer_type")}}】
             【{{$list->work_start_date}}】
-            【{{$list->work_start_time}}】
-            【{{$list->salary}}】
+{{--            【{{$list->work_start_date}}】--}}
+{{--            【{{$list->work_start_time}}】--}}
+{{--            【{{$list->salary}}】--}}
             【{{Config::get("const_s.salary_system.$list->salary_type")}}】
-            【{{$list->work_end_time}}】
+{{--            【{{$list->work_end_time}}】--}}
             【{{$list->location}}】
             【{{$list->prefectures}}】
             【{{$list->medical}}】
