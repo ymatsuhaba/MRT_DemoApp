@@ -1,6 +1,6 @@
 @section('right')
 <div id="right">
-                    <div class="box">求人検索</div><!--height:35px-->
+    <div class="box">求人検索</div><!--height:35px-->
                     <!--右側のコンテンツ内容です-->
             <form method="post" action="{{url('mrt-db.second.resultSearch')}}">
                 {{ csrf_field() }}

@@ -47,6 +47,7 @@ class MRTdbSearchController extends Controller
                 $query -> where('hourlySalary','>=', $hourlySalary);
             }
 
+
         if (isset($salary)) {
             $query -> where('salary','>=', $salary);
         }
