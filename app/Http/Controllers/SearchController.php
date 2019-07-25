@@ -26,7 +26,6 @@ class SearchController extends Controller
         // 都道府県
         if (isset($location)) {
             $query->where('location', $location);
-            echo '都道府県が選択されています';
         }
 
         //  診療科
