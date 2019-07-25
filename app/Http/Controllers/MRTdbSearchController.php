@@ -43,28 +43,17 @@ class MRTdbSearchController extends Controller
             }
         }
 
+        if (isset($hourlySalary)) {
+                $query -> where('hourlySalary','>=', $hourlySalary);
+            }
 
-//        // 給与形態
-//        if (isset($hourlySalary) || isset($salary_day)) {
-//            if (isset($hourlySalary) && !isset($salary)) {
-//                $query -> where('salary_type', '2');
-//                $query -> where('salary', '>=', $hourlySalary);
-//            }
-//            if (!isset($hourlySalary) && isset($salary)) {
-//                $query -> where('salary_type', '1');
-//                $query -> where('salary', '>=', $salary_day);
-//            }
-//            if (isset($hourlySalary) && isset($salary)) {
-//                $query -> where('salary', '>=', $hourlySalary);
-//                $query -> orwhere('salary', '>=', $salary);
-//            }
-//        }
-
+        if (isset($salary)) {
+            $query -> where('salary','>=', $salary);
+        }
 
         if (isset($startDate)){
             $query->where('startDate',$startDate);
         }
-
 
         $mrtDbCollection = $query->orderby('startDate','asc')->get();
 
@@ -73,10 +62,3 @@ class MRTdbSearchController extends Controller
     }
 }
 
-//DB::table('mrt_dbs')->where('prefecture','北海道')->get();
-//
-//return view('mrt-db.search',compact('mrtDbCollection'));
-
-//$collection =new mrt_db();
-//
-//$mrtDbCollection =$collection->getAllData();

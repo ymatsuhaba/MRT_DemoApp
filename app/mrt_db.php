@@ -9,11 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class mrt_db extends Model
 {
 
-//    protected $guarded = array('id');
-
-//    protected $fillable = ['type', 'startDate','endDate', 'week','prefecture', 'place', 'startTime', 'endTime',
-//        'salary', 'salarySystem', 'transportationSystem', 'transportationExpenses', 'workForm', 'facilityType'];
-
     public $timestamps = false;
 
     public function getAllData(){
