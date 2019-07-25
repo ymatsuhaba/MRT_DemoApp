@@ -68,6 +68,10 @@ Route::get('answerman.answer4','AnswermanController@answer4');
 Route::get('answerman.answer5','AnswermanController@answer5');
 
 Route::resource('mrt-db','MRTdbController');
+Route::post('mrt-db.second.resultSearch','MRTdbSearchController@search');
+Route::get('mrt-db.second.resultSearch','MRTdbSearchController@search');
+
+
 
 
 // しょう
