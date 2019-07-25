@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-//use Illuminate\Support\Facades\DB;
 
 class mrt_db extends Model
 {
@@ -29,9 +28,9 @@ class mrt_db extends Model
             $place = $mrtdbAllDatum->place;
             $medical = $mrtdbAllDatum->medical;
 
-            $type_change= config("const.type.$type");
+            $typeChange= config("const.type.$type");
 
-            $data='【'.$type_change.'】'.' '.
+            $data='【'.$typeChange.'】'.' '.
                 date('Y年m月d日',strtotime($startDate)).' '.
                 $week[date('w', strtotime($startDate))].' '.
                 date('H:i',strtotime($startTime)).'-'.date('H:i',strtotime($endTime)).' '.
