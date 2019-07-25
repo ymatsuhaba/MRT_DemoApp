@@ -23,9 +23,9 @@
 
 {{----------------------【求人一覧テーブル】--------------------}}
 <ul style="list-style: none;">
-    @foreach($result as $list)
+    @foreach($recruitments_result as $list)
         <li>
-            【{{Config::get("const_s.type.$list->job_offer_type")}}】
+            【{{Config::get("const_s.job_offer_type.$list->job_offer_type")}}】
             【{{$list->work_start_date}}】
             【{{$list->work_start_date}}】
             【{{$list->work_start_time}}】
