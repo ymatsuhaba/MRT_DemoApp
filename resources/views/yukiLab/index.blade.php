@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/yukiLab/index.css">
     <link rel="stylesheet" type="text/css" href="css/yukiLab/header.css">
     <link rel="stylesheet" type="text/css" href="css/yukiLab/yucky_books.css">
-    <title>Hello, world!</title>
+    <title>yukiLab | produced by メルカリ</title>
 </head>
 
 
