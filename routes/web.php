@@ -115,6 +115,8 @@ Route::get('/question5', 'AnswerController@question5');
 //MRTLPのページ
 Route::get('/mrtlp', 'LpController@index');
 Route::get('/search_result', 'SearchController@search');
+//Booksのページ
+Route::get('/bookRoom','BookController@bookList');
 
 
 
