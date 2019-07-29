@@ -71,9 +71,9 @@ class yukiLabController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit($id)
     {
-        $yucky_books =yukiLab::find($request->id);
+        $yucky_books =yukiLab::find($id);
 
         return view('yukiLab.edit',['yucky_books'=>$yucky_books]);
     }
@@ -87,14 +87,16 @@ class yukiLabController extends Controller
      */
     public function update(Request $request)
     {
-//        $yucky_books = new yukiLab();
-//
-//        $yucky_books->author_name = $request -> input('author_name');
-//        $yucky_books->book_title = $request -> input('book_title');
-//
-//        $yucky_books->save();
-//
-//        return redirect()->to('yukiLab');
+        $yucky_books = yukiLab::find($request->id);
+
+        $yucky_books->author_name = $request -> input('author_name');
+        $yucky_books->book_title = $request -> input('book_title');
+        $yucky_books->release_date = $request -> input('release_date');
+        $yucky_books->lending_situation = $request -> input('lending_situation');
+
+        $yucky_books->save();
+
+        return view('yukiLab',compact('yucky_books'));
     }
 
     /**
