@@ -20,7 +20,6 @@
 
 <header>
     <div><a href="yukiLab/create">新規登録</a></div>
-    <div><a href="yukiLab/update">更新</a></div>
 </header>
 
 
@@ -45,12 +44,12 @@
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="著者">
         </div>
         <div class="form-group">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-                Check me out
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-                Check me out
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-                Check me out
+            <input class="form-check-input" type="checkbox" value="1">
+                貸出中
+            <input class="form-check-input" type="checkbox" value="2">
+                在庫あり
+            <input class="form-check-input" type="checkbox" value="3">
+                紛失中
         </div>
             <bottom type="submit" class="btn btn-primary mb-2">検索</bottom>
     </form>
@@ -60,11 +59,13 @@
     @if(count($yucky_books) > 0)
         @foreach($yucky_books as $yucky_book)
             <p>
-            <li><a href="{{ url('yuckLab'.$yucky_book->id) }}">{{$yucky_book->id}}</a>{{$yucky_book->book_title}}
+            <li><a href="yukiLab/{{$yucky_book -> id}}">{{$yucky_book->id}}</a>
+                {{$yucky_book->book_title}}
                 {{$yucky_book->author_name}}
                 {{$yucky_book->release_date}}
                 {{Config::get("books.lending_situation.$yucky_book->lending_situation")}}
-                {{$yucky_book->create_at}}</li>
+                {{$yucky_book->create_at}}
+                <a href="yukiLab/{{$yucky_book -> id}}/edit">編集フォーム</a></li>
             </p>
         @endforeach
     @endif

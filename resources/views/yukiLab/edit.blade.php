@@ -1,4 +1,4 @@
-<form action="/yukiLab" method="post" class="form-horizontal">
+<form action="/yukiLab" method="update" class="form-horizontal">
     {{ csrf_field() }}
     <div class="form-group @if($errors->has('author_name')) has-error @endif">
         <label for="author_name" class="col-md-3 control-label">AUTHOR NAME</label>
@@ -35,4 +35,3 @@
 
     <div class="col-md-offset-3 text-center"><button class="btn btn-primary">確認</button></div>
 </form>
-
