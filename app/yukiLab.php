@@ -13,6 +13,6 @@ class yukiLab extends Model
     public $timestamps = true;
 
     protected $fillable =[
-        'book_title','author_name','release_date','lending_situation'
+        'book_title','author_name','release_date','lending_situation','image_url'
     ];
 }

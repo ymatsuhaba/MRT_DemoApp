@@ -19,7 +19,7 @@
 <body>
 
 <header>
-    <div><a href="yukiLab/create">新規登録</a></div>
+    <div id="create"><a href="yukiLab/create">新規登録</a></div>
 </header>
 
 
@@ -34,38 +34,41 @@
 
 
 <!--↓↓ 検索フォーム ↓↓-->
-<div class="col-sm-4">
-    <form class="form-inline" action="{{url('/yukiLab')}}">
-        {{ csrf_field() }}
+    <form action="{{url('yukiLab')}}" method="post" class="form-inline" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="タイトル">
+            <input type="text" class="form-control" id="formGroupExampleInput" name="author_name" placeholder="著者">
+        </div>
+        <div>
+            <input type="text" class="form-control" name="book_title" placeholder="タイトル">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="著者">
-        </div>
-        <div class="form-group">
-            <input class="form-check-input" type="checkbox" value="1">
+            <input class="form-check-input" type="checkbox" name="lending" value="0">
                 貸出中
-            <input class="form-check-input" type="checkbox" value="2">
+            <input class="form-check-input" type="checkbox" name="in_stock" value="1">
                 在庫あり
-            <input class="form-check-input" type="checkbox" value="3">
+            <input class="form-check-input" type="checkbox" name="being_lost" value="2">
                 紛失中
         </div>
-            <bottom type="submit" class="btn btn-primary mb-2">検索</bottom>
+        <div>
+            <input type="date" class="form-control" id="release_date" name="release_date" min="1950-07-01" max="2019-07-31">
+        </div>
+        <button class="btn btn-primary mb-2" type="submit">Confirm identity</button>
     </form>
-</div>
+
 <!--↑↑ 検索フォーム ↑↑-->
+
 <div id="yucky_books">
     @if(count($yucky_books) > 0)
         @foreach($yucky_books as $yucky_book)
             <p>
-            <li><a href="yukiLab/{{$yucky_book -> id}}">{{$yucky_book->id}}</a>
-                {{$yucky_book->book_title}}
+            <li><a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->id}}</a>
+                <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->book_title}}</a>
                 {{$yucky_book->author_name}}
                 {{$yucky_book->release_date}}
                 {{Config::get("books.lending_situation.$yucky_book->lending_situation")}}
-                {{$yucky_book->create_at}}
-                <a href="yukiLab/{{$yucky_book -> id}}/edit">編集フォーム</a></li>
+                {{$yucky_book->created_at}}
+                <a href="yukiLab/{{$yucky_book->id}}/edit">編集フォーム</a></li>
             </p>
         @endforeach
     @endif

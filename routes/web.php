@@ -72,9 +72,7 @@ Route::post('mrt-db.second.resultSearch','MRTdbSearchController@search');
 Route::get('mrt-db.second.resultSearch','MRTdbSearchController@search');
 
 Route::resource('yukiLab','yukiLabController');
-//Route::post('yukiLab','yukiLabSearchController@search');
-//Route::get('yukiLab','yukiLabSearchController@search');
-
+Route::post('yukiLab','yukiLabController@index');
 
 // しょう
 // 検索ページ
