@@ -18,11 +18,12 @@ class Books extends Migration
                 $table->bigIncrements('id');
                 $table->string('title');
                 $table->string('author');
-                $table->integer('release_date');
-                $table->string('cover');
-                $table->string('status');
-                $table->integer('registration_date');
-                $table->integer('update_date');
+                $table->string('release_date');
+//                $table->string('cover');
+                $table->integer('status');
+//                $table->date('registration_date');
+//                $table->('update_date');
+                $table->timestamps();
             });
         }
 

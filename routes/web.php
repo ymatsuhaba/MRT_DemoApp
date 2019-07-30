@@ -115,11 +115,14 @@ Route::get('/question5', 'AnswerController@question5');
 //MRTLPのページ
 Route::get('/mrtlp', 'LpController@index');
 Route::get('/search_result', 'SearchController@search');
-//Booksのページ
-Route::get('/bookRoom','BookController@bookList');
 
-
-
+//Books:一覧ページ
+Route::get('/bookRoom','BookController@list');
+//Books:新規登録ページ
+Route::get('BookRoom.register','BookController@register');
+//Books:新規登録確認ページ
+Route::get('BookRoom.confirm','BookController@confirm');
+Route::post('BookRoom.confirm','BookController@confirm');
 
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
