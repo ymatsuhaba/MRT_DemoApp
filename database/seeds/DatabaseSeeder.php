@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         
         $this->call(RecruitmentSeeder::class);
 
+        $this->call(EmployeesTableSeeder::class);
+
        factory(App\mrt_db::class, 10000)->create();
 
     }

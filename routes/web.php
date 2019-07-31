@@ -116,6 +116,9 @@ Route::get('/question5', 'AnswerController@question5');
 Route::get('/mrtlp', 'LpController@index');
 Route::get('/search_result', 'SearchController@search');
 
+// はばたん
+Route::get('doctor', 'DoctorController@index');
+
 
 
 
