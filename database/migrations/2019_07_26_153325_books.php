@@ -21,7 +21,7 @@ class Books extends Migration
                 $table->string('release_date');
 //                $table->string('cover');
                 $table->integer('status');
-//                $table->date('registration_date');
+                $table->timestamp('created_at');
 //                $table->('update_date');
                 $table->timestamps();
             });

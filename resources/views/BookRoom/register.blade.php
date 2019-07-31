@@ -34,7 +34,7 @@
 
     <div class="form-group">
         <label for="tel" class="col-md-3 control-label">発売フラグ</label>
-        <input type="number" class="form-control" name="status">
+        <input type="text" class="form-control" name="status">
     </div>
 
 

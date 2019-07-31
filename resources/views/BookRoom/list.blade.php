@@ -35,8 +35,8 @@
             <td>{{$list->title}}</td>
             <td>{{$list->author}}</td>
             <td>{{$list->release_date}}</td>
-            <td>{{$list->status}}</td>
-            <td>{{$list->registration_date}}</td>
+            <td>{{Config::get("const_s.status.$list->status")}}</td>
+            <td>{{$list->created_at}}</td>
         </tr>
     @endforeach
     </tbody>
