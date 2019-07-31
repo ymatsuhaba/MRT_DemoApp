@@ -19,7 +19,10 @@
 <body>
 
 <header>
-    <div id="create"><a href="yukiLab/create">新規登録</a></div>
+    <div id="content">
+        <div id="create"><a href="yukiLab/create">新規登録</a></div>
+        <div id="index"><a href="yukiLab/index">インデックス</a></div>
+    </div>
 </header>
 
 
@@ -34,7 +37,7 @@
 
 
 <!--↓↓ 検索フォーム ↓↓-->
-    <form action="{{url('yukiLab')}}" method="post" class="form-inline" enctype="multipart/form-data">
+    <form action="{{url('yukiLab')}}" method="get" class="form-inline" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <input type="text" class="form-control" id="formGroupExampleInput" name="author_name" placeholder="著者">
@@ -53,25 +56,29 @@
         <div>
             <input type="date" class="form-control" id="release_date" name="release_date" min="1950-07-01" max="2019-07-31">
         </div>
-        <button class="btn btn-primary mb-2" type="submit">Confirm identity</button>
+        <input class="btn btn-primary mb-2" type="submit" name="submit1">
     </form>
 
 <!--↑↑ 検索フォーム ↑↑-->
 
 <div id="yucky_books">
+    <form action="{{url('yukiLab')}}" method="get" enctype="multipart/form-data">
     @if(count($yucky_books) > 0)
         @foreach($yucky_books as $yucky_book)
-            <p>
-            <li><a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->id}}</a>
+            <li>
+                <input type="checkbox" name="id" value="{{$yucky_book->id}}">
+                <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->id}}</a>
                 <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->book_title}}</a>
                 {{$yucky_book->author_name}}
                 {{$yucky_book->release_date}}
                 {{Config::get("books.lending_situation.$yucky_book->lending_situation")}}
                 {{$yucky_book->created_at}}
-                <a href="yukiLab/{{$yucky_book->id}}/edit">編集フォーム</a></li>
-            </p>
+                <a href="yukiLab/{{$yucky_book->id}}/edit">編集フォーム</a>
+            </li>
         @endforeach
     @endif
+        <input class="btn btn-primary mb-2" type="submit" name="submit2">
+    </form>
 </div>
 
 </body>

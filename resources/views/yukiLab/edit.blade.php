@@ -1,6 +1,6 @@
-<form action="/yukiLab/{{$yucky_books->id}}" method="post" class="form-horizontal">
+<form action="/yukiLab" method="post" class="form-horizontal">
     @csrf
-    @method('put')
+    @method('post')
     <div class="form-group @if($errors->has('author_name')) has-error @endif">
         <label for="author_name" class="col-md-3 control-label">AUTHOR NAME</label>
         <div class="col-sm-9">
@@ -24,6 +24,16 @@
         </div>
     </div>
 
+    <div class="form-group @if($errors->has('image_url')) has-error @endif">
+        <label for="release_date" class="col-md-3 control-label">画像内容</label>
+        <div class="col-sm-9">
+            <input type="file" class="form-control" id="image_url" name="image_url">
+            @if($errors->has('image_url'))<span class="text-danger">{{ $errors->first('image_url') }}</span> @endif
+        </div>
+    </div>
+
+
+
     <div class="form-group @if($errors->has('lending_situation')) has-error @endif">
         <label for="lending_situation" class="col-md-3 control-label">RELEASE DATE</label>
         <div class="col-sm-9">
@@ -38,13 +48,4 @@
 </form>
 
 
-{{--<h1>Create Login</h1>--}}
-{{--<a class="btn btn-default" href="/login">Go Back</a>--}}
-{{--{!! Form::open(['action' => 'LoginController@store', 'method' => 'POST']) !!}--}}
-{{--{{ Form::Text('id',$login->id) }}--}}
-{{--{{ Form::Text('name',$login->name) }}--}}
-{{--{{ Form::Text('from',$login->from) }}--}}
-{{--{{ Form::Text('password',$login->password) }}--}}
-{{--{{ Form::Submit('Submit', ['class' => 'btn btn-primary']) }}--}}
-{{--{!! Form::close() !!}--}}
 

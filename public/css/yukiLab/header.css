@@ -5,7 +5,14 @@ header{
     position: relative;
 }
 
-    header #create{
+    header #content{
+        width:80%;
+        height:5vh;
+        display:flex;
+        margin:0 auto;
+    }
+
+    header #content #create{
         background-color: #5959fa;
         width:20%;
         height:5vh;
@@ -14,11 +21,29 @@ header{
         padding-top: 1.5vh;
     }
 
-    header #create a{
+    header #content #create a{
         color:white;
         text-decoration: none;
     }
 
-    header #create a:hover{
+    header #content #create a:hover{
+        color:orange;
+    }
+
+    header #content #index{
+        background-color: #5959fa;
+        width:20%;
+        height:5vh;
+        position: absolute;
+        text-align: center;
+        padding-top: 1.5vh;
+    }
+
+    header #content #index a{
+        color:white;
+        text-decoration: none;
+    }
+
+    header #content #index a:hover{
         color:orange;
     }
