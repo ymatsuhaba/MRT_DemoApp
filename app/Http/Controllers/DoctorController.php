@@ -9,12 +9,9 @@ class DoctorController extends Controller
 {
     public function index()
     {
+        //【Doctor】より全データ取得
         $doctor_list = Doctor::all();
 
-//        $doctor_list = $query->orderBy('doctor_id');
-
         return view('doctor', compact('doctor_list'));
-//        return view('doctor')->with('doctor.blade.php',$doctor);
     }
-    //
 }
