@@ -6,6 +6,9 @@ use App\yukiLab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+
+
 
 class yukiLabController extends Controller
 {
@@ -144,14 +147,14 @@ class yukiLabController extends Controller
         $yucky_books->lending_situation = $request->input('lending_situation');
 
         //画像ファイルの登録処理
-            //画像のデータの登録
-            $filename_with_ext = $request->file('image_url')->getClientOriginalName();
-            $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
-            $extention = $request->file('image_url')->getClientOriginalExtension();
-            //文字列結合
-            $filename_store = $filename . '_' . time() . '.' . $extention;
-            //upload
-            $yucky_books->image_url = $request->file('image_url')->storeAs('/public/yukiLabPng', $filename_store);
+        //画像のデータの登録
+        $filename_with_ext = $request->file('image_url')->getClientOriginalName();
+        $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
+        $extention = $request->file('image_url')->getClientOriginalExtension();
+        //文字列結合'_' . time() .
+        $filename_store = $filename . '.' . $extention;
+        //upload
+        $yucky_books->image_url = $request->file('image_url')->storeAs('public/yukiLabPng', $filename_store);
 
 
         //DBに保存する
@@ -175,9 +178,11 @@ class yukiLabController extends Controller
             'id'=>$yucky_books->id,
             'book_title'=>$yucky_books->book_title,
             'author_name'=>$yucky_books->author_name,
-            'image_url' => str_replace('public/', 'storage/', $yucky_books->image_url),
+            'image_url' => str_replace('public/', 'storage/app/public/yukiLabPng/', $yucky_books->image_url),
+//            'image_url' => $yucky_books->image_url,
             'lending_situation'=>$yucky_books->lending_situation,
             ]);
+
     }
 
     /**

@@ -82,16 +82,18 @@
     <form action="{{url('yukiLab')}}" method="get">
     @if(count($yucky_books) > 0)
         @foreach($yucky_books as $yucky_book)
-            <li>
-                <input type="checkbox" name="id[]" value="{{$yucky_book->id}}">
-                {{$yucky_book->id}}
-                <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->book_title}}</a>
-                {{$yucky_book->author_name}}
-                {{$yucky_book->release_date}}
-                {{Config::get("books.lending_situation.$yucky_book->lending_situation")}}
-                {{$yucky_book->created_at}}
-                <a href="yukiLab/{{$yucky_book->id}}/edit">編集フォーム</a>
-            </li>
+            <div id="box">
+                <div id=checkbox><input type="checkbox" name="id[]" value="{{$yucky_book->id}}"></div>
+                <div id="id">{{$yucky_book->id}}</div>
+                <div id="title"><a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->book_title}}</a></div>
+                <div id="author">{{$yucky_book->author_name}}</div>
+            </div>
+            <div id="box2">
+                <div id="release_date">{{$yucky_book->release_date}}</div>
+                <div id="lending_situation">{{Config::get("books.lending_situation.$yucky_book->lending_situation")}}</div>
+                <div id="created_at">{{$yucky_book->created_at}}</div>
+                <div id="edit"><a href="yukiLab/{{$yucky_book->id}}/edit">編集</a></div>
+            </div>
         @endforeach
     @endif
         <input class="btn btn-primary mb-2" type="submit" value="選択削除" name="delete">
