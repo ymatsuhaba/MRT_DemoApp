@@ -21,7 +21,6 @@
 <header>
     <div id="content">
         <div id="create"><a href="yukiLab/create">新規登録</a></div>
-{{--        <div id="index"><a href="yukiLab/index">インデックス</a></div>--}}
     </div>
 </header>
 
