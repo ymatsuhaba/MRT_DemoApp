@@ -72,6 +72,10 @@
         <input class="btn btn-primary mb-2" type="submit" value="登録日で降順" name="sort_created_at_desc">
     </form>
 
+    <form action="{{url('yukiLab')}}" method="get" class="form-inline">
+        <input class="btn btn-primary mb-2" type="submit" value="全件削除" name="destroy_all">
+    </form>
+
 <!--↑↑ 検索フォーム ↑↑-->
 
 <div id="yucky_books">
@@ -90,7 +94,7 @@
             </li>
         @endforeach
     @endif
-        <input class="btn btn-primary mb-2" type="submit" name="submit2">
+        <input class="btn btn-primary mb-2" type="submit" value="選択削除" name="delete">
     </form>
 </div>
 

@@ -27,15 +27,15 @@ class yukiLabController extends Controller
             $being_lost = $request->input('being_lost');
             $release_date = $request->input('release_date');
 
-
+            //タイトルで検索
             if (isset($book_title)) {
                 $dataFromDB->where('book_title', 'LIKE', "%{$book_title}%");
             }
-
+            //著者名で検索
             if (isset($author_name)) {
                 $dataFromDB->where('author_name', 'LIKE', "%{$author_name}%");
             }
-
+            //貸出フラグで検索
             if (isset($lending) || isset($in_stock) || isset($being_lost)) {
                 // 貸出中が選択されている場合
                 if (isset($lending) && !isset($in_stock) && !isset($being_lost)) {
@@ -45,12 +45,12 @@ class yukiLabController extends Controller
                 if (!isset($lending) && isset($in_stock) && !isset($being_lost)) {
                     $dataFromDB->where('lending_situation', $in_stock);
                 }
-                // 在庫ありが選択されている場合
+                // 紛失中が選択されている場合
                 if (!isset($lending) && !isset($in_stock) && isset($being_lost)) {
                     $dataFromDB->where('lending_situation', $being_lost);
                 }
             }
-
+            //発売日で検索
             if (isset($release_date)) {
                 $dataFromDB->where('release_date', $release_date);
             }
@@ -87,17 +87,20 @@ class yukiLabController extends Controller
         }
 
 
-        //削除フォーム
-        if(Input::get('submit2')){
+        //選択削除フォーム
+        if(Input::get('delete')){
             $id = $request->input('id');
 
-//            var_dump($id);
-
-            if(isset($id)){
-
-                $dataFromDB->where('id', $id)->delete();
+            if(isset($id)) {
+                $dataFromDB->where('id',$id)->delete();
             }
         }
+
+//        //全件削除フォーム
+        if(Input::get('destroy_all')){
+            $dataFromDB->delete();
+        }
+
 
         //取得してviewに返す
         $yucky_books = $dataFromDB->get();
@@ -131,8 +134,10 @@ class yukiLabController extends Controller
             'image_url' =>['required','file','image','mimes:jpeg,png']
         ]);
 
+        //インスタンス化
         $yucky_books = new yukiLab();
 
+        //変数に入れる
         $yucky_books->author_name = $request->input('author_name');
         $yucky_books->book_title = $request->input('book_title');
         $yucky_books->release_date = $request->input('release_date');
@@ -143,7 +148,7 @@ class yukiLabController extends Controller
             $filename_with_ext = $request->file('image_url')->getClientOriginalName();
             $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
             $extention = $request->file('image_url')->getClientOriginalExtension();
-            //ファイル名の作成
+            //文字列結合
             $filename_store = $filename.'_'.time().'.'.$extention;
             //upload
             $yucky_books->image_url = $request->file('image_url')->storeAs('/public/yukiLabPng', $filename_store);
