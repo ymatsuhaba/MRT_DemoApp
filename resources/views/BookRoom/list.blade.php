@@ -12,11 +12,9 @@
 
 {{--ヘッダー--}}
 @include('BookRoom.header')
-
 <a href="BookRoom.register"><button type="submit" class="btn btn-primary" style="text-align:center">新規登録はこちら</button></a>
 <a href="BookRoom.search"><button type="submit" class="btn btn-primary" style="text-align:center">検索はこちら</button></a>
 <a href="http://localhost:3000/bookRoom?_token=16dWG7PbqDzwWHUQvxZKzcTq5GWfjtCfpoSEH8AA&title=&author=&release_date="><button type="submit" class="btn btn-primary" style="text-align:center">一覧へ戻る</button></a>
-
 <div class="page-header" style="text-align: center">
     <h1>BookRoom 一覧表</h1>
 </div>
@@ -38,9 +36,8 @@
             <td>{{Config::get("const_s.status.$list->status")}}</td>
             <td>{{$list->created_at}}</td>
         </tr>
-    @endforeach
-    </tbody>
+        @endforeach
+        </tbody>
 </table>
-
- <!-- フッター -->
-    @include('BookRoom.footer')
+<!-- フッター -->
+@include('BookRoom.footer')
