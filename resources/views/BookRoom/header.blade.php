@@ -1,4 +1,3 @@
-<!-- header & grobal navi -->
 <nav class="navbar navbar-default" style="background-color: whitesmoke">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
