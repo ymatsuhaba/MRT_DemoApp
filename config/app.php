@@ -177,11 +177,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 //        App\Providers\FormServiceProvider::class,
 
-        /*
-     * 追加
-     */
-        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
-
     ],
 
     /*
