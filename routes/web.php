@@ -116,6 +116,17 @@ Route::get('/question5', 'AnswerController@question5');
 Route::get('/mrtlp', 'LpController@index');
 Route::get('/search_result', 'SearchController@search');
 
+//Books:検索ページ
+Route::get('/BookRoom.search','BookController@search');
+//Books:一覧ページ
+Route::get('/bookRoom','BookController@list');
+//Route::get('/bookRoom','BookController@titleSort');
+//Books:新規登録ページ
+Route::get('BookRoom.register','BookController@register');
+//Books:新規登録確認ページ
+Route::get('BookRoom.confirm','BookController@confirm');
+Route::post('BookRoom.confirm','BookController@confirm');
+
 // はばたん
 Route::get('doctor', 'DoctorController@index');
 
