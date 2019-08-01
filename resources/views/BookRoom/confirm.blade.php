@@ -19,19 +19,14 @@
         <th>タイトル</th>
         <th>著者名</th>
         <th>発売日</th>
-        <th>表紙</th>
         <th>貸出フラグ</th>
-        <th>登録日</th>
     </tr>
     </thead>
     <tbody>
-        <td>{{$entered->title}}</td>
-        <td>{{$entered->author}}</td>
-        <td>{{$entered->release_date}}</td>
-        <td>{{$entered->cover}}</td>
-        <td>{{$entered->status}}</td>
-        <td>{{$entered->registration_date}}</td>
-
+    <td>{{$entered->title}}</td>
+    <td>{{$entered->author}}</td>
+    <td>{{$entered->release_date}}</td>
+    <td>{{Config::get("const_s.status.$entered->status")}}</td>
     </tbody>
 </table>
 

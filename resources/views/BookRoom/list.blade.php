@@ -13,10 +13,12 @@
 {{--ヘッダー--}}
 @include('BookRoom.header')
 
-<a href="BookRoom.register"><button type="submit" class="btn btn-primary" style="text-align:center">新規登録はこちら！</button></a>
+<a href="BookRoom.register"><button type="submit" class="btn btn-primary" style="text-align:center">新規登録はこちら</button></a>
+<a href="BookRoom.search"><button type="submit" class="btn btn-primary" style="text-align:center">検索はこちら</button></a>
+<a href="http://localhost:3000/bookRoom?_token=16dWG7PbqDzwWHUQvxZKzcTq5GWfjtCfpoSEH8AA&title=&author=&release_date="><button type="submit" class="btn btn-primary" style="text-align:center">一覧へ戻る</button></a>
 
 <div class="page-header" style="text-align: center">
-    <h1>BookRoom一覧表</h1>
+    <h1>BookRoom 一覧表</h1>
 </div>
 <table class="table table-striped table-hover" style="text-align: center">
     <thead>
@@ -28,9 +30,7 @@
         <th>登録日</th>
     </tr>
     </thead>
-    <tbody>
-    <tbody>
-    @foreach($book_list as $list)
+    @foreach($books as $list)
         <tr>
             <td>{{$list->title}}</td>
             <td>{{$list->author}}</td>
@@ -44,5 +44,3 @@
 
  <!-- フッター -->
     @include('BookRoom.footer')
-
-

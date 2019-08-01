@@ -18,33 +18,35 @@
 <form method="get" action="{{ url('/BookRoom.confirm') }}" class="form-horizontal" style="text-align:center; height: 500px; width: auto">
     @csrf
     <div class="form-group">
-        <label for="name" class="col-md-3 control-label">タイトル</label>
+        {{$err_msg}}
+        <label class="col-md-3 control-label">タイトル</label>
         <input type="text" class="form-control"  name="title">
     </div>
 
     <div class="form-group ">
-        <label for="email" class="col-md-3 control-label">著者名</label>
+        <label class="col-md-3 control-label">著者名</label>
         <input type="text" class="form-control"  name="author">
     </div>
 
     <div class="form-group">
-        <label for="tel" class="col-md-3 control-label">発売日</label>
+        <label class="col-md-3 control-label">発売日</label>
         <input type="text" class="form-control" name="release_date">
     </div>
 
     <div class="form-group">
-        <label for="tel" class="col-md-3 control-label">発売フラグ</label>
-        <input type="text" class="form-control" name="status">
+        <label class="col-md-3 control-label">貸出フラグ</label>
+        <p><label class="col-md-3 control-label">貸出中</label><input type="radio" name="status" value="1"></p>
+        <p><label class="col-md-3 control-label">在庫あり</label><input type="radio" name="status" value="2"></p>
+        <p><label class="col-md-3 control-label">紛失中</label><input type="radio" name="status" value="3"></p>
     </div>
 
-
     {{--    <div class="form-group ">--}}
-{{--        <label for="email" class="col-md-3 control-label">表紙</label>--}
-{{--        {{ csrf_field() }}--}}
-{{--        <input type="file" class="form-control" id="" name="cover">--}}
-{{--    </div>--}}
+    {{--        <label for="email" class="col-md-3 control-label">表紙</label>--}
+    {{--        {{ csrf_field() }}--}}
+    {{--        <input type="file" class="form-control" id="" name="cover">--}}
+    {{--    </div>--}}
 
-{{--    <div class="col-md-offset-3 text-center">--}}
+    {{--    <div class="col-md-offset-3 text-center">--}}
     <button type="submit" class="btn btn-primary">確認</button>
 </form>
 <!-- フッター -->
