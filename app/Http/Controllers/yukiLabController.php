@@ -92,7 +92,7 @@ class yukiLabController extends Controller
             $id = $request->input('id');
 
             if(isset($id)) {
-                $dataFromDB->where('id',$id)->delete();
+                $dataFromDB->whereIn('id',$id)->delete();
             }
         }
 
@@ -128,10 +128,10 @@ class yukiLabController extends Controller
     {
         //バリデーションをかける
         $request->validate([
-            'author_name' => 'required|string|max:10',
+            'author_name' => 'required|string|max:30',
             'book_title' => 'required|string|max:30',
-            'release_date'=>'required',
-            'image_url' =>['required','file','image','mimes:jpeg,png']
+            'lending_situation' => 'required',
+            'image_url' => ['file', 'image', 'mimes:jpeg,png']
         ]);
 
         //インスタンス化
@@ -149,9 +149,10 @@ class yukiLabController extends Controller
             $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
             $extention = $request->file('image_url')->getClientOriginalExtension();
             //文字列結合
-            $filename_store = $filename.'_'.time().'.'.$extention;
+            $filename_store = $filename . '_' . time() . '.' . $extention;
             //upload
             $yucky_books->image_url = $request->file('image_url')->storeAs('/public/yukiLabPng', $filename_store);
+
 
         //DBに保存する
         $yucky_books->save();
@@ -179,7 +180,6 @@ class yukiLabController extends Controller
             ]);
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -200,7 +200,7 @@ class yukiLabController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
         //バリデーションをかける
         $request->validate([
@@ -209,25 +209,7 @@ class yukiLabController extends Controller
             'release_date'=>'required',
         ]);
 
-        $yucky_books = new yukiLab();
-
-        $yucky_books->author_name = $request->input('author_name');
-        $yucky_books->book_title = $request->input('book_title');
-        $yucky_books->release_date = $request->input('release_date');
-        $yucky_books->lending_situation = $request->input('lending_situation');
-
-        //画像ファイルの登録処理
-        //画像のデータの登録
-        $filename_with_ext = $request->file('image_url')->getClientOriginalName();
-        $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
-        $extention = $request->file('image_url')->getClientOriginalExtension();
-        //ファイル名の作成
-        $filename_store = $filename.'_'.time().'.'.$extention;
-        //upload
-        $yucky_books->image_url = $request->file('image_url')->storeAs('public/yukiLabPng', $filename_store);
-
-        //DBに保存する
-        $yucky_books->update($request->all());
+        yukiLab::find($id)->update($request->all());
 
         return redirect()->to('yukiLab');
 

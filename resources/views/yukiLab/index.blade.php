@@ -84,7 +84,7 @@
         @foreach($yucky_books as $yucky_book)
             <li>
                 <input type="checkbox" name="id[]" value="{{$yucky_book->id}}">
-                <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->id}}</a>
+                {{$yucky_book->id}}
                 <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->book_title}}</a>
                 {{$yucky_book->author_name}}
                 {{$yucky_book->release_date}}

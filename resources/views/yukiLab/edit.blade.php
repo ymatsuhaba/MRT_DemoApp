@@ -1,6 +1,6 @@
-<form action="/yukiLab" method="post" class="form-horizontal">
+<form action="/yukiLab/{{$yucky_books->id}}" method="post" class="form-horizontal" enctype="multipart/form-data">
     @csrf
-    @method('post')
+    @method('put')
     <div class="form-group @if($errors->has('author_name')) has-error @endif">
         <label for="author_name" class="col-md-3 control-label">AUTHOR NAME</label>
         <div class="col-sm-9">
@@ -27,7 +27,7 @@
     <div class="form-group @if($errors->has('image_url')) has-error @endif">
         <label for="release_date" class="col-md-3 control-label">画像内容</label>
         <div class="col-sm-9">
-            <input type="file" class="form-control" id="image_url" name="image_url">
+            <input type="file" class="form-control" id="image_url" name="image_url" >
             @if($errors->has('image_url'))<span class="text-danger">{{ $errors->first('image_url') }}</span> @endif
         </div>
     </div>
