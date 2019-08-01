@@ -40,6 +40,12 @@ class SearchController extends Controller
             // 日直・日当直が選択されている場合（当直が選択されていない）
             if (!isset($working_form_duty) && isset($working_form_day_duty)) {
                 $recruitments->where('work_form', $working_form_day_duty);
+        if (isset($working_form_duty) && !isset($working_form_day_duty)) {
+            $recruitments->where('work_form', $working_form_duty);
+            }
+            // 日直・日当直が選択されている場合（当直が選択されていない）
+        if (!isset($working_form_duty) && isset($working_form_day_duty)) {
+            $recruitments->where('work_form', $working_form_day_duty);
             }
         }
         // 給与形態
@@ -57,6 +63,19 @@ class SearchController extends Controller
             if (isset($salary_time) && isset($salary_day)) {
                 $recruitments->where('salary', '>=', $salary_time)
                     ->orwhere('salary', '>=', $salary_day);
+        if (isset($salary_time) && !isset($salary_day)) {
+            $recruitments->where('salary_type', '2')
+                  ->where('salary', '>=', $salary_time);
+            }
+
+        if (!isset($salary_time) && isset($salary_day)) {
+            $recruitments->where('salary_type', '1')
+                  ->where('salary', '>=', $salary_day);
+            }
+
+        if (isset($salary_time) && isset($salary_day)) {
+            $recruitments->where('salary', '>=', $salary_time)
+                  ->orwhere('salary', '>=', $salary_day);
             }
         }
 

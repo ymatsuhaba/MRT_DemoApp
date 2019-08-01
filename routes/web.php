@@ -127,6 +127,12 @@ Route::get('BookRoom.register','BookController@register');
 Route::get('BookRoom.confirm','BookController@confirm');
 Route::post('BookRoom.confirm','BookController@confirm');
 
+// はばたん
+Route::get('doctor', 'DoctorController@index');
+
+
+
+
 // その他
 Route::get('/v_bind_test', function () { return view('v_bind_test')->with('test', '変数テスト');});
 Route::get('/post_test', 'PostTestController@form');
