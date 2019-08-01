@@ -21,7 +21,7 @@
 <header>
     <div id="content">
         <div id="create"><a href="yukiLab/create">新規登録</a></div>
-        <div id="index"><a href="yukiLab/index">インデックス</a></div>
+{{--        <div id="index"><a href="yukiLab/index">インデックス</a></div>--}}
     </div>
 </header>
 
@@ -59,14 +59,27 @@
         <input class="btn btn-primary mb-2" type="submit" name="submit1">
     </form>
 
+    <form action="{{url('yukiLab')}}" method="get" class="form-inline">
+        <input class="btn btn-primary mb-2" type="submit" value="idで昇順" name="sort_id_asc">
+        <input class="btn btn-primary mb-2" type="submit" value="idで降順" name="sort_id_desc">
+        <input class="btn btn-primary mb-2" type="submit" value="著者で昇順" name="sort_author_asc">
+        <input class="btn btn-primary mb-2" type="submit" value="著者で降順" name="sort_author_desc">
+        <input class="btn btn-primary mb-2" type="submit" value="発売日で昇順" name="sort_release_asc">
+        <input class="btn btn-primary mb-2" type="submit" value="発売日で降順" name="sort_release_desc">
+        <input class="btn btn-primary mb-2" type="submit" value="貸出状況で昇順" name="sort_lending_situation_asc">
+        <input class="btn btn-primary mb-2" type="submit" value="貸出状況で降順" name="sort_lending_situation_desc">
+        <input class="btn btn-primary mb-2" type="submit" value="登録日で昇順" name="sort_created_at_asc">
+        <input class="btn btn-primary mb-2" type="submit" value="登録日で降順" name="sort_created_at_desc">
+    </form>
+
 <!--↑↑ 検索フォーム ↑↑-->
 
 <div id="yucky_books">
-    <form action="{{url('yukiLab')}}" method="get" enctype="multipart/form-data">
+    <form action="{{url('yukiLab')}}" method="get">
     @if(count($yucky_books) > 0)
         @foreach($yucky_books as $yucky_book)
             <li>
-                <input type="checkbox" name="id" value="{{$yucky_book->id}}">
+                <input type="checkbox" name="id[]" value="{{$yucky_book->id}}">
                 <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->id}}</a>
                 <a href="yukiLab/{{$yucky_book->id}}">{{$yucky_book->book_title}}</a>
                 {{$yucky_book->author_name}}

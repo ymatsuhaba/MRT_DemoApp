@@ -16,18 +16,7 @@ class yukiLabController extends Controller
      */
     public function index(Request $request)
     {
-//        $yucky_books = yukiLab::all();
-
-//        if (Input::get('submit1')){
-//            $this->search();
-//        }elseif(Input::get('submit2')){
-//            $this->delete();
-//        }
-
-//        return view('yukiLab.index',compact('yucky_books'));
-
         $dataFromDB = DB::table('yucky_books');
-
 
         //検索フォーム
         if(Input::get('submit1')){
@@ -68,22 +57,53 @@ class yukiLabController extends Controller
 
          }
 
+
+        //orderbyするためのフォーム
+            //idで昇順・降順
+        if(Input::get('sort_id_asc')){
+            $dataFromDB->orderby('id','asc');
+        }elseif (Input::get('sort_id_desc')){
+            $dataFromDB->orderby('id','desc');
+            //author_nameで昇順・降順
+        }elseif (Input::get('sort_author_asc')){
+            $dataFromDB->orderby('author_name','asc');
+        }elseif (Input::get('sort_author_desc')){
+            $dataFromDB->orderby('author_name','desc');
+            //release_dateで昇順・降順
+        }elseif (Input::get('sort_release_asc')){
+            $dataFromDB->orderby('release_date','asc');
+        }elseif (Input::get('sort_release_desc')){
+            $dataFromDB->orderby('release_date','desc');
+            //lending_situationで昇順・降順
+        }elseif (Input::get('sort_lending_situation_asc')){
+            $dataFromDB->orderby('lending_situation','asc');
+        }elseif (Input::get('sort_lending_situation_desc')){
+            $dataFromDB->orderby('release_date','desc');
+            //create_atで昇順・降順
+        }elseif (Input::get('sort_created_at_asc')){
+            $dataFromDB->orderby('created_at','asc');
+        }elseif (Input::get('sort_created_at_desc')){
+            $dataFromDB->orderby('created_at','desc');
+        }
+
+
         //削除フォーム
         if(Input::get('submit2')){
             $id = $request->input('id');
 
+//            var_dump($id);
+
             if(isset($id)){
+
                 $dataFromDB->where('id', $id)->delete();
             }
         }
+
+        //取得してviewに返す
         $yucky_books = $dataFromDB->get();
 
         return view('yukiLab.index',compact('yucky_books'));
     }
-
-
-//    public function search(Request $request){}
-
 
     /**
      * Show the form for creating a new resource.
@@ -105,8 +125,8 @@ class yukiLabController extends Controller
     {
         //バリデーションをかける
         $request->validate([
-            'author_name' => 'required',
-            'book_title' => 'required',
+            'author_name' => 'required|string|max:10',
+            'book_title' => 'required|string|max:30',
             'release_date'=>'required',
             'image_url' =>['required','file','image','mimes:jpeg,png']
         ]);
@@ -182,7 +202,6 @@ class yukiLabController extends Controller
             'author_name' => 'required',
             'book_title' => 'required',
             'release_date'=>'required',
-            'image_url' =>['required','file','image','mimes:jpeg,png']
         ]);
 
         $yucky_books = new yukiLab();
@@ -203,7 +222,7 @@ class yukiLabController extends Controller
         $yucky_books->image_url = $request->file('image_url')->storeAs('public/yukiLabPng', $filename_store);
 
         //DBに保存する
-        $yucky_books->save();
+        $yucky_books->update($request->all());
 
         return redirect()->to('yukiLab');
 
