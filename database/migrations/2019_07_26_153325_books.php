@@ -19,14 +19,11 @@ class Books extends Migration
                 $table->string('title');
                 $table->string('author');
                 $table->string('release_date');
-//                $table->string('cover');
+                $table->string('cover');
                 $table->integer('status');
-                $table->timestamp('created_at');
-//                $table->('update_date');
                 $table->timestamps();
             });
         }
-
     }
 
     /**
@@ -37,6 +34,5 @@ class Books extends Migration
     public function down()
     {
         Schema::drop('books');
-
     }
 }

@@ -18,34 +18,19 @@ class BookController extends Controller
 
     //新規登録画面ページ
     public function register() {
-        $err_msg = 'タイトルを入力してください。';
-
-
-
         return view('BookRoom.register', compact('err_msg'));
     }
 
     //新規登録確認画面ページ
     public function confirm(Request $request) {
 
-            $request->validate([
-            'title'=>'required',
-            'status'=>'required',
-            'release_date'=>'required',
-            ]);
-
-
-         $title = $request->input('title');
-
-         if ($title === null){
-             $err_msg = 'タイトルを入力してください。';
-             return view('BookRoom.register', compact('err_msg'));
-         }
-        //        //バリデーションのメッセージの設定
-//        $validate_messages = [
-//            "required" => "未入力です。入力をしてください"
-//        ];
-
+         $rules = [
+             'title'=>'required',
+             'status'=>'required',
+             'release_date'=>'date',
+             'image_url' => ['file', 'image', 'mimes:jpeg,png']
+        ];
+        $this->validate($request, $rules);
 
         //入力した値を取得
         $entered =new Books();
@@ -53,10 +38,8 @@ class BookController extends Controller
         $entered->title=$request->input('title');
         $entered->author= $request->input('author');
         $entered->release_date= $request->input('release_date');
-        //$entered->cover= $request->input('cover');
+        $entered->cover= $request->input('cover');
         $entered->status= $request->input('status');
-        //$entered->registration_date= $request->input('registration_date');
-        //$entered->update_date= $request->input('update_date');
 
         //入力した値を保存
         $entered->save();
@@ -65,6 +48,7 @@ class BookController extends Controller
         return view('BookRoom.confirm',compact('entered'));
     }
 
+        //検索ページ
     public function search(){
 
         return view('BookRoom.search');

@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BookRoom 確認</title>
+    <title>BookRoom 新規登録確認ページ</title>
 </head>
 {{--ヘッダー--}}
 @include('BookRoom.header')
@@ -29,11 +29,7 @@
     <td>{{Config::get("const_s.status.$entered->status")}}</td>
     </tbody>
 </table>
-
-<a href="http://localhost:3000/bookRoom">
-    <button type="submit" class="btn btn-primary" style="text-align:center">登録する</button>
-</a>
-
+<a href="http://localhost:3000/bookRoom"><button type="submit" class="btn btn-primary" style="text-align:center">登録する</button></a>
 
 <!-- フッター -->
 @include("BookRoom.footer")
