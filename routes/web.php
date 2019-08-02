@@ -117,7 +117,15 @@ Route::get('/mrtlp', 'LpController@index');
 Route::get('/search_result', 'SearchController@search');
 
 // はばたん
-Route::get('doctor', 'DoctorController@index');
+
+//検索ページ
+Route::get('/search_test_h', 'DoctorController@start');
+//一覧ページ
+Route::get('/doctor', 'DoctorController@index');
+Route::post('doctor', 'DoctorController@index');
+//検索ページ
+
+
 
 
 
