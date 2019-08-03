@@ -15,5 +15,8 @@
         <link rel="stylesheet" type="text/css" href="css/SpMrt/picture.css">
         <link rel="stylesheet" type="text/css" href="css/SpMrt/search.css">
         <link rel="stylesheet" type="text/css" href="css/SpMrt/create.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/main_content1.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/main_content2.css">
     <title>SP版　MRT</title>
     </head>

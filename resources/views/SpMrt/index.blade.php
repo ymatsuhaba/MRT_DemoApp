@@ -16,9 +16,15 @@
     </div>
 
     <div id="create">
-
     </div>
 
+    <div id="main_content1">
+    </div>
+
+    <div id="main_content2">
+    </div>
+
+@include('SpMrt.footer')
 </body>
 </html>
 
