@@ -17,6 +17,7 @@
             <div class="box">定期非常勤</div>
             <div class="box">常勤</div>
         </div>
+        <p>現在募集の件数 15603件</p>
     </div>
 
     <div id="create">
