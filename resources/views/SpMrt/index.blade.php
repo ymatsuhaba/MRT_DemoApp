@@ -20,6 +20,21 @@
     </div>
 
     <div id="create">
+        <div id="beginner">初めての方へ</div>
+        <div class="create_boxes">
+            <div class="left">スポット<br>ご希望の先生</div>
+            <div class="right">定期非常勤<br>ご希望の先生</div>
+        </div>
+        <div class="create_boxes">
+            <div class="left">常勤<br>ご希望の先生</div>
+            <div class="right">定期非常勤<br>会員向けサービス</div>
+        </div>
+        <div class="submit">
+            <form>
+                <input type="submit" value="新規登録" id="form">
+            </form>
+        </div>
+
     </div>
 
     <div id="main_content1">
