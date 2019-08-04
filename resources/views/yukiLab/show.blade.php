@@ -7,5 +7,5 @@
     @if($image_url)
         <img src="{{$image_url}}" alt="{{$image_url}}">
     @endif
-    <li>貸出フラグ{{Config::get("books.lending_situation.$lending_situation")}}</li>
+    <li>貸出フラグ{{Config::get("const.lending_situation.$lending_situation")}}</li>
 </ul>

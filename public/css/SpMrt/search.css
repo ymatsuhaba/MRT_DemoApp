@@ -4,3 +4,19 @@
     height:18vh;
     background-color: #3327a1;
 }
+
+    #search #search_boxes{
+        width:96%;
+        margin:0 auto;
+        display:flex;
+        height:5vh;
+    }
+
+        #search #search_boxes .box{
+            width:30%;
+            background-color:red;
+            height:3vh;
+            text-align: center;
+            margin:5vh 1.5% 0 1.5%;
+        }
+
