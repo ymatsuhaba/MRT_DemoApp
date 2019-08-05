@@ -121,10 +121,14 @@ Route::get('/search_result', 'SearchController@search');
 //検索ページ
 Route::get('/search_test_h', 'DoctorController@start');
 //一覧ページ
-Route::get('/doctor', 'DoctorController@index');
 Route::post('doctor', 'DoctorController@index');
-//検索ページ
-
+//登録ページ
+//Route::group(['prefix'=>'new_doctor'], function(){
+    Route::get('doctor', 'DoctorController@getIndex'); //一覧表示
+    Route::get('new_index', 'DoctorController@new_index'); //登録
+    Route::post('new_confirm', 'DoctorController@new_confirm'); //確認
+    Route::patch('doctor', 'DoctorController@finish'); //完了
+//});
 
 
 
