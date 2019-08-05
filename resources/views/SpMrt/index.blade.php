@@ -12,12 +12,17 @@
     </div>
 
     <div id="search">
+        <div class="outline">
+            <p><span>求人を探す</span>医師紹介実績1,232,064件</p>
+        </div>
         <div id="search_boxes">
             <div class="box">スポット</div>
             <div class="box">定期非常勤</div>
             <div class="box">常勤</div>
         </div>
-        <p>現在募集の件数 15603件</p>
+        <div class="outline">
+            <p>現在募集の件数 15603件</p>
+        </div>
     </div>
 
     <div id="create">
@@ -31,9 +36,7 @@
             <div class="right">定期非常勤<br>会員向けサービス</div>
         </div>
         <div class="submit">
-            <form>
-                <input type="submit" value="新規登録" id="form">
-            </form>
+            <a href="SpMrt.create">新規登録</a>
         </div>
 
     </div>

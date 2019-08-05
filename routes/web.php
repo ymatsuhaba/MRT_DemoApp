@@ -72,7 +72,7 @@ Route::get('mrt-db.second.resultSearch','MRTdbSearchController@search');
 //図書館作成
 Route::resource('yukiLab','yukiLabController');
 //sp_mrt関係
-Route::get('SpMrt','SpMrtController@index');
+Route::resource('SpMrt','SpMrtCrudController');
 
 
 // しょう

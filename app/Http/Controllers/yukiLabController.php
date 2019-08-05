@@ -54,18 +54,26 @@ class yukiLabController extends Controller
 
                 //貸出中と在庫ありが選択されている場合
                 if (isset($lending) && isset($in_stock) && !isset($being_lost)) {
-                    $dataFromDB->where('lending_situation', $lending)
-                        ->orwhere('lending_situation', $in_stock);
-                }
+                    $dataFromDB->where(function($dataFromDB) use($lending,$in_stock){
+                       $dataFromDB->where('lending_situation','=',$lending)
+                            ->orwhere('lending_situation','=',$in_stock);
+                    });
+                };
+
                 //在庫ありと紛失中が選択されている場合
                 if (!isset($lending) && isset($in_stock) && isset($being_lost)) {
-                    $dataFromDB->where('lending_situation', $in_stock)
-                        ->orwhere('lending_situation', $being_lost);
+                    $dataFromDB->where(function($dataFromDB) use($in_stock,$being_lost){
+                        $dataFromDB->where('lending_situation','=',$in_stock)
+                            ->orwhere('lending_situation','=',$being_lost);
+                    });
                 }
                 //貸出中と紛失中が選択されている場合
                 if (isset($lending) && !isset($in_stock) && isset($being_lost)) {
-                    $dataFromDB->where('lending_situation', $lending)
-                        ->orwhere('lending_situation', $being_lost);
+                    $dataFromDB->where(function($dataFromDB) use($lending,$being_lost){
+                        $dataFromDB->where('lending_situation','=',$lending)
+                            ->orwhere('lending_situation','=',$being_lost);
+                    });
+
                 }
             }
 
