@@ -1,8 +1,43 @@
-@include('SpMrt.head')
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="text/css" http-equiv="Content-Type">
+        <meta content="text/javascript" http-equiv="Content-Type">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--font Awesomeの使用-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!--　CSSの適応-->
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/header.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/picture.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/search.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/create.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/main_content1.css">
+        <link rel="stylesheet" type="text/css" href="css/SpMrt/main_content2.css">
 
-<header>
+        <script src="https://kit.fontawesome.com/48faf8915b.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <title>SP版　MRT</title>
+    </head>
 
-</header>
+    <header>
+{{--        <div id="box"><img src="SpMrt_png/logo.png" id="logo" alt="logo"></div>--}}
+{{--        <p id="text">医療のための求人サイト</p>--}}
+{{--        <div class="contents"><i class="fas fa-bars fa-2x"><p>お気に入り</p></i></div>--}}
+{{--        <div class="contents"><i class="far fa-star fa-2x"><p>お気に入り</p></i></div>--}}
+{{--        <div class="contents"><i class="fas fa-bars fa-2x"><p>お気に入り</p></i></div>--}}
+        <div class="flex items-stretch bg-gray-200 h-12">
+            <div class="flex-1 text-center px-4 m-2"><img src="SpMrt_png/logo.png" id="logo" alt="logo"></div>
+            <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2"><p id="text">医療のための求人サイト</p></div>
+            <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">1</div>
+            <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">2</div>
+            <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">3</div>
+        </div>
+    </header>
 
 <body>
     <div id="picture">
@@ -36,7 +71,7 @@
             <div class="right">定期非常勤<br>会員向けサービス</div>
         </div>
         <div class="submit">
-            <a href="SpMrt.create">新規登録</a>
+            <a href="SpMrt/create">新規登録</a>
         </div>
 
     </div>
@@ -81,7 +116,11 @@
         </ul>
     </div>
 
-@include('SpMrt.footer')
+    <footer>
+        <div id="inquiry">その他サービス</div>
+        <div id="box"><img src="SpMrt_png/owned_media.png" id="owned_media" alt="owned_media"></div>
+        <div id="end">©︎2019 MRT Inc</div>
+    </footer>
 </body>
 </html>
 

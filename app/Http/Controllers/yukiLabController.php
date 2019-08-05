@@ -81,7 +81,6 @@ class yukiLabController extends Controller
             if (isset($release_date)) {
                 $dataFromDB->where('release_date', $release_date);
             }
-
          }
 
         //orderbyするためのフォーム

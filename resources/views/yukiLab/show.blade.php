@@ -1,4 +1,3 @@
-
 <ul>
     <li>ID: {{ $id }}</li>
     <li>タイトル: {{ $book_title }}</li>
