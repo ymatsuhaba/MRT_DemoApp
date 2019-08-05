@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
        factory(App\mrt_db::class, 10000)->create();
 
-        factory(App\yukiLab::class, 100)->create();
+       factory(App\yukiLab::class, 100)->create();
 
     }
 }

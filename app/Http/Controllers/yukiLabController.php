@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 
-
 class yukiLabController extends Controller
 {
     /**
@@ -37,6 +36,7 @@ class yukiLabController extends Controller
             if (isset($author_name)) {
                 $dataFromDB->where('author_name', 'LIKE', "%{$author_name}%");
             }
+
             //貸出フラグで検索
             if (isset($lending) || isset($in_stock) || isset($being_lost)) {
                 // 貸出中が選択されている場合
@@ -51,14 +51,30 @@ class yukiLabController extends Controller
                 if (!isset($lending) && !isset($in_stock) && isset($being_lost)) {
                     $dataFromDB->where('lending_situation', $being_lost);
                 }
+
+                //貸出中と在庫ありが選択されている場合
+                if (isset($lending) && isset($in_stock) && !isset($being_lost)) {
+                    $dataFromDB->where('lending_situation', $lending)
+                        ->orwhere('lending_situation', $in_stock);
+                }
+                //在庫ありと紛失中が選択されている場合
+                if (!isset($lending) && isset($in_stock) && isset($being_lost)) {
+                    $dataFromDB->where('lending_situation', $in_stock)
+                        ->orwhere('lending_situation', $being_lost);
+                }
+                //貸出中と紛失中が選択されている場合
+                if (isset($lending) && !isset($in_stock) && isset($being_lost)) {
+                    $dataFromDB->where('lending_situation', $lending)
+                        ->orwhere('lending_situation', $being_lost);
+                }
             }
+
             //発売日で検索
             if (isset($release_date)) {
                 $dataFromDB->where('release_date', $release_date);
             }
 
          }
-
 
         //orderbyするためのフォーム
             //idで昇順・降順
@@ -88,7 +104,7 @@ class yukiLabController extends Controller
             $dataFromDB->orderby('created_at','desc');
         }
 
-
+//        \DB::enableQueryLog();
         //選択削除フォーム
         if(Input::get('delete')){
             $id = $request->input('id');
@@ -97,6 +113,7 @@ class yukiLabController extends Controller
                 $dataFromDB->whereIn('id',$id)->delete();
             }
         }
+//        dd(\DB::getQueryLog());
 
 //        //全件削除フォーム
         if(Input::get('destroy_all')){
