@@ -64,6 +64,7 @@ class DoctorController extends Controller
     // 保存
         $new_doctor->save();
 
+
     // 一覧にリダイレクト
         return redirect()->to('/doctor');
     }

@@ -16,11 +16,12 @@ class CreatDoctorTable extends Migration
         //schemaでテーブルを作成
         schema::create('doctors', function (Blueprint $table){
             //カラムを作成
-            $table->biginteger('doctor_id');
+            $table->bigIncrements('doctor_id');
             $table->string('doctor_name', 20);
             $table->string('birthplace');
             $table->string('sex');
             $table->date('date_of_birth');
+            $table->timestamps();
         });
     }
 
