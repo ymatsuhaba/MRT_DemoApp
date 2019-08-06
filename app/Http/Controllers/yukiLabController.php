@@ -73,7 +73,6 @@ class yukiLabController extends Controller
                         $dataFromDB->where('lending_situation','=',$lending)
                             ->orwhere('lending_situation','=',$being_lost);
                     });
-
                 }
             }
 

@@ -76,7 +76,6 @@
     </form>
 
 <!--↑↑ 検索フォーム ↑↑-->
-
 <div id="yucky_books">
     <form action="{{url('yukiLab')}}" method="get">
     @if(count($yucky_books) > 0)
