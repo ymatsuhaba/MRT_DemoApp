@@ -56,6 +56,7 @@ class MRTdbSearchController extends Controller
             $dataFromDB->where('startDate',$startDate);
         }
 
+
         $mrtDbCollection = $dataFromDB->orderby('startDate','asc')->get();
 
         return view('mrt-db.second.resultSearch',compact('mrtDbCollection'));

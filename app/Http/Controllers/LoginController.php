@@ -39,6 +39,7 @@ class LoginController extends Controller
     public function show($id)
     {
         $login =Login::find($id);
+
         return view('login.show')->with('login',$login);
     }
 

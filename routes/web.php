@@ -48,7 +48,6 @@ Route::get('/kadai5'         , 'KadaisakamotoController@kadai5');
 //Yuckyのリソースコントローラ
 Route::resource('login', 'LoginController');
 Route::get('/calcal','CalcalController@index');
-
 //Yuckyの計算機第一弾
 Route::resource('calculator', 'CalculatorController');
 Route::get('calculator.add','CalculatorController@add');
@@ -59,19 +58,19 @@ Route::get('calculator.searchAdd', 'CalculatorController@searchAdd');
 Route::get('calculator.searchSub', 'CalculatorController@searchSub');
 Route::get('calculator.searchMul', 'CalculatorController@searchMul');
 Route::get('calculator.searchDiv', 'CalculatorController@searchDiv');
-
+//課題5
 Route::resource('answerman','AnswermanController');
 Route::get('answerman.answer1','AnswermanController@answer1');
 Route::get('answerman.answer2','AnswermanController@answer2');
 Route::get('answerman.answer3','AnswermanController@answer3');
 Route::get('answerman.answer4','AnswermanController@answer4');
 Route::get('answerman.answer5','AnswermanController@answer5');
-
+//MRTのDB用
 Route::resource('mrt-db','MRTdbController');
 Route::post('mrt-db.second.resultSearch','MRTdbSearchController@search');
 Route::get('mrt-db.second.resultSearch','MRTdbSearchController@search');
-
-
+//図書館作成
+Route::resource('yukiLab','yukiLabController');
 
 
 // しょう
@@ -115,6 +114,16 @@ Route::get('/question5', 'AnswerController@question5');
 //MRTLPのページ
 Route::get('/mrtlp', 'LpController@index');
 Route::get('/search_result', 'SearchController@search');
+
+//Books:検索ページ
+Route::get('/BookRoom.search','BookController@search');
+//Books:一覧ページ
+Route::get('/bookRoom','BookController@list');
+//Books:新規登録ページ
+Route::get('BookRoom.register','BookController@register');
+//Books:新規登録確認ページ
+Route::get('BookRoom.confirm','BookController@confirm');
+Route::post('BookRoom.confirm','BookController@confirm');
 
 // はばたん
 

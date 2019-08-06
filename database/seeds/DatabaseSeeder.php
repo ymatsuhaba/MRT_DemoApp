@@ -1,5 +1,6 @@
 <?php
 
+use App\mrt_db;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,6 +24,8 @@ class DatabaseSeeder extends Seeder
 
 
        factory(App\mrt_db::class, 10000)->create();
+
+        factory(App\yukiLab::class, 100)->create();
 
     }
 }
