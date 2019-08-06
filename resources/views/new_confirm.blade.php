@@ -41,6 +41,11 @@
                         <input type="submit" name="button1" value="登録" class="btn btn-primary btn-wide" />
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="/new_index" class="btn btn-primary" style="margin:20px;">再入力</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

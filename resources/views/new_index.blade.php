@@ -10,6 +10,14 @@
 </head>
 <body>
 <h1>新規登録画面</h1>
+<div class="row">
+    <div class="col-sm-12">
+        <a href="/doctor" class="btn btn-primary" style="margin:20px;">一覧画面</a>
+        <a href="/new_index" class="btn btn-primary" style="margin:20px;">新規登録画面</a>
+        <a href="/search_test_h" class="btn btn-primary" style="margin:20px;">検索画面</a>
+    </div>
+</div>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-3">
@@ -45,7 +53,7 @@
                 </div>
                 <br>
                 <br>
-                <input type="submit" value="確認" class="btn btn-info">
+                <input type="submit" value="入力項目の確認" class="btn btn-info">
             </form>
         </div>
     </div>
