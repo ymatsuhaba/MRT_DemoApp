@@ -27,5 +27,9 @@ class DatabaseSeeder extends Seeder
 
         factory(App\yukiLab::class, 100)->create();
 
+        //しょう
+        $this->call(EmployeesTableSeeder::class);
+        $this->call(DeptsTableSeeder::class);
+
     }
 }
