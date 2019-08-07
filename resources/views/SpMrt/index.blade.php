@@ -34,9 +34,8 @@
             <div class="right">定期非常勤<br>会員向けサービス</div>
         </div>
         <div class="submit">
-            <a href="SpMrt/create">新規登録</a>
+            <div id="form"><a href="SpMrt/create">新規登録</a></div>
         </div>
-
     </div>
 
     <div id="main_content1">

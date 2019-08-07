@@ -25,7 +25,7 @@
         #create .create_boxes .left{
             width:50%;
             height:6vh;
-            background-color: #0d47a1;
+            background-color: #879ce1;
 
             text-align:center;
         }
@@ -33,7 +33,7 @@
         #create .create_boxes .right{
             width:50%;
             height:6vh;
-            background-color: #0d47a1;
+            background-color: #879ce1;
 
             text-align:center;
         }
@@ -46,16 +46,15 @@
     }
 
         #create .submit #form{
-            width:70%;
-            height:7vh;
+            width:50%;
+            height:5vh;
             margin:0 auto;
-            background-color:orange;
-            padding-top:1vh;
+            background-color: #f39700;
+            padding-top:0.5vh;
         }
 
-        #create .submit a{
-            font-size:5vh;
-            padding-top: 0.5vh;
-            margin-left:20%;
+        #create .submit #form a{
+            font-size:8vw;
+            margin-left:18%;
         }
 

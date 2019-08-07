@@ -34,15 +34,15 @@
                 <div class="mt-2 flex flex-no-wrap">
                     <div class="w-1/3 flex-none text-center">
                         <p class="font-bold hover:bg-indigo-400">{{Config("const.gender.$sp_mrt_datum->gender")}}</p>
-                        <p class="text-xs mt-2 text-grey-dark font-hairline">性</p>
+                        <p class="text-xs mt-1 text-grey-dark font-hairline">性</p>
                     </div>
                     <div class="w-1/3 flex-none text-center">
                         <p class="font-bold hover:bg-indigo-400">{{$sp_mrt_datum->password}}</p>
-                        <p class="text-xs mt-2 text-grey-dark font-hairline">パスワード</p>
+                        <p class="text-xs mt-1 text-grey-dark font-hairline">パスワード</p>
                     </div>
                     <div class="w-1/3 flex-none text-center">
                         <p class="font-bold hover:bg-indigo-400">{{Config("const.graduation_year.$sp_mrt_datum->graduation_year")}}</p>
-                        <p class="text-xs mt-2 text-grey-dark font-hairline">卒業年度</p>
+                        <p class="text-xs mt-1 text-grey-dark font-hairline">卒業年度</p>
                     </div>
                 </div>
             </div>
