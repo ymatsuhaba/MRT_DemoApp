@@ -45,6 +45,10 @@
                         <p class="text-xs mt-1 text-grey-dark font-hairline">卒業年度</p>
                     </div>
                 </div>
+                <div class="text-center mt-2">
+                    <p class="font-bold hover:bg-indigo-400">{{Config("const.university.$sp_mrt_datum->graduation_year")}}</p>
+                    <p class="text-sm font-hairline text-grey-dark mt-1">卒業大学</p>
+                </div>
             </div>
 
             <br>

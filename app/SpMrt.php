@@ -14,5 +14,5 @@ class SpMrt extends Model
 
     protected $fillable =[
         'Chinese_sei','Chinese_mei','Japanese_sei','Japanese_mei',
-        'gender','email','password'];
+        'gender','email','password','graduation_year','university'];
 }
