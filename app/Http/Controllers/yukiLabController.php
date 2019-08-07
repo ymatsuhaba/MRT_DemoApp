@@ -119,7 +119,7 @@ class yukiLabController extends Controller
                 $dataFromDB->whereIn('id',$id)->delete();
             }
         }
-//        dd(\DB::getQueryLog());
+
 
 //        //全件削除フォーム
         if(Input::get('destroy_all')){
@@ -129,6 +129,8 @@ class yukiLabController extends Controller
 
         //取得してviewに返す
         $yucky_books = $dataFromDB->get();
+
+//        dd(\DB::getQueryLog());
 
         return view('yukiLab.index',compact('yucky_books'));
     }

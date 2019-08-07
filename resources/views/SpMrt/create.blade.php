@@ -1,23 +1,7 @@
-<html>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta content="text/css" http-equiv="Content-Type">
-        <meta content="text/javascript" http-equiv="Content-Type">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!--font Awesomeの使用-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <!--　CSSの適応-->
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-        <title>SP版　MRT</title>
-    </head>
+@include('SpMrt.layout.head')
 
-<header>
+@include('SpMrt.layout.header')
 
-</header>
-<body>
     @if ($errors->any())
         <div class="errors">
             <ul>
@@ -28,26 +12,15 @@
         </div>
     @endif
 
-
     <div class="sm:w-3/5 w-full bg-white">
         <div class="p-8">
             <form method="post" action="{{url('SpMrt.table_list')}}">
                 @csrf
                 <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control" name="Chinese_sei" placeholder="姓">
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" name="Chinese_mei" placeholder="名">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control" name="Japanese_sei" placeholder="セイ">
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" name="Japanese_mei" placeholder="メイ">
-                    </div>
+                    <input type="text" class="form-control" name="Chinese_sei" placeholder="姓">
+                    <input type="text" class="form-control" name="Chinese_mei" placeholder="名">
+                    <input type="text" class="form-control" name="Japanese_sei" placeholder="セイ">
+                    <input type="text" class="form-control" name="Japanese_mei" placeholder="メイ">
                 </div>
                 <!--姓-->
                 <div id="title">
@@ -85,13 +58,9 @@
                        type="submit" value="新規登録">
             </form>
             <div class="text-center mt-4">
-                <p class="text-sm text-grey-dark">Already have an account? <a href="#" class="no-underline text-indigo font-bold hover:text-indigo-lighter">Sign in</a></p>
+                <p class="text-sm text-grey-dark">登録は終わりましたか? <a href="/SpMrt" class="no-underline text-indigo font-bold hover:text-indigo-lighter">Sign in</a></p>
             </div>
         </div>
     </div>
 
-
-
-
-</body>
-</html>
+@include('SpMrt.layout.footer')

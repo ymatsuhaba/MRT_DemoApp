@@ -17,3 +17,9 @@ GitHubを用いたチームでの開発
 関数はキャメルケース
 変数はスネークケース
 
+##Debugbarについて
+開始地点
+\DB::enableQueryLog();
+終了地点
+dd(\DB::getQueryLog());
+
