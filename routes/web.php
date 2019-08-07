@@ -137,7 +137,21 @@ Route::get('employee/list', [
 
 
 // はばたん
-Route::get('doctor', 'DoctorController@index');
+
+//検索ページ
+Route::get('/search_test_h', 'DoctorController@start');
+//一覧ページ
+Route::post('doctor', 'DoctorController@index');
+Route::get('doctor','DoctorController@index');
+//登録ページ
+Route::get('new_index', 'DoctorController@new_index'); //登録
+Route::post('new_confirm', 'DoctorController@new_confirm'); //確認
+Route::patch('doctor', 'DoctorController@finish'); //完了
+//更新ページ
+Route::get('/edit_index{doctor_id}', 'DoctorController@edit_index');
+Route::get('/edit_confirm', 'DoctorController@edit_confirm');
+
+
 
 
 
