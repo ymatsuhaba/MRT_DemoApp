@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Recruitment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+
 class SearchController extends Controller
 {
     // Searchページ
@@ -17,7 +20,9 @@ class SearchController extends Controller
         $salary_time = $request->input('salary_time') * '10000';
         $salary_day = $request->input('salary_day') * '10000';
         $work_start_date = $request->input('work_start_date');
+
         $recruitments = DB::table('recruitments');
+
         // 都道府県
         if (isset($location)) {
             $recruitments->where('location', $location);
@@ -49,10 +54,12 @@ class SearchController extends Controller
                     $recruitments->where('salary_type', '2')
                         ->where('salary', '>=', $salary_time);
                 }
+
                 if (!isset($salary_time) && isset($salary_day)) {
                     $recruitments->where('salary_type', '1')
                         ->where('salary', '>=', $salary_day);
                 }
+
                 if (isset($salary_time) && isset($salary_day)) {
                     $recruitments->where('salary', '>=', $salary_time)
                         ->orwhere('salary', '>=', $salary_day);
@@ -60,20 +67,26 @@ class SearchController extends Controller
                         $recruitments->where('salary_type', '2')
                             ->where('salary', '>=', $salary_time);
                     }
+
                     if (!isset($salary_time) && isset($salary_day)) {
                         $recruitments->where('salary_type', '1')
                             ->where('salary', '>=', $salary_day);
                     }
+
                     if (isset($salary_time) && isset($salary_day)) {
                         $recruitments->where('salary', '>=', $salary_time)
                             ->orwhere('salary', '>=', $salary_day);
                     }
                 }
+
                 //希望日程
                 if (isset($work_start_date)) {
                     $recruitments->where('work_start_date', $work_start_date);
                 }
+
                 $recruitments_result = $recruitments->Orderby('work_start_date', 'asc')->get();
+
+
                 return view('MRTLP.search_result', compact('recruitments_result'));
             }
         }

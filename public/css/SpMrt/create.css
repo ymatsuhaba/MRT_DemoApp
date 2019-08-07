@@ -26,12 +26,16 @@
             width:50%;
             height:6vh;
             background-color: #0d47a1;
+
+            text-align:center;
         }
 
         #create .create_boxes .right{
             width:50%;
             height:6vh;
             background-color: #0d47a1;
+
+            text-align:center;
         }
 
     #create .submit{
