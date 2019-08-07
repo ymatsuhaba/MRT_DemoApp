@@ -22,6 +22,8 @@ class CreateSpMrtTable extends Migration
             $table->integer('gender');
             $table->char('email');
             $table->char('password');
+            $table->integer('university');
+            $table->integer('graduation_year');
             $table->timestamps();
         });
     }

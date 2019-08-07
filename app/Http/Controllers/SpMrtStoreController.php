@@ -12,6 +12,16 @@ class SpMrtStoreController extends Controller
     {
         $data_sp_mrt = new SpMrt;
 
+        $request->validate([
+            'Chinese_sei'=>'required|string|max:10',
+            'Chinese_mei'=>'required|string|max:10',
+            'Japanese_sei'=>'required|string|max:10',
+            'Japanese_mei'=>'required|string|max:10',
+            'email'=>'required|email',
+            'gender'=>'required',
+            'university'=>'required',
+        ]);
+
         $data_sp_mrt->Chinese_sei = $request->input('Chinese_sei');
         $data_sp_mrt->Chinese_mei = $request->input('Chinese_mei');
         $data_sp_mrt->Japanese_sei = $request->input('Japanese_sei');
@@ -19,12 +29,11 @@ class SpMrtStoreController extends Controller
         $data_sp_mrt->gender = $request->input('gender');
         $data_sp_mrt->email = $request->input('email');
         $data_sp_mrt->password = $request->input('password');
+        $data_sp_mrt->university = $request->input('university');
+        $data_sp_mrt->graduation_year = $request->input('graduation_year');
 
         $data_sp_mrt->save();
 
-//        var_dump($data_sp_mrt);
-
-//        return view('SpMrt.table_list',compact('Chinese_sei','Chinese_mei','Japanese_sei','Japanese_mei','gender','email','password'));
         return view('SpMrt.table_list',compact('data_sp_mrt'));
     }
 

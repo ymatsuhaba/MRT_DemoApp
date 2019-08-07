@@ -1,33 +1,88 @@
-{{--@if(count($data_sp_mrt) > 0)--}}
-{{--    @foreach($data_sp_mrt as $data)--}}
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="text/css" http-equiv="Content-Type">
+    <meta content="text/javascript" http-equiv="Content-Type">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--font Awesomeの使用-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!--　CSSの適応-->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>SP版　MRT</title>
+</head>
 
-{{--    {{$data->Chinese_sei}}--}}
-{{--    {{$data->Chinese_mei}}--}}
-{{--    {{$data->Japanese_sei}}--}}
-{{--    {{$data->Japanese_mei}}--}}
-{{--    {{$data->gender}}--}}
-{{--    {{$data->email}}--}}
-{{--    {{$data->gender}}--}}
-{{--    @endforeach--}}
-{{--@endif--}}
+<header>
 
-{{--{{$data_sp_mrt->Chinese_mei}}--}}
-{{--@foreach($data_sp_mrt as $data_sp_mrt)--}}
-{{$data_sp_mrt->Chinese_sei}}
-{{$data_sp_mrt->Chinese_mei}}
-{{$data_sp_mrt->Japanese_sei}}
-{{$data_sp_mrt->Japanese_mei}}
-{{$data_sp_mrt->gender}}
-{{$data_sp_mrt->email}}
-{{$data_sp_mrt->password}}
 <a class="btn btn-secondary" href="SpMrt.DB_list">DB list</a>
-{{--@endforeach--}}
 
-
-{{--{{$Chinese_sei}}--}}
-{{--{{$Chinese_mei}}--}}
-{{--{{$Japanese_sei}}--}}
-{{--{{$Japanese_sei}}--}}
-{{--{{$gender}}--}}
-{{--{{$email}}--}}
-{{--{{$password}}--}}
+<div class="mx-auto">
+    <div class="bg-white shadow-md rounded my-6">
+        <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+            <thead>
+            <tr class="bg-orange-800">
+                <th class="py-4 px-2 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Column</th>
+                <th class="py-4 px-2 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="bg-teal-100">
+                <td class="py-2 px-2 border-2 border-teal-500">姓</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{$data_sp_mrt->Chinese_sei}}</a>
+                </td>
+            </tr>
+            <tr class="bg-orange-100">
+                <td class="py-2 px-2 border-2 border-orange-500">名</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{$data_sp_mrt->Chinese_mei}}</a>
+                </td>
+            </tr>
+            <tr class="bg-teal-100">
+                <td class="py-2 px-2 border-2 border-teal-500">セイ</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{$data_sp_mrt->Japanese_sei}}</a>
+                </td>
+            </tr>
+            <tr class="bg-orange-100">
+                <td class="py-2 px-2 border-2 border-orange-500">メイ</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{$data_sp_mrt->Japanese_mei}}</a>
+                </td>
+            </tr>
+            <tr class="bg-teal-100">
+                <td class="py-2 px-2 border-2 border-teal-500">性別</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{Config("const.gender.$data_sp_mrt->gender")}}</a>
+                </td>
+            </tr>
+            <tr class="bg-orange-100">
+                <td class="py-2 px-2 border-2 border-orange-500">eメール</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{$data_sp_mrt->email}}</a>
+                </td>
+            </tr>
+            <tr class="bg-teal-100">
+                <td class="py-2 px-2 border-2 border-teal-500">パスワード</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{$data_sp_mrt->password}}</a>
+                </td>
+            </tr>
+            <tr class="bg-orange-100">
+                <td class="py-2 px-2 border-2 border-orange-500">出身大学</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{Config("const.university.$data_sp_mrt->university")}}</a>
+                </td>
+            </tr>
+            <tr class="bg-teal-100">
+                <td class="py-2 px-2 border-2 border-teal-500">卒業年度</td>
+                <td class="py-2 px-2 border-2 border-grey-light">
+                    <a href="#" class="text-grey-lighter font-bold py-1 rounded text-xs bg-green">{{Config("const.graduation_year.$data_sp_mrt->graduation_year")}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

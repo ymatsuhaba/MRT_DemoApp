@@ -8,6 +8,7 @@
         {{$sp_mrt_datum->gender}}
         {{$sp_mrt_datum->email}}
         {{$sp_mrt_datum->password}}
+        {{Config("const.graduation_year.$sp_mrt_datum->graduation_year")}}
         </li>
     @endforeach
 @endif

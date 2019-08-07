@@ -229,6 +229,7 @@ class yukiLabController extends Controller
      */
     public function update(Request $request,$id)
     {
+
         //バリデーションをかける
         $request->validate([
             'author_name' => 'required',
