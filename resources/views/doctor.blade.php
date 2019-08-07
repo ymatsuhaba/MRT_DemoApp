@@ -17,11 +17,16 @@
     </div>
 </div>
 <body>
-<table border="1" align="center">
-    <tr><th>ID</th><th>名前</th><th>出身地</th><th>性別</th><th>生年月日</th></tr>
-@foreach($doctors as $doctor)
-        <tr><td>{{$doctor->doctor_id}}</td><td>{{$doctor->doctor_name}}</td><td>{{$doctor->birthplace}}</td><td>{{$doctor->sex}}</td><td>{{$doctor->date_of_birth}}</td></tr>
-@endforeach
-</table>
+<div class="col-md-3">
+<div class="col-md-3">
+    <form action="/edit_index" method="post" class="form-horizontal">
+        @csrf
+    <table border="1" align="center">
+        <tr><th>ID</th><th>名前</th><th>出身地</th><th>性別</th><th>生年月日</th><th>編集・削除</th></tr>
+    @foreach($doctors as $doctor)
+        <tr><td>{{$doctor->doctor_id}}</td><td>{{$doctor->doctor_name}}</td><td>{{$doctor->birthplace}}</td><td>{{$doctor->sex}}</td><td>{{$doctor->date_of_birth}}</td><td><a href="edit_index/{{$doctor->doctor_id}}/" class="btn btn-primary btn-sm">編集</a></td></tr>
+    @endforeach
+    </table>
+    </form>
 </body>
 </html>

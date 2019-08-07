@@ -37,19 +37,19 @@
                 <br>
                 <div class="form-group @if($errors->has('sex')) has-error @endif">
                 <label>性別</label>
-                <input type="radio" name="male" value="male">male <input type="radio" name="female" value="female">
+                <input type="radio" name="male" value="male" @if ($doctor->sex == 'male') checked @endif>male <input type="radio" name="female" value="female" @if ($doctor->sex == 'female') checked @endif>
                 @if($errors->has('sex'))<span class="text-danger">{{ $errors->first('sex') }}</span> @endif
                 </div>
                 <br>
                 <br>
                 <div class="form-group @if($errors->has('date_of_birth')) has-error @endif">
                 <label>生年月日</label>
-                <input type="text" name="date_of_birth"  placeholder="YYYY-MM-DDで入力">
+                <input type="date" name="date_of_birth"  data-date = {{$doctor->date_of_birth}}>
                 @if($errors->has('date_of_birth'))<span class="text-danger">{{ $errors->first('date_of_birth') }}</span> @endif
                 </div>
                 <br>
                 <br>
-                <input type="submit" value="入力項目の確認" class="btn btn-info">
+                <input type="submit" value="確認" class="btn btn-info">
             </form>
         </div>
     </div>
