@@ -27,7 +27,7 @@ class Books extends Model
         $books = DB::table('books');
 
         if (isset($title)) {
-            $books->where('title',  $title);
+            $books->where('title', $title);
         }
         if (isset($author)) {
             $books->where('author', $author);
