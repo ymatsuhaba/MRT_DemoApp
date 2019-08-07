@@ -141,7 +141,7 @@ class DoctorController extends Controller
     // 一覧画面にリダイレクト
         return redirect()->to('/doctor');
     }
-    //更新ページの表示
+    //更新ページの表示              
     public function edit_index($doctor_id)
     {
         $doctor = \App\Doctor::findOrfail($doctor_id);
