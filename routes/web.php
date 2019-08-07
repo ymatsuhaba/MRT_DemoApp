@@ -136,6 +136,8 @@ Route::get('doctor','DoctorController@index');
 Route::get('new_index', 'DoctorController@new_index'); //登録
 Route::post('new_confirm', 'DoctorController@new_confirm'); //確認
 Route::patch('doctor', 'DoctorController@finish'); //完了
+//更新ページ
+
 
 
 

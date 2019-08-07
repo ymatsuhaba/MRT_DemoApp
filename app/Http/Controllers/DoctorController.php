@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class DoctorController extends Controller
 {
-    //search_test_hページを表示
+    //検索ページを表示
     public function start()
     {
         return view('search_test_h');
@@ -29,6 +29,7 @@ class DoctorController extends Controller
             'date_of_birth'=>'nullable|date_format:Y-m-d|before:today'
         ];
 
+        //出力されるメッセージ
         $messages = [
             'doctor_name.regex'=>'アルファベット(半角)で入力してください。',
             'birthplace.regex'=>'アルファベット(半角)で入力してください。',
@@ -40,13 +41,13 @@ class DoctorController extends Controller
 
         $validation = \Validator::make($inputs,$rules,$messages);
 
-        //エラー次の処理
+        //エラー時の処理
         if($validation->fails())
         {
             return redirect()->back()->withErrors($validation->errors())->withInput();
         }
 
-        //バリデーションOKなら、今まで通り。
+        //バリデーションOKなら、下記の通り検索処理に移る。
 
         //table:doctorから$doctor_listにカラムを格納
         $doctor_list = DB::table('doctors');
@@ -79,13 +80,14 @@ class DoctorController extends Controller
     {
         return view('new_index');
     }
-    //確認画面の表示
+    //新規登録確認画面の表示
     public function new_confirm(Request $request)
     {
+        //入力された値を新規登録確認画面に表示
         $data = $request->all();
         return view('new_confirm')->with($data);
     }
-    //データの保存 一覧画面の表示
+    //データの保存
     public function finish(Request $request)
     {
         //バリデーション
@@ -101,6 +103,7 @@ class DoctorController extends Controller
             'date_of_birth'=>'required|date_format:Y-m-d|before:today'
         ];
 
+        //出力されるメッセージ
         $messages = [
             'doctor_name.required'=>'名前は必須です。',
             'doctor_name.regex'=>'アルファベット(半角)で入力してください。',
@@ -116,13 +119,13 @@ class DoctorController extends Controller
 
         $validation = \Validator::make($inputs,$rules,$messages);
 
-        //エラー次の処理
+        //エラー時の処理
         if($validation->fails())
         {
             return redirect()->to('/new_index')->withErrors($validation->errors())->withInput();
         }
 
-        //バリデーションOKなら、今まで通り。
+        //バリデーションOKなら、下記の通り新規登録処理に移る。
     // doctorオブジェクト生成
         $new_doctor = new \App\Doctor;
 
@@ -135,11 +138,13 @@ class DoctorController extends Controller
     // 保存
         $new_doctor->save();
 
-    // 一覧にリダイレクト
+    // 一覧画面にリダイレクト
         return redirect()->to('/doctor');
     }
-    public function edit_doctor($id)
+    //更新ページの表示
+    public function edit_index($doctor_id)
     {
-        $doctors = \App\Doctor::
+        $doctor = \App\Doctor::findOrfail($doctor_id);
+        return view('/edit_index', compact('doctor'));
     }
 }

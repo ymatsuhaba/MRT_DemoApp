@@ -23,8 +23,6 @@
         <div class="col-md-3">
             <form action="/new_confirm" method="post" class="form-horizontal">
                 @csrf
-{{--                <input name="_method" type="hidden" value="patch">--}}
-{{--                @method('patch')--}}
                 <div class="form-group @if($errors->has('doctor_name')) has-error @endif">
                 <label>名前</label>
                 <input type="text" name="doctor_name"  placeholder="アルファベットで入力">
