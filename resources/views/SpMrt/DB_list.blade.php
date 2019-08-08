@@ -5,7 +5,7 @@
     @if(count($sp_mrt_from_DB) > 0)
         @foreach($sp_mrt_from_DB as $sp_mrt_datum)
                 <div class="bg-indigo-200 shadow p-2 rounded lg:w-64">
-                    <div class="font-sans text-lg text-gray-800 text-center">データID【{{$sp_mrt_datum->id}}】</div>
+                    <div class="ID font-sans text-lg text-gray-800 text-center">データID【{{$sp_mrt_datum->id}}】</div>
                     <div class="mt-1 flex flex-no-wrap">
                         <div class="w-1/2 flex-none text-center">
                             <p class="font-bold hover:bg-indigo-400">{{$sp_mrt_datum->Chinese_sei}}</p>

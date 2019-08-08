@@ -4,44 +4,13 @@
 
 <body>
     <div id="picture">
-        <div class="cache">
-            <img src={{asset('SpMrt_png/main1.png')}} class="photo" alt="main1">
-{{--            <img src={{asset('SpMrt_png/main2.png')}} class="photo" alt="main2">--}}
-{{--            <img src={{asset('SpMrt_png/main3.png')}} class="photo" alt="main3">--}}
+        <div class="slider">
+            <div><a href="#"><img src={{asset('SpMrt_png/main1.png')}}></a></div>
+            <div><a href="#"><img src={{asset('SpMrt_png/main2.png')}}></a></div>
+            <div><a href="#"><img src={{asset('SpMrt_png/main3.png')}}></a></div>
         </div>
     </div>
-{{--    <div id="picture">--}}
-{{--        <div class="wrapper">--}}
-{{--            <ul id="sb-slider" class="sb-slider">--}}
-{{--                <li>--}}
-{{--                    <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src={{asset('SpMrt_png/main1.png')}} class="photo" alt="main1"></a>--}}
-{{--                    <div class="sb-description">--}}
-{{--                        <h3>Creative Lifesaver</h3>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src={{asset('SpMrt_png/main2.png')}} class="photo" alt="main2"></a>--}}
-{{--                    <div class="sb-description">--}}
-{{--                        <h3>Honest Entertainer</h3>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src={{asset('SpMrt_png/main3.png')}} class="photo" alt="main3"></a>--}}
-{{--                    <div class="sb-description">--}}
-{{--                        <h3>Brave Astronaut</h3>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
 
-{{--            <div id="shadow" class="shadow"></div>--}}
-
-{{--            <div id="nav-arrows" class="nav-arrows">--}}
-{{--                <a href="#">Next</a>--}}
-{{--                <a href="#">Previous</a>--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
 
     <div id="search">
         <div class="outline">
@@ -111,5 +80,7 @@
             <li class="list-group-item"><a href="#">PCサイトはこちら</a></li>
         </ul>
     </div>
+
+    <div id="view_time"></div>
 
 @include('SpMrt.layout.footer')

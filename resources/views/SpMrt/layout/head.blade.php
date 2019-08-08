@@ -17,21 +17,17 @@
     <link rel="stylesheet" type="text/css" href={{asset('css/SpMrt/footer.css')}}>
     <link rel="stylesheet" type="text/css" href={{asset('css/SpMrt/main_content1.css')}}>
     <link rel="stylesheet" type="text/css" href={{asset('css/SpMrt/main_content2.css')}}>
-
-    <script src="{{asset('js/SpMrt/index.js')}}"></script>
-
-    <script src="https://kit.fontawesome.com/48faf8915b.js"></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-{{--    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">--}}
+    <!--JavaScriptの適応-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( "#main_content1" ).accordion({
-                collapsible: true
-            });
-        } );
-    </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{{asset('js/SpMrt/index.js')}}"></script>
+    <script src="{{asset('js/SpMrt/slider.js')}}"></script>
+    <script src="{{asset('js/SpMrt/main_content1.js')}}"></script>
+    <script src="{{asset('js/SpMrt/DB_table.js')}}"></script>
+    <script src="https://kit.fontawesome.com/48faf8915b.js"></script>
     <title>SP版　MRT</title>
 </head>
