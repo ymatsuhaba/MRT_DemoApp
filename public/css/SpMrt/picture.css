@@ -16,7 +16,7 @@
 #picture .slider .prev.slick-arrow{
     width:10%;
     background-color: #e6e5e3;
-
+    /*文字*/
     font-size:2vh;
     padding-top:8vh;
 }
@@ -24,7 +24,7 @@
 #picture .slider .next.slick-arrow{
     width:10%;
     background-color: #e6e5e3;
-
+    /*文字*/
     font-size:2vh;
     padding-top:8vh;
 }

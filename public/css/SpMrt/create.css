@@ -1,18 +1,14 @@
 #create{
-    /*margin-top:vh;*/
     width:100%;
-    /*height:40vh;*/
-    /*background-color: #0d47a1;*/
 }
 
     #create #beginner{
         width:100%;
         height:6vh;
         background-color: #0d47a1;
-
+        /*文字*/
         font-size:4vh;
         padding-top: 1vh;
-
         text-align: center;
     }
 
@@ -26,7 +22,7 @@
             width:50%;
             height:6vh;
             background-color: #879ce1;
-
+            /*文字*/
             text-align:center;
         }
 
@@ -34,7 +30,7 @@
             width:50%;
             height:6vh;
             background-color: #879ce1;
-
+            /*文字*/
             text-align:center;
         }
 

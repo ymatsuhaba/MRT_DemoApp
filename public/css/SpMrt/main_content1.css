@@ -7,7 +7,6 @@
 
     #main_content1 #prefecture{
         width:100%;
-        /*background-color:red;*/
         display:flex;
         flex-wrap: wrap;
     }
@@ -29,7 +28,6 @@
 
     #main_content1 #naika{
         width:100%;
-        /*background-color:red;*/
         display:flex;
         flex-wrap: wrap;
     }
@@ -52,7 +50,6 @@
 
     #main_content1 #geka{
         width:100%;
-        /*background-color:red;*/
         display:flex;
         flex-wrap: wrap;
     }
@@ -68,7 +65,7 @@
             width:25%;
             height:3vh;
             margin-top:0.5vh;
-
+            /*文字*/
             font-size:2vh;
             text-align: center;
             border: 0.5vh solid rgba(0,0,0,.125);
@@ -76,7 +73,6 @@
 
     #main_content1 #sonota{
         width:100%;
-        /*background-color:red;*/
         display:flex;
         flex-wrap: wrap;
 
@@ -93,7 +89,7 @@
             width:25%;
             height:4.5vh;
             margin-top:0.5vh;
-
+            /*文字*/
             font-size:2vh;
             text-align: center;
             border: 0.5vh solid rgba(0,0,0,.125);
