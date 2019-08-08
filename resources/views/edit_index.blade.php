@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <form action="/edit_confirm" method="post" class="form-horizontal">
+            <form action="{{url('/edit_confirm/{$doctor->id}')}}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group @if($errors->has('doctor_name')) has-error @endif">
                 <label>名前</label>
@@ -37,14 +37,14 @@
                 <br>
                 <div class="form-group @if($errors->has('sex')) has-error @endif">
                 <label>性別</label>
-                <input type="radio" name="male" value="male" @if ($doctor->sex == 'male') checked @endif>male <input type="radio" name="female" value="female" @if ($doctor->sex == 'female') checked @endif>
+                <input type="radio" name="sex" value="male" @if ($doctor->sex == 'male') checked @endif>male <input type="radio" name="sex" value="female" @if ($doctor->sex == 'female') checked @endif>female
                 @if($errors->has('sex'))<span class="text-danger">{{ $errors->first('sex') }}</span> @endif
                 </div>
                 <br>
                 <br>
                 <div class="form-group @if($errors->has('date_of_birth')) has-error @endif">
                 <label>生年月日</label>
-                <input type="date" name="date_of_birth"  data-date = {{$doctor->date_of_birth}}>
+                <input type="date" name="date_of_birth" value = {{$doctor->date_of_birth}}>
                 @if($errors->has('date_of_birth'))<span class="text-danger">{{ $errors->first('date_of_birth') }}</span> @endif
                 </div>
                 <br>

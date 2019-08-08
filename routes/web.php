@@ -137,8 +137,9 @@ Route::get('new_index', 'DoctorController@new_index'); //登録
 Route::post('new_confirm', 'DoctorController@new_confirm'); //確認
 Route::patch('doctor', 'DoctorController@finish'); //完了
 //更新ページ
-Route::get('/edit_index{doctor_id}', 'DoctorController@edit_index');
-Route::get('/edit_confirm', 'DoctorController@edit_confirm');
+Route::get('/edit_index/{id}', 'DoctorController@edit_index');//編集
+Route::post('/edit_confirm/{id}', 'DoctorController@edit_confirm');//確認
+Route::patch('/doctor/{id}', 'DoctorController@edit_finish');//完了
 
 
 
