@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href={{asset('css/SpMrt/main_content1.css')}}>
     <link rel="stylesheet" type="text/css" href={{asset('css/SpMrt/main_content2.css')}}>
 
+    <script src="{{asset('js/SpMrt/index.js')}}"></script>
+
     <script src="https://kit.fontawesome.com/48faf8915b.js"></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 

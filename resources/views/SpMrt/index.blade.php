@@ -4,10 +4,44 @@
 
 <body>
     <div id="picture">
-        <img src={{asset('SpMrt_png/main1.png')}} class="photo" alt="main1">
-{{--        <img src="SpMrt_png/main2.png" class="photo" alt="main2">--}}
-{{--        <img src="SpMrt_png/main3.png" class="photo" alt="main3">--}}
+        <div class="cache">
+            <img src={{asset('SpMrt_png/main1.png')}} class="photo" alt="main1">
+{{--            <img src={{asset('SpMrt_png/main2.png')}} class="photo" alt="main2">--}}
+{{--            <img src={{asset('SpMrt_png/main3.png')}} class="photo" alt="main3">--}}
+        </div>
     </div>
+{{--    <div id="picture">--}}
+{{--        <div class="wrapper">--}}
+{{--            <ul id="sb-slider" class="sb-slider">--}}
+{{--                <li>--}}
+{{--                    <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src={{asset('SpMrt_png/main1.png')}} class="photo" alt="main1"></a>--}}
+{{--                    <div class="sb-description">--}}
+{{--                        <h3>Creative Lifesaver</h3>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src={{asset('SpMrt_png/main2.png')}} class="photo" alt="main2"></a>--}}
+{{--                    <div class="sb-description">--}}
+{{--                        <h3>Honest Entertainer</h3>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src={{asset('SpMrt_png/main3.png')}} class="photo" alt="main3"></a>--}}
+{{--                    <div class="sb-description">--}}
+{{--                        <h3>Brave Astronaut</h3>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+
+{{--            <div id="shadow" class="shadow"></div>--}}
+
+{{--            <div id="nav-arrows" class="nav-arrows">--}}
+{{--                <a href="#">Next</a>--}}
+{{--                <a href="#">Previous</a>--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div id="search">
         <div class="outline">
@@ -34,7 +68,7 @@
             <div class="right">定期非常勤<br>会員向けサービス</div>
         </div>
         <div class="submit">
-            <div id="form"><a href="SpMrt/create">新規登録</a></div>
+            <div id="form"><a href="SpMrt/create" onclick="link()">新規登録</a></div>
         </div>
     </div>
 
