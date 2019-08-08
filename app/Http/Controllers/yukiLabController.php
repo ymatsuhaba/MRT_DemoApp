@@ -110,7 +110,6 @@ class yukiLabController extends Controller
             $dataFromDB->orderby('created_at','desc');
         }
 
-//        \DB::enableQueryLog();
         //選択削除フォーム
         if(Input::get('delete')){
             $id = $request->input('id');
@@ -120,7 +119,6 @@ class yukiLabController extends Controller
             }
         }
 
-
 //        //全件削除フォーム
         if(Input::get('destroy_all')){
             $dataFromDB->delete();
@@ -129,8 +127,6 @@ class yukiLabController extends Controller
 
         //取得してviewに返す
         $yucky_books = $dataFromDB->get();
-
-//        dd(\DB::getQueryLog());
 
         return view('yukiLab.index',compact('yucky_books'));
     }
