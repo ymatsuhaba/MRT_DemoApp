@@ -9,7 +9,7 @@
                         <div class="id2">
                             <select class="select" name="prefecture">
                                 <option value="" selected>Choose...</option>
-                                    @foreach(config('prefecture') as $index1 => $name1)
+                                    @foreach(config('const.prefecture') as $index1 => $name1)
                                         <option value="{{$index1}}">{{$name1}}</option>
                                     @endforeach
                             </select>
@@ -22,7 +22,7 @@
                         <div class="id2">
                             <select class="select" name="medical">
                                 <option value="" selected>Choose...</option>
-                                    @foreach(config('medical') as $key => $value)
+                                    @foreach(config('const.medical') as $key => $value)
                                         <option value="{{$key}}">{{$value}}</option>
                                     @endforeach
                             </select>
@@ -69,7 +69,7 @@
                     <div class="id2">
                         <select class="select" name="startDate">
                             <option value="" selected>Choose...</option>
-                            @foreach(config('calender') as $key => $value)
+                            @foreach(config('const.calender') as $key => $value)
                                 <option value="{{$key}}">{{$value}}</option>
                             @endforeach
                         </select>
