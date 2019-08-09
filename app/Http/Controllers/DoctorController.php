@@ -156,6 +156,41 @@ class DoctorController extends Controller
     //更新確認画面の表示
     public function edit_confirm(Request $request)
     {
+        //バリデーション
+
+        //評価対象
+        $inputs = $request->all();
+
+        //ルール
+        $rules = [
+            'doctor_name' => 'required|regex:/^[a-zA-Z +]*$/|',
+            'birthplace' => 'required|regex:/^[a-zA-Z +]*$/|',
+            'sex' => 'required|in:male,female|',
+            'date_of_birth' => 'required|date_format:Y-m-d|before:today'
+        ];
+
+        //出力されるメッセージ
+        $messages = [
+            'doctor_name.required' => '名前は必須です。',
+            'doctor_name.regex' => 'アルファベット(半角)で入力してください。',
+            'birthplace.required' => '出身地は必須です。',
+            'birthplace.regex' => 'アルファベット(半角)で入力してください。',
+            'sex.required' => '性別は必須です。',
+            'sex.in' => "'male'または'female'で入力してください。",
+            'date_of_birth.date' => 'フォーマット通りに入力してください。',
+            'date_of_birth.required' => '生年月日は必須です。',
+            'date_of_birth.date_format' => 'YYYY-MM-DDで入力してください。',
+            'date_of_birth.before' => '正しい日付で入力してください。',
+        ];
+
+        $validation = \Validator::make($inputs, $rules, $messages);
+
+        //エラー時の処理
+        if ($validation->fails()) {
+            return redirect()->back()->withErrors($validation->errors())->withinput();
+        }
+
+        //バリデーションOKなら、下記の通り新規登録処理に移る。
         //入力された値を新規登録確認画面に表示
         $data = $request->all();
 
@@ -163,11 +198,10 @@ class DoctorController extends Controller
     }
 
     //更新処理
-
-    public function edit_finish(Request $request, $id)
+    public function edit_finish(Request $request)
     {
         //レコードを検索
-        $doctor = Doctor::find($id);
+        $doctor = Doctor::find($request->input('id'));
 
         //値を代入
         $doctor->doctor_name = $request->doctor_name;
@@ -178,5 +212,14 @@ class DoctorController extends Controller
         $doctor->save();
 
         return redirect()->to('/doctor');
+    }
+
+    //削除処理
+    public function delete(Request $request)
+    {
+        //レコードを検索
+        $doctor = Doctor::find($request->id)->delete();
+        //一覧画面を表示
+        return redirect('/doctor');
     }
 }

@@ -8,6 +8,20 @@
     <link rel="stylesheet" type="text/css" href="css/style_h.css">
     <title>登録医師一覧</title>
 </head>
+@section('script')
+    <script>
+        $(function(){
+            $(".btn-dell").click(function(){
+                if(confirm("本当に削除しますか？")){
+                    //そのままsubmit（削除）
+                }else{
+                    //cancel
+                    return false;
+                }
+            });
+        });
+    </script>
+@endsection
 <h1>登録医師一覧</h1>
 <div class="row">
     <div class="col-sm-12">
@@ -28,7 +42,10 @@
                     <td>{{$doctor->birthplace}}</td>
                     <td>{{$doctor->sex}}</td>
                     <td>{{$doctor->date_of_birth}}</td>
-                    <td><a href="/edit_index/{{$doctor->id}}" class="card-link">編集</a></td>
+                    <td><a href="/edit_index/{{$doctor->id}}" class="btn-square-pop">編集</a><form action="/doctor/delete/{{$doctor->id}}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="submit" value="削除" class="btn-square-pop" onclick='return confirm("急に消すじゃん？");'>
+                        </form></td>
                 </tr>
             @endforeach
         </table>

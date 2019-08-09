@@ -21,8 +21,8 @@
                 <input type="hidden" name="sex" value="{{$sex}}">
                 <input type="hidden" name="date_of_birth" value="{{$date_of_birth}}">
                 <div class="row">
-                <label class="col-sm-4 control-label">名前</label>
-                <div class="col-sm-8">{{$doctor_name}}</div>
+                    <label class="col-sm-4 control-label">名前</label>
+                    <div class="col-sm-8">{{$doctor_name}}</div>
                 </div>
                 <div class="row">
                     <label class="col-sm-4 control-label">出身地</label>

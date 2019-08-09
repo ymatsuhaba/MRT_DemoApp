@@ -130,16 +130,18 @@ Route::post('BookRoom.confirm','BookController@confirm');
 //検索ページ
 Route::get('/search_test_h', 'DoctorController@start');
 //一覧ページ
-Route::post('doctor', 'DoctorController@index');
-Route::get('doctor','DoctorController@index');
+Route::post('/doctor', 'DoctorController@index');
+Route::get('/doctor','DoctorController@index');
 //登録ページ
-Route::get('new_index', 'DoctorController@new_index'); //登録
-Route::post('new_confirm', 'DoctorController@new_confirm'); //確認
-Route::patch('doctor', 'DoctorController@finish'); //完了
+Route::get('/new_index', 'DoctorController@new_index'); //登録
+Route::post('/new_confirm', 'DoctorController@new_confirm'); //確認
+Route::patch('/doctor', 'DoctorController@finish'); //完了
 //更新ページ
 Route::get('/edit_index/{id}', 'DoctorController@edit_index');//編集
-Route::post('/edit_confirm/{id}', 'DoctorController@edit_confirm');//確認
-Route::patch('/doctor/{id}', 'DoctorController@edit_finish');//完了
+Route::post('/edit_confirm', 'DoctorController@edit_confirm');//確認
+Route::put('/doctor', 'DoctorController@edit_finish');//完了
+//削除ページ
+Route::post('/doctor/delete/{id}', 'DoctorController@delete');//削除
 
 
 

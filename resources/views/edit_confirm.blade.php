@@ -13,13 +13,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <form action="{{url('/doctor/{{$doctor->id')}}" method="post" class="form-horizontal">
-                {{ method_field('patch') }}
+            <form action="{{url('/doctor')}}" method="post" class="form-horizontal">
+                {{ method_field('put') }}
                 @csrf
                 <input type="hidden" name="doctor_name" value="{{$doctor_name}}">
                 <input type="hidden" name="birthplace" value="{{$birthplace}}">
                 <input type="hidden" name="sex" value="{{$sex}}">
                 <input type="hidden" name="date_of_birth" value="{{$date_of_birth}}">
+                <input type="hidden" name="id" value="{{$id}}">
                 <div class="row">
                     <label class="col-sm-4 control-label">名前</label>
                     <div class="col-sm-8">{{$doctor_name}}</div>
