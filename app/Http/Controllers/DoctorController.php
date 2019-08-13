@@ -187,6 +187,7 @@ class DoctorController extends Controller
 
         //エラー時の処理
         if ($validation->fails()) {
+            //エラー時にエラーメッセージと入力データを保持して編集画面にリダイレクト
             return redirect()->back()->withErrors($validation->errors())->withinput();
         }
 
@@ -200,6 +201,12 @@ class DoctorController extends Controller
     //更新処理
     public function edit_finish(Request $request)
     {
+        if ($request->get('action') === 'back') {
+            // 入力画面へ戻る
+            return redirect()
+                ->route('edit_index')
+                ->withInput($request->except(['action', 'confirming']));
+        }
         //レコードを検索
         $doctor = Doctor::find($request->input('id'));
 
@@ -217,7 +224,7 @@ class DoctorController extends Controller
     //削除処理
     public function delete(Request $request)
     {
-        //レコードを検索
+        //レコードを検索・削除
         $doctor = Doctor::find($request->id)->delete();
         //一覧画面を表示
         return redirect('/doctor');

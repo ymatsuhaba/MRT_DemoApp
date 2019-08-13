@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style_h.css">
-    <title>更新情報の確認</title>
+    <title>更新確認画面</title>
 </head>
 <body>
 <h1>更新情報の確認</h1>
@@ -39,12 +39,12 @@
                 </div>
                 <div class="row" style="margin-top: 30px;">
                     <div class="col-sm-offset-4 col-sm-8">
-                        <input type="submit" name="button1" value="更新" class="btn btn-primary btn-wide" />
+                        <input type="submit" name="button1" value="登録情報の更新" class="btn btn-primary btn-wide" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="/edit_index" class="btn btn-primary" style="margin:20px;">再入力</a>
+                        <a href="/edit_index/{{$id}}" class="btn btn-primary" style="margin:20px;">取消</a>
                     </div>
                 </div>
             </form>

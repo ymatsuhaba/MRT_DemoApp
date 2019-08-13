@@ -8,20 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/style_h.css">
     <title>登録医師一覧</title>
 </head>
-@section('script')
-    <script>
-        $(function(){
-            $(".btn-dell").click(function(){
-                if(confirm("本当に削除しますか？")){
-                    //そのままsubmit（削除）
-                }else{
-                    //cancel
-                    return false;
-                }
-            });
-        });
-    </script>
-@endsection
 <h1>登録医師一覧</h1>
 <div class="row">
     <div class="col-sm-12">
