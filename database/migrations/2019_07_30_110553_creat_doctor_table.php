@@ -16,7 +16,7 @@ class CreatDoctorTable extends Migration
         //schemaでテーブルを作成
         schema::create('doctors', function (Blueprint $table){
             //カラムを作成
-            $table->bigIncrements('doctor_id');
+            $table->bigIncrements('id');
             $table->string('doctor_name', 20);
             $table->string('birthplace');
             $table->string('sex');
