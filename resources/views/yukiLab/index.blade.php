@@ -76,7 +76,6 @@
     </form>
 
 <!--↑↑ 検索フォーム ↑↑-->
-
 <div id="yucky_books">
     <form action="{{url('yukiLab')}}" method="get">
     @if(count($yucky_books) > 0)
@@ -89,7 +88,7 @@
             </div>
             <div id="box2">
                 <div id="release_date">{{$yucky_book->release_date}}</div>
-                <div id="lending_situation">{{Config::get("books.lending_situation.$yucky_book->lending_situation")}}</div>
+                <div id="lending_situation">{{Config::get("const.lending_situation.$yucky_book->lending_situation")}}</div>
                 <div id="created_at">{{$yucky_book->created_at}}</div>
                 <div id="edit"><a href="yukiLab/{{$yucky_book->id}}/edit">編集</a></div>
             </div>

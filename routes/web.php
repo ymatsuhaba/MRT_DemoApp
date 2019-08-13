@@ -71,6 +71,11 @@ Route::post('mrt-db.second.resultSearch','MRTdbSearchController@search');
 Route::get('mrt-db.second.resultSearch','MRTdbSearchController@search');
 //図書館作成
 Route::resource('yukiLab','yukiLabController');
+//sp_mrt関係
+Route::resource('SpMrt','SpMrtCrudController', ['only' => ['index', 'create']]);
+Route::post('SpMrt.table_list','SpMrtStoreController@store');
+Route::get('SpMrt.table_list','SpMrtStoreController@store');
+Route::get('SpMrt.DB_list','SpMrtStoreController@index');
 
 
 // しょう
@@ -124,6 +129,12 @@ Route::get('BookRoom.register','BookController@register');
 //Books:新規登録確認ページ
 Route::get('BookRoom.confirm','BookController@confirm');
 Route::post('BookRoom.confirm','BookController@confirm');
+//従業員リストのページ
+Route::get('employee/list', [
+    'uses' => 'EmployeeController@select',
+    'as' => 'employee.list'
+]);
+
 
 // はばたん
 

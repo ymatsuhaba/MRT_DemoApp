@@ -103,7 +103,8 @@
                     <a href="/bookRoom">BookRoom</a>
                     <a href="/doctor">MRT-h</a>
                     <a href="/yukiLab">yukiLab</a>
-
+                    <a href="/employee/list">従業員リスト</a>
+                    <a href="/SpMrt">SpMrt</a>
                 </div>
             </div>
         </div>

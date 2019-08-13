@@ -1,0 +1,56 @@
+#create{
+    width:100%;
+}
+
+    #create #beginner{
+        width:100%;
+        height:6vh;
+        background-color: #0d47a1;
+        /*文字*/
+        font-size:4vh;
+        padding-top: 1vh;
+        text-align: center;
+    }
+
+    #create .create_boxes{
+        width:100%;
+        height:6vh;
+        display: flex;
+    }
+
+        #create .create_boxes .left{
+            width:50%;
+            height:6vh;
+            background-color: #879ce1;
+            /*文字*/
+            text-align:center;
+        }
+
+        #create .create_boxes .right{
+            width:50%;
+            height:6vh;
+            background-color: #879ce1;
+            /*文字*/
+            text-align:center;
+        }
+
+    #create .submit{
+        width:100%;
+        height:10vh;
+        background-color: #0d47a1;
+        padding-top: 2vh;
+    }
+
+        #create .submit #form{
+            width:50%;
+            height:5vh;
+            margin:0 auto;
+            background-color: #f39700;
+            padding-top:0.5vh;
+        }
+
+        #create .submit #form a{
+            font-size:8vw;
+            margin-left:18%;
+        }
+

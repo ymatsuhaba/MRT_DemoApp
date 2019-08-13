@@ -1,0 +1,16 @@
+#main_content2{
+    width:100%;
+    height:40vh;
+}
+
+
+    #main_content2 .list-group .list-group-item{
+        position: relative;
+        display: block;
+        padding: 0.5vh 1vw;
+        margin-bottom: 0.5vh;
+        background-color: #fff;
+        border: 0.5vh solid rgba(0,0,0,.125);
+    }
+
+
