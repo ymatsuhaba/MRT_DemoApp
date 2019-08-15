@@ -38,7 +38,6 @@
         <p><label class="col-md-3 control-label">貸出中</label><input type="radio" name="status" value="1" @if ($books->status == '1') checked @endif></p>
         <p><label class="col-md-3 control-label">在庫あり</label><input type="radio" name="status" value="2" @if ($books->status == '2') checked @endif></p>
         <p><label class="col-md-3 control-label">紛失中</label><input type="radio" name="status" value="3" @if ($books->status == '3') checked @endif></p>
-        @if($errors->has('status'))<br><span class="error" style="color: red">{{ $errors->first('status') }}</span> @endif
     </div>
     <input name="id" type="hidden" value="{{$books->id}}">
     <button type="submit" class="btn btn-warning">完了</button>

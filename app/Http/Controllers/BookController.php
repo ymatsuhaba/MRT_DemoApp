@@ -25,7 +25,6 @@ class BookController extends Controller
 
         $rules = [
             'title'=>'required',
-            'status'=>'required',
             'release_date'=>'date',
             'image_url' => ['file', 'image', 'mimes:jpeg,png']
         ];
@@ -82,7 +81,6 @@ class BookController extends Controller
         $books->status       = $request->status;
         //保存（更新）
         $books->save();
-        //リダイレクト
         return view('BookRoom.update');
     }
 

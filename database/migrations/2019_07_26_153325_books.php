@@ -19,7 +19,6 @@ class Books extends Migration
                 $table->string('title');
                 $table->string('author')->nullable();
                 $table->string('release_date');
-                $table->string('cover')->nullable();
                 $table->integer('status');
                 $table->timestamps();
             });
