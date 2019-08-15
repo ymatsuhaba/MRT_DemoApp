@@ -129,6 +129,14 @@ Route::get('BookRoom.register','BookController@register');
 //Books:新規登録確認ページ
 Route::get('BookRoom.confirm','BookController@confirm');
 Route::post('BookRoom.confirm','BookController@confirm');
+//Books:詳細ページ
+Route::get('BookRoom.detail'  , 'BookController@details');
+//Books:編集ページ
+Route::get('BookRoom.edit'  ,'BookController@edit');
+Route::get('BookRoom.update','BookController@update');
+//Books:削除ページ
+Route::get('BookRoom.delete', 'BookController@delete');
+
 //従業員リストのページ
 Route::get('employee/list', [
     'uses' => 'EmployeeController@select',

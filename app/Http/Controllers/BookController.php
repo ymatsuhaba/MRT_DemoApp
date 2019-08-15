@@ -15,12 +15,11 @@ class BookController extends Controller
 
         return view('BookRoom.list',['books'=>$book_list]);
     }
-
     //新規登録画面ページ
     public function register() {
+
         return view('BookRoom.register', compact('err_msg'));
     }
-
     //新規登録確認画面ページ
     public function confirm(Request $request) {
 
@@ -34,23 +33,64 @@ class BookController extends Controller
 
         //入力した値を取得
         $entered =new Books();
-
         $entered->title=$request->input('title');
         $entered->author= $request->input('author');
         $entered->release_date= $request->input('release_date');
         $entered->cover= $request->input('cover');
         $entered->status= $request->input('status');
-
         //入力した値を保存
         $entered->save();
-
         //一覧画面に値をリダイレクト
         return view('BookRoom.confirm',compact('entered'));
     }
 
-        //検索ページ
+    //検索ページ
     public function search(){
 
         return view('BookRoom.search');
+    }
+    //詳細ページ
+    public function details(Request $id){
+
+        $books =Books::find($id)->first();
+        return view('BookRoom.detail')->with('books',$books);
+    }
+    //編集ページ
+    public function edit(Request $id)
+    {
+        //値を取得
+        $books = Books::find($id)->first();
+        return view('BookRoom.edit')->with('books',$books);
+    }
+    //更新
+    public function update(Request $request)
+    {
+        $rules = [
+            'title'=>'required',
+            'status'=>'required',
+            'author'=>'required',
+            'release_date'=>'date',
+        ];
+        $this->validate($request, $rules);
+
+        //レコードを検索
+        $books = Books::find($request->id)->first();
+        //値を代入
+        $books->title        = $request->title;
+        $books->author       = $request->author;
+        $books->release_date = $request->release_date;
+        $books->status       = $request->status;
+        //保存（更新）
+        $books->save();
+        //リダイレクト
+        return view('BookRoom.update');
+    }
+
+    public function delete(Request $request)
+    {
+        //削除対象レコードを検索
+         Books::find($request->id)->delete();
+        //リダイレクト
+        return redirect()->to('/bookRoom');
     }
 }

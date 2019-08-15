@@ -35,6 +35,15 @@
             <td>{{$list->release_date}}</td>
             <td>{{Config::get("const_s.status.$list->status")}}</td>
             <td>{{$list->created_at}}</td>
+            <td><a href="BookRoom.detail?id={{$list->id}}" class="btn btn-warning">詳細</a></td>
+            <td><a href="BookRoom.edit?id={{$list->id}}" class="btn btn-warning">編集</a></td>
+            <td>
+                <form method="get" action="{{url('BookRoom.delete')}}">
+                    {{ csrf_field() }}
+                    <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("削除しますか？");'>
+                    <input type="hidden" value="{{$list->id}}" name="id">
+                </form>
+            </td>
         </tr>
         @endforeach
         </tbody>

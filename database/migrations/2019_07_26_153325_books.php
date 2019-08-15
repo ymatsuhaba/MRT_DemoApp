@@ -17,9 +17,9 @@ class Books extends Migration
             Schema::create('books', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('title');
-                $table->string('author');
+                $table->string('author')->nullable();
                 $table->string('release_date');
-                $table->string('cover');
+                $table->string('cover')->nullable();
                 $table->integer('status');
                 $table->timestamps();
             });
