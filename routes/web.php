@@ -153,6 +153,8 @@ Route::post('/edit_confirm', 'DoctorController@edit_confirm');//確認
 Route::put('/doctor', 'DoctorController@edit_finish');//完了
 //削除ページ
 Route::post('/doctor/delete/{id}', 'DoctorController@delete');//削除
+//デモページ
+Route::get('/DemoPage_h', 'DemoPage_hController@start');
 
 
 
