@@ -23,11 +23,11 @@ class BookController extends Controller
     //新規登録確認画面ページ
     public function confirm(Request $request) {
 
-         $rules = [
-             'title'=>'required',
-             'status'=>'required',
-             'release_date'=>'date',
-             'image_url' => ['file', 'image', 'mimes:jpeg,png']
+        $rules = [
+            'title'=>'required',
+            'status'=>'required',
+            'release_date'=>'date',
+            'image_url' => ['file', 'image', 'mimes:jpeg,png']
         ];
         $this->validate($request, $rules);
 
@@ -89,7 +89,7 @@ class BookController extends Controller
     public function delete(Request $request)
     {
         //削除対象レコードを検索
-         Books::find($request->id)->delete();
+        Books::find($request->id)->delete();
         //リダイレクト
         return redirect()->to('/bookRoom');
     }
