@@ -25,10 +25,8 @@ class BookController extends Controller
 
         $rules = [
             'title'=>'required',
-            'release_date'=>'date',
+            'release_date'=>'required','date',
             'status'=>'required',
-            'image_url' => ['file', 'image', 'mimes:jpeg,png']
-
         ];
         $this->validate($request, $rules);
 
