@@ -36,11 +36,6 @@
         <p><label class="col-md-3 control-label">紛失中</label><input type="radio" name="status" value="3"></p>
         @if($errors->has('status'))<br><span class="error" style="color: red">※貸出フラグを選択してください。</span> @endif
     </div>
-    <div class="form-group ">
-            <label for="email" class="col-md-3 control-label">表紙</label>
-            {{ csrf_field() }}
-            <input type="file" class="form-control"  name="cover">
-        </div>
     <button type="submit" class="btn btn-primary">確認</button>
 </form>
 <!-- フッター -->
