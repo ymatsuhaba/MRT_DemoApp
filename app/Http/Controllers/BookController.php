@@ -26,6 +26,7 @@ class BookController extends Controller
         $rules = [
             'title'=>'required',
             'release_date'=>'date',
+            'status'=>'required',
             'image_url' => ['file', 'image', 'mimes:jpeg,png']
 
         ];
