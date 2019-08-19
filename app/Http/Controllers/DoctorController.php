@@ -225,7 +225,8 @@ class DoctorController extends Controller
     public function delete(Request $request)
     {
         //レコードを検索・削除
-        $doctor = Doctor::find($request->id)->delete();
+//        $doctor = Doctor::find($request->id)->delete();
+        Doctor::find($request->id)->delete();
         //一覧画面を表示
         return redirect('/doctor');
     }

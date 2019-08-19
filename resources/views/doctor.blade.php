@@ -8,6 +8,12 @@
     <link rel="stylesheet" type="text/css" href="css/style_h.css">
     <title>登録医師一覧</title>
 </head>
+<style>
+    body
+    {
+        text-decoration: none;
+    }
+</style>
 <h1>登録医師一覧</h1>
 <div class="row">
     <div class="col-sm-12">
@@ -28,7 +34,7 @@
                     <td>{{$doctor->birthplace}}</td>
                     <td>{{$doctor->sex}}</td>
                     <td>{{$doctor->date_of_birth}}</td>
-                    <td><a href="/edit_index/{{$doctor->id}}" class="btn-square-pop">編集</a><form action="/doctor/delete/{{$doctor->id}}" method="POST">
+                    <td><button type="button"><a href="/edit_index/{{$doctor->id}}" class="btn-square-pop">編集</button></a><action="/doctor/delete/{{$doctor->id}}" method="POST"></>
                             {{ csrf_field() }}
                             <input type="submit" value="削除" class="btn-square-pop" onclick='return confirm("急に消すじゃん？");'>
                         </form></td>
