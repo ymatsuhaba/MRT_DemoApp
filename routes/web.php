@@ -143,10 +143,13 @@ Route::get('employee/list', [
     'as' => 'employee.list'
 ]);
 //MRTのFormのページ
-Route::get('MRT_form.index', 'BookController@delete');
-Route::get('MRT_form', function () {
-    return view('MRT_form.index');
-});
+Route::get('MRT_form', 'MRTCrudController@index');
+//Route::get('MRT_form', function () {
+//    return view('MRT_form.index');
+//});
+
+
+
 
 
 // はばたん

@@ -37,7 +37,7 @@ body {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: #00c853;
+    border-bottom:1px solid #333399;
     outline: none;
     padding-bottom: 8px;
     box-sizing: border-box;
