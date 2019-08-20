@@ -35,7 +35,6 @@ class BookController extends Controller
         $entered->title=$request->input('title');
         $entered->author= $request->input('author');
         $entered->release_date= $request->input('release_date');
-        $entered->cover= $request->input('cover');
         $entered->status= $request->input('status');
         //入力した値を保存
         $entered->save();

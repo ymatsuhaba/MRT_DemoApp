@@ -142,6 +142,11 @@ Route::get('employee/list', [
     'uses' => 'EmployeeController@select',
     'as' => 'employee.list'
 ]);
+//MRTのFormのページ
+Route::get('MRT_form.index', 'BookController@delete');
+Route::get('MRT_form', function () {
+    return view('MRT_form.index');
+});
 
 
 // はばたん

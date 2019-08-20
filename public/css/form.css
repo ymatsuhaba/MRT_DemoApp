@@ -1,0 +1,68 @@
+#header_img{
+    width:100%;
+    height:20vh;
+    position: relative;
+}
+
+#header_img2{
+    width: 180px;
+    height: auto;
+    position: absolute;
+    top: 5%;
+    left: 43%;
+}
+
+body {
+    background-color: whitesmoke;
+}
+.content {
+    background-color: white;
+    border-top: 20px solid #333399;
+    text-align: center;
+    box-shadow: 10px 10px 15px -10px;
+    margin-left: 30%;
+    margin-right:30%;
+    margin-top: 1%;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+
+}
+
+.color {
+    color: red;
+}
+
+.form-control {
+    font-size: 16px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: #00c853;
+    outline: none;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
+/*.text_underline{*/
+/*    position: relative;*/
+/*    border-top: 3px solid rgb(26,95,30)*/
+/*}*/
+
+.title {
+    text-align: left;
+    margin: 0% 0% 2% 3%;
+
+}
+
+#inquiry {
+    padding: 3% 0% 0% 0%;
+    text-shadow:3px 3px 3px gainsboro;
+}
+
+.example {
+    text-align: left;
+    margin: 0% 0% 2% 3%;
+}
+
+
+
+
