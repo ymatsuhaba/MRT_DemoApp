@@ -10,7 +10,14 @@
     <style>
         body{
             font-size: 13px;
+            color: #606161;
             display: inline-block;
+            width: 100%;
+        }
+        .link1
+        {
+            /*display: inline-flex;*/
+            /*width: 106px;*/
         }
         .link1 a
         {
@@ -27,7 +34,6 @@
         .Link
         {
             display: flex;
-            display: -webkit-flex;
             text-align: center;
             justify-content: center;
             margin-bottom: 0px;
@@ -62,6 +68,7 @@
             overflow: hidden;
             font-size:13px;
             width:100%;
+            height: 45px;
             display:flex;
             margin:0 220px;
             position: absolute;
@@ -73,12 +80,13 @@
             display: flex;
             justify-content: center;
             width: 113px;
-            height: 40px;
+            height: 35px;
             border:1px solid #7679ab;
             border-bottom: none;
             align-items: center;
             position: relative;
             margin-right: 5px;
+            margin-top: 9px;
         }
         .menubar li a {
             display: flex;
@@ -89,11 +97,11 @@
             text-align: center;
             text-decoration: none;
             font-size: 14px;
-            height: 40px;
+            width: 113px;
+            height: 35px;
             position: absolute;
             left: 0;
             right: 0;
-            margin: auto;
         }
         .menubar ul li:hover:not(.active)
         {
@@ -111,6 +119,8 @@
             background-color: white!important;
             color: #333399!important;
             text-decoration: none!important;
+            width: 113px;
+            height: 35px;
         }
         .main1
         {
@@ -151,8 +161,10 @@
         {
             display: inline;
             padding-bottom: 0;
-            padding-left: 0;
+            padding-left: 1px;
+            padding-right: 1px;
             background-color: #FFFFFF;
+            padding-top: 3px;
         }
         .main1-1 ul li a
         {
@@ -169,15 +181,17 @@
         {
             color: #808181;
             margin: 0;
-            padding: 5px 15px 4px;
+            padding: 5px 12px 4px;
         }
         .main1-1 ul li span
         {
             background-color: #3e90df;
+            padding: 3px 2px 1px;
         }
 
         .main1-1 ul li span a{
             color: #FFFFFF;
+            padding: 5px 15px 4px;
         }
         .login-form
         {
@@ -207,9 +221,9 @@
             list-style-type: none;
             overflow: hidden;
             width:100%;
+            height: 30px;
             display:flex;
-            margin:0 220px;
-            /*position: absolute;*/
+            margin:0 210px;
             bottom: 0;
             left:0;
             right:0;
@@ -218,14 +232,205 @@
         {
             display: flex;
             justify-content: center;
-            width: 113px;
-            height: 40px;
-            border: 1px solid #7679ab;
+            height: 30px;
+            border: 1px solid #d4d4d4;
             border-bottom: none;
             align-items: center;
             margin-right: 5px;
         }
+        .sub-menubar ul li a
+        {
+            font-size: 15px;
+            padding: 4px 15px 0;
+        }
+        .active1
+        {
+            height: 30px;
+            background: -webkit-linear-gradient(top, rgba(26,160,229,0.8) 0%, rgba(26,160,229,0.8) 50%, #1aa0e5 51%, rgba(26,160,229,0.8) 95%, rgba(26,160,229,0.8) 100%);
+            color: #FFFFFF;
+            text-decoration: none!important;
+            cursor: default;
+        }
+        .active1:hover
+        {
+            background: -webkit-linear-gradient(top, rgba(26,160,229,0.8) 0%, rgba(26,160,229,0.8) 50%, #1aa0e5 51%, rgba(26,160,229,0.8) 95%, rgba(26,160,229,0.8) 100%);
+            color: #FFFFFF;
+            text-decoration: none!important;
+            cursor: default;
+        }
+        .regular
+        {
+            height: 30px;
+            color: #606161;
+            background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
+        }
+        .regular:hover
+        {
+            background: -webkit-linear-gradient(top, rgba(38,173,139,0.8) 0%, rgba(38,173,139,0.8) 50%, #26ad8b 51%, rgba(38,173,139,0.8) 95%, rgba(38,173,139,0.8) 100%);
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .career
+        {
+            height: 30px;
+            color: #606161;
+            background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
+        }
+        .career:hover
+        {
+            color: #FFFFFF;
+            background: -webkit-linear-gradient(top, #2e9aed 0%, #2e9aed 50%, #0d7de1 51%, #2e9aed 95%, #2e9aed 100%);
+            text-decoration: none;
+        }
+        .main2
+        {
+            display: inline-flex;
+            border-top: 3px solid #1AA0E5!important;
+            margin-left: 250px;
+            padding: 15px 10px 20px;
+            border:1px solid #d4d4d4;
+            width: 954px;
+            height: 600px;
+        }
+        .new-job
+        {
+            border: 1px solid #d4d4d4;
+            background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
+            height: 32px;
+            width: 457px;
 
+        }
+        .text1
+        {
+            border-left: 2px solid #1AA0E5;
+            height: 32px;
+            font-size: 16px;
+            margin-left:1px ;
+            padding-left: 8px;
+            padding-top: 3px;
+        }
+        .search-job
+        {
+            border: 1px solid #d4d4d4;
+            background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
+            height: 32px;
+            margin-left: 20px;
+            width: 457px;
+        }
+        .text2
+        {
+            border-left: 2px solid #1AA0E5;
+            height: 32px;
+            font-size: 16px;
+            margin-left:1px ;
+            padding-left: 8px;
+            padding-top: 3px;
+
+        }
+        .search-job tbody
+        {
+            display: flex;
+        }
+        .input-group
+        {
+            margin-top: 10px;
+            width:100%;
+            height:30px;
+            display:flex;
+        }
+        .pref_menu{
+            height:30px;
+            padding-top: 6px;
+            width: 80px;
+            font-size: 12px;
+            font-family: "MS PGothic"!important;
+            color: #606161;
+            margin-left: 0px;
+        }
+        #dropdown-menu
+        {
+            height:30px;
+            width:40%;
+            background-color:white;
+        }
+        .subject_menu
+        {
+            font-size: 12px;
+            font-family: "MS PGothic";
+            color: #606161;
+            width: 80px;
+            margin-left: 0px;
+        }
+        .job
+        {
+            white-space: nowrap!important;
+        }
+        .job_type
+        {
+            font-size: 12px;
+            font-family: "MS PGothic";
+            color: #606161;
+            width: 80px;
+            margin-right: 0;
+            margin-left: 0px;
+
+        }
+        .job_type span
+        {
+            margin-left: 35px;
+        }
+        .money
+        {
+            display: flex;
+        }
+        .money1
+        {
+            font-size: 12px;
+            font-family: "MS PGothic";
+            color: #606161;
+            width: 80px;
+            margin-left: 0px;
+        }
+        .money2
+        {
+            display: block;
+        }
+        .dropdown-toggle button
+        {
+            margin-left: 10px;
+        }
+        .dropdown-toggle img
+        {
+            margin-left: 0px;
+        }
+        .period1
+        {
+            display: inline-flex;
+        }
+        .period2
+        {
+            margin-left: 0px;
+        }
+        .pMessage
+        {
+            margin-left: 53px;
+        }
+        .border
+        {
+            background-color: #808181;
+            width: 3px;
+            height: 11px;
+            float: left;
+            margin: 4px 5px 0 0;
+        }
+        .date
+        {
+            margin-left: 133px;
+        }
+        .submit-btn
+        {
+            margin-left: 140px;
+        }
     </style>
     <title>医師求人・転職紹介・アルバイトならMRT</title>
 </head>
@@ -259,7 +464,7 @@
     <img src="MRT2.png"/>
     <div class="main1-1">
         <ul>
-            <li><span><a class="active1" href="/DemoPage_h">医師</a></span></li>
+            <li><span><a href="/DemoPage_h">医師</a></span></li>
             <li><a href="#">採用ご担当者様</a></li>
         </ul>
         <div class="main-back">
@@ -275,16 +480,143 @@
             </div>
         </div>
         <div class="new">
-        <a href="DemoPage_h"><img src="新規会員登録.png"/></a>
+            <a href="DemoPage_h"><img src="新規会員登録.png"/></a>
         </div>
     </div>
 </div>
 <div class="sub-menubar">
     <ul>
-        <li><a href="#">アルバイト(スポット)の求人</a></li>
-        <li><a href="#">アルバイト(定期非常勤)の求人</a></li>
-        <li><a href="#">転職(常勤)の求人</a></li>
+        <li><a class="active1" href="#">アルバイト(スポット)の求人</a></li>
+        <li><a class="regular" href="#">アルバイト(定期非常勤)の求人</a></li>
+        <li><a class="career" href="#">転職(常勤)の求人</a></li>
     </ul>
+</div>
+<div class="main2">
+    <div class="new-job">
+        <div class="text1">
+            新着求人
+        </div>
+    </div>
+    <div class="search-job">
+        <div class="text2">
+            求人検索
+        </div>
+        <tbody>
+        <tr>
+            <div class="input-group">
+                <div class="pref_menu"><div class="border"></div>都道府県</div>
+                <select id="dropdown-menu" name="prefecture">
+                    <option value="dropdown-item" disabled selected style='display:none;'>都道府県を選択</option>
+                    <option class="dropdown-item" href="#"></option>
+                    <option class="dropdown-item" href="#">北海道</option>
+                    <option class="dropdown-item" href="#">青森県</option>
+                    <option class="dropdown-item" href="#">岩手県</option>
+                    <option class="dropdown-item" href="#">宮城県</option>
+                    <option class="dropdown-item" href="#">秋田県</option>
+                    <option class="dropdown-item" href="#">山形県</option>
+                    <option class="dropdown-item" href="#">福島県</option>
+                    <option class="dropdown-item" href="#">茨城県</option>
+                    <option class="dropdown-item" href="#">栃木県</option>
+                    <option class="dropdown-item" href="#">群馬県</option>
+                    <option class="dropdown-item" href="#">埼玉県</option>
+                    <option class="dropdown-item" href="#">千葉県</option>
+                    <option class="dropdown-item" href="#">東京都</option>
+                    <option class="dropdown-item" href="#">神奈川県</option>
+                    <option class="dropdown-item" href="#">新潟県</option>
+                    <option class="dropdown-item" href="#">富山県</option>
+                    <option class="dropdown-item" href="#">石川県</option>
+                    <option class="dropdown-item" href="#">福井県</option>
+                    <option class="dropdown-item" href="#">山梨県</option>
+                    <option class="dropdown-item" href="#">長野県</option>
+                    <option class="dropdown-item" href="#">岐阜県</option>
+                    <option class="dropdown-item" href="#">静岡県</option>
+                    <option class="dropdown-item" href="#">愛知県</option>
+                    <option class="dropdown-item" href="#">三重県</option>
+                    <option class="dropdown-item" href="#">滋賀県</option>
+                    <option class="dropdown-item" href="#">京都府</option>
+                    <option class="dropdown-item" href="#">大阪府</option>
+                    <option class="dropdown-item" href="#">兵庫県</option>
+                    <option class="dropdown-item" href="#">奈良県</option>
+                    <option class="dropdown-item" href="#">和歌山県</option>
+                    <option class="dropdown-item" href="#">鳥取県</option>
+                    <option class="dropdown-item" href="#">島根県</option>
+                    <option class="dropdown-item" href="#">岡山県</option>
+                    <option class="dropdown-item" href="#">広島県</option>
+                    <option class="dropdown-item" href="#">山口県</option>
+                    <option class="dropdown-item" href="#">徳島県</option>
+                    <option class="dropdown-item" href="#">香川県</option>
+                    <option class="dropdown-item" href="#">愛媛県</option>
+                    <option class="dropdown-item" href="#">高知県</option>
+                    <option class="dropdown-item" href="#">福岡県</option>
+                    <option class="dropdown-item" href="#">佐賀県</option>
+                    <option class="dropdown-item" href="#">長崎県</option>
+                    <option class="dropdown-item" href="#">熊本県</option>
+                    <option class="dropdown-item" href="#">大分県</option>
+                    <option class="dropdown-item" href="#">宮崎県</option>
+                    <option class="dropdown-item" href="#">鹿児島県</option>
+                    <option class="dropdown-item" href="#">沖縄県</option>
+                </select>
+            </div>
+        </tr>
+        <br>
+        <tr>
+            <div class="input-group">
+                <div class="subject_menu"><div class="border"></div>診療科</div>
+                <select id="dropdown-menu" name="subject">
+                    <option value="dropdown-item" disabled selected style='display:none;'>科目を選択</option>
+                    <option class="dropdown-item" href="#"></option>
+                    <option class="dropdown-item" href="#">内科</option>
+                    <option class="dropdown-item" href="#">外科</option>
+                    <option class="dropdown-item" href="#">形成外科</option>
+                    <option class="dropdown-item" href="#">整形外科</option>
+                    <option class="dropdown-item" href="#">脳外科</option>
+                    <option class="dropdown-item" href="#">婦人科</option>
+                    <option class="dropdown-item" href="#">眼科</option>
+                    <option class="dropdown-item" href="#">精神科</option>
+                    <option class="dropdown-item" href="#">心療内科</option>
+                    <option class="dropdown-item" href="#">麻酔科</option>
+                    <option class="dropdown-item" href="#">小児科</option>
+                    <option class="dropdown-item" href="#">放射線科</option>
+                    <option class="dropdown-item" href="#">耳鼻科</option>
+                    <option class="dropdown-item" href="#">皮膚科</option>
+                    <option class="dropdown-item" href="#">訪問診療</option>
+                    <option class="dropdown-item" href="#">人間ドック</option>
+                    <option class="dropdown-item" href="#">内視鏡</option>
+                    <option class="dropdown-item" href="#">透析</option>
+                    <option class="dropdown-item" href="#">健診</option>
+                    <option class="dropdown-item" href="#">往診</option>
+                    <option class="dropdown-item" href="#">病棟管理</option>
+                    <option class="dropdown-item" href="#">産婦人科</option>
+                    <option class="dropdown-item" href="#">口腔外科</option>
+                    <option class="dropdown-item" href="#">歯科口腔外科</option>
+                    <option class="dropdown-item" href="#">歯科</option>
+                    <option class="dropdown-item" href="#">コンタクト</option>
+                </select>
+            </div>
+        </tr><br>
+        <tr>
+            <div class="job">
+                <div class="job_type"><div class="border"></div>勤務形態<span><input type="checkbox" value="当直">当直　　　　<input type="checkbox" value="日直・日当直">日直・日当直</span></div>
+            </div>
+        </tr><br>
+        <div class="money">
+        <div class="money1"><div class="border"></div>希望給与</div>
+        <div class="money2">時給　<input type="text" value="">　万円以上　※半角数字
+            <br>一回　<input type="text" value="">　万円以上　※半角数字</div>
+        </div>
+            </tr><br>
+            <tr>
+                <div class="period1">
+                <div class="period2"><div class="border"></div>期間</div>
+                <div class="pMessage">ご希望の期間を選択してください</div>
+                </div>
+                <br><div class="date"><input type="date"></div>
+            </tr><br>
+        </tbody>
+        <form>
+            <input type="image" src="この条件で検索.png" value="" class="submit-btn">
+        </form>
+    </div>
 </div>
 
 <!-- Optional JavaScript -->
