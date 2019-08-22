@@ -9,7 +9,7 @@
     <title>更新確認画面</title>
 </head>
 <body>
-<h1>更新情報の確認</h1>
+<h1>更新確認画面</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-3">

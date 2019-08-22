@@ -41,8 +41,8 @@
                 <br>
                 <div class="form-group @if($errors->has('date_of_birth')) has-error @endif">
                     <label>生年月日</label>
-                    <input type="date" name="date_of_birth" value = {{old('date_of_birth',$doctor->date_of_birth)}}>
-                    <br>@if($errors->has('date_of_birth'))<input type='hidden' name='date_of_birth' value='{{ old('date_of_birth') }}'><span class="text-danger">{{ $errors->first('date_of_birth') }}</span> @endif
+                    <input type="date" name="date_of_birth" value = "{{old('date_of_birth',$doctor->date_of_birth)}}">
+                    <br>@if($errors->has('date_of_birth'))<span class="text-danger">{{ $errors->first('date_of_birth') }}</span> @endif
                 </div>
                 <br>
                 <br>
