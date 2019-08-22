@@ -14,11 +14,6 @@
             display: inline-block;
             width: 100%;
         }
-        .link1
-        {
-            /*display: inline-flex;*/
-            /*width: 106px;*/
-        }
         .link1 a
         {
             color: snow;
