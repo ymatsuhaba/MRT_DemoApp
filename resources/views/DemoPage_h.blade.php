@@ -290,18 +290,28 @@
             padding: 15px 10px 20px;
             border:1px solid #d4d4d4;
             width: 954px;
-            height: 600px;
+            height: 700px;
         }
         .new-job
         {
-            border: 1px solid #d4d4d4;
-            background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
-            height: 32px;
+            height: 550px;
             width: 457px;
-
+            white-space: nowrap;
+            text-overflow: ellipsis!important;
+            /*overflow: scroll;*/
+        }
+        .scroll
+        {
+            height: 520px;
+            width: 457px;
+            white-space: nowrap;
+            text-overflow: ellipsis!important;
+            overflow: scroll;
         }
         .text1
         {
+            border: 1px solid #d4d4d4;
+            background: -webkit-linear-gradient(top, #f5f5f5 0%, #f5f5f5 50%, #dedede 51%, #f5f5f5 95%, #f5f5f5 100%);
             border-left: 2px solid #1AA0E5;
             height: 32px;
             font-size: 16px;
@@ -431,6 +441,36 @@
         {
             margin-left: 140px;
         }
+        .new-job tr
+        {
+            overflow: hidden;
+            text-overflow: ellipsis!important;
+        }
+        .new_job tr:nth-child(odd)
+        {
+            background: #f9f9f9!important;
+        }
+        .new-job table tr a link visited
+        {
+            display: inline;
+            text-overflow: ellipsis !important;
+            overflow: hidden;
+            color: #3e90df;
+
+        }
+        .jobs
+        {
+            padding: 0px 5px 5px 5px!important;
+            font-size: 12px!important;
+        }
+        .jobs:nth-child(odd)
+        {
+            background: #f9f9f9!important;
+        }
+        .job1
+        {
+            padding-bottom: 10px!important;
+        }
     </style>
     <title>医師求人・転職紹介・アルバイトならMRT</title>
 </head>
@@ -454,8 +494,8 @@
         <li><a href="#">アルバイト<span>(スポット)</span></a></li>
         <li><a href="#">アルバイト<span>(定期非常勤)</span></a></li>
         <li><a href="#">転職(常勤)</a></li>
-        <li><a href="#">開業</a></li>
-        <li><a href="#">産業医</a></li>
+        <li><a href="https://kaigyou.medrt.com/" target="_blank">開業</a></li>
+        <li><a href="https://sangyoi.medrt.com/" target="_blank">産業医</a></li>
         <li><a href="#">採用担当者様</a></li>
         <li><a href="#">看護師・薬剤師<span>医療従事者の方</span></a></li>
     </ul>
@@ -475,12 +515,12 @@
                     <label>パスワード</label>
                     <input type='password' name='id' value="" class="input-size">
                     <br><br><a href="https://medrt.com/doctors/password_recovery">>パスワードをお忘れの先生</a><br>
-                    <br><a href="DemoPage_h"><img src="ログイン.png"/></a>
+                    <br><a href="https://medrt.com/login_error.html"><img src="ログイン.png"/></a>
                 </form>
             </div>
         </div>
         <div class="new">
-            <a href="DemoPage_h"><img src="新規会員登録.png"/></a>
+            <a href="https://medrt.com/doctors/register"><img src="新規会員登録.png"/></a>
         </div>
     </div>
 </div>
@@ -495,6 +535,21 @@
     <div class="new-job">
         <div class="text1">
             新着求人
+        </div>
+        @csrf
+        <div class="scroll">
+            <table border-top="1" align="center">
+                @foreach($change_spot_jobs as $spot_job)
+                    <div class="job1">
+                        <tr>
+                            <a class="jobs" style="color: #4584A5;" href="#">
+                                {{$spot_job}}
+                                <br>
+                            </a>
+                        </tr>
+                    </div>
+                @endforeach
+            </table>
         </div>
     </div>
     <div class="search-job">
@@ -600,18 +655,18 @@
             </div>
         </tr><br>
         <div class="money">
-        <div class="money1"><div class="border"></div>希望給与</div>
-        <div class="money2">時給　<input type="text" value="">　万円以上　※半角数字
-            <br>一回　<input type="text" value="">　万円以上　※半角数字</div>
+            <div class="money1"><div class="border"></div>希望給与</div>
+            <div class="money2">時給　<input type="text" value="">　万円以上　※半角数字
+                <br>一回　<input type="text" value="">　万円以上　※半角数字</div>
         </div>
-            </tr><br>
-            <tr>
-                <div class="period1">
+        </tr><br>
+        <tr>
+            <div class="period1">
                 <div class="period2"><div class="border"></div>期間</div>
                 <div class="pMessage">ご希望の期間を選択してください</div>
-                </div>
-                <br><div class="date"><input type="date"></div>
-            </tr><br>
+            </div>
+            <br><div class="date"><input type="date"></div>
+        </tr><br>
         </tbody>
         <form>
             <input type="image" src="この条件で検索.png" value="" class="submit-btn">
