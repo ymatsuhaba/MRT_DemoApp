@@ -466,6 +466,14 @@
         {
             padding-bottom: 10px!important;
         }
+        .shitei
+        {
+            height: 30px;
+            font-size: 13px;
+            font-family: "MS PGothic";
+            padding-left: 6px;
+            padding-top: 6px;
+        }
     </style>
     <title>医師求人・転職紹介・アルバイトならMRT</title>
 </head>
@@ -551,68 +559,70 @@
         <div class="text2">
             求人検索
         </div>
+        <form action="{{'/DemoPage_h_result'}}" method="post">
+            @csrf
         <tbody>
         <tr>
             <div class="input-group">
                 <div class="pref_menu"><div class="border"></div>都道府県</div>
                 <select id="dropdown-menu" name="prefecture">
-                    <option value="dropdown-item" disabled selected style='display:none;'>都道府県を選択</option>
-                    <option class="dropdown-item" href="#"></option>
-                    <option class="dropdown-item" href="#">北海道</option>
-                    <option class="dropdown-item" href="#">青森県</option>
-                    <option class="dropdown-item" href="#">岩手県</option>
-                    <option class="dropdown-item" href="#">宮城県</option>
-                    <option class="dropdown-item" href="#">秋田県</option>
-                    <option class="dropdown-item" href="#">山形県</option>
-                    <option class="dropdown-item" href="#">福島県</option>
-                    <option class="dropdown-item" href="#">茨城県</option>
-                    <option class="dropdown-item" href="#">栃木県</option>
-                    <option class="dropdown-item" href="#">群馬県</option>
-                    <option class="dropdown-item" href="#">埼玉県</option>
-                    <option class="dropdown-item" href="#">千葉県</option>
-                    <option class="dropdown-item" href="#">東京都</option>
-                    <option class="dropdown-item" href="#">神奈川県</option>
-                    <option class="dropdown-item" href="#">新潟県</option>
-                    <option class="dropdown-item" href="#">富山県</option>
-                    <option class="dropdown-item" href="#">石川県</option>
-                    <option class="dropdown-item" href="#">福井県</option>
-                    <option class="dropdown-item" href="#">山梨県</option>
-                    <option class="dropdown-item" href="#">長野県</option>
-                    <option class="dropdown-item" href="#">岐阜県</option>
-                    <option class="dropdown-item" href="#">静岡県</option>
-                    <option class="dropdown-item" href="#">愛知県</option>
-                    <option class="dropdown-item" href="#">三重県</option>
-                    <option class="dropdown-item" href="#">滋賀県</option>
-                    <option class="dropdown-item" href="#">京都府</option>
-                    <option class="dropdown-item" href="#">大阪府</option>
-                    <option class="dropdown-item" href="#">兵庫県</option>
-                    <option class="dropdown-item" href="#">奈良県</option>
-                    <option class="dropdown-item" href="#">和歌山県</option>
-                    <option class="dropdown-item" href="#">鳥取県</option>
-                    <option class="dropdown-item" href="#">島根県</option>
-                    <option class="dropdown-item" href="#">岡山県</option>
-                    <option class="dropdown-item" href="#">広島県</option>
-                    <option class="dropdown-item" href="#">山口県</option>
-                    <option class="dropdown-item" href="#">徳島県</option>
-                    <option class="dropdown-item" href="#">香川県</option>
-                    <option class="dropdown-item" href="#">愛媛県</option>
-                    <option class="dropdown-item" href="#">高知県</option>
-                    <option class="dropdown-item" href="#">福岡県</option>
-                    <option class="dropdown-item" href="#">佐賀県</option>
-                    <option class="dropdown-item" href="#">長崎県</option>
-                    <option class="dropdown-item" href="#">熊本県</option>
-                    <option class="dropdown-item" href="#">大分県</option>
-                    <option class="dropdown-item" href="#">宮崎県</option>
-                    <option class="dropdown-item" href="#">鹿児島県</option>
-                    <option class="dropdown-item" href="#">沖縄県</option>
-                </select>
+                    <option value="select" disabled selected style='display:none;'>都道府県を選択</option>
+                    <option class="blank" href="#"></option>
+                    <option class="Hokkaido" href="#">北海道</option>
+                    <option class="Aomori" href="#">青森県</option>
+                    <option class="Iwate" href="#">岩手県</option>
+                    <option class="Miyagi" href="#">宮城県</option>
+                    <option class="Akita" href="#">秋田県</option>
+                    <option class="Yamagata" href="#">山形県</option>
+                    <option class="Fukushima" href="#">福島県</option>
+                    <option class="Ibaraki" href="#">茨城県</option>
+                    <option class="Tochigi" href="#">栃木県</option>
+                    <option class="Gunma" href="#">群馬県</option>
+                    <option class="Saitama" href="#">埼玉県</option>
+                    <option class="Chiba" href="#">千葉県</option>
+                    <option class="Tokyo" href="#">東京都</option>
+                    <option class="Kanagawa" href="#">神奈川県</option>
+                    <option class="Niigata" href="#">新潟県</option>
+                    <option class="Toyama" href="#">富山県</option>
+                    <option class="Ishikawa" href="#">石川県</option>
+                    <option class="Fukui" href="#">福井県</option>
+                    <option class="Yamanashi" href="#">山梨県</option>
+                    <option class="Nagano" href="#">長野県</option>
+                    <option class="Gifu" href="#">岐阜県</option>
+                    <option class="Shizuoka" href="#">静岡県</option>
+                    <option class="Aichi" href="#">愛知県</option>
+                    <option class="Mie" href="#">三重県</option>
+                    <option class="Shiga" href="#">滋賀県</option>
+                    <option class="Kyoto" href="#">京都府</option>
+                    <option class="Osaka" href="#">大阪府</option>
+                    <option class="Hyogo" href="#">兵庫県</option>
+                    <option class="Nara" href="#">奈良県</option>
+                    <option class="Wakayama" href="#">和歌山県</option>
+                    <option class="Tottori" href="#">鳥取県</option>
+                    <option class="Shimane" href="#">島根県</option>
+                    <option class="Okayama" href="#">岡山県</option>
+                    <option class="Hiroshima" href="#">広島県</option>
+                    <option class="Yamaguchi" href="#">山口県</option>
+                    <option class="Tokushima" href="#">徳島県</option>
+                    <option class="Kagawa" href="#">香川県</option>
+                    <option class="Ehime" href="#">愛媛県</option>
+                    <option class="Kouchi" href="#">高知県</option>
+                    <option class="Fukuoka" href="#">福岡県</option>
+                    <option class="Saga" href="#">佐賀県</option>
+                    <option class="Nagasaki" href="#">長崎県</option>
+                    <option class="Kumamoto" href="#">熊本県</option>
+                    <option class="Ooita" href="#">大分県</option>
+                    <option class="Miyazaki" href="#">宮崎県</option>
+                    <option class="Kagoshima" href="#">鹿児島県</option>
+                    <option class="Okinawa" href="#">沖縄県</option>
+                </select><div class="shitei">指定無し</div>
             </div>
         </tr>
         <br>
         <tr>
             <div class="input-group">
                 <div class="subject_menu"><div class="border"></div>診療科</div>
-                <select id="dropdown-menu" name="subject">
+                <select id="dropdown-menu" name="clinical department">
                     <option value="dropdown-item" disabled selected style='display:none;'>科目を選択</option>
                     <option class="dropdown-item" href="#"></option>
                     <option class="dropdown-item" href="#">内科</option>
@@ -641,18 +651,18 @@
                     <option class="dropdown-item" href="#">歯科口腔外科</option>
                     <option class="dropdown-item" href="#">歯科</option>
                     <option class="dropdown-item" href="#">コンタクト</option>
-                </select>
+                </select><div class="shitei">指定無し</div>
             </div>
         </tr><br>
         <tr>
             <div class="job">
-                <div class="job_type"><div class="border"></div>勤務形態<span><input type="checkbox" value="当直">当直　　　　<input type="checkbox" value="日直・日当直">日直・日当直</span></div>
+                <div class="job_type"><div class="border"></div>勤務形態<span><input type="checkbox" name="tochoku" value="当直">当直　　　　<input type="checkbox" name="nichoku" value="日直・日当直">日直・日当直</span></div>
             </div>
         </tr><br>
         <div class="money">
             <div class="money1"><div class="border"></div>希望給与</div>
-            <div class="money2">時給　<input type="text" value="">　万円以上　※半角数字
-                <br>一回　<input type="text" value="">　万円以上　※半角数字</div>
+            <div class="money2">時給　<input type="text" name="money1" value="">　万円以上　※半角数字
+                <br>一回　<input type="text" name="money2" value="">　万円以上　※半角数字</div>
         </div>
         </tr><br>
         <tr>
@@ -660,11 +670,12 @@
                 <div class="period2"><div class="border"></div>期間</div>
                 <div class="pMessage">ご希望の期間を選択してください</div>
             </div>
-            <br><div class="date"><input type="date"></div>
+            <br><div class="date"><input type="date" name="date"></div>
         </tr><br>
         </tbody>
         <form>
             <input type="image" src="この条件で検索.png" value="" class="submit-btn">
+        </form>
         </form>
     </div>
 </div>
