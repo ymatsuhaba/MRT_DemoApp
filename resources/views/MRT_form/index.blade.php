@@ -21,39 +21,39 @@
 </header>
 
 {{--main contents--}}
-<div class="content">
-    <form action="/MRT_costomer_result" method="post">
-
+<form method="get" action="{{ url('MRT_form.result') }}" class="form-horizontal" style="text-align:center; height: 500px; width: auto" enctype="multipart/form-data">
+    <div class="content">
         <div>
-            <h3 id="inquiry">お問い合わせ・お申込み</h3><br><br><br>
+            <h3 id="inquiry">お問い合わせ・お申込み</h3><br>
+            <p>診療報酬ファクタリングに関するお問い合わせ・お申し込みはこちらから</p>
         </div>
-
+{{--個人情報の取り扱いについて--}}
+        <div>
+            <h6>「個人情報の取扱いについて（<a href="https://anew-m.com/privacy">https://anew-m.com/privacy</a>）」をお読みいただき、同意の上、下記の登録手続きを行ってください。<span class="color">*</span></h6>
+        </div><br>
+{{--医療法人様名または病医院様名--}}
         <div>
             <h5 class="title">医療法人様名または病医院様名<span class="color">*</span></h5>
             <div class="form-group">
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="customer" value="{{ old('customer') }}">
-                @if($errors->has('customer')) <span class="text-danger">{{ $errors->first('customer') }}</span> @endif
-
-
+                @if($errors->has('customer'))<span class="text-danger">この質問は必須です<br><br></span> @endif
                 <div class="text_underline"></div>
             </div>
         </div>
-
+{{--郵便番号--}}
         <div>
             <h5 class="title">郵便番号<span class="color">*</span></h5>
             <p class="example">例）000-0000</p>
             <div class="form-group">
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="postcode" value="{{ old('postcode') }}">
-                @if($errors->has('postcode')) <span class="text-danger">{{ $errors->first('postcode') }}</span> @endif
-
-
+                @if($errors->has('postcode')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
-
+{{--住所（都道府県）--}}
         <div>
             <h5 class="title">住所（都道府県）<span class="color">*</span></h5>
-            <select>
-                <option value="選択">選択</option>
+            <select name="prefectures">
+                <option value="">選択</option>
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>
                 <option value="岩手県">岩手県</option>
@@ -102,64 +102,56 @@
                 <option value="鹿児島県">鹿児島県</option>
                 <option value="沖縄県">沖縄県</option>
             </select>
-        </div>
+            @if($errors->has('prefectures')) <span class="text-danger">この質問は必須です</span> @endif
 
+        </div>
+{{--住所（市区町村）--}}
         <div>
             <h5 class="title">住所（市区町村）<span class="color">*</span></h5>
             <div class="form-group">
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="city" value="{{ old('city') }}">
-                @if($errors->has('city')) <span class="text-danger">{{ $errors->first('city') }}</span> @endif
+                @if($errors->has('city')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
-
+{{--住所（丁目番地）--}}
         <div>
             <h5 class="title">住所（丁目番地）<span class="color">*</span></h5>
             <div class="form-group">
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="block_number" value="{{ old('block_number') }}">
-                @if($errors->has('block_number')) <span class="text-danger">{{ $errors->first('block_number') }}</span> @endif
+                @if($errors->has('block_number')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
-
+{{--住所（建物名・部屋番号）--}}
         <div>
-            <h5 class="title">住所（建物名・部屋番号）<span class="color">*</span></h5>
+            <h5 class="title">住所（建物名・部屋番号）<span class="color"></span></h5>
             <div class="form-group">
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="building_name or apartment_number" value="{{ old('building_name or apartment_number') }}">
-                @if($errors->has('building_name or apartment_number')) <span class="text-danger">{{ $errors->first('building_name or apartment_number') }}</span> @endif
             </div>
         </div>
-
+{{--電話番号--}}
         <div>
             <h5 class="title">電話番号<span class="color">*</span></h5>
             <div class="form-group">
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="tel" value="{{ old('tel') }}">
-                @if($errors->has('tel')) <span class="text-danger">{{ $errors->first('tel') }}</span> @endif
+                @if($errors->has('tel')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
-
+{{--FAX--}}
         <div>
-            <h5 class="title">FAX<span class="color">*</span></h5>
+            <h5 class="title">FAX<span class="color"></span></h5>
             <p class="example">例）000-0000-0000</p>
             <div class="form-group">
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="fax" value="{{ old('fax') }}">
-                @if($errors->has('fax')) <span class="text-danger">{{ $errors->first('fax') }}</span> @endif
             </div>
         </div>
+{{--送信ボタン--}}
+        <div class="">
+            <div>
+                <a href="http://localhost:3000/MRT_form.result"><button type="submit" class="btn btn-primary" value="送信"><link>送信</button></a>
+            </div>
 
-    </form>
-
-    {{--送信ボタン--}}
-    <div class="">
-
-        <div>
-            <button type="button" class="btn btn-primary">送信</button>
         </div>
-
     </div>
-
-</div>
-
-
-
-
+</form>
 </body>
 </html>

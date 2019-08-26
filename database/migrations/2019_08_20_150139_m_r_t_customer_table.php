@@ -20,7 +20,7 @@ class MRTCustomerTable extends Migration
             $table->string('prefectures')->comment('住所（都道府県）');
             $table->string('city')->comment('住所（市区町村）');
             $table->string('block_number')->comment('住所（丁目番地）');
-            $table->string('building_name or apartment_number')->comment('住所（建物名・部屋番号）');
+            $table->string('building_name_or_apartment_number')->comment('住所（建物名・部屋番号）');
             $table->string('tel')->comment('電話番号');
             $table->string('fax')->comment('FAX');
         });
