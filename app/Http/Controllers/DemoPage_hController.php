@@ -87,32 +87,56 @@ class DemoPage_hController extends Controller
 //
 //        //バリデーションOKなら、下記の通り検索処理に移る。
 
-        //table:doctorから$doctor_listにカラムを格納
-        $doctor_list = DB::table('doctors');
+        //table:spot_jobから$job_listにカラムを格納
+        $job_list = DB::table('spot_job');
         //  キーワード受け取り
-        $doctor_name = $request->input('doctor_name');
-        $birthplace = $request->input('birthplace');
-        $sex = $request->input('sex');
-        $date_of_birth = $request->input('date_of_birth');
+        $prefecture = $request->input('prefecture');
+        $clinical_department = $request->input('clinical_department');
+        $tochoku = $request->input('tochoku');
+        $nichoku = $request->input('nichoku');
+        $salary_hour = $request->input('salary_hour');
+        $salary = $request->input('salary');
+        $date = $request->input('date');
+        $salary_hour_after= $salary_hour*10000;
+        $salary_after=$salary*10000;
 
         //もしキーワードがあれば
-        if (!empty($doctor_name)) {
-            $doctor_list->where('doctor_name', 'like', "%$doctor_name%");
+        if (!empty($prefecture)) {
+            $job_list->where('prefectures', 'like', "%$prefecture%");
         }
-        if (!empty($birthplace)) {
-            $doctor_list->where('birthplace', 'like', "%$birthplace%");
+        if (!empty($clinical_department)) {
+            $job_list->where('clinical_department', $clinical_department);
         }
-        if (!empty($sex)) {
-            $doctor_list->where('sex', $sex);
+        if (!empty($tochoku)&&empty($nichoku)) {
+            $job_list->where('work_form',$tochoku);
         }
-        if (!empty($date_of_birth)) {
-            $doctor_list->where('date_of_birth', $date_of_birth);
+        if (!empty($nichoku)&&empty($tochoku)) {
+            $job_list->where('work_form', $nichoku);
         }
-        //$doctorsへ$doctor_listの値を返す
-        $doctors = $doctor_list->get();
+        if (!empty($nichoku)&&!empty($tochoku)) {
+            $job_list->where('work_form', '=',$nichoku)->orwhere('work_form','=', $tochoku);
+        }
+        if (!empty($salary_hour_after)&&empty($salary_after)) {
+            $job_list->where('salary_hour', '>=', $salary_hour_after);
+        }
+        if (!empty($salary_after)&&empty($salary_hour_after)) {
+            $job_list->where('salary', '>=', $salary_after);
+        }
+        if (!empty($salary_after)&&!empty($salary_hour_after)) {
+            $job_list->where('salary', '>=', $salary_after)->orWhere('salary_hour','>=',$salary_hour_after);
+        }
+        if (!empty($date)) {
+            $job_list->where('work_start_date', $date);
+        }
+        //$spot_jobsへ$job_listの値を返す
+        $spot_jobs = $job_list->get();
 
-        return view('doctor', compact('doctors'));
-    }
+        $work_start_date2 = $spot_jobs->work_start_date;
+        $work_start_date2->format('m月d日');
+        str_replace(work_start_date,$work_start_date2,"対象の文字列");
 
-    }
+
+            return view('search_job_result', compact('spot_jobs'));
+        }
+
 }

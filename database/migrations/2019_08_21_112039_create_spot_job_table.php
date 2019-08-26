@@ -24,6 +24,7 @@ class CreateSpotJobTable extends Migration
             $table->string('location', 300)->nullable();
             $table->string('salary_type')->nullable();
             $table->integer('salary')->nullable();
+            $table->integer('salary_hour')->nullable();
             $table->string('transport_money_type', 1)->nullable();
             $table->integer('transport_money')->nullable();
             $table->string('clinical_department')->nullable();
