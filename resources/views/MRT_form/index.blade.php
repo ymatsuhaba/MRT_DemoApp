@@ -17,11 +17,9 @@
 <header>
     <img src="0616afb944333b332155b2aae153f49b_m.jpg" id="header_img">
     <img src="スクリーンショット 2019-08-20 13.25.33.png" id="header_img2">
-
 </header>
-
 {{--main contents--}}
-<form method="get" action="{{ url('MRT_form.result') }}" class="form-horizontal" style="text-align:center; height: 500px; width: auto" enctype="multipart/form-data">
+<form method="get" action="{{ url('MRT_form.result') }}"  style="text-align:center; height: 500px; width: auto">
     <div class="content">
         <div>
             <h3 id="inquiry">お問い合わせ・お申込み</h3><br>
@@ -34,19 +32,20 @@
 {{--医療法人様名または病医院様名--}}
         <div>
             <h5 class="title">医療法人様名または病医院様名<span class="color">*</span></h5>
-            <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="customer" value="{{ old('customer') }}">
-                @if($errors->has('customer'))<span class="text-danger">この質問は必須です<br><br></span> @endif
-                <div class="text_underline"></div>
+            <div class="text">
+                <input type="text" class="input_box"  placeholder="回答を入力" name="customer" value="{{ old('customer') }}">
+                <span class="focus_line"></span>
+            @if($errors->has('customer'))<span class="text-danger">この質問は必須です<br><br></span> @endif
             </div>
         </div>
 {{--郵便番号--}}
         <div>
             <h5 class="title">郵便番号<span class="color">*</span></h5>
             <p class="example">例）000-0000</p>
-            <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="postcode" value="{{ old('postcode') }}">
-                @if($errors->has('postcode')) <span class="text-danger">この質問は必須です</span> @endif
+            <div class="text">
+                <input type="text" class="input_box"  placeholder="回答を入力" name="postcode" value="{{ old('postcode') }}">
+                <span class="focus_line"></span>
+            @if($errors->has('postcode')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
 {{--住所（都道府県）--}}
@@ -108,40 +107,45 @@
 {{--住所（市区町村）--}}
         <div>
             <h5 class="title">住所（市区町村）<span class="color">*</span></h5>
-            <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="city" value="{{ old('city') }}">
-                @if($errors->has('city')) <span class="text-danger">この質問は必須です</span> @endif
+            <div class="text">
+                <input type="text" class="input_box"  placeholder="回答を入力" name="city" value="{{ old('city') }}">
+                <span class="focus_line"></span>
+            @if($errors->has('city')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
 {{--住所（丁目番地）--}}
         <div>
             <h5 class="title">住所（丁目番地）<span class="color">*</span></h5>
-            <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="block_number" value="{{ old('block_number') }}">
-                @if($errors->has('block_number')) <span class="text-danger">この質問は必須です</span> @endif
+            <div class="text">
+                <input type="text" class="input_box"  placeholder="回答を入力" name="block_number" value="{{ old('block_number') }}">
+                <span class="focus_line"></span>
+            @if($errors->has('block_number')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
 {{--住所（建物名・部屋番号）--}}
         <div>
             <h5 class="title">住所（建物名・部屋番号）<span class="color"></span></h5>
-            <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="building_name or apartment_number" value="{{ old('building_name or apartment_number') }}">
+            <div class="text">
+                <input type="text" class="input_box"  placeholder="回答を入力" name="building_name or apartment_number" value="{{ old('building_name or apartment_number') }}">
+                <span class="focus_line"></span>
             </div>
         </div>
 {{--電話番号--}}
         <div>
             <h5 class="title">電話番号<span class="color">*</span></h5>
-            <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="tel" value="{{ old('tel') }}">
-                @if($errors->has('tel')) <span class="text-danger">この質問は必須です</span> @endif
+            <div class="text">
+                <input type="text" class="input_box"  placeholder="回答を入力" name="tel" value="{{ old('tel') }}">
+                <span class="focus_line"></span>
+            @if($errors->has('tel')) <span class="text-danger">この質問は必須です</span> @endif
             </div>
         </div>
 {{--FAX--}}
         <div>
             <h5 class="title">FAX<span class="color"></span></h5>
             <p class="example">例）000-0000-0000</p>
-            <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="回答を入力" name="fax" value="{{ old('fax') }}">
+            <div class="text">
+                <input type="text" class="input_box"  placeholder="回答を入力" name="fax" value="{{ old('fax') }}">
+                <span class="focus_line"></span>
             </div>
         </div>
 {{--送信ボタン--}}

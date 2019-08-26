@@ -42,10 +42,7 @@ body {
     padding-bottom: 8px;
     box-sizing: border-box;
 }
-/*.text_underline{*/
-/*    position: relative;*/
-/*    border-top: 3px solid rgb(26,95,30)*/
-/*}*/
+
 
 .title {
     text-align: left;
@@ -66,49 +63,61 @@ body {
 span {
     color: #d93025;
     font-size: 20px;
-    background-color: #0d47a1;
 }
 
 
 /*下線部のCSS*/
-
-.cp_ip {
+.text {
     position: relative;
     width: 80%;
     margin: 40px 3%;
 }
-.cp_ip input[type='text'] {
+.text input[type='text'] {
     font: 15px/24px sans-serif;
     box-sizing: border-box;
     width: 100%;
     letter-spacing: 1px;
     padding-left: 4em;
 }
-.cp_ip input[type='text']:focus {
+.text input[type='text']:focus {
     outline: none;
 }
-.ef {
+.input_box {
     padding: 4px 0;
     border: 0;
     border-bottom: 1px solid #1b2538;
     background-color: transparent;
 }
-.ef ~ .focus_line {
+.input_box ~ .focus_line {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
     transition: 0.4s;
-    background-color: #da3c41;
+    background-color: rgb(26,95,30);
 }
-.ef:focus ~ .focus_line,
-.cp_ip.ef ~ .focus_line {
+.input_box:focus ~ .focus_line,
+.text.input_box ~ .focus_line {
     width: 100%;
     transition: 0.4s;
 }
-
-
+.input_box ~ label {
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    color: #aaaaaa;
+}
+.input_box:focus ~ label, .text.input_box ~ label {
+    font-size: 12px;
+    top: -16px;
+    transition: 0.3s;
+    color: rgb(26,95,30);
+}
 
 
 
