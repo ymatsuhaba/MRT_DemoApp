@@ -47,7 +47,7 @@ class DemoPage_hController extends Controller
     public function search(Request $request)
     {
         //table:spot_jobから$job_listにカラムを格納
-        $job_list = DB::table('spot_job');
+        $job_list = DB::table('spot_job')->orderBy('work_start_date');
         //  キーワード受け取り
         $prefecture = $request->input('prefecture');
         $clinical_department = $request->input('clinical_department');
@@ -90,11 +90,12 @@ class DemoPage_hController extends Controller
         }
         if (!empty($salary_after)&&!empty($salary_hour_after)) {
             $job_list->where('salary', '>=', $salary_after)->orWhere('salary_hour','>=',$salary_hour_after);
+            $spot_jobs = $job_list->get();
         }
         $spot_jobs = $job_list->get();
         if (!empty($date)) {
             $job_list->where('work_start_date', $date);
-            $spot_jobs = $job_list->orderBy('$date')->get();
+            $spot_jobs = $job_list->get();
         }
             return view('search_job_result', compact('spot_jobs'));
         }
