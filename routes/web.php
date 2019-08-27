@@ -163,6 +163,7 @@ Route::put('/doctor', 'DoctorController@edit_finish');//完了
 Route::post('/doctor/delete/{id}', 'DoctorController@delete');//削除
 //デモページ
 Route::get('/DemoPage_h', 'DemoPage_hController@start');
+Route::post('/search_job_result', 'DemoPage_hController@search');
 
 
 

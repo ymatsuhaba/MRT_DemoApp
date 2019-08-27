@@ -14,7 +14,7 @@ class DemoPage_hController extends Controller
     //検索ページを表示
     public function start()
     {
-        $spot_jobs = \DB::table('spot_job')->get();
+        $spot_jobs = \DB::table('spot_job')->orderBy('work_start_date')->get();
 
         $change_spot_jobs=new Collection();
 
@@ -30,19 +30,13 @@ class DemoPage_hController extends Controller
             $place = $mrtdbAllDatum->location;
             $medical = $mrtdbAllDatum->clinical_department;
 
-            if (mb_strlen($prefecture) == 4) {
-                $space = '　';
-            } else {
-                $space = '　　';
-            }
-
             $typeChange= config("const_h.job_offer_type.$type");
 
             $data='【'.$typeChange.'】'.' '.
                 date('Y年m月d日',strtotime($startDate)).' '.
                 $week[date('w', strtotime($startDate))].' '.
                 date('H:i',strtotime($startTime)).'-'.date('H:i',strtotime($endTime)).' '.
-                '【'.$prefecture.'】'.$space. $place. $medical;
+                '【'.$prefecture.'】'. $place. $medical;
 
             $change_spot_jobs->push($data);
 
@@ -50,4 +44,60 @@ class DemoPage_hController extends Controller
 
         return view('/DemoPage_h',compact('change_spot_jobs'));
     }
+    public function search(Request $request)
+    {
+        //table:spot_jobから$job_listにカラムを格納
+        $job_list = DB::table('spot_job')->orderBy('work_start_date');
+        //  キーワード受け取り
+        $prefecture = $request->input('prefecture');
+        $clinical_department = $request->input('clinical_department');
+        $tochoku = $request->input('tochoku');
+        $nichoku = $request->input('nichoku');
+        $salary_hour = $request->input('salary_hour');
+        $salary = $request->input('salary');
+        $date = $request->input('date');
+        $salary_hour_after= $salary_hour*10000;
+        $salary_after=$salary*10000;
+
+        //もしキーワードがあれば
+        if (!empty($prefecture)) {
+            $job_list->where('prefectures', 'like', "%$prefecture%");
+            $spot_jobs = $job_list->get();
+        }
+        if (!empty($clinical_department)) {
+            $job_list->where('clinical_department', $clinical_department);
+            $spot_jobs = $job_list->get();
+        }
+        if (!empty($tochoku)&&empty($nichoku)) {
+            $job_list->where('work_form',$tochoku);
+            $spot_jobs = $job_list->get();
+        }
+        if (!empty($nichoku)&&empty($tochoku)) {
+            $job_list->where('work_form', $nichoku);
+            $spot_jobs = $job_list->get();
+        }
+        if (!empty($nichoku)&&!empty($tochoku)) {
+            $job_list->where('work_form', '=',$nichoku)->orwhere('work_form','=', $tochoku);
+            $spot_jobs = $job_list->get();
+        }
+        if (!empty($salary_hour_after)&&empty($salary_after)) {
+            $job_list->where('salary_hour', '>=', $salary_hour_after);
+            $spot_jobs = $job_list->get();
+        }
+        if (!empty($salary_after)&&empty($salary_hour_after)) {
+            $job_list->where('salary', '>=', $salary_after);
+            $spot_jobs = $job_list->get();
+        }
+        if (!empty($salary_after)&&!empty($salary_hour_after)) {
+            $job_list->where('salary', '>=', $salary_after)->orWhere('salary_hour','>=',$salary_hour_after);
+            $spot_jobs = $job_list->get();
+        }
+        $spot_jobs = $job_list->get();
+        if (!empty($date)) {
+            $job_list->where('work_start_date', $date);
+            $spot_jobs = $job_list->get();
+        }
+            return view('search_job_result', compact('spot_jobs'));
+        }
+
 }
