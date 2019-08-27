@@ -30,12 +30,6 @@ class DemoPage_hController extends Controller
             $place = $mrtdbAllDatum->location;
             $medical = $mrtdbAllDatum->clinical_department;
 
-//            if (mb_strlen($prefecture) == 4) {
-//                $space = '　';
-//            } else {
-//                $space = '　　';
-//            }
-
             $typeChange= config("const_h.job_offer_type.$type");
 
             $data='【'.$typeChange.'】'.' '.
