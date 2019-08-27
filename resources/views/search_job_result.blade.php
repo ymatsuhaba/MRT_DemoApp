@@ -30,7 +30,7 @@
                 <tr><td>{{config("const_h.job_offer_type.$spot_job->job_offer_type")}}</td>
                     <td>{{$spot_job->work_start_date}}</td>
                     <td>{{$spot_job->prefectures}} {{$spot_job->location}}</td>
-                    <td>{{config("const_h.work_start_time.$spot_job->work_start_time")}}-{{config("const_h.work_end_time.$spot_job->work_end_time")}}</td>
+                    <td>{{$spot_job->work_start_time}}-{{$spot_job->work_end_time}}</td>
                     <td>{{$spot_job->salary}}{{$spot_job->salary_hour}}円　{{config("const_h.salary_type.$spot_job->salary_type")}}</td>
                     <td>{{$spot_job->transport_money}}{{config("const_h.transport_money_type.$spot_job->transport_money_type")}}</td>
                     <td>{{$spot_job->clinical_department}}</td>

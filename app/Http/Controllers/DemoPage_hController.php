@@ -14,7 +14,7 @@ class DemoPage_hController extends Controller
     //検索ページを表示
     public function start()
     {
-        $spot_jobs = \DB::table('spot_job')->get();
+        $spot_jobs = \DB::table('spot_job')->orderBy('work_start_date')->get();
 
         $change_spot_jobs=new Collection();
 
@@ -30,11 +30,11 @@ class DemoPage_hController extends Controller
             $place = $mrtdbAllDatum->location;
             $medical = $mrtdbAllDatum->clinical_department;
 
-            if (mb_strlen($prefecture) == 4) {
-                $space = '　';
-            } else {
-                $space = '　　';
-            }
+//            if (mb_strlen($prefecture) == 4) {
+//                $space = '　';
+//            } else {
+//                $space = '　　';
+//            }
 
             $typeChange= config("const_h.job_offer_type.$type");
 
@@ -42,7 +42,7 @@ class DemoPage_hController extends Controller
                 date('Y年m月d日',strtotime($startDate)).' '.
                 $week[date('w', strtotime($startDate))].' '.
                 date('H:i',strtotime($startTime)).'-'.date('H:i',strtotime($endTime)).' '.
-                '【'.$prefecture.'】'.$space. $place. $medical;
+                '【'.$prefecture.'】'. $place. $medical;
 
             $change_spot_jobs->push($data);
 
@@ -52,41 +52,6 @@ class DemoPage_hController extends Controller
     }
     public function search(Request $request)
     {
-        //バリデーション
-
-//        //評価対象
-//        $inputs = $request->all();
-//
-//        //ルール
-//        $rules = [
-//            'prefecture' => 'nullable',
-//            'clinical_department' => 'nullable',
-//            'tochoku' => 'nullable',
-//            'nichoku' => 'nullable',
-//            'money1' => 'nullable',
-//            'money2' => 'nullable',
-//            'date' => 'nullable'
-//        ];
-//
-////        //出力されるメッセージ
-////        $messages = [
-////            'doctor_name.regex' => 'アルファベット(半角)で入力してください。',
-////            'birthplace.regex' => 'アルファベット(半角)で入力してください。',
-////            'sex.in' => "'male'または'female'で入力してください。",
-////            'date_of_birth.date' => 'フォーマット通りに入力してください。',
-////            'date_of_birth.date_format' => 'YYYY-MM-DDで入力してください。',
-////            'date_of_birth.before' => '正しい日付で入力してください。',
-////        ];
-//
-//        $validation = \Validator::make($inputs, $rules, $messages);
-//
-//        //エラー時の処理
-//        if ($validation->fails()) {
-//            return redirect()->back()->withErrors($validation->errors())->withInput();
-//        }
-//
-//        //バリデーションOKなら、下記の通り検索処理に移る。
-
         //table:spot_jobから$job_listにカラムを格納
         $job_list = DB::table('spot_job');
         //  キーワード受け取り
@@ -103,39 +68,40 @@ class DemoPage_hController extends Controller
         //もしキーワードがあれば
         if (!empty($prefecture)) {
             $job_list->where('prefectures', 'like', "%$prefecture%");
+            $spot_jobs = $job_list->get();
         }
         if (!empty($clinical_department)) {
             $job_list->where('clinical_department', $clinical_department);
+            $spot_jobs = $job_list->get();
         }
         if (!empty($tochoku)&&empty($nichoku)) {
             $job_list->where('work_form',$tochoku);
+            $spot_jobs = $job_list->get();
         }
         if (!empty($nichoku)&&empty($tochoku)) {
             $job_list->where('work_form', $nichoku);
+            $spot_jobs = $job_list->get();
         }
         if (!empty($nichoku)&&!empty($tochoku)) {
             $job_list->where('work_form', '=',$nichoku)->orwhere('work_form','=', $tochoku);
+            $spot_jobs = $job_list->get();
         }
         if (!empty($salary_hour_after)&&empty($salary_after)) {
             $job_list->where('salary_hour', '>=', $salary_hour_after);
+            $spot_jobs = $job_list->get();
         }
         if (!empty($salary_after)&&empty($salary_hour_after)) {
             $job_list->where('salary', '>=', $salary_after);
+            $spot_jobs = $job_list->get();
         }
         if (!empty($salary_after)&&!empty($salary_hour_after)) {
             $job_list->where('salary', '>=', $salary_after)->orWhere('salary_hour','>=',$salary_hour_after);
         }
+        $spot_jobs = $job_list->get();
         if (!empty($date)) {
             $job_list->where('work_start_date', $date);
+            $spot_jobs = $job_list->orderBy('$date')->get();
         }
-        //$spot_jobsへ$job_listの値を返す
-        $spot_jobs = $job_list->get();
-
-        $work_start_date2 = $spot_jobs->work_start_date;
-        $work_start_date2->format('m月d日');
-        str_replace(work_start_date,$work_start_date2,"対象の文字列");
-
-
             return view('search_job_result', compact('spot_jobs'));
         }
 
