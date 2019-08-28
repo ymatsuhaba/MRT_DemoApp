@@ -14,7 +14,7 @@ class DemoPage_hController extends Controller
     //検索ページを表示
     public function start()
     {
-        $spot_jobs = \DB::table('spot_job')->orderBy('work_start_date')->get();
+        $spot_jobs = \DB::table('spot_job')->orderBy('work_start_date')->orderBy('work_start_time')->get();
 
         $change_spot_jobs=new Collection();
 
@@ -47,7 +47,7 @@ class DemoPage_hController extends Controller
     public function search(Request $request)
     {
         //table:spot_jobから$job_listにカラムを格納
-        $job_list = DB::table('spot_job')->orderBy('work_start_date');
+        $job_list = DB::table('spot_job')->orderBy('work_start_date')->orderBy('work_start_time');
         //  キーワード受け取り
         $prefecture = $request->input('prefecture');
         $clinical_department = $request->input('clinical_department');
@@ -65,7 +65,7 @@ class DemoPage_hController extends Controller
             $spot_jobs = $job_list->get();
         }
         if (!empty($clinical_department)) {
-            $job_list->where('clinical_department', $clinical_department);
+            $job_list->where('clinical_department','like', "%$clinical_department%");
             $spot_jobs = $job_list->get();
         }
         if (!empty($tochoku)&&empty($nichoku)) {
