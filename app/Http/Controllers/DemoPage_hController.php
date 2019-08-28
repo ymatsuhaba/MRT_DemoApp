@@ -53,8 +53,8 @@ class DemoPage_hController extends Controller
 
         //ルール
         $rules = [
-            'salary_hour' => 'nullable|regex:/^[0-9]/|',
-            'salary' => 'nullable|regex:/^[0-9]/|',
+            'salary_hour' => 'nullable|regex:/^[0-9]*$/|',
+            'salary' => 'nullable|regex:/^[0-9]*$/|',
         ];
 
         //出力されるメッセージ
