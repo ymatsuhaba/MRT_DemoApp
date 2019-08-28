@@ -660,9 +660,10 @@
             </div>
         </tr><br>
         <div class="money">
-            <div class="money1"><div class="border"></div>希望給与</div>
-            <div class="money2">時給　<input type="text" name="salary_hour" >　万円以上　※半角数字
-                <br>一回　<input type="text" name="salary" >　万円以上　※半角数字</div>
+            <div class="money1 @if($errors->has('salary_hour')) has-error @endif @if($errors->has('salary')) has-error @endif"><div class="border"></div>希望給与</div>
+            <div class="money2">時給　<input type="text" name="salary_hour" value="{{old('salary_hour', '')}}">　万円以上　※半角数字
+                <br>@if($errors->has('salary_hour'))<span class="text-danger">{{ $errors->first('salary_hour') }}</span> @endif
+                <br>一回　<input type="text" name="salary" value="{{old('salary', '')}}">　万円以上　※半角数字<br>@if($errors->has('salary'))<span class="text-danger">{{ $errors->first('salary') }}</span> @endif</div>
         </div>
         </tr><br>
         <tr>

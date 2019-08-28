@@ -46,6 +46,31 @@ class DemoPage_hController extends Controller
     }
     public function search(Request $request)
     {
+        //バリデーション
+
+        //評価対象
+        $inputs = $request->all();
+
+        //ルール
+        $rules = [
+            'salary_hour' => 'nullable|regex:/^[0-9]/|',
+            'salary' => 'nullable|regex:/^[0-9]/|',
+        ];
+
+        //出力されるメッセージ
+        $messages = [
+            'salary_hour.regex' => '有効な金額を入力してください',
+            'salary.regex' => '有効な金額を入力してください',
+        ];
+
+        $validation = \Validator::make($inputs, $rules, $messages);
+
+        //エラー時の処理
+        if ($validation->fails()) {
+            return redirect()->back()->withErrors($validation->errors())->withInput();
+        }
+
+        //バリデーションOKなら、下記の通り検索処理に移る。
         //table:spot_jobから$job_listにカラムを格納
         $job_list = DB::table('spot_job')->orderBy('work_start_date')->orderBy('work_start_time');
         //  キーワード受け取り
