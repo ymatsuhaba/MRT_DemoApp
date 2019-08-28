@@ -164,6 +164,11 @@ Route::post('/doctor/delete/{id}', 'DoctorController@delete');//削除
 //デモページ
 Route::get('/DemoPage_h', 'DemoPage_hController@start');
 Route::post('/search_job_result', 'DemoPage_hController@search');
+//本屋さん
+Route::get('/LibNewBook', 'LibBookController@new_book');
+Route::post('/LibNewConfirm', 'LibBookController@new_confirm');
+Route::get('/LibBook', 'LibBookController@start');
+
 
 
 
