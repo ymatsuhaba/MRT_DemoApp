@@ -27,20 +27,20 @@
         </div>
         {{--個人情報の取り扱いについて--}}
         <div>
-            <h6>「個人情報の取扱いについて（<a href="https://anew-m.com/privacy">https://anew-m.com/privacy</a>）」をお読みいただき、同意の上、下記の登録手続きを行ってください。<span class="color">*</span></h6>
+            <h6>「個人情報の取扱いについて（<a href="https://anew-m.com/privacy">https://anew-m.com/privacy</a>）」をお読みいただき、同意の上、下記の登録手続きを行ってください。<span class="color">*必須</span></h6>
         </div><br>
         {{--「個人情報の取扱いについて」に同意する--}}
         <div>
             <label>
-                <input type="radio" class="" name="" checked >
+                <input type="radio">
                 「個人情報の取扱いについて」に同意する
             </label><br><br><br>
             {{--医療法人様名または病医院様名--}}
             <div @if($errors->has('customer')) class="item" @endif>
                 <h5 class="title">医療法人様名または病医院様名<span class="color">*</span></h5>
                 <div class="text">
-                    @if($errors->has('customer'))<span class="text-danger">{{ $errors->first('customer') }}</span> @endif
                     <input type="text" class="input_box"  placeholder="回答を入力" name="customer" value="{{ old('customer') }}">
+                    @if($errors->has('customer'))<span class="text-danger">{{ $errors->first('customer') }}</span> @endif
                     <span class="focus_line"></span>
                 </div>
             </div>
@@ -149,11 +149,12 @@
                 </div>
             </div>
             {{--FAX--}}
-            <div>
+            <div @if($errors->has('tel')) class="item" @endif>
                 <h5 class="title">FAX<span class="color"></span></h5>
                 <p class="example">例）000-0000-0000</p>
                 <div class="text">
                     <input type="text" class="input_box"  placeholder="回答を入力" name="fax" value="{{ old('fax') }}">
+                    @if($errors->has('fax'))<span class="text-danger">{{ $errors->first('fax') }}</span> @endif
                     <span class="focus_line"></span>
                 </div>
             </div>

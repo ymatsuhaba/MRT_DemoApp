@@ -24,6 +24,8 @@ class FormController extends Controller
                 , 'city' => 'required'
                 , 'block_number' => 'required'
                 , 'tel' => ['required', 'regex:/^([0-9]{3}-[0-9]{4}-[0-9]{4})$/']
+                , 'fax' => ['required', 'regex:/^([0-9]{3}-[0-9]{4}-[0-9]{4})$/']
+
             ]
             , [
                 'customer.required' => 'この質問は必須です'
@@ -34,6 +36,8 @@ class FormController extends Controller
                 , 'block_number.required' => 'この質問は必須です'
                 , 'tel.required' => 'この質問は必須です'
                 , 'tel.regex' => '000-0000-0000の形式で入力してください'
+                , 'fax.required' => 'この質問は必須です'
+                , 'fax.regex' => '000-0000-0000の形式で入力してください'
             ]);
         //入力した値を取得
         $entered = new Customer();
