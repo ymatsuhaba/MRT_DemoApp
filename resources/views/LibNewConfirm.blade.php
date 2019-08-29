@@ -34,7 +34,6 @@
                     <label class="col-sm-4 control-label">著者</label>
                     <div class="col-sm-8">{{$writer_name}}</div>
                 </div>
-
                 <div class="row">
                     <label class="col-sm-4 control-label">発売日</label>
                     <div class="col-sm-8">{{$release_date}}</div>
