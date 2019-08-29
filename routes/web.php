@@ -168,6 +168,7 @@ Route::post('/search_job_result', 'DemoPage_hController@search');
 Route::get('/LibNewBook', 'LibBookController@new_book');
 Route::post('/LibNewConfirm', 'LibBookController@new_confirm');
 Route::get('/LibBook', 'LibBookController@start');
+Route::post('/LibBook', 'LibBookController@new_entry');
 
 
 
