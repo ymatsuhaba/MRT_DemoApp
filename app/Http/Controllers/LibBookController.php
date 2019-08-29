@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\LibBook;
+use Illuminate\Support\Facades\Input;
 
 class LibBookController extends Controller
 {
@@ -24,13 +25,20 @@ class LibBookController extends Controller
     public function newConfirm(Request $request)
     {
         //バリデーション
+        Input::merge(array_map(function ($value) {
+            if (is_string($value)) {
+                return trim($value);
+            } else {
+                return $value;
+            }
+        }, Input::all()));
 
         //評価対象
         $inputs = $request -> all();
 
         //ルール
         $rules = [
-            'title' => 'required'
+            'title' => 'required|regex:/[^\s　]/'
             , 'writer_name' => 'nullable|regex:/^[ぁ-んァ-ヶー一-龠a-zA-Za-zA-Z +]*$/|not_regex:[0-9０−９]'
             , 'release_date' => 'nullable|before:tomorrow'
             , 'lending_status' => 'required'
@@ -40,6 +48,7 @@ class LibBookController extends Controller
         //出力されるメッセージ
         $messages = [
             'title.required' => 'タイトルは必須です'
+            , 'title.regex' => 'タイトルは必須です'
             , 'writer_name.regex' => '有効な著者名を入力してください'
             , 'writer_name.not_regex' => '有効な著者名を入力してください'
             , 'release_date.before' => '有効な日付を選択してください'
