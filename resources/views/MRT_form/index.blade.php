@@ -27,12 +27,12 @@
         </div>
         {{--個人情報の取り扱いについて--}}
         <div>
-            <h6>「個人情報の取扱いについて（<a href="https://anew-m.com/privacy">https://anew-m.com/privacy</a>）」をお読みいただき、同意の上、下記の登録手続きを行ってください。<span class="color">*</span></h6>
+            <h6>「個人情報の取扱いについて（<a href="https://anew-m.com/privacy">https://anew-m.com/privacy</a>）」をお読みいただき、同意の上、下記の登録手続きを行ってください。<span class="color">*必須</span></h6>
         </div><br>
         {{--「個人情報の取扱いについて」に同意する--}}
         <div>
             <label>
-                <input type="radio" class="" name="" checked >
+                <input type="radio">
                 「個人情報の取扱いについて」に同意する
             </label><br><br><br>
             {{--医療法人様名または病医院様名--}}
