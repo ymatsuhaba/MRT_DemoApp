@@ -15,7 +15,8 @@
 body {
     background-color: whitesmoke;
 }
-.container {
+
+.content {
     background-color: white;
     border-top: 20px solid #333399;
     text-align: center;
@@ -24,7 +25,6 @@ body {
     margin-right:30%;
     margin-top: 1%;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-
 }
 
 .color {
@@ -46,7 +46,6 @@ body {
 .title {
     text-align: left;
     margin: 0% 0% 2% 3%;
-
 }
 
 #inquiry {
@@ -125,7 +124,7 @@ span {
     margin-right: 17%;
     text-align: center;
 }
-.prefectures {
+.cp_sl06 {
     position: relative;
     font-family: inherit;
     background-color: transparent;
@@ -136,11 +135,11 @@ span {
     border: none;
     border-bottom: 1px solid rgba(0,0,0, 0.3);
 }
-.prefectures:focus {
+.cp_sl06:focus {
     outline: none;
     border-bottom: 1px solid rgba(0,0,0, 0);
 }
-.selected .prefectures {
+.selected .cp_sl06 {
     appearance: none;
     -webkit-appearance:none
 }
@@ -154,13 +153,13 @@ span {
     width: 0;
     height: 0;
     padding: 0;
-    container: '';
+    content: '';
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 6px solid rgba(0, 0, 0, 0.3);
     pointer-events: none;
 }
-.prefectures_selectlabel {
+.cp_sl06_selectlabel {
     color: rgba(0,0,0, 0.5);
     font-size: 18px;
     font-weight: normal;
@@ -170,19 +169,19 @@ span {
     top: 10px;
     transition: 0.2s ease all;
 }
-.prefectures:focus ~ .prefectures_selectlabel, .prefectures:valid ~ .prefectures_selectlabel {
+.cp_sl06:focus ~ .cp_sl06_selectlabel, .cp_sl06:valid ~ .cp_sl06_selectlabel {
     color: rgb(26,95,30);
     top: -20px;
     transition: 0.2s ease all;
     font-size: 14px;
 }
-.prefectures_selectbar {
+.cp_sl06_selectbar {
     position: relative;
     display: block;
     width: 100%;
 }
-.prefectures_selectbar:before, .prefectures_selectbar:after {
-    container: '';
+.cp_sl06_selectbar:before, .cp_sl06_selectbar:after {
+    content: '';
     height: 2px;
     width: 0;
     bottom: 1px;
@@ -190,22 +189,23 @@ span {
     background: rgb(26,95,30);
     transition: 0.2s ease all;
 }
-.prefectures_selectbar:before {
+.cp_sl06_selectbar:before {
     left: 50%;
 }
-.prefectures_selectbar:after {
+.cp_sl06_selectbar:after {
     right: 50%;
 }
-.prefectures:focus ~ .prefectures_selectbar:before, .prefectures:focus ~ .prefectures_selectbar:after {
+.cp_sl06:focus ~ .cp_sl06_selectbar:before, .cp_sl06:focus ~ .cp_sl06_selectbar:after {
     width: 50%;
 }
-.prefectures_highlight {
+.cp_sl06_highlight {
     position: absolute;
     top: 25%;
     left: 0;
     pointer-events: none;
     opacity: 0.5;
 }
+
 .item{
     background-color: #FCE8E6;
 }

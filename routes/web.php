@@ -142,9 +142,9 @@ Route::get('employee/list', [
     'as' => 'employee.list'
 ]);
 //お問い合わせ・申し込み入力フォームのページ
-Route::get('MRT_form', 'MRTCrudController@index');
+Route::get('MRT_form', 'FormController@index');
 //お問い合わせ・申し込み入力結果のページ
-Route::get('MRT_form.result', 'MRTCrudController@result');
+Route::get('MRT_form.result', 'FormController@result');
 
 
 // はばたん
