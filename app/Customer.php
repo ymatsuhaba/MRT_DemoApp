@@ -10,6 +10,14 @@ class Customer extends Model
 
     public $guarded = 'id';
 
-    public $fillable = ['customer','postcode','prefectures','city','block_number','building_name_or_apartment_number'
-        ,'tel','fax'];
+    public $fillable = [
+        'customer'
+        , 'postcode'
+        , 'prefectures'
+        , 'city'
+        , 'block_number'
+        , 'building_name_or_apartment_number'
+        , 'tel'
+        , 'fax'
+    ];
 }
