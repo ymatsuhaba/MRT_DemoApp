@@ -165,10 +165,10 @@ Route::post('/doctor/delete/{id}', 'DoctorController@delete');//削除
 Route::get('/DemoPage_h', 'DemoPage_hController@start');
 Route::post('/search_job_result', 'DemoPage_hController@search');
 //本屋さん
-Route::get('/LibNewBook', 'LibBookController@new_book');
-Route::post('/LibNewConfirm', 'LibBookController@new_confirm');
-Route::get('/LibBook', 'LibBookController@start');
-Route::post('/LibBook', 'LibBookController@new_entry');
+Route::get('/LibNewBook', 'LibBookController@newBook');
+Route::post('/LibNewConfirm', 'LibBookController@newConfirm');
+Route::get('/LibBook', 'LibBookController@startBook');
+Route::post('/LibBook', 'LibBookController@newEntry');
 
 
 

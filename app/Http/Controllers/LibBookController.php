@@ -2,34 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use foo\bar;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\LibBook;
-use phpDocumentor\Reflection\Types\Nullable;
 
 class LibBookController extends Controller
 {
     //一覧画面表示
-    public function start()
+    public function startBook()
     {
-        $books = \DB::table('lib_books')->orderBy('created_at')->get();
+        $books = \DB::table('lib_books') -> orderBy('created_at') -> get();
         return view('LibBook', compact('books'));
     }
 
     //新規登録画面の表示
-    public function new_book()
+    public function newBook()
     {
         return view('LibNewBook');
     }
 
     //新規登録確認画面の表示
-    public function new_confirm(Request $request)
+    public function newConfirm(Request $request)
     {
         //バリデーション
 
         //評価対象
-        $inputs = $request->all();
+        $inputs = $request -> all();
 
         //ルール
         $rules = [
@@ -53,36 +50,38 @@ class LibBookController extends Controller
         $validation = \Validator::make($inputs, $rules, $messages);
 
         //エラー時の処理
-        if ($validation->fails()) {
+        if ($validation -> fails()) {
             //エラー時にエラーメッセージと入力データを保持して登録画面にリダイレクト
-            return redirect()->to('/LibNewBook')->withErrors($validation->errors())->withInput();
+            return redirect() -> to('/LibNewBook') -> withErrors($validation -> errors()) -> withInput();
         }
         //バリデーションOKなら、下記の通り新規登録確認画面に移る。
         //入力された値を新規登録確認画面に表示
-        $data = $request->all();
-        return view('LibNewConfirm')->with($data);
+        $data = $request -> all();
+        return view('LibNewConfirm') -> with($data);
     }
 
     //データの保存
-    public function new_entry(Request $request)
+    public function newEntry(Request $request)
     {
 
 
         //バリデーションOKなら、下記の通り新規登録処理に移る。
         // doctorオブジェクト生成
-        $new_book = new \App\LibBook();
+        $new_book = new LibBook();
 
+//        $name = $request -> file('cover_image') -> getClientOriginalName();
+//        $request -> file('cover_image') -> storeAs('cover_image', $name);
         // 値の登録
-        $new_book->title = $request->title;
-        $new_book->writer_name = $request->writer_name;
-        $new_book->release_date = $request->release_date;
-        $new_book->lending_status = $request->lending_status;
-        $new_book->cover_image = $request->cover_image;
+        $new_book -> title = $request -> title;
+        $new_book -> writer_name = $request -> writer_name;
+        $new_book -> release_date = $request -> release_date;
+        $new_book -> lending_status = $request -> lending_status;
+//        $new_book -> cover_image = $request -> cover_image;
 
         // 保存
-        $new_book->save();
+        $new_book -> save();
 
         // 一覧画面にリダイレクト
-        return redirect()->to('/LibBook');
+        return redirect() -> to('/LibBook');
     }
 }

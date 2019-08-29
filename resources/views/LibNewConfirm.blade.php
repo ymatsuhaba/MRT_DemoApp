@@ -46,7 +46,7 @@
                     <label class="col-sm-4 control-label">表紙</label>
                     @if ($cover_image)
                         <div class="col-sm-8">{{$cover_image}}</div>
-{{--                        <div class="col-sm-8"><img src ="/{{ $cover_image }}"></div>--}}
+                        <div class="col-sm-8"><img src ="/public/storage{{ $cover_image }}"></div>
                         @else
                         <br>アップロードファイル無し
                     @endif
