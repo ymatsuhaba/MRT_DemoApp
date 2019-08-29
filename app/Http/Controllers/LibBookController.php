@@ -31,7 +31,7 @@ class LibBookController extends Controller
         //ルール
         $rules = [
             'title' => 'required'
-            , 'writer_name' => 'nullable|regex:/^[ぁ-んァ-ヶー一-龠a-zA-Z +]*$/|not_regex:[0-9０−９]'
+            , 'writer_name' => 'nullable|regex:/^[ぁ-んァ-ヶー一-龠a-zA-Za-zA-Z +]*$/|not_regex:[0-9０−９]'
             , 'release_date' => 'nullable|before:tomorrow'
             , 'lending_status' => 'required'
 //            , 'cover_image' => 'image'

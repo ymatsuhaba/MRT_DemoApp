@@ -46,19 +46,20 @@
                 </div>
                 <br>
                 <br>
+                <div class="form-group @if($errors->has('release_date')) has-error @endif">
+                    <label>発売日</label>
+                    <input type="date" name="release_date" value = "{{old('release_date','')}}">
+                    <br>@if($errors->has('release_date'))<span class="text-danger">{{ $errors->first('release_date') }}</span> @endif
+                </div>
+
+                <br>
+                <br>
                 <div class="form-group @if($errors->has('lending_status')) has-error @endif">
                     <label>貸出フラグ</label>
                     <input type="radio" name="lending_status" value="1" @if (old('lending_status', '') == 1) checked @endif>貸出中
                     <input type="radio" name="lending_status" value="2" @if (old('lending_status', '') == 2) checked @endif>在庫あり
                     <input type="radio" name="lending_status" value="3" @if (old('lending_status', '') == 3) checked @endif>紛失中
                     <br>@if($errors->has('lending_status'))<span class="text-danger">{{ $errors->first('lending_status') }}</span> @endif
-                </div>
-                <br>
-                <br>
-                <div class="form-group @if($errors->has('release_date')) has-error @endif">
-                    <label>発売日</label>
-                    <input type="date" name="release_date" value = "{{old('release_date','')}}">
-                    <br>@if($errors->has('release_date'))<span class="text-danger">{{ $errors->first('release_date') }}</span> @endif
                 </div>
                 <br>
                 <br>
