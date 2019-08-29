@@ -105,6 +105,7 @@
                     <a href="/yukiLab">yukiLab</a>
                     <a href="/employee/list">従業員リスト</a>
                     <a href="/SpMrt">SpMrt</a>
+                    <a href="MRT_form">お問い合わせ</a>
                     <a href="/LibBook">古本屋</a>
                 </div>
             </div>

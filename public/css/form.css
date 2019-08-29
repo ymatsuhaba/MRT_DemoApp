@@ -1,0 +1,213 @@
+#header_img{
+    width:100%;
+    height:20vh;
+    position: relative;
+}
+
+#header_img2{
+    width: 180px;
+    height: auto;
+    position: absolute;
+    top: 5%;
+    left: 43%;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.content {
+    background-color: white;
+    border-top: 20px solid #333399;
+    text-align: center;
+    box-shadow: 10px 10px 15px -10px;
+    margin-left: 30%;
+    margin-right:30%;
+    margin-top: 1%;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+}
+
+.color {
+    color: red;
+}
+
+.form-control {
+    font-size: 16px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom:1px solid #333399;
+    outline: none;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: left;
+    margin: 0% 0% 2% 3%;
+}
+
+#inquiry {
+    padding: 3% 0% 0% 0%;
+    text-shadow:3px 3px 3px gainsboro;
+}
+
+.example {
+    text-align: left;
+    margin: 0% 0% 2% 3%;
+}
+
+span {
+    color: #d93025;
+    font-size: 20px;
+}
+
+/*inputタグの下線部のCSS*/
+.text {
+    position: relative;
+    width: 80%;
+    margin: 40px 3%;
+}
+.text input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 4em;
+}
+.text input[type='text']:focus {
+    outline: none;
+}
+.input_box {
+    padding: 4px 0;
+    border: 0;
+    border-bottom: 1px solid whitesmoke;
+    background-color: transparent;
+}
+.input_box ~ .focus_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: 0.4s;
+    background-color: rgb(26,95,30);
+}
+.input_box:focus ~ .focus_line,
+.text.input_box ~ .focus_line {
+    width: 100%;
+    transition: 0.4s;
+}
+.input_box ~ label {
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    color: #aaaaaa;
+}
+.input_box:focus ~ label, .text.input_box ~ label {
+    font-size: 12px;
+    top: -16px;
+    transition: 0.3s;
+    color: rgb(26,95,30);
+}
+
+/*都道府県のプルダウン*/
+.selected {
+    position: relative;
+    width: 80%;
+    margin: 2em auto;
+    margin-right: 17%;
+    text-align: center;
+}
+.cp_sl06 {
+    position: relative;
+    font-family: inherit;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    font-size: 14px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.3);
+}
+.cp_sl06:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0,0,0, 0);
+}
+.selected .cp_sl06 {
+    appearance: none;
+    -webkit-appearance:none
+}
+.selected select::-ms-expand {
+    display: none;
+}
+.selected:after {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+.cp_sl06_selectlabel {
+    color: rgba(0,0,0, 0.5);
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: 0.2s ease all;
+}
+.cp_sl06:focus ~ .cp_sl06_selectlabel, .cp_sl06:valid ~ .cp_sl06_selectlabel {
+    color: rgb(26,95,30);
+    top: -20px;
+    transition: 0.2s ease all;
+    font-size: 14px;
+}
+.cp_sl06_selectbar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.cp_sl06_selectbar:before, .cp_sl06_selectbar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: rgb(26,95,30);
+    transition: 0.2s ease all;
+}
+.cp_sl06_selectbar:before {
+    left: 50%;
+}
+.cp_sl06_selectbar:after {
+    right: 50%;
+}
+.cp_sl06:focus ~ .cp_sl06_selectbar:before, .cp_sl06:focus ~ .cp_sl06_selectbar:after {
+    width: 50%;
+}
+.cp_sl06_highlight {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.item{
+    background-color: #FCE8E6;
+}
+
+
