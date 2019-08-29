@@ -33,22 +33,21 @@ class LibBookController extends Controller
 
         //ルール
         $rules = [
-            'title' => 'required',
-            'writer_name' => 'nullable|regex:/^[ぁ-んァ-ヶー一-龠a-zA-Z +]*$/|not_regex:[0-9０−９]',
-            'release_date' => 'nullable|before:tomorrow',
-            'lending_status' => 'required',
-//            'cover_image' => 'nullable|mimes:jpeg,png,jpg,gif/'
-//            'cover_image' => 'nullable|image'
+            'title' => 'required'
+            , 'writer_name' => 'nullable|regex:/^[ぁ-んァ-ヶー一-龠a-zA-Z +]*$/|not_regex:[0-9０−９]'
+            , 'release_date' => 'nullable|before:tomorrow'
+            , 'lending_status' => 'required'
+//            , 'cover_image' => 'image'
         ];
 
         //出力されるメッセージ
         $messages = [
-            'title.required' => 'タイトルは必須です',
-            'writer_name.regex' => '有効な著者名を入力してください',
-            'writer_name.not_regex' => '有効な著者名を入力してください',
-            'release_date.before' => '有効な日付を選択してください',
-            'lending_status.required' => '貸出フラグを選択してください。',
-//            'cover_image.image' => '拡張子が正しくありません',
+            'title.required' => 'タイトルは必須です'
+            , 'writer_name.regex' => '有効な著者名を入力してください'
+            , 'writer_name.not_regex' => '有効な著者名を入力してください'
+            , 'release_date.before' => '有効な日付を選択してください'
+            , 'lending_status.required' => '貸出フラグを選択してください。'
+//            , 'cover_image.image' => '拡張子が正しくありません'
         ];
 
         $validation = \Validator::make($inputs, $rules, $messages);
