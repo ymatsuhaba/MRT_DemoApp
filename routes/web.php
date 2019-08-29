@@ -148,6 +148,9 @@ Route::get('MRT_form', 'MRTCrudController@index');
 //お問い合わせ・申し込み入力結果のページ
 Route::get('MRT_form.result', 'MRTCrudController@result');
 
+//Route::get('MRT_form.result', function () {
+//    return view('MRT_form.result');
+//});
 
 // はばたん
 
