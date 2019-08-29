@@ -18,6 +18,7 @@
     <img src="0616afb944333b332155b2aae153f49b_m.jpg" id="header_img">
     <img src="スクリーンショット 2019-08-20 13.25.33.png" id="header_img2">
 </header>
+
 {{--結果一覧テーブル--}}
 <table class="table table-striped table-hover" style="text-align: center">
     <thead>

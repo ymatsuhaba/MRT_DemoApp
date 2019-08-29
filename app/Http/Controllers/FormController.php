@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-class MRTCrudController extends Controller
+class FormController extends Controller
 {
     //お問い合わせ入力画面
     public function index()
@@ -23,22 +23,18 @@ class MRTCrudController extends Controller
             'prefectures' => 'required',
             'city' => 'required',
             'block_number' => 'required',
-            'tel' => 'required',
-//            'postcode1' => 'boolean',
+            'tel' => ['required', 'regex:/^([0-9]{3}-[0-9]{4}-[0-9]{4})$/'],
         ],
             [
                 'customer.required' => 'この質問は必須です',
                 'postcode.required' => 'この質問は必須です',
-                'postcode.regex:' => '000-0000形式で入力してください',
+                'postcode.regex' => '000-0000の形式で入力してください',
                 'prefectures.required' => 'この質問は必須です',
                 'city.required' => 'この質問は必須です',
                 'block_number.required' => 'この質問は必須です',
                 'tel.required' => 'この質問は必須です',
-
+                'tel.regex' => '000-0000-0000の形式で入力してください',
             ]);
-
-//        $this->validate($request, $rules);
-
         //入力した値を取得
         $entered =new Customer();
         $entered->customer=$request->input('customer');

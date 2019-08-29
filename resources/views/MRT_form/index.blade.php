@@ -3,7 +3,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" container="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {{--favicon--}}
@@ -13,41 +13,45 @@
     <title>お問い合わせ・お申込み</title>
 </head>
 <body>
+
 {{--header--}}
 <header>
     <img src="0616afb944333b332155b2aae153f49b_m.jpg" id="header_img">
     <img src="スクリーンショット 2019-08-20 13.25.33.png" id="header_img2">
 </header>
-{{--main contents--}}
+
+{{--container--}}
 <form method="get" action="{{ url('MRT_form.result') }}"  style="text-align:center; height: 500px; width: auto">
-    <div class="content">
+    <div class="container">
         <div>
             <h3 id="inquiry">お問い合わせ・お申込み</h3><br>
             <p>診療報酬ファクタリングに関するお問い合わせ・お申し込みはこちらから</p>
         </div>
+
         {{--個人情報の取り扱いについて--}}
         <div>
             <h6>「個人情報の取扱いについて（<a href="https://anew-m.com/privacy">https://anew-m.com/privacy</a>）」をお読みいただき、同意の上、下記の登録手続きを行ってください。<span class="color">*</span></h6>
         </div><br>
+
         {{--「個人情報の取扱いについて」に同意する--}}
-        <div class="">
+        <div>
             <label>
                 <input type="radio" class="" name="" checked >
                 「個人情報の取扱いについて」に同意する
             </label><br><br><br>
+
             {{--医療法人様名または病医院様名--}}
-            <div>
+            <div @if($errors->has('customer')) class="item" @endif>
                 <h5 class="title">医療法人様名または病医院様名<span class="color">*</span></h5>
                 <div class="text">
                     @if($errors->has('customer'))<span class="text-danger">{{ $errors->first('customer') }}</span> @endif
                     <input type="text" class="input_box"  placeholder="回答を入力" name="customer" value="{{ old('customer') }}">
                     <span class="focus_line"></span>
-
-                    {{--                    @if($errors->has('customer'))<br><span class="error">{{ $errors->first('customer') }}</span> @endif--}}
                 </div>
             </div>
+
             {{--郵便番号--}}
-            <div>
+            <div @if($errors->has('postcode')) class="item" @endif>
                 <h5 class="title">郵便番号<span class="color">*</span></h5>
                 <p class="example">例）000-0000</p>
                 <div class="text">
@@ -56,11 +60,12 @@
                     @if($errors->has('postcode')) <span class="text-danger">{{$errors->first('postcode')}}</span> @endif
                 </div>
             </div>
+
             {{--住所（都道府県）--}}
-            <div>
+            <div @if($errors->has('prefectures')) class="item" @endif>
                 <h5 class="title">住所（都道府県）<span class="color">*</span></h5>
                 <div class="selected">
-                    <select class="cp_sl06" name="prefectures">
+                    <select class="prefectures" name="prefectures">
                         <option value="">選択</option>
                         <option value="北海道">北海道</option>
                         <option value="青森県">青森県</option>
@@ -110,13 +115,14 @@
                         <option value="鹿児島県">鹿児島県</option>
                         <option value="沖縄県">沖縄県</option>
                     </select>
-                    <span class="cp_sl06_highlight"></span>
-                    <span class="cp_sl06_selectbar"></span>
+                    <span class="prefectures_highlight"></span>
+                    <span class="prefectures_selectbar"></span>
                 </div>
-                @if($errors->has('prefectures')) <span class="text-danger">{{$errors->first('prefectures')}}</span> @endif
+                @if($errors->has('prefectures'))<span class="text-danger">{{$errors->first('prefectures')}}</span> @endif
             </div>
+
             {{--住所（市区町村）--}}
-            <div>
+            <div @if($errors->has('city')) class="item" @endif>
                 <h5 class="title">住所（市区町村）<span class="color">*</span></h5>
                 <div class="text">
                     <input type="text" class="input_box"  placeholder="回答を入力" name="city" value="{{ old('city') }}">
@@ -124,8 +130,9 @@
                     @if($errors->has('city')) <span class="text-danger">{{$errors->first('city')}}</span> @endif
                 </div>
             </div>
+
             {{--住所（丁目番地）--}}
-            <div>
+            <div @if($errors->has('block_number')) class="item" @endif>
                 <h5 class="title">住所（丁目番地）<span class="color">*</span></h5>
                 <div class="text">
                     <input type="text" class="input_box"  placeholder="回答を入力" name="block_number" value="{{ old('block_number') }}">
@@ -133,6 +140,7 @@
                     @if($errors->has('block_number')) <span class="text-danger">{{$errors->first('block_number')}}</span> @endif
                 </div>
             </div>
+
             {{--住所（建物名・部屋番号）--}}
             <div>
                 <h5 class="title">住所（建物名・部屋番号）<span class="color"></span></h5>
@@ -141,8 +149,9 @@
                     <span class="focus_line"></span>
                 </div>
             </div>
+
             {{--電話番号--}}
-            <div>
+            <div @if($errors->has('tel')) class="item" @endif>
                 <h5 class="title">電話番号<span class="color">*</span></h5>
                 <div class="text">
                     <input type="text" class="input_box"  placeholder="回答を入力" name="tel" value="{{ old('tel') }}">
@@ -150,6 +159,7 @@
                     @if($errors->has('tel')) <span class="text-danger">{{$errors->first('tel')}}</span> @endif
                 </div>
             </div>
+
             {{--FAX--}}
             <div>
                 <h5 class="title">FAX<span class="color"></span></h5>
@@ -159,8 +169,9 @@
                     <span class="focus_line"></span>
                 </div>
             </div>
+
             {{--送信ボタン--}}
-            <div class="">
+            <div>
                 <div>
                     <button type="submit" class="btn btn-primary" value="送信">送信</button>
                 </div>

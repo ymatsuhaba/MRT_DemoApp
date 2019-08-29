@@ -136,7 +136,6 @@ Route::get('BookRoom.edit'  ,'BookController@edit');
 Route::get('BookRoom.update','BookController@update');
 //Books:削除ページ
 Route::get('BookRoom.delete', 'BookController@delete');
-
 //従業員リストのページ
 Route::get('employee/list', [
     'uses' => 'EmployeeController@select',
@@ -144,16 +143,11 @@ Route::get('employee/list', [
 ]);
 //お問い合わせ・申し込み入力フォームのページ
 Route::get('MRT_form', 'MRTCrudController@index');
-
 //お問い合わせ・申し込み入力結果のページ
 Route::get('MRT_form.result', 'MRTCrudController@result');
 
-//Route::get('MRT_form.result', function () {
-//    return view('MRT_form.result');
-//});
 
 // はばたん
-
 //検索ページ
 Route::get('/search_test_h', 'DoctorController@start');
 //一覧ページ
