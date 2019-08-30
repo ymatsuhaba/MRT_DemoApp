@@ -27,6 +27,9 @@ class LibBookController extends Controller
         //バリデーション
         Input::merge(array_map(function ($value) {
             if (is_string($value)) {
+                $value = preg_replace('/\A[\x00\s]++|[\x00\s]++\z/u', '', $value);
+                $value = preg_replace('/　/', ' ', $value);   // 全角スペースを半角スペースに置換
+                $value = preg_replace('/\s+/', ' ', $value); // 連続するスペースをまとめる
                 return trim($value);
             } else {
                 return $value;
@@ -39,7 +42,7 @@ class LibBookController extends Controller
         //ルール
         $rules = [
             'title' => 'required|regex:/[^\s　]/'
-            , 'writer_name' => 'nullable|regex:/^[ぁ-んァ-ヶー一-龠a-zA-Zａ-ｚＡ-Ｚ +]*$/|not_regex:[0-9０−９]'
+            , 'writer_name' => 'nullable|regex:/^[ぁ-んァ-ヶー一-龠a-zA-Zａ-ｚＡ-Ｚ +]*$/', 'not_regex:/^[^0-9]'
             , 'release_date' => 'nullable|before:tomorrow'
             , 'lending_status' => 'required'
 //            , 'cover_image' => 'image'

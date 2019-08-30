@@ -53,14 +53,14 @@ class DemoPage_hController extends Controller
 
         //ルール
         $rules = [
-            'salary_hour' => 'nullable|regex:/^[0-9]*$/|',
-            'salary' => 'nullable|regex:/^[0-9]*$/|',
+            'salary_hour' => 'nullable|numeric|'
+            , 'salary' => 'nullable|numeric|'
         ];
 
         //出力されるメッセージ
         $messages = [
-            'salary_hour.regex' => '有効な金額を入力してください',
-            'salary.regex' => '有効な金額を入力してください',
+            'salary_hour.numeric' => '有効な金額を入力してください',
+            'salary.numeric' => '有効な金額を入力してください',
         ];
 
         $validation = \Validator::make($inputs, $rules, $messages);
@@ -87,42 +87,33 @@ class DemoPage_hController extends Controller
         //もしキーワードがあれば
         if (!empty($prefecture)) {
             $job_list->where('prefectures', 'like', "%$prefecture%");
-            $spot_jobs = $job_list->get();
         }
         if (!empty($clinical_department)) {
             $job_list->where('clinical_department','like', "%$clinical_department%");
-            $spot_jobs = $job_list->get();
         }
         if (!empty($tochoku)&&empty($nichoku)) {
             $job_list->where('work_form',$tochoku);
-            $spot_jobs = $job_list->get();
         }
         if (!empty($nichoku)&&empty($tochoku)) {
             $job_list->where('work_form', $nichoku);
-            $spot_jobs = $job_list->get();
         }
         if (!empty($nichoku)&&!empty($tochoku)) {
             $job_list->where('work_form', '=',$nichoku)->orwhere('work_form','=', $tochoku);
-            $spot_jobs = $job_list->get();
         }
         if (!empty($salary_hour_after)&&empty($salary_after)) {
             $job_list->where('salary_hour', '>=', $salary_hour_after);
-            $spot_jobs = $job_list->get();
         }
         if (!empty($salary_after)&&empty($salary_hour_after)) {
             $job_list->where('salary', '>=', $salary_after);
-            $spot_jobs = $job_list->get();
         }
         if (!empty($salary_after)&&!empty($salary_hour_after)) {
             $job_list->where('salary', '>=', $salary_after)->orWhere('salary_hour','>=',$salary_hour_after);
-            $spot_jobs = $job_list->get();
         }
-        $spot_jobs = $job_list->get();
         if (!empty($date)) {
             $job_list->where('work_start_date', $date);
-            $spot_jobs = $job_list->get();
         }
-            return view('search_job_result', compact('spot_jobs'));
-        }
+        $spot_jobs = $job_list->get();
+        return view('search_job_result', compact('spot_jobs'));
+    }
 
 }
